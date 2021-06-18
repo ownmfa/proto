@@ -1,0 +1,172 @@
+syntax = "proto3";
+package ownmfa.api;
+
+import "api/status.proto";
+import "common/role.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+import "validate/validate.proto";
+
+option go_package = "github.com/ownmfa/api/go/api";
+
+// UserService contains functions to query and modify users.
+service UserService {
+  // Create a user. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  rpc CreateUser(CreateUserRequest) returns (User) {
+    option (google.api.http) = {
+      post: "/v1/users"
+      body: "user"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      responses: {
+        key: "201"
+        value: {
+          description: "A successful response."
+          schema: {
+            json_schema: {
+              ref: ".ownmfa.api.User"
+            }
+          }
+        }
+      }
+    };
+  }
+
+  // Get a user by ID. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  rpc GetUser(GetUserRequest) returns (User) {
+    option (google.api.http) = {
+      get: "/v1/users/{id}"
+    };
+  }
+
+  // Update a user. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  rpc UpdateUser(UpdateUserRequest) returns (User) {
+    option (google.api.http) = {
+      put: "/v1/users/{user.id}"
+      body: "user"
+      additional_bindings {
+        patch: "/v1/users/{user.id}"
+        body: "user"
+      }
+    };
+  }
+
+  // Update a user's password. Passwords are checked against NIST password guidelines.
+  rpc UpdateUserPassword(UpdateUserPasswordRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      put: "/v1/users/{id}/password"
+      body: "*"
+    };
+  }
+
+  // Delete a user by ID. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  rpc DeleteUser(DeleteUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/users/{id}"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      responses: {
+        key: "204"
+        value: {
+          description: "A successful response."
+          schema: {}
+        }
+      }
+    };
+  }
+
+  // List users. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse) {
+    option (google.api.http) = {
+      get: "/v1/users"
+    };
+  }
+}
+
+// User represents a user as stored in the database.
+message User {
+  // User ID (UUID).
+  string id = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Organization ID (UUID).
+  string org_id = 2 [json_name = "orgID", (google.api.field_behavior) = OUTPUT_ONLY];
+
+  // User name.
+  string name = 3 [(validate.rules).string = {min_len: 5, max_len: 80}];
+
+  // User email.
+  string email = 4 [(validate.rules).string.email = true];
+
+  // User role.
+  common.Role role = 5 [(validate.rules).enum = {in: [4, 8, 12, 15]}];
+
+  // User status.
+  Status status = 6 [(validate.rules).enum = {in: [3, 6]}];
+
+  // User creation timestamp.
+  google.protobuf.Timestamp created_at = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // User modification timestamp.
+  google.protobuf.Timestamp updated_at = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// CreateUserRequest is sent to create a user.
+message CreateUserRequest {
+  // User message to create.
+  User user = 1 [(validate.rules).message.required = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// GetUserRequest is sent to get a user.
+message GetUserRequest {
+  // User ID (UUID) to get.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// UpdateUserRequest is sent to update a user.
+message UpdateUserRequest {
+  // User message to update.
+  User user = 1 [(validate.rules).message.required = true, (google.api.field_behavior) = REQUIRED];
+
+  // Fields to update. Automatically populated by a PATCH request. If not present, a full resource update is performed.
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+// UpdateUserPasswordRequest is sent to update a user's password.
+message UpdateUserPasswordRequest {
+  // User ID (UUID) to update password.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = OUTPUT_ONLY];
+
+  // User password to update.
+  string password = 2 [(validate.rules).string = {min_len: 10, max_len: 100}, (google.api.field_behavior) = REQUIRED];
+}
+
+// DeleteUserRequest is sent to delete a user.
+message DeleteUserRequest {
+  // User ID (UUID) to delete.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// ListUsersRequest is sent to list users.
+message ListUsersRequest {
+  // Number of users to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
+  int32 page_size = 1 [(validate.rules).int32.lte = 250];
+
+  // Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
+  string page_token = 2;
+}
+
+// ListUsersResponse is sent in response to a user list.
+message ListUsersResponse {
+  // User array, ordered by ascending created_at timestamp. The completeness of the array will depend on whether the request was made by an admin user, non-admin user, or API key.
+  repeated User users = 1;
+
+  // Pagination token used to retrieve the next page of results. Not returned for the last page.
+  string next_page_token = 2;
+
+  // Total number of users available.
+  int32 total_size = 3;
+}

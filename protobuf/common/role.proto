@@ -1,0 +1,22 @@
+syntax = "proto3";
+package ownmfa.common;
+
+option go_package = "github.com/ownmfa/api/go/common";
+
+// Role represents the role of a user.
+enum Role {
+  // Role is not specified.
+  ROLE_UNSPECIFIED = 0;
+
+  // Viewers can only read resources in their organization, but can update their own user.
+  VIEWER = 4;
+
+  // Authenticators can read and modify resources in their organization, but can only update their own user.
+  AUTHENTICATOR = 8;
+
+  // Admins can read and modify anything in their organization, including creating users of an equal or lesser role.
+  ADMIN = 12;
+
+  // System admins can create organizations and modify anything in their organization.
+  SYS_ADMIN = 15;
+}
