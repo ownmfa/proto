@@ -18,7 +18,7 @@ go: version
 
 tag:
 	git tag -s v$(VERSION) -m "Version $(VERSION)"
-	git push v$(VERSION)
+	git push origin v$(VERSION)
 
 clean:
 	find . -name '*.pb*.go' -type f|xargs rm -v
