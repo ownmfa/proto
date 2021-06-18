@@ -1,0 +1,44 @@
+syntax = "proto3";
+package ownmfa.api;
+
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option go_package = "github.com/ownmfa/api/go/api";
+
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "Hermes"
+    version: "APIVERSION"
+    contact: {
+      name: "OwnMFA"
+      url: "https://www.ownmfa.com/"
+      email: "info@ownmfa.com"
+    }
+    description: "Getting started with the Hermes API:\n- Log in with `/v1/sessions/login` using your provided credentials. Authorize below using the provided token.\n- Create an application with `/v1/applications`. For SMS and software token authentication methods, all template fields can be left empty.\n- (Optional) Create an `AUTHENTICATOR` role API key with `/v1/sessions/keys`. Re-authorize using the provided token.\n\nActivate an identity (single occurrence):\n- Create an identity with `/v1/applications/{identity.appID}/identities`. Only one method field is supported when creating an identity.\n- Issue the returned identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Activate the identity with `/v1/applications/{appID}/identities/{id}/activate` using the received or generated challenge.\n\nVerify an identity (ongoing):\n- Issue the identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Verify the identity with `/v1/applications/{appID}/identities/{id}/verify` using the received or generated challenge.",
+    license: {
+      name: "ISC License";
+      url: "https://github.com/ownmfa/api/blob/main/LICENSE";
+    };
+  }
+  external_docs: {
+    description: "API Protobuf and gRPC definitions";
+    url: "https://github.com/ownmfa/api";
+  }
+  security_definitions: {
+    security: {
+      key: "TokenAuth"
+      value: {
+        type: TYPE_API_KEY
+        in: IN_HEADER
+        name: "Authorization"
+        description: "Enter your token (/v1/sessions/login) in the format **Bearer &lt;token&gt;**"
+      }
+    }
+  }
+  security: {
+    security_requirement: {
+      key: "TokenAuth"
+      value: {}
+    }
+  }
+};

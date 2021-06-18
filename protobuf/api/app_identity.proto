@@ -1,0 +1,521 @@
+syntax = "proto3";
+package ownmfa.api;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+import "validate/validate.proto";
+
+option go_package = "github.com/ownmfa/api/go/api";
+
+// AppIdentityService contains functions to query and modify applications and identities.
+service AppIdentityService {
+  // Create an application. Applications contain external user identities and common settings for authentication methods.
+  rpc CreateApp(CreateAppRequest) returns (App) {
+    option (google.api.http) = {
+      post: "/v1/applications"
+      body: "app"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      responses: {
+        key: "201"
+        value: {
+          description: "A successful response."
+          schema: {
+            json_schema: {
+              ref: ".ownmfa.api.App"
+            }
+          }
+        }
+      }
+    };
+  }
+
+  // Create an identity. Identities are used to challenge, activate, and verify external users.
+  rpc CreateIdentity(CreateIdentityRequest) returns (CreateIdentityResponse) {
+    option (google.api.http) = {
+      post: "/v1/applications/{identity.app_id}/identities"
+      body: "identity"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      responses: {
+        key: "201"
+        value: {
+          description: "A successful response."
+          schema: {
+            json_schema: {
+              ref: ".ownmfa.api.CreateIdentityResponse"
+            }
+          }
+        }
+      }
+    };
+  }
+
+  // Activate an identity following a challenge.
+  rpc ActivateIdentity(ActivateIdentityRequest) returns (Identity) {
+    option (google.api.http) = {
+      put: "/v1/applications/{app_id}/identities/{id}/activate"
+      body: "*"
+    };
+  }
+
+  // Issue a challenge to an identity.
+  rpc ChallengeIdentity(ChallengeIdentityRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1/applications/{app_id}/identities/{id}/challenge"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      responses: {
+        key: "202"
+        value: {
+          description: "A successful response."
+          schema: {}
+        }
+      }
+      responses: {
+        key: "204"
+        value: {
+          description: "A successful response."
+          schema: {}
+        }
+      }
+    };
+  }
+
+  // Verify an identity following a challenge.
+  rpc VerifyIdentity(VerifyIdentityRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1/applications/{app_id}/identities/{id}/verify"
+      body: "*"
+    };
+  }
+
+  // Get an application by ID. Applications contain external user identities and common settings for authentication methods.
+  rpc GetApp(GetAppRequest) returns (App) {
+    option (google.api.http) = {
+      get: "/v1/applications/{id}"
+    };
+  }
+
+  // Get an identity by ID. Identities are used to challenge, activate, and verify external users.
+  rpc GetIdentity(GetIdentityRequest) returns (Identity) {
+    option (google.api.http) = {
+      get: "/v1/applications/{app_id}/identities/{id}"
+    };
+  }
+
+  // Update an application. Applications contain external user identities and common settings for authentication methods.
+  rpc UpdateApp(UpdateAppRequest) returns (App) {
+    option (google.api.http) = {
+      put: "/v1/applications/{app.id}"
+      body: "app"
+      additional_bindings {
+        patch: "/v1/applications/{app.id}"
+        body: "app"
+      }
+    };
+  }
+
+  // Delete an application by ID. Applications contain external user identities and common settings for authentication methods.
+  rpc DeleteApp(DeleteAppRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/applications/{id}"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      responses: {
+        key: "204"
+        value: {
+          description: "A successful response."
+          schema: {}
+        }
+      }
+    };
+  }
+
+  // Delete an identity by ID. Identities are used to challenge, activate, and verify external users.
+  rpc DeleteIdentity(DeleteIdentityRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/applications/{app_id}/identities/{id}"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      responses: {
+        key: "204"
+        value: {
+          description: "A successful response."
+          schema: {}
+        }
+      }
+    };
+  }
+
+  // List all applications. Applications contain external user identities and common settings for authentication methods.
+  rpc ListApps(ListAppsRequest) returns (ListAppsResponse) {
+    option (google.api.http) = {
+      get: "/v1/applications"
+    };
+  }
+
+  // List identities. Identities are used to challenge, activate, and verify external users.
+  rpc ListIdentities(ListIdentitiesRequest) returns (ListIdentitiesResponse) {
+    option (google.api.http) = {
+      get: "/v1/applications/{app_id}/identities"
+      additional_bindings {
+        get: "/v1/applications/identities"
+      }
+    };
+  }
+}
+
+// App represents an application as stored in the database.
+message App {
+  // Application ID (UUID).
+  string id = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Organization ID (UUID).
+  string org_id = 2 [json_name = "orgID", (google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Application name.
+  string name = 3 [(validate.rules).string = {min_len: 5, max_len: 40}];
+
+  // Application display name. Used anywhere the application is shown to a user, including templates and notification sender fields.
+  string display_name = 4 [(validate.rules).string = {min_len: 5, max_len: 80}];
+
+  // Application email. Optional, used as the 'From' address in email notifications.
+  string email = 5 [(validate.rules).string = {ignore_empty: true, email: true}];
+
+  // Pushover application key. If not specified, the default OwnMFA Pushover application and templates will be used.
+  string pushover_key = 6 [(validate.rules).string.max_len = 45];
+
+  // Application subject template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution is '{{.displayName}}'. Optional field, for notification methods that support subjects.
+  string subject_template = 7 [(validate.rules).string.max_len = 1024];
+
+  // Application text body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support text bodies. To prevent fraud, SMS notifications used a fixed body that includes the application display_name and verification code.
+  string text_body_template = 8 [(validate.rules).string.max_len = 4096];
+
+  // Application HTML body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support HTML bodies. When used in JSON, the value will be represented as a base64 string.
+  bytes html_body_template = 9 [(validate.rules).bytes.max_len = 4096];
+
+  // Application creation timestamp.
+  google.protobuf.Timestamp created_at = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Application modification timestamp.
+  google.protobuf.Timestamp updated_at = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// CreateAppRequest is sent to create an application.
+message CreateAppRequest {
+  // App message to create.
+  App app = 1 [(validate.rules).message.required = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// GetAppRequest is sent to get an application.
+message GetAppRequest {
+  // Application ID (UUID) to get.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// UpdateAppRequest is sent to update an application.
+message UpdateAppRequest {
+  // App message to update.
+  App app = 1 [(validate.rules).message.required = true, (google.api.field_behavior) = REQUIRED];
+
+  // Fields to update. Automatically populated by a PATCH request. If not present, a full resource update is performed.
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+// DeleteAppRequest is sent to delete an application.
+message DeleteAppRequest {
+  // Application ID (UUID) to delete.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// ListAppsRequest is sent to list applications.
+message ListAppsRequest {
+  // Number of applications to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
+  int32 page_size = 1 [(validate.rules).int32.lte = 250];
+
+  // Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
+  string page_token = 2;
+}
+
+// ListAppsResponse is sent in response to an application list.
+message ListAppsResponse {
+  // App array, ordered by ascending created_at timestamp.
+  repeated App apps = 1;
+
+  // Pagination token used to retrieve the next page of results. Not returned for the last page.
+  string next_page_token = 2;
+
+  // Total number of applications available.
+  int32 total_size = 3;
+}
+
+// IdentityStatus represents the status of an identity.
+enum IdentityStatus {
+  // Identity is not yet verified.
+  UNVERIFIED = 0;
+
+  // Identity has been activated.
+  ACTIVATED = 3;
+}
+
+// Hash represents a hash function.
+enum Hash {
+  // SHA-2 512 bits.
+  SHA512 = 0;
+
+  // SHA-2 256 bits.
+  SHA256 = 1;
+
+  // SHA-1.
+  SHA1 = 2;
+}
+
+// SoftwareHOTPMethod configures a software OATH HOTP one-time password method.
+message SoftwareHOTPMethod {
+  // Software HOTP hash function. Defaults to SHA512 if not specified.
+  Hash hash = 1;
+
+  // Passcode digits length. Defaults to 7 if not specified.
+  int32 digits = 2 [(validate.rules).int32 = {ignore_empty: true, gte: 6, lte: 10}];
+
+  // Software HOTP starting counter. Only included during identity creation. Defaults to 0 if not specified.
+  int32 counter = 3;
+
+  // Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
+  string account_name = 4 [(validate.rules).string.max_len = 80];
+}
+
+// SoftwareTOTPMethod configures a software OATH TOTP one-time password method.
+message SoftwareTOTPMethod {
+  // Software TOTP hash function. Defaults to SHA512 if not specified.
+  Hash hash = 1;
+
+  // Passcode digits length. Defaults to 7 if not specified.
+  int32 digits = 2 [(validate.rules).int32 = {ignore_empty: true, gte: 6, lte: 10}];
+
+  // Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
+  string account_name = 3 [(validate.rules).string.max_len = 80];
+}
+
+// GoogleAuthHOTPMethod configures a Google Authenticator HOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function.
+message GoogleAuthHOTPMethod {
+  // Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
+  string account_name = 1 [(validate.rules).string.max_len = 80];
+}
+
+// GoogleAuthTOTPMethod configures a Google Authenticator or Microsoft Authenticator TOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function.
+message GoogleAuthTOTPMethod {
+  // Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
+  string account_name = 1 [(validate.rules).string.max_len = 80];
+}
+
+// HardwareHOTPMethod configures a hardware OATH HOTP one-time password method.
+message HardwareHOTPMethod {
+  // Hardware HOTP hash function. Defaults to SHA512 if not specified.
+  Hash hash = 1;
+
+  // Passcode digits length.
+  int32 digits = 2 [(validate.rules).int32 = {gte: 6, lte: 10}];
+
+  // Hardware HOTP starting counter. Only included during identity creation. Defaults to 0 if not specified.
+  int32 counter = 3;
+
+  // Hardware HOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
+  bytes secret = 4 [(validate.rules).bytes.min_len = 16];
+}
+
+// HardwareTOTPMethod configures a hardware OATH TOTP one-time password method.
+message HardwareTOTPMethod {
+  // Hardware TOTP hash function. Defaults to SHA512 if not specified.
+  Hash hash = 1;
+
+  // Passcode digits length.
+  int32 digits = 2 [(validate.rules).int32 = {gte: 6, lte: 10}];
+
+  // Hardware TOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
+  bytes secret = 3 [(validate.rules).bytes.min_len = 16];
+}
+
+// SMSMethod configures an SMS passcode method.
+message SMSMethod {
+  // Phone number. Must be in valid [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
+  string phone = 1 [(validate.rules).string = {min_len: 8, max_len: 16}];
+}
+
+// PushoverMethod configures a Pushover passcode method.
+message PushoverMethod {
+  // Pushover user key.
+  string pushover_key = 1 [(validate.rules).string = {min_len: 25, max_len: 45}];
+}
+
+// EmailMethod configures an email passcode method.
+message EmailMethod {
+  // Email address.
+  string email = 1 [(validate.rules).string.email = true];
+}
+
+// BackupsCodesMethod configures a backup codes method. Identities using this method are immediately activated and do not require activation.
+message BackupsCodesMethod {
+  // Number of passcodes provided.
+  int32 passcodes = 1 [(validate.rules).int32 = {gte: 6, lte: 10}];
+}
+
+// Identity represents an identity as stored in the database.
+message Identity {
+  // Identity ID (UUID).
+  string id = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Organization ID (UUID).
+  string org_id = 2 [json_name = "orgID", (google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Application ID (UUID).
+  string app_id = 3 [json_name = "appID", (google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Identity comment. This should be an opaque identifier known to the consuming application.
+  string comment = 4 [(validate.rules).string = {min_len: 5, max_len: 80}, (google.api.field_behavior) = REQUIRED];
+
+  // Identity status.
+  IdentityStatus status = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Identity method.
+  oneof method_oneof {
+    option (validate.required) = true;
+
+    // Software HOTP method configuration.
+    SoftwareHOTPMethod software_hotp_method = 16 [json_name = "softwareHOTPMethod"];
+
+    // Software TOTP method configuration.
+    SoftwareTOTPMethod software_totp_method = 6 [json_name = "softwareTOTPMethod"];
+
+    // Google Authenticator HOTP method configuration.
+    GoogleAuthHOTPMethod google_auth_hotp_method = 17 [json_name = "googleAuthHOTPMethod"];
+
+    // Google Authenticator TOTP method configuration.
+    GoogleAuthTOTPMethod google_auth_totp_method = 7 [json_name = "googleAuthTOTPMethod"];
+
+    // Hardware HOTP method configuration.
+    HardwareHOTPMethod hardware_hotp_method = 18 [json_name = "hardwareHOTPMethod"];
+
+    // Hardware TOTP method configuration.
+    HardwareTOTPMethod hardware_totp_method = 19 [json_name = "hardwareTOTPMethod"];
+
+    // SMS method configuration.
+    SMSMethod sms_method = 8;
+
+    // Pushover method configuration.
+    PushoverMethod pushover_method = 20;
+
+    // Email method configuration.
+    EmailMethod email_method = 9;
+
+    // Backups codes method configuration.
+    BackupsCodesMethod backup_codes_method = 10;
+  }
+
+  // Identity creation timestamp.
+  google.protobuf.Timestamp created_at = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Identity modification timestamp.
+  google.protobuf.Timestamp updated_at = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// CreateIdentityRequest is sent to create an identity.
+message CreateIdentityRequest {
+  // Identity message to create.
+  Identity identity = 1 [(validate.rules).message.required = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// CreateIdentityResponse is sent in response to an identity creation.
+message CreateIdentityResponse {
+  // Identity message created.
+  Identity identity = 1;
+
+  // Secret in base32 format, for identity methods that provide secrets. Only returned once, upon identity creation.
+  string secret = 2;
+
+  // Identity QR code, in Google Authenticator-compatible format, as a PNG image. For identity methods that provide secrets. Only returned once, upon identity creation. When used in JSON, the value will be represented as a base64 string.
+  bytes qr = 3;
+
+  // Passcode array, for identity methods that provide pregenerated passcodes. Only returned once, upon identity creation.
+  repeated string passcodes = 4;
+}
+
+// ActivateIdentityRequest is sent to activate an identity.
+message ActivateIdentityRequest {
+  // Identity ID (UUID) to activate.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+
+  // Application ID (UUID).
+  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+
+  // Passcode for verification.
+  string passcode = 3 [(validate.rules).string = {min_len: 6, max_len: 10}, (google.api.field_behavior) = REQUIRED];
+}
+
+// ChallengeIdentityRequest is sent to issue a challenge to an identity.
+message ChallengeIdentityRequest {
+  // Identity ID (UUID) to issue challenge. The rate limit for methods that send notifications is one challenge per identity every 30 seconds.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+
+  // Application ID (UUID).
+  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// VerifyIdentityRequest is sent to verify an identity. If verification fails, the request does not automatically fall through to a backup codes method. Consuming applications should design a workflow that either explicitly verifies by backup codes or falls through on failure.
+message VerifyIdentityRequest {
+  // Identity ID (UUID) to verify.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+
+  // Application ID (UUID).
+  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+
+  // Passcode for verification.
+  string passcode = 3 [(validate.rules).string = {min_len: 6, max_len: 10}, (google.api.field_behavior) = REQUIRED];
+}
+
+// GetIdentityRequest is sent to get an identity.
+message GetIdentityRequest {
+  // Identity ID (UUID) to get. Identity method_oneof may be returned in simplified form.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+
+  // Application ID (UUID).
+  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// DeleteIdentityRequest is sent to delete an identity.
+message DeleteIdentityRequest {
+  // Identity ID (UUID) to delete.
+  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+
+  // Application ID (UUID).
+  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+}
+
+// ListIdentitiesRequest is sent to list identities.
+message ListIdentitiesRequest {
+  // Number of identities to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
+  int32 page_size = 1 [(validate.rules).int32.lte = 250];
+
+  // Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
+  string page_token = 2;
+
+  // Application ID (UUID). If not specified, all rules are included.
+  string app_id = 3 [json_name = "appID", (validate.rules).string = {ignore_empty: true, uuid: true}];
+}
+
+// ListIdentitiesResponse is sent in response to an identity list.
+message ListIdentitiesResponse {
+  // Identity array, ordered by ascending created_at timestamp.
+  repeated Identity identities = 1;
+
+  // Pagination token used to retrieve the next page of results. Not returned for the last page.
+  string next_page_token = 2;
+
+  // Total number of identities available.
+  int32 total_size = 3;
+}

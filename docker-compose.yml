@@ -1,0 +1,12 @@
+version: "3"
+services:
+  go_openapi:
+    build: ./go
+    command: sh -c "cd go && make"
+    volumes:
+      - .:/api
+  python:
+    build: ./python
+    command: sh -c "cd python && make"
+    volumes:
+      - .:/api

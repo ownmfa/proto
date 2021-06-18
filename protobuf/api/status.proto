@@ -1,0 +1,16 @@
+syntax = "proto3";
+package ownmfa.api;
+
+option go_package = "github.com/ownmfa/api/go/api";
+
+// Status represents the status of a message.
+enum Status {
+  // Status is not specified.
+  STATUS_UNSPECIFIED = 0;
+
+  // Message subject is active.
+  ACTIVE = 3;
+
+  // Message subject is disabled.
+  DISABLED = 6;
+}
