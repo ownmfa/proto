@@ -3,17 +3,17 @@
 generate: deps common api
 
 deps:
-	pip install grpcio-tools
+	gem install grpc-tools
 
 common:
-	python -m grpc_tools.protoc -I=../protobuf -I=/tmp/googleapis -I=/tmp/pgv \
-	--python_out=. \
+	grpc_tools_ruby_protoc -I=../protobuf -I=/tmp/googleapis -I=/tmp/pgv \
+	--ruby_out=. \
 	common/role.proto
 
 api:
-	python -m grpc_tools.protoc -I=../protobuf -I=/tmp/googleapis \
+	grpc_tools_ruby_protoc -I=../protobuf -I=/tmp/googleapis \
 	-I=/tmp/grpc-gateway -I=/tmp/pgv \
-	--python_out=. --grpc_python_out=. \
+	--ruby_out=. --grpc_out=. \
 	api/app_identity.proto \
 	api/event.proto \
 	api/org.proto \
