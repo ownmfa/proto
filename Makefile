@@ -1,6 +1,6 @@
 .PHONY: generate go clean
 
-VERSION = 0.1.1
+VERSION = 0.1.4
 
 generate: version
 	docker-compose build --no-cache --pull
@@ -20,6 +20,7 @@ tag:
 	git tag -s v$(VERSION) -m "Version $(VERSION)"
 	git tag -s go/v$(VERSION) -m "Version $(VERSION)"
 	git push --tags
+	go list -m github.com/ownmfa/api/go@v$(VERSION)
 
 clean:
 	find . -name '*.pb*.go' -type f|xargs rm -v
