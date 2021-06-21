@@ -12,8 +12,7 @@ common:
 
 api:
 	python -m grpc_tools.protoc -I=../protobuf -I=/tmp/googleapis \
-	-I=/tmp/grpc-gateway -I=/tmp/pgv \
-	--python_out=. --grpc_python_out=. \
+	-I=/tmp/grpc-gateway -I=/tmp/pgv --python_out=. --grpc_python_out=. \
 	api/app_identity.proto \
 	api/event.proto \
 	api/org.proto \

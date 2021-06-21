@@ -12,8 +12,7 @@ common:
 
 api:
 	grpc_tools_ruby_protoc -I=../protobuf -I=/tmp/googleapis \
-	-I=/tmp/grpc-gateway -I=/tmp/pgv \
-	--ruby_out=. --grpc_out=. \
+	-I=/tmp/grpc-gateway -I=/tmp/pgv --ruby_out=. --grpc_out=. \
 	api/app_identity.proto \
 	api/event.proto \
 	api/org.proto \
