@@ -1,6 +1,7 @@
 syntax = "proto3";
 package ownmfa.api;
 
+import "api/status.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/field_mask.proto";
@@ -77,6 +78,24 @@ service OrgService {
   }
 }
 
+// Plan represents the plan and associated capabilities of an organization.
+enum Plan {
+  // Plan is not specified.
+  PLAN_UNSPECIFIED = 0;
+
+  // Payment has failed and the organization is restricted to Starter plan capabilities.
+  PAYMENT_FAIL = 3;
+
+  // Starter plan supports software and hardware OATH one-time password authentication methods, up to a limited number of identities.
+  STARTER = 6;
+
+  // Pro plan supports all authentication methods and includes email support.
+  PRO = 9;
+
+  // Enterprise plan supports all authentication methods and includes email and phone support.
+  ENTERPRISE = 12;
+}
+
 // Org represents an organization as stored in the database.
 message Org {
   // Organization ID (UUID).
@@ -84,6 +103,12 @@ message Org {
 
   // Organization name.
   string name = 2 [(validate.rules).string = {min_len: 5, max_len: 40}];
+
+  // Organization status.
+  Status status = 5 [(validate.rules).enum = {in: [3, 6]}];
+
+  // Organization plan.
+  Plan plan = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Organization creation timestamp.
   google.protobuf.Timestamp created_at = 3 [(google.api.field_behavior) = OUTPUT_ONLY];

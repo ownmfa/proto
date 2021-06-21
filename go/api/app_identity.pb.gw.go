@@ -969,7 +969,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateApp")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateApp", runtime.WithHTTPPathPattern("/v1/applications"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -992,7 +992,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateIdentity")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{identity.app_id}/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1015,7 +1015,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ActivateIdentity")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ActivateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/activate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1038,7 +1038,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ChallengeIdentity")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ChallengeIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/challenge"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1061,7 +1061,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/VerifyIdentity")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/VerifyIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/verify"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1084,7 +1084,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetApp")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1107,7 +1107,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetIdentity")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1130,7 +1130,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1153,7 +1153,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1176,7 +1176,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteApp")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1199,7 +1199,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteIdentity")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1222,7 +1222,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListApps")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListApps", runtime.WithHTTPPathPattern("/v1/applications"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1245,7 +1245,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1268,7 +1268,7 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1330,7 +1330,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateApp")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateApp", runtime.WithHTTPPathPattern("/v1/applications"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1350,7 +1350,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateIdentity")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{identity.app_id}/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1370,7 +1370,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ActivateIdentity")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ActivateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/activate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1390,7 +1390,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ChallengeIdentity")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ChallengeIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/challenge"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1410,7 +1410,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/VerifyIdentity")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/VerifyIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/verify"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1430,7 +1430,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetApp")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1450,7 +1450,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetIdentity")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1470,7 +1470,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1490,7 +1490,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1510,7 +1510,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteApp")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1530,7 +1530,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteIdentity")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1550,7 +1550,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListApps")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListApps", runtime.WithHTTPPathPattern("/v1/applications"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1570,7 +1570,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1590,7 +1590,7 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

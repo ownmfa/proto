@@ -3,6 +3,7 @@
 
 require 'google/protobuf'
 
+require 'api/status_pb'
 require 'google/protobuf/empty_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/protobuf/field_mask_pb'
@@ -14,6 +15,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "ownmfa.api.Org" do
       optional :id, :string, 1
       optional :name, :string, 2
+      optional :status, :enum, 5, "ownmfa.api.Status"
+      optional :plan, :enum, 6, "ownmfa.api.Plan"
       optional :created_at, :message, 3, "google.protobuf.Timestamp"
       optional :updated_at, :message, 4, "google.protobuf.Timestamp"
     end
@@ -39,6 +42,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :next_page_token, :string, 2
       optional :total_size, :int32, 3
     end
+    add_enum "ownmfa.api.Plan" do
+      value :PLAN_UNSPECIFIED, 0
+      value :PAYMENT_FAIL, 3
+      value :STARTER, 6
+      value :PRO, 9
+      value :ENTERPRISE, 12
+    end
   end
 end
 
@@ -51,5 +61,6 @@ module Ownmfa
     DeleteOrgRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.DeleteOrgRequest").msgclass
     ListOrgsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.ListOrgsRequest").msgclass
     ListOrgsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.ListOrgsResponse").msgclass
+    Plan = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.Plan").enummodule
   end
 end

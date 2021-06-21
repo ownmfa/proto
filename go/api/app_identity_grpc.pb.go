@@ -4,10 +4,10 @@ package api
 
 import (
 	context "context"
-	empty "github.com/golang/protobuf/ptypes/empty"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -26,9 +26,9 @@ type AppIdentityServiceClient interface {
 	// Activate an identity following a challenge.
 	ActivateIdentity(ctx context.Context, in *ActivateIdentityRequest, opts ...grpc.CallOption) (*Identity, error)
 	// Issue a challenge to an identity.
-	ChallengeIdentity(ctx context.Context, in *ChallengeIdentityRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	ChallengeIdentity(ctx context.Context, in *ChallengeIdentityRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Verify an identity following a challenge.
-	VerifyIdentity(ctx context.Context, in *VerifyIdentityRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	VerifyIdentity(ctx context.Context, in *VerifyIdentityRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Get an application by ID. Applications contain external user identities and common settings for authentication methods.
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*App, error)
 	// Get an identity by ID. Identities are used to challenge, activate, and verify external users.
@@ -36,9 +36,9 @@ type AppIdentityServiceClient interface {
 	// Update an application. Applications contain external user identities and common settings for authentication methods.
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*App, error)
 	// Delete an application by ID. Applications contain external user identities and common settings for authentication methods.
-	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Delete an identity by ID. Identities are used to challenge, activate, and verify external users.
-	DeleteIdentity(ctx context.Context, in *DeleteIdentityRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	DeleteIdentity(ctx context.Context, in *DeleteIdentityRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// List all applications. Applications contain external user identities and common settings for authentication methods.
 	ListApps(ctx context.Context, in *ListAppsRequest, opts ...grpc.CallOption) (*ListAppsResponse, error)
 	// List identities. Identities are used to challenge, activate, and verify external users.
@@ -80,8 +80,8 @@ func (c *appIdentityServiceClient) ActivateIdentity(ctx context.Context, in *Act
 	return out, nil
 }
 
-func (c *appIdentityServiceClient) ChallengeIdentity(ctx context.Context, in *ChallengeIdentityRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
+func (c *appIdentityServiceClient) ChallengeIdentity(ctx context.Context, in *ChallengeIdentityRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
 	err := c.cc.Invoke(ctx, "/ownmfa.api.AppIdentityService/ChallengeIdentity", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -89,8 +89,8 @@ func (c *appIdentityServiceClient) ChallengeIdentity(ctx context.Context, in *Ch
 	return out, nil
 }
 
-func (c *appIdentityServiceClient) VerifyIdentity(ctx context.Context, in *VerifyIdentityRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
+func (c *appIdentityServiceClient) VerifyIdentity(ctx context.Context, in *VerifyIdentityRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
 	err := c.cc.Invoke(ctx, "/ownmfa.api.AppIdentityService/VerifyIdentity", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -125,8 +125,8 @@ func (c *appIdentityServiceClient) UpdateApp(ctx context.Context, in *UpdateAppR
 	return out, nil
 }
 
-func (c *appIdentityServiceClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
+func (c *appIdentityServiceClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
 	err := c.cc.Invoke(ctx, "/ownmfa.api.AppIdentityService/DeleteApp", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -134,8 +134,8 @@ func (c *appIdentityServiceClient) DeleteApp(ctx context.Context, in *DeleteAppR
 	return out, nil
 }
 
-func (c *appIdentityServiceClient) DeleteIdentity(ctx context.Context, in *DeleteIdentityRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
+func (c *appIdentityServiceClient) DeleteIdentity(ctx context.Context, in *DeleteIdentityRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
 	err := c.cc.Invoke(ctx, "/ownmfa.api.AppIdentityService/DeleteIdentity", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -172,9 +172,9 @@ type AppIdentityServiceServer interface {
 	// Activate an identity following a challenge.
 	ActivateIdentity(context.Context, *ActivateIdentityRequest) (*Identity, error)
 	// Issue a challenge to an identity.
-	ChallengeIdentity(context.Context, *ChallengeIdentityRequest) (*empty.Empty, error)
+	ChallengeIdentity(context.Context, *ChallengeIdentityRequest) (*emptypb.Empty, error)
 	// Verify an identity following a challenge.
-	VerifyIdentity(context.Context, *VerifyIdentityRequest) (*empty.Empty, error)
+	VerifyIdentity(context.Context, *VerifyIdentityRequest) (*emptypb.Empty, error)
 	// Get an application by ID. Applications contain external user identities and common settings for authentication methods.
 	GetApp(context.Context, *GetAppRequest) (*App, error)
 	// Get an identity by ID. Identities are used to challenge, activate, and verify external users.
@@ -182,9 +182,9 @@ type AppIdentityServiceServer interface {
 	// Update an application. Applications contain external user identities and common settings for authentication methods.
 	UpdateApp(context.Context, *UpdateAppRequest) (*App, error)
 	// Delete an application by ID. Applications contain external user identities and common settings for authentication methods.
-	DeleteApp(context.Context, *DeleteAppRequest) (*empty.Empty, error)
+	DeleteApp(context.Context, *DeleteAppRequest) (*emptypb.Empty, error)
 	// Delete an identity by ID. Identities are used to challenge, activate, and verify external users.
-	DeleteIdentity(context.Context, *DeleteIdentityRequest) (*empty.Empty, error)
+	DeleteIdentity(context.Context, *DeleteIdentityRequest) (*emptypb.Empty, error)
 	// List all applications. Applications contain external user identities and common settings for authentication methods.
 	ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error)
 	// List identities. Identities are used to challenge, activate, and verify external users.
@@ -205,10 +205,10 @@ func (UnimplementedAppIdentityServiceServer) CreateIdentity(context.Context, *Cr
 func (UnimplementedAppIdentityServiceServer) ActivateIdentity(context.Context, *ActivateIdentityRequest) (*Identity, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ActivateIdentity not implemented")
 }
-func (UnimplementedAppIdentityServiceServer) ChallengeIdentity(context.Context, *ChallengeIdentityRequest) (*empty.Empty, error) {
+func (UnimplementedAppIdentityServiceServer) ChallengeIdentity(context.Context, *ChallengeIdentityRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ChallengeIdentity not implemented")
 }
-func (UnimplementedAppIdentityServiceServer) VerifyIdentity(context.Context, *VerifyIdentityRequest) (*empty.Empty, error) {
+func (UnimplementedAppIdentityServiceServer) VerifyIdentity(context.Context, *VerifyIdentityRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyIdentity not implemented")
 }
 func (UnimplementedAppIdentityServiceServer) GetApp(context.Context, *GetAppRequest) (*App, error) {
@@ -220,10 +220,10 @@ func (UnimplementedAppIdentityServiceServer) GetIdentity(context.Context, *GetId
 func (UnimplementedAppIdentityServiceServer) UpdateApp(context.Context, *UpdateAppRequest) (*App, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateApp not implemented")
 }
-func (UnimplementedAppIdentityServiceServer) DeleteApp(context.Context, *DeleteAppRequest) (*empty.Empty, error) {
+func (UnimplementedAppIdentityServiceServer) DeleteApp(context.Context, *DeleteAppRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
 }
-func (UnimplementedAppIdentityServiceServer) DeleteIdentity(context.Context, *DeleteIdentityRequest) (*empty.Empty, error) {
+func (UnimplementedAppIdentityServiceServer) DeleteIdentity(context.Context, *DeleteIdentityRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteIdentity not implemented")
 }
 func (UnimplementedAppIdentityServiceServer) ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error) {

@@ -52,6 +52,15 @@ func (m *Org) Validate() error {
 		}
 	}
 
+	if _, ok := _Org_Status_InLookup[m.GetStatus()]; !ok {
+		return OrgValidationError{
+			field:  "Status",
+			reason: "value must be in list [3 6]",
+		}
+	}
+
+	// no validation rules for Plan
+
 	if v, ok := interface{}(m.GetCreatedAt()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return OrgValidationError{
@@ -128,6 +137,11 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = OrgValidationError{}
+
+var _Org_Status_InLookup = map[Status]struct{}{
+	3: {},
+	6: {},
+}
 
 // Validate checks the field values on CreateOrgRequest with the rules defined
 // in the proto definition for this message. If any rules are violated, an
