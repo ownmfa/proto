@@ -20,3 +20,5 @@
 
 ### OwnMFA ###
 /protobuf/api/openapi.proto
+/go/example/login/login
+/go/example/identity/identity

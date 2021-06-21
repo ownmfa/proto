@@ -13,3 +13,5 @@ Documentation: https://pkg.go.dev/github.com/ownmfa/api/go
 ```
 go get -u github.com/ownmfa/api/go
 ```
+
+Example gRPC code: `go/example/`

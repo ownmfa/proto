@@ -2191,7 +2191,7 @@
     }
   ],
   "externalDocs": {
-    "description": "API Protobuf and gRPC definitions",
+    "description": "API Protobuf / gRPC definitions and example code",
     "url": "https://github.com/ownmfa/api"
   }
 }

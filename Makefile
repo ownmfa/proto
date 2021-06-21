@@ -27,3 +27,5 @@ clean:
 	find . -name '*_pb2*.py' -type f|xargs rm -v
 	find . -name '*_pb.rb' -type f|xargs rm -v
 	rm -fv openapi/hermes.swagger.json
+	rm -fv go/example/login/login
+	rm -fv go/example/identity/identity
