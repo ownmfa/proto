@@ -181,7 +181,7 @@ message App {
   // Application name.
   string name = 3 [(validate.rules).string = {min_len: 5, max_len: 40}];
 
-  // Application display name. Used anywhere the application is shown to a user, including templates and notification sender fields.
+  // Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields.
   string display_name = 4 [(validate.rules).string = {min_len: 5, max_len: 80}];
 
   // Application email. Optional, used as the 'From' address in email notifications.
@@ -365,6 +365,12 @@ message BackupsCodesMethod {
   int32 passcodes = 1 [(validate.rules).int32 = {gte: 6, lte: 10}];
 }
 
+// SecurityQuestionsMethod configures a security questions method. Identities using this method are immediately activated and do not require activation.
+message SecurityQuestionsMethod {
+  // Answer to the security question. Only included during identity creation. The security question should be stored out-of-band and queried of an external user by the consuming application.
+  string answer = 1 [(validate.rules).string = {min_len: 3, max_len: 80}];
+}
+
 // Identity represents an identity as stored in the database.
 message Identity {
   // Identity ID (UUID).
@@ -415,6 +421,9 @@ message Identity {
 
     // Backups codes method configuration.
     BackupsCodesMethod backup_codes_method = 10;
+
+    // Security questions method configuration.
+    SecurityQuestionsMethod security_questions_method = 21;
   }
 
   // Identity creation timestamp.
@@ -453,8 +462,8 @@ message ActivateIdentityRequest {
   // Application ID (UUID).
   string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
-  // Passcode for verification.
-  string passcode = 3 [(validate.rules).string = {min_len: 6, max_len: 10}, (google.api.field_behavior) = REQUIRED];
+  // Passcode for verification. For security questions identity methods, this is the answer to the security question.
+  string passcode = 3 [(validate.rules).string = {min_len: 3, max_len: 80}, (google.api.field_behavior) = REQUIRED];
 }
 
 // ChallengeIdentityRequest is sent to issue a challenge to an identity.
@@ -474,8 +483,8 @@ message VerifyIdentityRequest {
   // Application ID (UUID).
   string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
-  // Passcode for verification.
-  string passcode = 3 [(validate.rules).string = {min_len: 6, max_len: 10}, (google.api.field_behavior) = REQUIRED];
+  // Passcode for verification. For security questions identity methods, this is the answer to the security question.
+  string passcode = 3 [(validate.rules).string = {min_len: 3, max_len: 80}, (google.api.field_behavior) = REQUIRED];
 }
 
 // GetIdentityRequest is sent to get an identity.

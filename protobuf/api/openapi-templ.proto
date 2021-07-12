@@ -21,7 +21,7 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
     }
   }
   external_docs: {
-    description: "API Protobuf / gRPC definitions and example code";
+    description: "API Protobuf + gRPC definitions and example code";
     url: "https://github.com/ownmfa/api";
   }
   security_definitions: {
