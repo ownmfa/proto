@@ -86,6 +86,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "ownmfa.api.BackupsCodesMethod" do
       optional :passcodes, :int32, 1
     end
+    add_message "ownmfa.api.SecurityQuestionsMethod" do
+      optional :answer, :string, 1
+    end
     add_message "ownmfa.api.Identity" do
       optional :id, :string, 1
       optional :org_id, :string, 2
@@ -105,6 +108,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :pushover_method, :message, 20, "ownmfa.api.PushoverMethod"
         optional :email_method, :message, 9, "ownmfa.api.EmailMethod"
         optional :backup_codes_method, :message, 10, "ownmfa.api.BackupsCodesMethod"
+        optional :security_questions_method, :message, 21, "ownmfa.api.SecurityQuestionsMethod"
       end
     end
     add_message "ownmfa.api.CreateIdentityRequest" do
@@ -179,6 +183,7 @@ module Ownmfa
     PushoverMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.PushoverMethod").msgclass
     EmailMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.EmailMethod").msgclass
     BackupsCodesMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.BackupsCodesMethod").msgclass
+    SecurityQuestionsMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.SecurityQuestionsMethod").msgclass
     Identity = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.Identity").msgclass
     CreateIdentityRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.CreateIdentityRequest").msgclass
     CreateIdentityResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.CreateIdentityResponse").msgclass

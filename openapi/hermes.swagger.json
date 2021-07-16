@@ -3,7 +3,7 @@
   "info": {
     "title": "Hermes",
     "description": "Getting started with the Hermes API:\n- Log in with `/v1/sessions/login` using your provided credentials. Authorize below using the provided token.\n- Create an application with `/v1/applications`. For SMS and software token authentication methods, all template fields can be left empty.\n- (Optional) Create an `AUTHENTICATOR` role API key with `/v1/sessions/keys`. Re-authorize using the provided token.\n\nActivate an identity (single occurrence):\n- Create an identity with `/v1/applications/{identity.appID}/identities`. Only one method field is supported when creating an identity.\n- Issue the returned identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Activate the identity with `/v1/applications/{appID}/identities/{id}/activate` using the received or generated challenge.\n\nVerify an identity (ongoing):\n- Issue the identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Verify the identity with `/v1/applications/{appID}/identities/{id}/verify` using the received or generated challenge.",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "contact": {
       "name": "OwnMFA",
       "url": "https://www.ownmfa.com/",
@@ -426,7 +426,7 @@
               "properties": {
                 "passcode": {
                   "type": "string",
-                  "description": "Passcode for verification.",
+                  "description": "Passcode for verification. For security questions identity methods, this is the answer to the security question.",
                   "required": [
                     "passcode"
                   ]
@@ -533,7 +533,7 @@
               "properties": {
                 "passcode": {
                   "type": "string",
-                  "description": "Passcode for verification.",
+                  "description": "Passcode for verification. For security questions identity methods, this is the answer to the security question.",
                   "required": [
                     "passcode"
                   ]
@@ -1449,7 +1449,7 @@
         },
         "displayName": {
           "type": "string",
-          "description": "Application display name. Used anywhere the application is shown to a user, including templates and notification sender fields."
+          "description": "Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields."
         },
         "email": {
           "type": "string",
@@ -1743,6 +1743,10 @@
         "backupCodesMethod": {
           "$ref": "#/definitions/apiBackupsCodesMethod",
           "description": "Backups codes method configuration."
+        },
+        "securityQuestionsMethod": {
+          "$ref": "#/definitions/apiSecurityQuestionsMethod",
+          "description": "Security questions method configuration."
         },
         "createdAt": {
           "type": "string",
@@ -2057,6 +2061,16 @@
       },
       "description": "SMSMethod configures an SMS passcode method."
     },
+    "apiSecurityQuestionsMethod": {
+      "type": "object",
+      "properties": {
+        "answer": {
+          "type": "string",
+          "description": "Answer to the security question. Only included during identity creation. The security question should be stored out-of-band and queried of an external user by the consuming application."
+        }
+      },
+      "description": "SecurityQuestionsMethod configures a security questions method. Identities using this method are immediately activated and do not require activation."
+    },
     "apiSoftwareHOTPMethod": {
       "type": "object",
       "properties": {
@@ -2211,7 +2225,7 @@
     }
   ],
   "externalDocs": {
-    "description": "API Protobuf / gRPC definitions and example code",
+    "description": "API Protobuf + gRPC definitions and example code",
     "url": "https://github.com/ownmfa/api"
   }
 }

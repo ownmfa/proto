@@ -1554,6 +1554,80 @@ var _ interface {
 	ErrorName() string
 } = BackupsCodesMethodValidationError{}
 
+// Validate checks the field values on SecurityQuestionsMethod with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *SecurityQuestionsMethod) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if l := utf8.RuneCountInString(m.GetAnswer()); l < 3 || l > 80 {
+		return SecurityQuestionsMethodValidationError{
+			field:  "Answer",
+			reason: "value length must be between 3 and 80 runes, inclusive",
+		}
+	}
+
+	return nil
+}
+
+// SecurityQuestionsMethodValidationError is the validation error returned by
+// SecurityQuestionsMethod.Validate if the designated constraints aren't met.
+type SecurityQuestionsMethodValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SecurityQuestionsMethodValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SecurityQuestionsMethodValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SecurityQuestionsMethodValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SecurityQuestionsMethodValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SecurityQuestionsMethodValidationError) ErrorName() string {
+	return "SecurityQuestionsMethodValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e SecurityQuestionsMethodValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSecurityQuestionsMethod.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SecurityQuestionsMethodValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SecurityQuestionsMethodValidationError{}
+
 // Validate checks the field values on Identity with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
 func (m *Identity) Validate() error {
@@ -1712,6 +1786,18 @@ func (m *Identity) Validate() error {
 			if err := v.Validate(); err != nil {
 				return IdentityValidationError{
 					field:  "BackupCodesMethod",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Identity_SecurityQuestionsMethod:
+
+		if v, ok := interface{}(m.GetSecurityQuestionsMethod()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return IdentityValidationError{
+					field:  "SecurityQuestionsMethod",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
@@ -1972,10 +2058,10 @@ func (m *ActivateIdentityRequest) Validate() error {
 		}
 	}
 
-	if l := utf8.RuneCountInString(m.GetPasscode()); l < 6 || l > 10 {
+	if l := utf8.RuneCountInString(m.GetPasscode()); l < 3 || l > 80 {
 		return ActivateIdentityRequestValidationError{
 			field:  "Passcode",
-			reason: "value length must be between 6 and 10 runes, inclusive",
+			reason: "value length must be between 3 and 80 runes, inclusive",
 		}
 	}
 
@@ -2161,10 +2247,10 @@ func (m *VerifyIdentityRequest) Validate() error {
 		}
 	}
 
-	if l := utf8.RuneCountInString(m.GetPasscode()); l < 6 || l > 10 {
+	if l := utf8.RuneCountInString(m.GetPasscode()); l < 3 || l > 80 {
 		return VerifyIdentityRequestValidationError{
 			field:  "Passcode",
-			reason: "value length must be between 6 and 10 runes, inclusive",
+			reason: "value length must be between 3 and 80 runes, inclusive",
 		}
 	}
 
