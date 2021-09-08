@@ -38,7 +38,7 @@ mod:
 openapi:
 	protoc -I=../protobuf -I=/tmp/googleapis -I=/tmp/grpc-gateway -I=/tmp/pgv \
 	--openapiv2_out=../openapi \
-	--openapiv2_opt=allow_merge=true,merge_file_name=hermes \
+	--openapiv2_opt=allow_merge=true,merge_file_name=hermes,openapi_naming_strategy=simple \
 	api/openapi.proto \
 	api/app_identity.proto \
 	api/event.proto \
