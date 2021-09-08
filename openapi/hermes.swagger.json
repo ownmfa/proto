@@ -3,7 +3,7 @@
   "info": {
     "title": "Hermes",
     "description": "Getting started with the Hermes API:\n- Log in with `/v1/sessions/login` using your provided credentials. Authorize below using the provided token.\n- Create an application with `/v1/applications`. For SMS and software token authentication methods, all template fields can be left empty.\n- (Optional) Create an `AUTHENTICATOR` role API key with `/v1/sessions/keys`. Re-authorize using the provided token.\n\nActivate an identity (single occurrence):\n- Create an identity with `/v1/applications/{identity.appID}/identities`. Only one method field is supported when creating an identity.\n- Issue the returned identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Activate the identity with `/v1/applications/{appID}/identities/{id}/activate` using the received or generated challenge.\n\nVerify an identity (ongoing):\n- Issue the identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Verify the identity with `/v1/applications/{appID}/identities/{id}/verify` using the received or generated challenge.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "contact": {
       "name": "OwnMFA",
       "url": "https://www.ownmfa.com/",
@@ -46,13 +46,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiListAppsResponse"
+              "$ref": "#/definitions/ListAppsResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -84,19 +84,19 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiApp"
+              "$ref": "#/definitions/App"
             }
           },
           "201": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiApp"
+              "$ref": "#/definitions/App"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -107,7 +107,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiApp"
+              "$ref": "#/definitions/App"
             }
           }
         ],
@@ -124,13 +124,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiListIdentitiesResponse"
+              "$ref": "#/definitions/ListIdentitiesResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -171,13 +171,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiApp"
+              "$ref": "#/definitions/App"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -195,7 +195,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiApp"
+              "$ref": "#/definitions/App"
             }
           },
           {
@@ -217,13 +217,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiApp"
+              "$ref": "#/definitions/App"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -241,7 +241,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiApp"
+              "$ref": "#/definitions/App"
             }
           },
           {
@@ -265,13 +265,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiListIdentitiesResponse"
+              "$ref": "#/definitions/ListIdentitiesResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -312,13 +312,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiIdentity"
+              "$ref": "#/definitions/Identity"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -359,7 +359,7 @@
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -392,13 +392,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiIdentity"
+              "$ref": "#/definitions/Identity"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -466,7 +466,7 @@
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -505,7 +505,7 @@
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -559,19 +559,19 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiCreateIdentityResponse"
+              "$ref": "#/definitions/CreateIdentityResponse"
             }
           },
           "201": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiCreateIdentityResponse"
+              "$ref": "#/definitions/CreateIdentityResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -589,7 +589,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiIdentity"
+              "$ref": "#/definitions/Identity"
             }
           }
         ],
@@ -606,13 +606,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiApp"
+              "$ref": "#/definitions/App"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -646,7 +646,7 @@
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -672,13 +672,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiListEventsResponse"
+              "$ref": "#/definitions/ListEventsResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -720,13 +720,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiLatestEventsResponse"
+              "$ref": "#/definitions/LatestEventsResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -759,13 +759,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiListOrgsResponse"
+              "$ref": "#/definitions/ListOrgsResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -797,19 +797,19 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiOrg"
+              "$ref": "#/definitions/Org"
             }
           },
           "201": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiOrg"
+              "$ref": "#/definitions/Org"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -820,7 +820,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiOrg"
+              "$ref": "#/definitions/Org"
             }
           }
         ],
@@ -837,13 +837,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiOrg"
+              "$ref": "#/definitions/Org"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -877,7 +877,7 @@
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -903,13 +903,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiOrg"
+              "$ref": "#/definitions/Org"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -927,7 +927,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiOrg"
+              "$ref": "#/definitions/Org"
             }
           },
           {
@@ -949,13 +949,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiOrg"
+              "$ref": "#/definitions/Org"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -973,7 +973,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiOrg"
+              "$ref": "#/definitions/Org"
             }
           },
           {
@@ -997,13 +997,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiListKeysResponse"
+              "$ref": "#/definitions/ListKeysResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1035,19 +1035,19 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiCreateKeyResponse"
+              "$ref": "#/definitions/CreateKeyResponse"
             }
           },
           "201": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiCreateKeyResponse"
+              "$ref": "#/definitions/CreateKeyResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1058,7 +1058,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiKey"
+              "$ref": "#/definitions/Key"
             }
           }
         ],
@@ -1085,7 +1085,7 @@
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1111,13 +1111,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiLoginResponse"
+              "$ref": "#/definitions/LoginResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1127,7 +1127,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiLoginRequest"
+              "$ref": "#/definitions/LoginRequest"
             }
           }
         ],
@@ -1145,13 +1145,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiListUsersResponse"
+              "$ref": "#/definitions/ListUsersResponse"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1183,19 +1183,19 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/User"
             }
           },
           "201": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/User"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1206,7 +1206,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/User"
             }
           }
         ],
@@ -1223,13 +1223,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/User"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1263,7 +1263,7 @@
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1295,7 +1295,7 @@
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1342,13 +1342,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/User"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1366,7 +1366,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/User"
             }
           },
           {
@@ -1388,13 +1388,13 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/User"
             }
           },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
+              "$ref": "#/definitions/rpc.Status"
             }
           }
         },
@@ -1412,7 +1412,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/User"
             }
           },
           {
@@ -1430,7 +1430,16 @@
     }
   },
   "definitions": {
-    "apiApp": {
+    "Any": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "App": {
       "type": "object",
       "properties": {
         "id": {
@@ -1487,7 +1496,7 @@
       },
       "description": "App represents an application as stored in the database."
     },
-    "apiBackupsCodesMethod": {
+    "BackupsCodesMethod": {
       "type": "object",
       "properties": {
         "passcodes": {
@@ -1498,11 +1507,11 @@
       },
       "description": "BackupsCodesMethod configures a backup codes method. Identities using this method are immediately activated and do not require activation."
     },
-    "apiCreateIdentityResponse": {
+    "CreateIdentityResponse": {
       "type": "object",
       "properties": {
         "identity": {
-          "$ref": "#/definitions/apiIdentity",
+          "$ref": "#/definitions/Identity",
           "description": "Identity message created."
         },
         "secret": {
@@ -1524,11 +1533,11 @@
       },
       "description": "CreateIdentityResponse is sent in response to an identity creation."
     },
-    "apiCreateKeyResponse": {
+    "CreateKeyResponse": {
       "type": "object",
       "properties": {
         "key": {
-          "$ref": "#/definitions/apiKey",
+          "$ref": "#/definitions/Key",
           "description": "Key message created."
         },
         "token": {
@@ -1538,7 +1547,7 @@
       },
       "description": "CreateKeyResponse is sent in response to an API key creation."
     },
-    "apiEmailMethod": {
+    "EmailMethod": {
       "type": "object",
       "properties": {
         "email": {
@@ -1548,7 +1557,7 @@
       },
       "description": "EmailMethod configures an email passcode method."
     },
-    "apiEvent": {
+    "Event": {
       "type": "object",
       "properties": {
         "orgID": {
@@ -1564,7 +1573,7 @@
           "description": "Identity ID (UUID)."
         },
         "status": {
-          "$ref": "#/definitions/apiEventStatus",
+          "$ref": "#/definitions/EventStatus",
           "description": "Event status."
         },
         "error": {
@@ -1583,7 +1592,7 @@
       },
       "description": "Event represents an event as stored in the database."
     },
-    "apiEventStatus": {
+    "EventStatus": {
       "type": "string",
       "enum": [
         "EVENT_STATUS_UNSPECIFIED",
@@ -1600,7 +1609,7 @@
       "default": "EVENT_STATUS_UNSPECIFIED",
       "description": "EventStatus represents the status of an event.\n\n - EVENT_STATUS_UNSPECIFIED: Event status is not specified.\n - IDENTITY_CREATED: Identity was successfully created.\n - CHALLENGE_SENT: Challenge was successfully sent.\n - CHALLENGE_NOOP: Challenge was requested, but was not required by the identity's authentication method.\n - CHALLENGE_FAIL: Challenge failed to send. The Event error field will be populated.\n - ACTIVATE_SUCCESS: Identity was successfully activated.\n - ACTIVATE_FAIL: Identity failed to activate. The Event error field will be populated.\n - VERIFY_SUCCESS: Identity was successfully verified.\n - VERIFY_FAIL: Identity failed to verify. The Event error field will be populated.\n - IDENTITY_DELETED: Identity was successfully deleted."
     },
-    "apiGoogleAuthHOTPMethod": {
+    "GoogleAuthHOTPMethod": {
       "type": "object",
       "properties": {
         "accountName": {
@@ -1610,7 +1619,7 @@
       },
       "description": "GoogleAuthHOTPMethod configures a Google Authenticator HOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function."
     },
-    "apiGoogleAuthTOTPMethod": {
+    "GoogleAuthTOTPMethod": {
       "type": "object",
       "properties": {
         "accountName": {
@@ -1620,11 +1629,11 @@
       },
       "description": "GoogleAuthTOTPMethod configures a Google Authenticator or Microsoft Authenticator TOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function."
     },
-    "apiHardwareHOTPMethod": {
+    "HardwareHOTPMethod": {
       "type": "object",
       "properties": {
         "hash": {
-          "$ref": "#/definitions/apiHash",
+          "$ref": "#/definitions/Hash",
           "description": "Hardware HOTP hash function. Defaults to SHA512 if not specified."
         },
         "digits": {
@@ -1645,11 +1654,11 @@
       },
       "description": "HardwareHOTPMethod configures a hardware OATH HOTP one-time password method."
     },
-    "apiHardwareTOTPMethod": {
+    "HardwareTOTPMethod": {
       "type": "object",
       "properties": {
         "hash": {
-          "$ref": "#/definitions/apiHash",
+          "$ref": "#/definitions/Hash",
           "description": "Hardware TOTP hash function. Defaults to SHA512 if not specified."
         },
         "digits": {
@@ -1665,7 +1674,7 @@
       },
       "description": "HardwareTOTPMethod configures a hardware OATH TOTP one-time password method."
     },
-    "apiHash": {
+    "Hash": {
       "type": "string",
       "enum": [
         "SHA512",
@@ -1675,7 +1684,7 @@
       "default": "SHA512",
       "description": "Hash represents a hash function.\n\n - SHA512: SHA-2 512 bits.\n - SHA256: SHA-2 256 bits.\n - SHA1: SHA-1."
     },
-    "apiIdentity": {
+    "Identity": {
       "type": "object",
       "properties": {
         "id": {
@@ -1701,51 +1710,51 @@
           ]
         },
         "status": {
-          "$ref": "#/definitions/apiIdentityStatus",
+          "$ref": "#/definitions/IdentityStatus",
           "description": "Identity status."
         },
         "softwareHOTPMethod": {
-          "$ref": "#/definitions/apiSoftwareHOTPMethod",
+          "$ref": "#/definitions/SoftwareHOTPMethod",
           "description": "Software HOTP method configuration."
         },
         "softwareTOTPMethod": {
-          "$ref": "#/definitions/apiSoftwareTOTPMethod",
+          "$ref": "#/definitions/SoftwareTOTPMethod",
           "description": "Software TOTP method configuration."
         },
         "googleAuthHOTPMethod": {
-          "$ref": "#/definitions/apiGoogleAuthHOTPMethod",
+          "$ref": "#/definitions/GoogleAuthHOTPMethod",
           "description": "Google Authenticator HOTP method configuration."
         },
         "googleAuthTOTPMethod": {
-          "$ref": "#/definitions/apiGoogleAuthTOTPMethod",
+          "$ref": "#/definitions/GoogleAuthTOTPMethod",
           "description": "Google Authenticator TOTP method configuration."
         },
         "hardwareHOTPMethod": {
-          "$ref": "#/definitions/apiHardwareHOTPMethod",
+          "$ref": "#/definitions/HardwareHOTPMethod",
           "description": "Hardware HOTP method configuration."
         },
         "hardwareTOTPMethod": {
-          "$ref": "#/definitions/apiHardwareTOTPMethod",
+          "$ref": "#/definitions/HardwareTOTPMethod",
           "description": "Hardware TOTP method configuration."
         },
         "smsMethod": {
-          "$ref": "#/definitions/apiSMSMethod",
+          "$ref": "#/definitions/SMSMethod",
           "description": "SMS method configuration."
         },
         "pushoverMethod": {
-          "$ref": "#/definitions/apiPushoverMethod",
+          "$ref": "#/definitions/PushoverMethod",
           "description": "Pushover method configuration."
         },
         "emailMethod": {
-          "$ref": "#/definitions/apiEmailMethod",
+          "$ref": "#/definitions/EmailMethod",
           "description": "Email method configuration."
         },
         "backupCodesMethod": {
-          "$ref": "#/definitions/apiBackupsCodesMethod",
+          "$ref": "#/definitions/BackupsCodesMethod",
           "description": "Backups codes method configuration."
         },
         "securityQuestionsMethod": {
-          "$ref": "#/definitions/apiSecurityQuestionsMethod",
+          "$ref": "#/definitions/SecurityQuestionsMethod",
           "description": "Security questions method configuration."
         },
         "createdAt": {
@@ -1766,7 +1775,7 @@
         "comment"
       ]
     },
-    "apiIdentityStatus": {
+    "IdentityStatus": {
       "type": "string",
       "enum": [
         "UNVERIFIED",
@@ -1775,7 +1784,7 @@
       "default": "UNVERIFIED",
       "description": "IdentityStatus represents the status of an identity.\n\n - UNVERIFIED: Identity is not yet verified.\n - ACTIVATED: Identity has been activated."
     },
-    "apiKey": {
+    "Key": {
       "type": "object",
       "properties": {
         "id": {
@@ -1796,7 +1805,7 @@
           ]
         },
         "role": {
-          "$ref": "#/definitions/commonRole",
+          "$ref": "#/definitions/Role",
           "description": "Key role."
         },
         "createdAt": {
@@ -1811,26 +1820,26 @@
         "name"
       ]
     },
-    "apiLatestEventsResponse": {
+    "LatestEventsResponse": {
       "type": "object",
       "properties": {
         "events": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/apiEvent"
+            "$ref": "#/definitions/Event"
           },
           "description": "Event array, ordered by descending created_at timestamp."
         }
       },
       "description": "LatestEventsResponse is sent in response to an organization latest list."
     },
-    "apiListAppsResponse": {
+    "ListAppsResponse": {
       "type": "object",
       "properties": {
         "apps": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/apiApp"
+            "$ref": "#/definitions/App"
           },
           "description": "App array, ordered by ascending created_at timestamp."
         },
@@ -1846,26 +1855,26 @@
       },
       "description": "ListAppsResponse is sent in response to an application list."
     },
-    "apiListEventsResponse": {
+    "ListEventsResponse": {
       "type": "object",
       "properties": {
         "events": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/apiEvent"
+            "$ref": "#/definitions/Event"
           },
           "description": "Event array, ordered by descending created_at timestamp."
         }
       },
       "description": "ListEventsResponse is sent in response to an identity events list."
     },
-    "apiListIdentitiesResponse": {
+    "ListIdentitiesResponse": {
       "type": "object",
       "properties": {
         "identities": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/apiIdentity"
+            "$ref": "#/definitions/Identity"
           },
           "description": "Identity array, ordered by ascending created_at timestamp."
         },
@@ -1881,13 +1890,13 @@
       },
       "description": "ListIdentitiesResponse is sent in response to an identity list."
     },
-    "apiListKeysResponse": {
+    "ListKeysResponse": {
       "type": "object",
       "properties": {
         "keys": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/apiKey"
+            "$ref": "#/definitions/Key"
           },
           "description": "Key array, ordered by ascending created_at timestamp."
         },
@@ -1903,13 +1912,13 @@
       },
       "description": "ListKeysResponse is sent in response to an API key list."
     },
-    "apiListOrgsResponse": {
+    "ListOrgsResponse": {
       "type": "object",
       "properties": {
         "orgs": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/apiOrg"
+            "$ref": "#/definitions/Org"
           },
           "description": "Org array, ordered by ascending created_at timestamp."
         },
@@ -1925,13 +1934,13 @@
       },
       "description": "ListOrgsResponse is sent in response to an organization list."
     },
-    "apiListUsersResponse": {
+    "ListUsersResponse": {
       "type": "object",
       "properties": {
         "users": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/apiUser"
+            "$ref": "#/definitions/User"
           },
           "description": "User array, ordered by ascending created_at timestamp. The completeness of the array will depend on whether the request was made by an admin user, non-admin user, or API key."
         },
@@ -1947,7 +1956,7 @@
       },
       "description": "ListUsersResponse is sent in response to a user list."
     },
-    "apiLoginRequest": {
+    "LoginRequest": {
       "type": "object",
       "properties": {
         "email": {
@@ -1979,7 +1988,7 @@
         "password"
       ]
     },
-    "apiLoginResponse": {
+    "LoginResponse": {
       "type": "object",
       "properties": {
         "token": {
@@ -1994,7 +2003,7 @@
       },
       "description": "LoginResponse is sent in response to a user login."
     },
-    "apiOrg": {
+    "Org": {
       "type": "object",
       "properties": {
         "id": {
@@ -2007,11 +2016,11 @@
           "description": "Organization name."
         },
         "status": {
-          "$ref": "#/definitions/ownmfaapiStatus",
+          "$ref": "#/definitions/api.Status",
           "description": "Organization status."
         },
         "plan": {
-          "$ref": "#/definitions/apiPlan",
+          "$ref": "#/definitions/Plan",
           "description": "Organization plan."
         },
         "createdAt": {
@@ -2029,7 +2038,7 @@
       },
       "description": "Org represents an organization as stored in the database."
     },
-    "apiPlan": {
+    "Plan": {
       "type": "string",
       "enum": [
         "PLAN_UNSPECIFIED",
@@ -2041,7 +2050,7 @@
       "default": "PLAN_UNSPECIFIED",
       "description": "Plan represents the plan and associated capabilities of an organization.\n\n - PLAN_UNSPECIFIED: Plan is not specified.\n - PAYMENT_FAIL: Payment has failed and the organization is restricted to Starter plan capabilities.\n - STARTER: Starter plan supports software and hardware OATH one-time password authentication methods, up to a limited number of identities.\n - PRO: Pro plan supports all authentication methods and includes email support.\n - ENTERPRISE: Enterprise plan supports all authentication methods and includes email and phone support."
     },
-    "apiPushoverMethod": {
+    "PushoverMethod": {
       "type": "object",
       "properties": {
         "pushoverKey": {
@@ -2051,7 +2060,19 @@
       },
       "description": "PushoverMethod configures a Pushover passcode method."
     },
-    "apiSMSMethod": {
+    "Role": {
+      "type": "string",
+      "enum": [
+        "ROLE_UNSPECIFIED",
+        "VIEWER",
+        "AUTHENTICATOR",
+        "ADMIN",
+        "SYS_ADMIN"
+      ],
+      "default": "ROLE_UNSPECIFIED",
+      "description": "Role represents the role of a user.\n\n - ROLE_UNSPECIFIED: Role is not specified.\n - VIEWER: Viewers can only read resources in their organization, but can update their own user.\n - AUTHENTICATOR: Authenticators can read and modify resources in their organization, but can only update their own user.\n - ADMIN: Admins can read and modify anything in their organization, including creating users of an equal or lesser role.\n - SYS_ADMIN: System admins can create organizations and modify anything in their organization."
+    },
+    "SMSMethod": {
       "type": "object",
       "properties": {
         "phone": {
@@ -2061,7 +2082,7 @@
       },
       "description": "SMSMethod configures an SMS passcode method."
     },
-    "apiSecurityQuestionsMethod": {
+    "SecurityQuestionsMethod": {
       "type": "object",
       "properties": {
         "answer": {
@@ -2071,11 +2092,11 @@
       },
       "description": "SecurityQuestionsMethod configures a security questions method. Identities using this method are immediately activated and do not require activation."
     },
-    "apiSoftwareHOTPMethod": {
+    "SoftwareHOTPMethod": {
       "type": "object",
       "properties": {
         "hash": {
-          "$ref": "#/definitions/apiHash",
+          "$ref": "#/definitions/Hash",
           "description": "Software HOTP hash function. Defaults to SHA512 if not specified."
         },
         "digits": {
@@ -2095,11 +2116,11 @@
       },
       "description": "SoftwareHOTPMethod configures a software OATH HOTP one-time password method."
     },
-    "apiSoftwareTOTPMethod": {
+    "SoftwareTOTPMethod": {
       "type": "object",
       "properties": {
         "hash": {
-          "$ref": "#/definitions/apiHash",
+          "$ref": "#/definitions/Hash",
           "description": "Software TOTP hash function. Defaults to SHA512 if not specified."
         },
         "digits": {
@@ -2114,7 +2135,7 @@
       },
       "description": "SoftwareTOTPMethod configures a software OATH TOTP one-time password method."
     },
-    "apiUser": {
+    "User": {
       "type": "object",
       "properties": {
         "id": {
@@ -2136,11 +2157,11 @@
           "description": "User email."
         },
         "role": {
-          "$ref": "#/definitions/commonRole",
+          "$ref": "#/definitions/Role",
           "description": "User role."
         },
         "status": {
-          "$ref": "#/definitions/ownmfaapiStatus",
+          "$ref": "#/definitions/api.Status",
           "description": "User status."
         },
         "createdAt": {
@@ -2158,19 +2179,17 @@
       },
       "description": "User represents a user as stored in the database."
     },
-    "commonRole": {
+    "api.Status": {
       "type": "string",
       "enum": [
-        "ROLE_UNSPECIFIED",
-        "VIEWER",
-        "AUTHENTICATOR",
-        "ADMIN",
-        "SYS_ADMIN"
+        "STATUS_UNSPECIFIED",
+        "ACTIVE",
+        "DISABLED"
       ],
-      "default": "ROLE_UNSPECIFIED",
-      "description": "Role represents the role of a user.\n\n - ROLE_UNSPECIFIED: Role is not specified.\n - VIEWER: Viewers can only read resources in their organization, but can update their own user.\n - AUTHENTICATOR: Authenticators can read and modify resources in their organization, but can only update their own user.\n - ADMIN: Admins can read and modify anything in their organization, including creating users of an equal or lesser role.\n - SYS_ADMIN: System admins can create organizations and modify anything in their organization."
+      "default": "STATUS_UNSPECIFIED",
+      "description": "Status represents the status of a message.\n\n - STATUS_UNSPECIFIED: Status is not specified.\n - ACTIVE: Message subject is active.\n - DISABLED: Message subject is disabled."
     },
-    "googlerpcStatus": {
+    "rpc.Status": {
       "type": "object",
       "properties": {
         "code": {
@@ -2183,30 +2202,8 @@
         "details": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/protobufAny"
+            "$ref": "#/definitions/Any"
           }
-        }
-      }
-    },
-    "ownmfaapiStatus": {
-      "type": "string",
-      "enum": [
-        "STATUS_UNSPECIFIED",
-        "ACTIVE",
-        "DISABLED"
-      ],
-      "default": "STATUS_UNSPECIFIED",
-      "description": "Status represents the status of a message.\n\n - STATUS_UNSPECIFIED: Status is not specified.\n - ACTIVE: Message subject is active.\n - DISABLED: Message subject is disabled."
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "typeUrl": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string",
-          "format": "byte"
         }
       }
     }
