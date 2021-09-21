@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\034github.com/ownmfa/api/go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16\x61pi/app_identity.proto\x12\nownmfa.api\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x17validate/validate.proto\"\x80\x03\n\x03\x41pp\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1a\n\x06org_id\x18\x02 \x01(\tB\x03\xe0\x41\x03R\x05orgID\x12\x17\n\x04name\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x05\x18(\x12\x1f\n\x0c\x64isplay_name\x18\x04 \x01(\tB\t\xfa\x42\x06r\x04\x10\x05\x18P\x12\x19\n\x05\x65mail\x18\x05 \x01(\tB\n\xfa\x42\x07r\x05`\x01\xd0\x01\x01\x12\x1d\n\x0cpushover_key\x18\x06 \x01(\tB\x07\xfa\x42\x04r\x02\x18-\x12\"\n\x10subject_template\x18\x07 \x01(\tB\x08\xfa\x42\x05r\x03\x18\x80\x08\x12$\n\x12text_body_template\x18\x08 \x01(\tB\x08\xfa\x42\x05r\x03\x18\x80 \x12$\n\x12html_body_template\x18\t \x01(\x0c\x42\x08\xfa\x42\x05z\x03\x18\x80 \x12\x33\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x33\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\"=\n\x10\x43reateAppRequest\x12)\n\x03\x61pp\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.AppB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\"(\n\rGetAppRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\"n\n\x10UpdateAppRequest\x12)\n\x03\x61pp\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.AppB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"+\n\x10\x44\x65leteAppRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\"B\n\x0fListAppsRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListAppsResponse\x12\x1d\n\x04\x61pps\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.App\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\"\x81\x01\n\x12SoftwareHOTPMethod\x12\x1e\n\x04hash\x18\x01 \x01(\x0e\x32\x10.ownmfa.api.Hash\x12\x1b\n\x06\x64igits\x18\x02 \x01(\x05\x42\x0b\xfa\x42\x08\x1a\x06\x18\n(\x06@\x01\x12\x0f\n\x07\x63ounter\x18\x03 \x01(\x05\x12\x1d\n\x0c\x61\x63\x63ount_name\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18P\"p\n\x12SoftwareTOTPMethod\x12\x1e\n\x04hash\x18\x01 \x01(\x0e\x32\x10.ownmfa.api.Hash\x12\x1b\n\x06\x64igits\x18\x02 \x01(\x05\x42\x0b\xfa\x42\x08\x1a\x06\x18\n(\x06@\x01\x12\x1d\n\x0c\x61\x63\x63ount_name\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18P\"5\n\x14GoogleAuthHOTPMethod\x12\x1d\n\x0c\x61\x63\x63ount_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18P\"5\n\x14GoogleAuthTOTPMethod\x12\x1d\n\x0c\x61\x63\x63ount_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18P\"y\n\x12HardwareHOTPMethod\x12\x1e\n\x04hash\x18\x01 \x01(\x0e\x32\x10.ownmfa.api.Hash\x12\x19\n\x06\x64igits\x18\x02 \x01(\x05\x42\t\xfa\x42\x06\x1a\x04\x18\n(\x06\x12\x0f\n\x07\x63ounter\x18\x03 \x01(\x05\x12\x17\n\x06secret\x18\x04 \x01(\x0c\x42\x07\xfa\x42\x04z\x02\x10\x10\"h\n\x12HardwareTOTPMethod\x12\x1e\n\x04hash\x18\x01 \x01(\x0e\x32\x10.ownmfa.api.Hash\x12\x19\n\x06\x64igits\x18\x02 \x01(\x05\x42\t\xfa\x42\x06\x1a\x04\x18\n(\x06\x12\x17\n\x06secret\x18\x03 \x01(\x0c\x42\x07\xfa\x42\x04z\x02\x10\x10\"%\n\tSMSMethod\x12\x18\n\x05phone\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x08\x18\x10\"1\n\x0ePushoverMethod\x12\x1f\n\x0cpushover_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x19\x18-\"%\n\x0b\x45mailMethod\x12\x16\n\x05\x65mail\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02`\x01\"2\n\x12\x42\x61\x63kupsCodesMethod\x12\x1c\n\tpasscodes\x18\x01 \x01(\x05\x42\t\xfa\x42\x06\x1a\x04\x18\n(\x06\"4\n\x17SecurityQuestionsMethod\x12\x19\n\x06\x61nswer\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x03\x18P\"\xc6\x08\n\x08Identity\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1a\n\x06org_id\x18\x02 \x01(\tB\x03\xe0\x41\x03R\x05orgID\x12\x1a\n\x06\x61pp_id\x18\x03 \x01(\tB\x03\xe0\x41\x03R\x05\x61ppID\x12\x1d\n\x07\x63omment\x18\x04 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x05\x18P\xe0\x41\x02\x12/\n\x06status\x18\x05 \x01(\x0e\x32\x1a.ownmfa.api.IdentityStatusB\x03\xe0\x41\x03\x12R\n\x14software_hotp_method\x18\x10 \x01(\x0b\x32\x1e.ownmfa.api.SoftwareHOTPMethodH\x00R\x12softwareHOTPMethod\x12R\n\x14software_totp_method\x18\x06 \x01(\x0b\x32\x1e.ownmfa.api.SoftwareTOTPMethodH\x00R\x12softwareTOTPMethod\x12Y\n\x17google_auth_hotp_method\x18\x11 \x01(\x0b\x32 .ownmfa.api.GoogleAuthHOTPMethodH\x00R\x14googleAuthHOTPMethod\x12Y\n\x17google_auth_totp_method\x18\x07 \x01(\x0b\x32 .ownmfa.api.GoogleAuthTOTPMethodH\x00R\x14googleAuthTOTPMethod\x12R\n\x14hardware_hotp_method\x18\x12 \x01(\x0b\x32\x1e.ownmfa.api.HardwareHOTPMethodH\x00R\x12hardwareHOTPMethod\x12R\n\x14hardware_totp_method\x18\x13 \x01(\x0b\x32\x1e.ownmfa.api.HardwareTOTPMethodH\x00R\x12hardwareTOTPMethod\x12+\n\nsms_method\x18\x08 \x01(\x0b\x32\x15.ownmfa.api.SMSMethodH\x00\x12\x35\n\x0fpushover_method\x18\x14 \x01(\x0b\x32\x1a.ownmfa.api.PushoverMethodH\x00\x12/\n\x0c\x65mail_method\x18\t \x01(\x0b\x32\x17.ownmfa.api.EmailMethodH\x00\x12=\n\x13\x62\x61\x63kup_codes_method\x18\n \x01(\x0b\x32\x1e.ownmfa.api.BackupsCodesMethodH\x00\x12H\n\x19security_questions_method\x18\x15 \x01(\x0b\x32#.ownmfa.api.SecurityQuestionsMethodH\x00\x12\x33\n\ncreated_at\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x33\n\nupdated_at\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x42\x13\n\x0cmethod_oneof\x12\x03\xf8\x42\x01\"L\n\x15\x43reateIdentityRequest\x12\x33\n\x08identity\x18\x01 \x01(\x0b\x32\x14.ownmfa.api.IdentityB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\"o\n\x16\x43reateIdentityResponse\x12&\n\x08identity\x18\x01 \x01(\x0b\x32\x14.ownmfa.api.Identity\x12\x0e\n\x06secret\x18\x02 \x01(\t\x12\n\n\x02qr\x18\x03 \x01(\x0c\x12\x11\n\tpasscodes\x18\x04 \x03(\t\"v\n\x17\x41\x63tivateIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\x12\x1e\n\x08passcode\x18\x03 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x03\x18P\xe0\x41\x02\"W\n\x18\x43hallengeIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\"t\n\x15VerifyIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\x12\x1e\n\x08passcode\x18\x03 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x03\x18P\xe0\x41\x02\"Q\n\x12GetIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\"T\n\x15\x44\x65leteIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\"l\n\x15ListIdentitiesRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\x12\"\n\x06\x61pp_id\x18\x03 \x01(\tB\x0b\xfa\x42\x08r\x06\xb0\x01\x01\xd0\x01\x01R\x05\x61ppID\"o\n\x16ListIdentitiesResponse\x12(\n\nidentities\x18\x01 \x03(\x0b\x32\x14.ownmfa.api.Identity\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05*/\n\x0eIdentityStatus\x12\x0e\n\nUNVERIFIED\x10\x00\x12\r\n\tACTIVATED\x10\x03*(\n\x04Hash\x12\n\n\x06SHA512\x10\x00\x12\n\n\x06SHA256\x10\x01\x12\x08\n\x04SHA1\x10\x02\x32\x92\x0e\n\x12\x41ppIdentityService\x12\x92\x01\n\tCreateApp\x12\x1c.ownmfa.api.CreateAppRequest\x1a\x0f.ownmfa.api.App\"V\x82\xd3\xe4\x93\x02\x17\"\x10/v1/applications:\x03\x61pp\x92\x41\x36J4\n\x03\x32\x30\x31\x12-\n\x16\x41 successful response.\x12\x13\n\x11\x1a\x0f.ownmfa.api.App\x12\xe5\x01\n\x0e\x43reateIdentity\x12!.ownmfa.api.CreateIdentityRequest\x1a\".ownmfa.api.CreateIdentityResponse\"\x8b\x01\x82\xd3\xe4\x93\x02\x39\"-/v1/applications/{identity.app_id}/identities:\x08identity\x92\x41IJG\n\x03\x32\x30\x31\x12@\n\x16\x41 successful response.\x12&\n$\x1a\".ownmfa.api.CreateIdentityResponse\x12\x8c\x01\n\x10\x41\x63tivateIdentity\x12#.ownmfa.api.ActivateIdentityRequest\x1a\x14.ownmfa.api.Identity\"=\x82\xd3\xe4\x93\x02\x37\x1a\x32/v1/applications/{app_id}/identities/{id}/activate:\x01*\x12\xd8\x01\n\x11\x43hallengeIdentity\x12$.ownmfa.api.ChallengeIdentityRequest\x1a\x16.google.protobuf.Empty\"\x84\x01\x82\xd3\xe4\x93\x02\x35\"3/v1/applications/{app_id}/identities/{id}/challenge\x92\x41\x46J!\n\x03\x32\x30\x32\x12\x1a\n\x16\x41 successful response.\x12\x00J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12\x88\x01\n\x0eVerifyIdentity\x12!.ownmfa.api.VerifyIdentityRequest\x1a\x16.google.protobuf.Empty\";\x82\xd3\xe4\x93\x02\x35\"0/v1/applications/{app_id}/identities/{id}/verify:\x01*\x12S\n\x06GetApp\x12\x19.ownmfa.api.GetAppRequest\x1a\x0f.ownmfa.api.App\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/applications/{id}\x12v\n\x0bGetIdentity\x12\x1e.ownmfa.api.GetIdentityRequest\x1a\x14.ownmfa.api.Identity\"1\x82\xd3\xe4\x93\x02+\x12)/v1/applications/{app_id}/identities/{id}\x12\x84\x01\n\tUpdateApp\x12\x1c.ownmfa.api.UpdateAppRequest\x1a\x0f.ownmfa.api.App\"H\x82\xd3\xe4\x93\x02\x42\x1a\x19/v1/applications/{app.id}:\x03\x61ppZ 2\x19/v1/applications/{app.id}:\x03\x61pp\x12\x86\x01\n\tDeleteApp\x12\x1c.ownmfa.api.DeleteAppRequest\x1a\x16.google.protobuf.Empty\"C\x82\xd3\xe4\x93\x02\x17*\x15/v1/applications/{id}\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12\xa4\x01\n\x0e\x44\x65leteIdentity\x12!.ownmfa.api.DeleteIdentityRequest\x1a\x16.google.protobuf.Empty\"W\x82\xd3\xe4\x93\x02+*)/v1/applications/{app_id}/identities/{id}\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12_\n\x08ListApps\x12\x1b.ownmfa.api.ListAppsRequest\x1a\x1c.ownmfa.api.ListAppsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/applications\x12\xa4\x01\n\x0eListIdentities\x12!.ownmfa.api.ListIdentitiesRequest\x1a\".ownmfa.api.ListIdentitiesResponse\"K\x82\xd3\xe4\x93\x02\x45\x12$/v1/applications/{app_id}/identitiesZ\x1d\x12\x1b/v1/applications/identitiesB\x1eZ\x1cgithub.com/ownmfa/api/go/apib\x06proto3'
+  serialized_pb=b'\n\x16\x61pi/app_identity.proto\x12\nownmfa.api\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x17validate/validate.proto\"\x80\x03\n\x03\x41pp\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1a\n\x06org_id\x18\x02 \x01(\tB\x03\xe0\x41\x03R\x05orgID\x12\x17\n\x04name\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x05\x18(\x12\x1f\n\x0c\x64isplay_name\x18\x04 \x01(\tB\t\xfa\x42\x06r\x04\x10\x05\x18P\x12\x19\n\x05\x65mail\x18\x05 \x01(\tB\n\xfa\x42\x07r\x05`\x01\xd0\x01\x01\x12\x1d\n\x0cpushover_key\x18\x06 \x01(\tB\x07\xfa\x42\x04r\x02\x18-\x12\"\n\x10subject_template\x18\x07 \x01(\tB\x08\xfa\x42\x05r\x03\x18\x80\x08\x12$\n\x12text_body_template\x18\x08 \x01(\tB\x08\xfa\x42\x05r\x03\x18\x80 \x12$\n\x12html_body_template\x18\t \x01(\x0c\x42\x08\xfa\x42\x05z\x03\x18\x80 \x12\x33\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x33\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\"=\n\x10\x43reateAppRequest\x12)\n\x03\x61pp\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.AppB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\"(\n\rGetAppRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\"n\n\x10UpdateAppRequest\x12)\n\x03\x61pp\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.AppB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"+\n\x10\x44\x65leteAppRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\"B\n\x0fListAppsRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListAppsResponse\x12\x1d\n\x04\x61pps\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.App\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\"\x81\x01\n\x12SoftwareHOTPMethod\x12\x1e\n\x04hash\x18\x01 \x01(\x0e\x32\x10.ownmfa.api.Hash\x12\x1b\n\x06\x64igits\x18\x02 \x01(\x05\x42\x0b\xfa\x42\x08\x1a\x06\x18\n(\x06@\x01\x12\x0f\n\x07\x63ounter\x18\x03 \x01(\x05\x12\x1d\n\x0c\x61\x63\x63ount_name\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18P\"p\n\x12SoftwareTOTPMethod\x12\x1e\n\x04hash\x18\x01 \x01(\x0e\x32\x10.ownmfa.api.Hash\x12\x1b\n\x06\x64igits\x18\x02 \x01(\x05\x42\x0b\xfa\x42\x08\x1a\x06\x18\n(\x06@\x01\x12\x1d\n\x0c\x61\x63\x63ount_name\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18P\"5\n\x14GoogleAuthHOTPMethod\x12\x1d\n\x0c\x61\x63\x63ount_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18P\"5\n\x14GoogleAuthTOTPMethod\x12\x1d\n\x0c\x61\x63\x63ount_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18P\"\x14\n\x12\x41ppleiOSTOTPMethod\"y\n\x12HardwareHOTPMethod\x12\x1e\n\x04hash\x18\x01 \x01(\x0e\x32\x10.ownmfa.api.Hash\x12\x19\n\x06\x64igits\x18\x02 \x01(\x05\x42\t\xfa\x42\x06\x1a\x04\x18\n(\x06\x12\x0f\n\x07\x63ounter\x18\x03 \x01(\x05\x12\x17\n\x06secret\x18\x04 \x01(\x0c\x42\x07\xfa\x42\x04z\x02\x10\x10\"h\n\x12HardwareTOTPMethod\x12\x1e\n\x04hash\x18\x01 \x01(\x0e\x32\x10.ownmfa.api.Hash\x12\x19\n\x06\x64igits\x18\x02 \x01(\x05\x42\t\xfa\x42\x06\x1a\x04\x18\n(\x06\x12\x17\n\x06secret\x18\x03 \x01(\x0c\x42\x07\xfa\x42\x04z\x02\x10\x10\"%\n\tSMSMethod\x12\x18\n\x05phone\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x08\x18\x10\"1\n\x0ePushoverMethod\x12\x1f\n\x0cpushover_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x19\x18-\"%\n\x0b\x45mailMethod\x12\x16\n\x05\x65mail\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02`\x01\"2\n\x12\x42\x61\x63kupsCodesMethod\x12\x1c\n\tpasscodes\x18\x01 \x01(\x05\x42\t\xfa\x42\x06\x1a\x04\x18\n(\x06\"4\n\x17SecurityQuestionsMethod\x12\x19\n\x06\x61nswer\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x03\x18P\"\x9b\t\n\x08Identity\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1a\n\x06org_id\x18\x02 \x01(\tB\x03\xe0\x41\x03R\x05orgID\x12\x1a\n\x06\x61pp_id\x18\x03 \x01(\tB\x03\xe0\x41\x03R\x05\x61ppID\x12\x1d\n\x07\x63omment\x18\x04 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x05\x18P\xe0\x41\x02\x12/\n\x06status\x18\x05 \x01(\x0e\x32\x1a.ownmfa.api.IdentityStatusB\x03\xe0\x41\x03\x12R\n\x14software_hotp_method\x18\x10 \x01(\x0b\x32\x1e.ownmfa.api.SoftwareHOTPMethodH\x00R\x12softwareHOTPMethod\x12R\n\x14software_totp_method\x18\x06 \x01(\x0b\x32\x1e.ownmfa.api.SoftwareTOTPMethodH\x00R\x12softwareTOTPMethod\x12Y\n\x17google_auth_hotp_method\x18\x11 \x01(\x0b\x32 .ownmfa.api.GoogleAuthHOTPMethodH\x00R\x14googleAuthHOTPMethod\x12Y\n\x17google_auth_totp_method\x18\x07 \x01(\x0b\x32 .ownmfa.api.GoogleAuthTOTPMethodH\x00R\x14googleAuthTOTPMethod\x12S\n\x15\x61pple_ios_totp_method\x18\x16 \x01(\x0b\x32\x1e.ownmfa.api.AppleiOSTOTPMethodH\x00R\x12\x61ppleiOSTOTPMethod\x12R\n\x14hardware_hotp_method\x18\x12 \x01(\x0b\x32\x1e.ownmfa.api.HardwareHOTPMethodH\x00R\x12hardwareHOTPMethod\x12R\n\x14hardware_totp_method\x18\x13 \x01(\x0b\x32\x1e.ownmfa.api.HardwareTOTPMethodH\x00R\x12hardwareTOTPMethod\x12+\n\nsms_method\x18\x08 \x01(\x0b\x32\x15.ownmfa.api.SMSMethodH\x00\x12\x35\n\x0fpushover_method\x18\x14 \x01(\x0b\x32\x1a.ownmfa.api.PushoverMethodH\x00\x12/\n\x0c\x65mail_method\x18\t \x01(\x0b\x32\x17.ownmfa.api.EmailMethodH\x00\x12=\n\x13\x62\x61\x63kup_codes_method\x18\n \x01(\x0b\x32\x1e.ownmfa.api.BackupsCodesMethodH\x00\x12H\n\x19security_questions_method\x18\x15 \x01(\x0b\x32#.ownmfa.api.SecurityQuestionsMethodH\x00\x12\x33\n\ncreated_at\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x33\n\nupdated_at\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x42\x13\n\x0cmethod_oneof\x12\x03\xf8\x42\x01\"L\n\x15\x43reateIdentityRequest\x12\x33\n\x08identity\x18\x01 \x01(\x0b\x32\x14.ownmfa.api.IdentityB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\"o\n\x16\x43reateIdentityResponse\x12&\n\x08identity\x18\x01 \x01(\x0b\x32\x14.ownmfa.api.Identity\x12\x0e\n\x06secret\x18\x02 \x01(\t\x12\n\n\x02qr\x18\x03 \x01(\x0c\x12\x11\n\tpasscodes\x18\x04 \x03(\t\"v\n\x17\x41\x63tivateIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\x12\x1e\n\x08passcode\x18\x03 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x03\x18P\xe0\x41\x02\"W\n\x18\x43hallengeIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\"t\n\x15VerifyIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\x12\x1e\n\x08passcode\x18\x03 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x03\x18P\xe0\x41\x02\"Q\n\x12GetIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\"T\n\x15\x44\x65leteIdentityRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\x12\"\n\x06\x61pp_id\x18\x02 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02R\x05\x61ppID\"l\n\x15ListIdentitiesRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\x12\"\n\x06\x61pp_id\x18\x03 \x01(\tB\x0b\xfa\x42\x08r\x06\xb0\x01\x01\xd0\x01\x01R\x05\x61ppID\"o\n\x16ListIdentitiesResponse\x12(\n\nidentities\x18\x01 \x03(\x0b\x32\x14.ownmfa.api.Identity\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05*/\n\x0eIdentityStatus\x12\x0e\n\nUNVERIFIED\x10\x00\x12\r\n\tACTIVATED\x10\x03*(\n\x04Hash\x12\n\n\x06SHA512\x10\x00\x12\n\n\x06SHA256\x10\x01\x12\x08\n\x04SHA1\x10\x02\x32\x92\x0e\n\x12\x41ppIdentityService\x12\x92\x01\n\tCreateApp\x12\x1c.ownmfa.api.CreateAppRequest\x1a\x0f.ownmfa.api.App\"V\x82\xd3\xe4\x93\x02\x17\"\x10/v1/applications:\x03\x61pp\x92\x41\x36J4\n\x03\x32\x30\x31\x12-\n\x16\x41 successful response.\x12\x13\n\x11\x1a\x0f.ownmfa.api.App\x12\xe5\x01\n\x0e\x43reateIdentity\x12!.ownmfa.api.CreateIdentityRequest\x1a\".ownmfa.api.CreateIdentityResponse\"\x8b\x01\x82\xd3\xe4\x93\x02\x39\"-/v1/applications/{identity.app_id}/identities:\x08identity\x92\x41IJG\n\x03\x32\x30\x31\x12@\n\x16\x41 successful response.\x12&\n$\x1a\".ownmfa.api.CreateIdentityResponse\x12\x8c\x01\n\x10\x41\x63tivateIdentity\x12#.ownmfa.api.ActivateIdentityRequest\x1a\x14.ownmfa.api.Identity\"=\x82\xd3\xe4\x93\x02\x37\x1a\x32/v1/applications/{app_id}/identities/{id}/activate:\x01*\x12\xd8\x01\n\x11\x43hallengeIdentity\x12$.ownmfa.api.ChallengeIdentityRequest\x1a\x16.google.protobuf.Empty\"\x84\x01\x82\xd3\xe4\x93\x02\x35\"3/v1/applications/{app_id}/identities/{id}/challenge\x92\x41\x46J!\n\x03\x32\x30\x32\x12\x1a\n\x16\x41 successful response.\x12\x00J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12\x88\x01\n\x0eVerifyIdentity\x12!.ownmfa.api.VerifyIdentityRequest\x1a\x16.google.protobuf.Empty\";\x82\xd3\xe4\x93\x02\x35\"0/v1/applications/{app_id}/identities/{id}/verify:\x01*\x12S\n\x06GetApp\x12\x19.ownmfa.api.GetAppRequest\x1a\x0f.ownmfa.api.App\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/applications/{id}\x12v\n\x0bGetIdentity\x12\x1e.ownmfa.api.GetIdentityRequest\x1a\x14.ownmfa.api.Identity\"1\x82\xd3\xe4\x93\x02+\x12)/v1/applications/{app_id}/identities/{id}\x12\x84\x01\n\tUpdateApp\x12\x1c.ownmfa.api.UpdateAppRequest\x1a\x0f.ownmfa.api.App\"H\x82\xd3\xe4\x93\x02\x42\x1a\x19/v1/applications/{app.id}:\x03\x61ppZ 2\x19/v1/applications/{app.id}:\x03\x61pp\x12\x86\x01\n\tDeleteApp\x12\x1c.ownmfa.api.DeleteAppRequest\x1a\x16.google.protobuf.Empty\"C\x82\xd3\xe4\x93\x02\x17*\x15/v1/applications/{id}\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12\xa4\x01\n\x0e\x44\x65leteIdentity\x12!.ownmfa.api.DeleteIdentityRequest\x1a\x16.google.protobuf.Empty\"W\x82\xd3\xe4\x93\x02+*)/v1/applications/{app_id}/identities/{id}\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12_\n\x08ListApps\x12\x1b.ownmfa.api.ListAppsRequest\x1a\x1c.ownmfa.api.ListAppsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/applications\x12\xa4\x01\n\x0eListIdentities\x12!.ownmfa.api.ListIdentitiesRequest\x1a\".ownmfa.api.ListIdentitiesResponse\"K\x82\xd3\xe4\x93\x02\x45\x12$/v1/applications/{app_id}/identitiesZ\x1d\x12\x1b/v1/applications/identitiesB\x1eZ\x1cgithub.com/ownmfa/api/go/apib\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_api_dot_field__behavior__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,validate_dot_validate__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _IDENTITYSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3910,
-  serialized_end=3957,
+  serialized_start=4017,
+  serialized_end=4064,
 )
 _sym_db.RegisterEnumDescriptor(_IDENTITYSTATUS)
 
@@ -82,8 +82,8 @@ _HASH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3959,
-  serialized_end=3999,
+  serialized_start=4066,
+  serialized_end=4106,
 )
 _sym_db.RegisterEnumDescriptor(_HASH)
 
@@ -581,6 +581,31 @@ _GOOGLEAUTHTOTPMETHOD = _descriptor.Descriptor(
 )
 
 
+_APPLEIOSTOTPMETHOD = _descriptor.Descriptor(
+  name='AppleiOSTOTPMethod',
+  full_name='ownmfa.api.AppleiOSTOTPMethod',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1439,
+  serialized_end=1459,
+)
+
+
 _HARDWAREHOTPMETHOD = _descriptor.Descriptor(
   name='HardwareHOTPMethod',
   full_name='ownmfa.api.HardwareHOTPMethod',
@@ -629,8 +654,8 @@ _HARDWAREHOTPMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1439,
-  serialized_end=1560,
+  serialized_start=1461,
+  serialized_end=1582,
 )
 
 
@@ -675,8 +700,8 @@ _HARDWARETOTPMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1562,
-  serialized_end=1666,
+  serialized_start=1584,
+  serialized_end=1688,
 )
 
 
@@ -707,8 +732,8 @@ _SMSMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1668,
-  serialized_end=1705,
+  serialized_start=1690,
+  serialized_end=1727,
 )
 
 
@@ -739,8 +764,8 @@ _PUSHOVERMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1707,
-  serialized_end=1756,
+  serialized_start=1729,
+  serialized_end=1778,
 )
 
 
@@ -771,8 +796,8 @@ _EMAILMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1758,
-  serialized_end=1795,
+  serialized_start=1780,
+  serialized_end=1817,
 )
 
 
@@ -803,8 +828,8 @@ _BACKUPSCODESMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1797,
-  serialized_end=1847,
+  serialized_start=1819,
+  serialized_end=1869,
 )
 
 
@@ -835,8 +860,8 @@ _SECURITYQUESTIONSMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1849,
-  serialized_end=1901,
+  serialized_start=1871,
+  serialized_end=1923,
 )
 
 
@@ -912,63 +937,70 @@ _IDENTITY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='googleAuthTOTPMethod', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hardware_hotp_method', full_name='ownmfa.api.Identity.hardware_hotp_method', index=9,
+      name='apple_ios_totp_method', full_name='ownmfa.api.Identity.apple_ios_totp_method', index=9,
+      number=22, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='appleiOSTOTPMethod', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hardware_hotp_method', full_name='ownmfa.api.Identity.hardware_hotp_method', index=10,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='hardwareHOTPMethod', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hardware_totp_method', full_name='ownmfa.api.Identity.hardware_totp_method', index=10,
+      name='hardware_totp_method', full_name='ownmfa.api.Identity.hardware_totp_method', index=11,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='hardwareTOTPMethod', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sms_method', full_name='ownmfa.api.Identity.sms_method', index=11,
+      name='sms_method', full_name='ownmfa.api.Identity.sms_method', index=12,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pushover_method', full_name='ownmfa.api.Identity.pushover_method', index=12,
+      name='pushover_method', full_name='ownmfa.api.Identity.pushover_method', index=13,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='email_method', full_name='ownmfa.api.Identity.email_method', index=13,
+      name='email_method', full_name='ownmfa.api.Identity.email_method', index=14,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='backup_codes_method', full_name='ownmfa.api.Identity.backup_codes_method', index=14,
+      name='backup_codes_method', full_name='ownmfa.api.Identity.backup_codes_method', index=15,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='security_questions_method', full_name='ownmfa.api.Identity.security_questions_method', index=15,
+      name='security_questions_method', full_name='ownmfa.api.Identity.security_questions_method', index=16,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created_at', full_name='ownmfa.api.Identity.created_at', index=16,
+      name='created_at', full_name='ownmfa.api.Identity.created_at', index=17,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\340A\003', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='updated_at', full_name='ownmfa.api.Identity.updated_at', index=17,
+      name='updated_at', full_name='ownmfa.api.Identity.updated_at', index=18,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -991,8 +1023,8 @@ _IDENTITY = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\370B\001'),
   ],
-  serialized_start=1904,
-  serialized_end=2998,
+  serialized_start=1926,
+  serialized_end=3105,
 )
 
 
@@ -1023,8 +1055,8 @@ _CREATEIDENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3000,
-  serialized_end=3076,
+  serialized_start=3107,
+  serialized_end=3183,
 )
 
 
@@ -1076,8 +1108,8 @@ _CREATEIDENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3078,
-  serialized_end=3189,
+  serialized_start=3185,
+  serialized_end=3296,
 )
 
 
@@ -1122,8 +1154,8 @@ _ACTIVATEIDENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3191,
-  serialized_end=3309,
+  serialized_start=3298,
+  serialized_end=3416,
 )
 
 
@@ -1161,8 +1193,8 @@ _CHALLENGEIDENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3311,
-  serialized_end=3398,
+  serialized_start=3418,
+  serialized_end=3505,
 )
 
 
@@ -1207,8 +1239,8 @@ _VERIFYIDENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3400,
-  serialized_end=3516,
+  serialized_start=3507,
+  serialized_end=3623,
 )
 
 
@@ -1246,8 +1278,8 @@ _GETIDENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3518,
-  serialized_end=3599,
+  serialized_start=3625,
+  serialized_end=3706,
 )
 
 
@@ -1285,8 +1317,8 @@ _DELETEIDENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3601,
-  serialized_end=3685,
+  serialized_start=3708,
+  serialized_end=3792,
 )
 
 
@@ -1331,8 +1363,8 @@ _LISTIDENTITIESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3687,
-  serialized_end=3795,
+  serialized_start=3794,
+  serialized_end=3902,
 )
 
 
@@ -1377,8 +1409,8 @@ _LISTIDENTITIESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3797,
-  serialized_end=3908,
+  serialized_start=3904,
+  serialized_end=4015,
 )
 
 _APP.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -1396,6 +1428,7 @@ _IDENTITY.fields_by_name['software_hotp_method'].message_type = _SOFTWAREHOTPMET
 _IDENTITY.fields_by_name['software_totp_method'].message_type = _SOFTWARETOTPMETHOD
 _IDENTITY.fields_by_name['google_auth_hotp_method'].message_type = _GOOGLEAUTHHOTPMETHOD
 _IDENTITY.fields_by_name['google_auth_totp_method'].message_type = _GOOGLEAUTHTOTPMETHOD
+_IDENTITY.fields_by_name['apple_ios_totp_method'].message_type = _APPLEIOSTOTPMETHOD
 _IDENTITY.fields_by_name['hardware_hotp_method'].message_type = _HARDWAREHOTPMETHOD
 _IDENTITY.fields_by_name['hardware_totp_method'].message_type = _HARDWARETOTPMETHOD
 _IDENTITY.fields_by_name['sms_method'].message_type = _SMSMETHOD
@@ -1417,6 +1450,9 @@ _IDENTITY.fields_by_name['google_auth_hotp_method'].containing_oneof = _IDENTITY
 _IDENTITY.oneofs_by_name['method_oneof'].fields.append(
   _IDENTITY.fields_by_name['google_auth_totp_method'])
 _IDENTITY.fields_by_name['google_auth_totp_method'].containing_oneof = _IDENTITY.oneofs_by_name['method_oneof']
+_IDENTITY.oneofs_by_name['method_oneof'].fields.append(
+  _IDENTITY.fields_by_name['apple_ios_totp_method'])
+_IDENTITY.fields_by_name['apple_ios_totp_method'].containing_oneof = _IDENTITY.oneofs_by_name['method_oneof']
 _IDENTITY.oneofs_by_name['method_oneof'].fields.append(
   _IDENTITY.fields_by_name['hardware_hotp_method'])
 _IDENTITY.fields_by_name['hardware_hotp_method'].containing_oneof = _IDENTITY.oneofs_by_name['method_oneof']
@@ -1452,6 +1488,7 @@ DESCRIPTOR.message_types_by_name['SoftwareHOTPMethod'] = _SOFTWAREHOTPMETHOD
 DESCRIPTOR.message_types_by_name['SoftwareTOTPMethod'] = _SOFTWARETOTPMETHOD
 DESCRIPTOR.message_types_by_name['GoogleAuthHOTPMethod'] = _GOOGLEAUTHHOTPMETHOD
 DESCRIPTOR.message_types_by_name['GoogleAuthTOTPMethod'] = _GOOGLEAUTHTOTPMETHOD
+DESCRIPTOR.message_types_by_name['AppleiOSTOTPMethod'] = _APPLEIOSTOTPMETHOD
 DESCRIPTOR.message_types_by_name['HardwareHOTPMethod'] = _HARDWAREHOTPMETHOD
 DESCRIPTOR.message_types_by_name['HardwareTOTPMethod'] = _HARDWARETOTPMETHOD
 DESCRIPTOR.message_types_by_name['SMSMethod'] = _SMSMETHOD
@@ -1549,6 +1586,13 @@ GoogleAuthTOTPMethod = _reflection.GeneratedProtocolMessageType('GoogleAuthTOTPM
   # @@protoc_insertion_point(class_scope:ownmfa.api.GoogleAuthTOTPMethod)
   })
 _sym_db.RegisterMessage(GoogleAuthTOTPMethod)
+
+AppleiOSTOTPMethod = _reflection.GeneratedProtocolMessageType('AppleiOSTOTPMethod', (_message.Message,), {
+  'DESCRIPTOR' : _APPLEIOSTOTPMETHOD,
+  '__module__' : 'api.app_identity_pb2'
+  # @@protoc_insertion_point(class_scope:ownmfa.api.AppleiOSTOTPMethod)
+  })
+_sym_db.RegisterMessage(AppleiOSTOTPMethod)
 
 HardwareHOTPMethod = _reflection.GeneratedProtocolMessageType('HardwareHOTPMethod', (_message.Message,), {
   'DESCRIPTOR' : _HARDWAREHOTPMETHOD,
@@ -1733,8 +1777,8 @@ _APPIDENTITYSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=4002,
-  serialized_end=5812,
+  serialized_start=4109,
+  serialized_end=5919,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateApp',
