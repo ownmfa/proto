@@ -314,6 +314,9 @@ message GoogleAuthTOTPMethod {
   string account_name = 1 [(validate.rules).string.max_len = 80];
 }
 
+// AppleiOSTOTPMethod configures an Apple iOS TOTP one-time password method.
+message AppleiOSTOTPMethod {}
+
 // HardwareHOTPMethod configures a hardware OATH HOTP one-time password method.
 message HardwareHOTPMethod {
   // Hardware HOTP hash function. Defaults to SHA512 if not specified.
@@ -403,6 +406,9 @@ message Identity {
 
     // Google Authenticator TOTP method configuration.
     GoogleAuthTOTPMethod google_auth_totp_method = 7 [json_name = "googleAuthTOTPMethod"];
+
+    // Apple iOS TOTP method configuration.
+    AppleiOSTOTPMethod apple_ios_totp_method = 22 [json_name = "appleiOSTOTPMethod"];
 
     // Hardware HOTP method configuration.
     HardwareHOTPMethod hardware_hotp_method = 18 [json_name = "hardwareHOTPMethod"];

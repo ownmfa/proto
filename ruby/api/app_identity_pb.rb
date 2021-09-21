@@ -63,6 +63,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "ownmfa.api.GoogleAuthTOTPMethod" do
       optional :account_name, :string, 1
     end
+    add_message "ownmfa.api.AppleiOSTOTPMethod" do
+    end
     add_message "ownmfa.api.HardwareHOTPMethod" do
       optional :hash, :enum, 1, "ownmfa.api.Hash"
       optional :digits, :int32, 2
@@ -102,6 +104,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :software_totp_method, :message, 6, "ownmfa.api.SoftwareTOTPMethod"
         optional :google_auth_hotp_method, :message, 17, "ownmfa.api.GoogleAuthHOTPMethod"
         optional :google_auth_totp_method, :message, 7, "ownmfa.api.GoogleAuthTOTPMethod"
+        optional :apple_ios_totp_method, :message, 22, "ownmfa.api.AppleiOSTOTPMethod"
         optional :hardware_hotp_method, :message, 18, "ownmfa.api.HardwareHOTPMethod"
         optional :hardware_totp_method, :message, 19, "ownmfa.api.HardwareTOTPMethod"
         optional :sms_method, :message, 8, "ownmfa.api.SMSMethod"
@@ -177,6 +180,7 @@ module Ownmfa
     SoftwareTOTPMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.SoftwareTOTPMethod").msgclass
     GoogleAuthHOTPMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.GoogleAuthHOTPMethod").msgclass
     GoogleAuthTOTPMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.GoogleAuthTOTPMethod").msgclass
+    AppleiOSTOTPMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.AppleiOSTOTPMethod").msgclass
     HardwareHOTPMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.HardwareHOTPMethod").msgclass
     HardwareTOTPMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.HardwareTOTPMethod").msgclass
     SMSMethod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("ownmfa.api.SMSMethod").msgclass
