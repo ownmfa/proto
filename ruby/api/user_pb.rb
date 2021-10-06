@@ -15,7 +15,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("api/user.proto", :syntax => :proto3) do
     add_message "ownmfa.api.User" do
       optional :id, :string, 1
-      optional :org_id, :string, 2
+      optional :org_id, :string, 2, json_name: "orgID"
       optional :name, :string, 3
       optional :email, :string, 4
       optional :role, :enum, 5, "ownmfa.common.Role"
