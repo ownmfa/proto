@@ -13,7 +13,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("api/app_identity.proto", :syntax => :proto3) do
     add_message "ownmfa.api.App" do
       optional :id, :string, 1
-      optional :org_id, :string, 2
+      optional :org_id, :string, 2, json_name: "orgID"
       optional :name, :string, 3
       optional :display_name, :string, 4
       optional :email, :string, 5
@@ -93,20 +93,20 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "ownmfa.api.Identity" do
       optional :id, :string, 1
-      optional :org_id, :string, 2
-      optional :app_id, :string, 3
+      optional :org_id, :string, 2, json_name: "orgID"
+      optional :app_id, :string, 3, json_name: "appID"
       optional :comment, :string, 4
       optional :status, :enum, 5, "ownmfa.api.IdentityStatus"
       optional :created_at, :message, 14, "google.protobuf.Timestamp"
       optional :updated_at, :message, 15, "google.protobuf.Timestamp"
       oneof :method_oneof do
-        optional :software_hotp_method, :message, 16, "ownmfa.api.SoftwareHOTPMethod"
-        optional :software_totp_method, :message, 6, "ownmfa.api.SoftwareTOTPMethod"
-        optional :google_auth_hotp_method, :message, 17, "ownmfa.api.GoogleAuthHOTPMethod"
-        optional :google_auth_totp_method, :message, 7, "ownmfa.api.GoogleAuthTOTPMethod"
-        optional :apple_ios_totp_method, :message, 22, "ownmfa.api.AppleiOSTOTPMethod"
-        optional :hardware_hotp_method, :message, 18, "ownmfa.api.HardwareHOTPMethod"
-        optional :hardware_totp_method, :message, 19, "ownmfa.api.HardwareTOTPMethod"
+        optional :software_hotp_method, :message, 16, "ownmfa.api.SoftwareHOTPMethod", json_name: "softwareHOTPMethod"
+        optional :software_totp_method, :message, 6, "ownmfa.api.SoftwareTOTPMethod", json_name: "softwareTOTPMethod"
+        optional :google_auth_hotp_method, :message, 17, "ownmfa.api.GoogleAuthHOTPMethod", json_name: "googleAuthHOTPMethod"
+        optional :google_auth_totp_method, :message, 7, "ownmfa.api.GoogleAuthTOTPMethod", json_name: "googleAuthTOTPMethod"
+        optional :apple_ios_totp_method, :message, 22, "ownmfa.api.AppleiOSTOTPMethod", json_name: "appleiOSTOTPMethod"
+        optional :hardware_hotp_method, :message, 18, "ownmfa.api.HardwareHOTPMethod", json_name: "hardwareHOTPMethod"
+        optional :hardware_totp_method, :message, 19, "ownmfa.api.HardwareTOTPMethod", json_name: "hardwareTOTPMethod"
         optional :sms_method, :message, 8, "ownmfa.api.SMSMethod"
         optional :pushover_method, :message, 20, "ownmfa.api.PushoverMethod"
         optional :email_method, :message, 9, "ownmfa.api.EmailMethod"
@@ -125,30 +125,30 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "ownmfa.api.ActivateIdentityRequest" do
       optional :id, :string, 1
-      optional :app_id, :string, 2
+      optional :app_id, :string, 2, json_name: "appID"
       optional :passcode, :string, 3
     end
     add_message "ownmfa.api.ChallengeIdentityRequest" do
       optional :id, :string, 1
-      optional :app_id, :string, 2
+      optional :app_id, :string, 2, json_name: "appID"
     end
     add_message "ownmfa.api.VerifyIdentityRequest" do
       optional :id, :string, 1
-      optional :app_id, :string, 2
+      optional :app_id, :string, 2, json_name: "appID"
       optional :passcode, :string, 3
     end
     add_message "ownmfa.api.GetIdentityRequest" do
       optional :id, :string, 1
-      optional :app_id, :string, 2
+      optional :app_id, :string, 2, json_name: "appID"
     end
     add_message "ownmfa.api.DeleteIdentityRequest" do
       optional :id, :string, 1
-      optional :app_id, :string, 2
+      optional :app_id, :string, 2, json_name: "appID"
     end
     add_message "ownmfa.api.ListIdentitiesRequest" do
       optional :page_size, :int32, 1
       optional :page_token, :string, 2
-      optional :app_id, :string, 3
+      optional :app_id, :string, 3, json_name: "appID"
     end
     add_message "ownmfa.api.ListIdentitiesResponse" do
       repeated :identities, :message, 1, "ownmfa.api.Identity"

@@ -9,16 +9,16 @@ require 'google/api/field_behavior_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("api/event.proto", :syntax => :proto3) do
     add_message "ownmfa.api.Event" do
-      optional :org_id, :string, 1
-      optional :app_id, :string, 2
-      optional :identity_id, :string, 3
+      optional :org_id, :string, 1, json_name: "orgID"
+      optional :app_id, :string, 2, json_name: "appID"
+      optional :identity_id, :string, 3, json_name: "identityID"
       optional :status, :enum, 4, "ownmfa.api.EventStatus"
       optional :error, :string, 5
       optional :created_at, :message, 6, "google.protobuf.Timestamp"
       optional :trace_id, :string, 7
     end
     add_message "ownmfa.api.ListEventsRequest" do
-      optional :identity_id, :string, 1
+      optional :identity_id, :string, 1, json_name: "identityID"
       optional :end_time, :message, 2, "google.protobuf.Timestamp"
       optional :start_time, :message, 3, "google.protobuf.Timestamp"
     end
@@ -26,8 +26,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :events, :message, 1, "ownmfa.api.Event"
     end
     add_message "ownmfa.api.LatestEventsRequest" do
-      optional :app_id, :string, 1
-      optional :identity_id, :string, 2
+      optional :app_id, :string, 1, json_name: "appID"
+      optional :identity_id, :string, 2, json_name: "identityID"
     end
     add_message "ownmfa.api.LatestEventsResponse" do
       repeated :events, :message, 1, "ownmfa.api.Event"
