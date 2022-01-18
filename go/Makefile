@@ -9,7 +9,9 @@ deps:
 	github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
 	go install \
 	github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
-	go install github.com/envoyproxy/protoc-gen-validate@latest
+# Regression in protoc-gen-validate template/go/file.go
+# https://github.com/envoyproxy/protoc-gen-validate/issues/552
+	go install github.com/envoyproxy/protoc-gen-validate@v0.6.2
 
 common:
 	protoc -I=../protobuf -I=/tmp/googleapis -I=/tmp/pgv \
