@@ -206,6 +206,7 @@ func (m *App) validate(all bool) error {
 	if len(errors) > 0 {
 		return AppMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -394,6 +395,7 @@ func (m *CreateAppRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return CreateAppRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -505,6 +507,7 @@ func (m *GetAppRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return GetAppRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -681,6 +684,7 @@ func (m *UpdateAppRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return UpdateAppRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -792,6 +796,7 @@ func (m *DeleteAppRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return DeleteAppRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -912,6 +917,7 @@ func (m *ListAppsRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListAppsRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1049,6 +1055,7 @@ func (m *ListAppsResponse) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListAppsResponseMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1178,6 +1185,7 @@ func (m *SoftwareHOTPMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return SoftwareHOTPMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1307,6 +1315,7 @@ func (m *SoftwareTOTPMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return SoftwareTOTPMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1419,6 +1428,7 @@ func (m *GoogleAuthHOTPMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return GoogleAuthHOTPMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1531,6 +1541,7 @@ func (m *GoogleAuthTOTPMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return GoogleAuthTOTPMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1632,6 +1643,7 @@ func (m *AppleiOSTOTPMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return AppleiOSTOTPMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1759,6 +1771,7 @@ func (m *HardwareHOTPMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return HardwareHOTPMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1884,6 +1897,7 @@ func (m *HardwareTOTPMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return HardwareTOTPMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1996,6 +2010,7 @@ func (m *SMSMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return SMSMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -2105,6 +2120,7 @@ func (m *PushoverMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return PushoverMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -2216,6 +2232,7 @@ func (m *EmailMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return EmailMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -2375,6 +2392,7 @@ func (m *BackupsCodesMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return BackupsCodesMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -2487,6 +2505,7 @@ func (m *SecurityQuestionsMethod) validate(all bool) error {
 	if len(errors) > 0 {
 		return SecurityQuestionsMethodMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -3051,6 +3070,7 @@ func (m *Identity) validate(all bool) error {
 	if len(errors) > 0 {
 		return IdentityMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -3189,6 +3209,7 @@ func (m *CreateIdentityRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return CreateIdentityRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -3323,6 +3344,7 @@ func (m *CreateIdentityResponse) validate(all bool) error {
 	if len(errors) > 0 {
 		return CreateIdentityResponseMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -3459,6 +3481,7 @@ func (m *ActivateIdentityRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return ActivateIdentityRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -3592,6 +3615,7 @@ func (m *ChallengeIdentityRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return ChallengeIdentityRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -3736,6 +3760,7 @@ func (m *VerifyIdentityRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return VerifyIdentityRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -3869,6 +3894,7 @@ func (m *GetIdentityRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return GetIdentityRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -4002,6 +4028,7 @@ func (m *DeleteIdentityRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return DeleteIdentityRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -4140,6 +4167,7 @@ func (m *ListIdentitiesRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListIdentitiesRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -4287,6 +4315,7 @@ func (m *ListIdentitiesResponse) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListIdentitiesResponseMultiError(errors)
 	}
+
 	return nil
 }
 

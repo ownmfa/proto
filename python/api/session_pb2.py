@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from common import role_pb2 as common_dot_role__pb2
+from api import role_pb2 as api_dot_role__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
@@ -26,9 +26,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\034github.com/ownmfa/api/go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x61pi/session.proto\x12\nownmfa.api\x1a\x11\x63ommon/role.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x17validate/validate.proto\"P\n\x0cLoginRequest\x12\x12\n\x05\x65mail\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08org_name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08password\x18\x03 \x01(\tB\x03\xe0\x41\x02\"N\n\rLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb9\x01\n\x03Key\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1a\n\x06org_id\x18\x02 \x01(\tB\x03\xe0\x41\x03R\x05orgID\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x05\x18P\xe0\x41\x02\x12\x34\n\x04role\x18\x04 \x01(\x0e\x32\x13.ownmfa.common.RoleB\x11\xfa\x42\x0b\x82\x01\x08\x18\x04\x18\x08\x18\x0c\x18\x0f\xe0\x41\x02\x12\x33\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\"=\n\x10\x43reateKeyRequest\x12)\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.KeyB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\"@\n\x11\x43reateKeyResponse\x12\x1c\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.Key\x12\r\n\x05token\x18\x02 \x01(\t\"+\n\x10\x44\x65leteKeyRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\"B\n\x0fListKeysRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListKeysResponse\x12\x1d\n\x04keys\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.Key\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\x32\x90\x04\n\x0eSessionService\x12`\n\x05Login\x12\x18.ownmfa.api.LoginRequest\x1a\x19.ownmfa.api.LoginResponse\"\"\x82\xd3\xe4\x93\x02\x17\"\x12/v1/sessions/login:\x01*\x92\x41\x02\x62\x00\x12\xaf\x01\n\tCreateKey\x12\x1c.ownmfa.api.CreateKeyRequest\x1a\x1d.ownmfa.api.CreateKeyResponse\"e\x82\xd3\xe4\x93\x02\x18\"\x11/v1/sessions/keys:\x03key\x92\x41\x44JB\n\x03\x32\x30\x31\x12;\n\x16\x41 successful response.\x12!\n\x1f\x1a\x1d.ownmfa.api.CreateKeyResponse\x12\x87\x01\n\tDeleteKey\x12\x1c.ownmfa.api.DeleteKeyRequest\x1a\x16.google.protobuf.Empty\"D\x82\xd3\xe4\x93\x02\x18*\x16/v1/sessions/keys/{id}\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12`\n\x08ListKeys\x12\x1b.ownmfa.api.ListKeysRequest\x1a\x1c.ownmfa.api.ListKeysResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/sessions/keysB\x1eZ\x1cgithub.com/ownmfa/api/go/apib\x06proto3'
+  serialized_pb=b'\n\x11\x61pi/session.proto\x12\nownmfa.api\x1a\x0e\x61pi/role.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x17validate/validate.proto\"P\n\x0cLoginRequest\x12\x12\n\x05\x65mail\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08org_name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08password\x18\x03 \x01(\tB\x03\xe0\x41\x02\"N\n\rLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb6\x01\n\x03Key\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1a\n\x06org_id\x18\x02 \x01(\tB\x03\xe0\x41\x03R\x05orgID\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x05\x18P\xe0\x41\x02\x12\x31\n\x04role\x18\x04 \x01(\x0e\x32\x10.ownmfa.api.RoleB\x11\xfa\x42\x0b\x82\x01\x08\x18\x04\x18\x08\x18\x0c\x18\x0f\xe0\x41\x02\x12\x33\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\"=\n\x10\x43reateKeyRequest\x12)\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.KeyB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\"@\n\x11\x43reateKeyResponse\x12\x1c\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.Key\x12\r\n\x05token\x18\x02 \x01(\t\"+\n\x10\x44\x65leteKeyRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\"B\n\x0fListKeysRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListKeysResponse\x12\x1d\n\x04keys\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.Key\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\x32\x90\x04\n\x0eSessionService\x12`\n\x05Login\x12\x18.ownmfa.api.LoginRequest\x1a\x19.ownmfa.api.LoginResponse\"\"\x82\xd3\xe4\x93\x02\x17\"\x12/v1/sessions/login:\x01*\x92\x41\x02\x62\x00\x12\xaf\x01\n\tCreateKey\x12\x1c.ownmfa.api.CreateKeyRequest\x1a\x1d.ownmfa.api.CreateKeyResponse\"e\x82\xd3\xe4\x93\x02\x18\"\x11/v1/sessions/keys:\x03key\x92\x41\x44JB\n\x03\x32\x30\x31\x12;\n\x16\x41 successful response.\x12!\n\x1f\x1a\x1d.ownmfa.api.CreateKeyResponse\x12\x87\x01\n\tDeleteKey\x12\x1c.ownmfa.api.DeleteKeyRequest\x1a\x16.google.protobuf.Empty\"D\x82\xd3\xe4\x93\x02\x18*\x16/v1/sessions/keys/{id}\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12`\n\x08ListKeys\x12\x1b.ownmfa.api.ListKeysRequest\x1a\x1c.ownmfa.api.ListKeysResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/sessions/keysB\x1eZ\x1cgithub.com/ownmfa/api/go/apib\x06proto3'
   ,
-  dependencies=[common_dot_role__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_api_dot_field__behavior__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,validate_dot_validate__pb2.DESCRIPTOR,])
+  dependencies=[api_dot_role__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_api_dot_field__behavior__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,validate_dot_validate__pb2.DESCRIPTOR,])
 
 
 
@@ -74,8 +74,8 @@ _LOGINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=250,
-  serialized_end=330,
+  serialized_start=247,
+  serialized_end=327,
 )
 
 
@@ -113,8 +113,8 @@ _LOGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=332,
-  serialized_end=410,
+  serialized_start=329,
+  serialized_end=407,
 )
 
 
@@ -173,8 +173,8 @@ _KEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=413,
-  serialized_end=598,
+  serialized_start=410,
+  serialized_end=592,
 )
 
 
@@ -205,8 +205,8 @@ _CREATEKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=600,
-  serialized_end=661,
+  serialized_start=594,
+  serialized_end=655,
 )
 
 
@@ -244,8 +244,8 @@ _CREATEKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=663,
-  serialized_end=727,
+  serialized_start=657,
+  serialized_end=721,
 )
 
 
@@ -276,8 +276,8 @@ _DELETEKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=729,
-  serialized_end=772,
+  serialized_start=723,
+  serialized_end=766,
 )
 
 
@@ -315,8 +315,8 @@ _LISTKEYSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=774,
-  serialized_end=840,
+  serialized_start=768,
+  serialized_end=834,
 )
 
 
@@ -361,12 +361,12 @@ _LISTKEYSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=842,
-  serialized_end=936,
+  serialized_start=836,
+  serialized_end=930,
 )
 
 _LOGINRESPONSE.fields_by_name['expires_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_KEY.fields_by_name['role'].enum_type = common_dot_role__pb2._ROLE
+_KEY.fields_by_name['role'].enum_type = api_dot_role__pb2._ROLE
 _KEY.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _CREATEKEYREQUEST.fields_by_name['key'].message_type = _KEY
 _CREATEKEYRESPONSE.fields_by_name['key'].message_type = _KEY
@@ -458,8 +458,8 @@ _SESSIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=939,
-  serialized_end=1467,
+  serialized_start=933,
+  serialized_end=1461,
   methods=[
   _descriptor.MethodDescriptor(
     name='Login',

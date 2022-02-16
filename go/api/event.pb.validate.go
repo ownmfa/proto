@@ -103,6 +103,7 @@ func (m *Event) validate(all bool) error {
 	if len(errors) > 0 {
 		return EventMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -271,6 +272,7 @@ func (m *ListEventsRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListEventsRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -414,6 +416,7 @@ func (m *ListEventsResponse) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListEventsResponseMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -547,6 +550,7 @@ func (m *LatestEventsRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return LatestEventsRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -690,6 +694,7 @@ func (m *LatestEventsResponse) validate(all bool) error {
 	if len(errors) > 0 {
 		return LatestEventsResponseMultiError(errors)
 	}
+
 	return nil
 }
 

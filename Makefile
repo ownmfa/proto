@@ -1,6 +1,6 @@
 .PHONY: generate version go tag clean
 
-VERSION = 1.0.6
+VERSION = 1.0.7
 
 generate: version
 	docker compose build --no-cache --pull
@@ -20,6 +20,7 @@ tag:
 	git tag -s v$(VERSION) -m "Version $(VERSION)"
 	git tag -s go/v$(VERSION) -m "Version $(VERSION)"
 	git push --tags
+# List may fail if repo is private
 	go list -m github.com/ownmfa/api/go@v$(VERSION)
 
 clean:

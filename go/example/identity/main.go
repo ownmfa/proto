@@ -10,7 +10,6 @@ import (
 	"time"
 
 	"github.com/ownmfa/api/go/api"
-	"github.com/ownmfa/api/go/common"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/encoding/gzip"
@@ -110,7 +109,7 @@ func main() {
 	sessCli = api.NewSessionServiceClient(loginConn)
 	createKey, err := sessCli.CreateKey(ctx, &api.CreateKeyRequest{
 		Key: &api.Key{
-			Name: flag.Arg(1) + "-example", Role: common.Role_AUTHENTICATOR,
+			Name: flag.Arg(1) + "-example", Role: api.Role_AUTHENTICATOR,
 		},
 	})
 	checkErr(err)

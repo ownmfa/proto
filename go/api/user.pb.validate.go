@@ -17,8 +17,6 @@ import (
 	"unicode/utf8"
 
 	"google.golang.org/protobuf/types/known/anypb"
-
-	common "github.com/ownmfa/api/go/common"
 )
 
 // ensure the imports are used
@@ -35,8 +33,6 @@ var (
 	_ = (*mail.Address)(nil)
 	_ = anypb.Any{}
 	_ = sort.Sort
-
-	_ = common.Role(0)
 )
 
 // define the regex for a UUID once up-front
@@ -173,6 +169,7 @@ func (m *User) validate(all bool) error {
 	if len(errors) > 0 {
 		return UserMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -296,7 +293,7 @@ var _ interface {
 	ErrorName() string
 } = UserValidationError{}
 
-var _User_Role_InLookup = map[common.Role]struct{}{
+var _User_Role_InLookup = map[Role]struct{}{
 	4:  {},
 	8:  {},
 	12: {},
@@ -373,6 +370,7 @@ func (m *CreateUserRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return CreateUserRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -486,6 +484,7 @@ func (m *GetUserRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return GetUserRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -662,6 +661,7 @@ func (m *UpdateUserRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return UpdateUserRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -786,6 +786,7 @@ func (m *UpdateUserPasswordRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return UpdateUserPasswordRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -907,6 +908,7 @@ func (m *DeleteUserRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return DeleteUserRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1029,6 +1031,7 @@ func (m *ListUsersRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListUsersRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1166,6 +1169,7 @@ func (m *ListUsersResponse) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListUsersResponseMultiError(errors)
 	}
+
 	return nil
 }
 

@@ -1,7 +1,7 @@
 syntax = "proto3";
 package ownmfa.api;
 
-import "common/role.proto";
+import "api/role.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 import "google/api/annotations.proto";
@@ -102,7 +102,7 @@ message Key {
   string name = 3 [(validate.rules).string = {min_len: 5, max_len: 80}, (google.api.field_behavior) = REQUIRED];
 
   // Key role.
-  common.Role role = 4 [(validate.rules).enum = {in: [4, 8, 12, 15]}, (google.api.field_behavior) = REQUIRED];
+  Role role = 4 [(validate.rules).enum = {in: [4, 8, 12, 15]}, (google.api.field_behavior) = REQUIRED];
 
   // Key creation timestamp.
   google.protobuf.Timestamp created_at = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
