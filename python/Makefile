@@ -1,14 +1,9 @@
-.PHONY: generate deps common api
+.PHONY: generate deps api
 
-generate: deps common api
+generate: deps api
 
 deps:
 	pip install grpcio-tools
-
-common:
-	python -m grpc_tools.protoc -I=../protobuf -I=/tmp/googleapis -I=/tmp/pgv \
-	--python_out=. \
-	common/role.proto
 
 api:
 	python -m grpc_tools.protoc -I=../protobuf -I=/tmp/googleapis \
@@ -16,6 +11,7 @@ api:
 	api/app_identity.proto \
 	api/event.proto \
 	api/org.proto \
+	api/role.proto \
 	api/session.proto \
 	api/status.proto \
 	api/user.proto

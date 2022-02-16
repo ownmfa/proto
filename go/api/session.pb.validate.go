@@ -17,8 +17,6 @@ import (
 	"unicode/utf8"
 
 	"google.golang.org/protobuf/types/known/anypb"
-
-	common "github.com/ownmfa/api/go/common"
 )
 
 // ensure the imports are used
@@ -35,8 +33,6 @@ var (
 	_ = (*mail.Address)(nil)
 	_ = anypb.Any{}
 	_ = sort.Sort
-
-	_ = common.Role(0)
 )
 
 // define the regex for a UUID once up-front
@@ -73,6 +69,7 @@ func (m *LoginRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return LoginRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -202,6 +199,7 @@ func (m *LoginResponse) validate(all bool) error {
 	if len(errors) > 0 {
 		return LoginResponseMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -355,6 +353,7 @@ func (m *Key) validate(all bool) error {
 	if len(errors) > 0 {
 		return KeyMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -428,7 +427,7 @@ var _ interface {
 	ErrorName() string
 } = KeyValidationError{}
 
-var _Key_Role_InLookup = map[common.Role]struct{}{
+var _Key_Role_InLookup = map[Role]struct{}{
 	4:  {},
 	8:  {},
 	12: {},
@@ -500,6 +499,7 @@ func (m *CreateKeyRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return CreateKeyRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -630,6 +630,7 @@ func (m *CreateKeyResponse) validate(all bool) error {
 	if len(errors) > 0 {
 		return CreateKeyResponseMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -743,6 +744,7 @@ func (m *DeleteKeyRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return DeleteKeyRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -863,6 +865,7 @@ func (m *ListKeysRequest) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListKeysRequestMultiError(errors)
 	}
+
 	return nil
 }
 
@@ -1000,6 +1003,7 @@ func (m *ListKeysResponse) validate(all bool) error {
 	if len(errors) > 0 {
 		return ListKeysResponseMultiError(errors)
 	}
+
 	return nil
 }
 

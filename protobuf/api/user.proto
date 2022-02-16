@@ -1,8 +1,8 @@
 syntax = "proto3";
 package ownmfa.api;
 
+import "api/role.proto";
 import "api/status.proto";
-import "common/role.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/field_mask.proto";
@@ -102,7 +102,7 @@ message User {
   string email = 4 [(validate.rules).string.email = true];
 
   // User role.
-  common.Role role = 5 [(validate.rules).enum = {in: [4, 8, 12, 15]}];
+  Role role = 5 [(validate.rules).enum = {in: [4, 8, 12, 15]}];
 
   // User status.
   Status status = 6 [(validate.rules).enum = {in: [3, 6]}];
