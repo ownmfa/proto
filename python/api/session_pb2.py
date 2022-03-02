@@ -3,6 +3,7 @@
 # source: api/session.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -20,367 +21,18 @@ from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapi
 from validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='api/session.proto',
-  package='ownmfa.api',
-  syntax='proto3',
-  serialized_options=b'Z\034github.com/ownmfa/api/go/api',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x61pi/session.proto\x12\nownmfa.api\x1a\x0e\x61pi/role.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x17validate/validate.proto\"P\n\x0cLoginRequest\x12\x12\n\x05\x65mail\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08org_name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08password\x18\x03 \x01(\tB\x03\xe0\x41\x02\"N\n\rLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb6\x01\n\x03Key\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1a\n\x06org_id\x18\x02 \x01(\tB\x03\xe0\x41\x03R\x05orgID\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x05\x18P\xe0\x41\x02\x12\x31\n\x04role\x18\x04 \x01(\x0e\x32\x10.ownmfa.api.RoleB\x11\xfa\x42\x0b\x82\x01\x08\x18\x04\x18\x08\x18\x0c\x18\x0f\xe0\x41\x02\x12\x33\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\"=\n\x10\x43reateKeyRequest\x12)\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.KeyB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\"@\n\x11\x43reateKeyResponse\x12\x1c\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.Key\x12\r\n\x05token\x18\x02 \x01(\t\"+\n\x10\x44\x65leteKeyRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\"B\n\x0fListKeysRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListKeysResponse\x12\x1d\n\x04keys\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.Key\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\x32\x90\x04\n\x0eSessionService\x12`\n\x05Login\x12\x18.ownmfa.api.LoginRequest\x1a\x19.ownmfa.api.LoginResponse\"\"\x82\xd3\xe4\x93\x02\x17\"\x12/v1/sessions/login:\x01*\x92\x41\x02\x62\x00\x12\xaf\x01\n\tCreateKey\x12\x1c.ownmfa.api.CreateKeyRequest\x1a\x1d.ownmfa.api.CreateKeyResponse\"e\x82\xd3\xe4\x93\x02\x18\"\x11/v1/sessions/keys:\x03key\x92\x41\x44JB\n\x03\x32\x30\x31\x12;\n\x16\x41 successful response.\x12!\n\x1f\x1a\x1d.ownmfa.api.CreateKeyResponse\x12\x87\x01\n\tDeleteKey\x12\x1c.ownmfa.api.DeleteKeyRequest\x1a\x16.google.protobuf.Empty\"D\x82\xd3\xe4\x93\x02\x18*\x16/v1/sessions/keys/{id}\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12`\n\x08ListKeys\x12\x1b.ownmfa.api.ListKeysRequest\x1a\x1c.ownmfa.api.ListKeysResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/sessions/keysB\x1eZ\x1cgithub.com/ownmfa/api/go/apib\x06proto3'
-  ,
-  dependencies=[api_dot_role__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_api_dot_field__behavior__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,validate_dot_validate__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x61pi/session.proto\x12\nownmfa.api\x1a\x0e\x61pi/role.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x17validate/validate.proto\"P\n\x0cLoginRequest\x12\x12\n\x05\x65mail\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08org_name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08password\x18\x03 \x01(\tB\x03\xe0\x41\x02\"N\n\rLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb6\x01\n\x03Key\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1a\n\x06org_id\x18\x02 \x01(\tB\x03\xe0\x41\x03R\x05orgID\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\xfa\x42\x06r\x04\x10\x05\x18P\xe0\x41\x02\x12\x31\n\x04role\x18\x04 \x01(\x0e\x32\x10.ownmfa.api.RoleB\x11\xfa\x42\x0b\x82\x01\x08\x18\x04\x18\x08\x18\x0c\x18\x0f\xe0\x41\x02\x12\x33\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\"=\n\x10\x43reateKeyRequest\x12)\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.KeyB\x0b\xfa\x42\x05\x8a\x01\x02\x10\x01\xe0\x41\x02\"@\n\x11\x43reateKeyResponse\x12\x1c\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.Key\x12\r\n\x05token\x18\x02 \x01(\t\"+\n\x10\x44\x65leteKeyRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xfa\x42\x05r\x03\xb0\x01\x01\xe0\x41\x02\"B\n\x0fListKeysRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListKeysResponse\x12\x1d\n\x04keys\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.Key\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\x32\x90\x04\n\x0eSessionService\x12`\n\x05Login\x12\x18.ownmfa.api.LoginRequest\x1a\x19.ownmfa.api.LoginResponse\"\"\x82\xd3\xe4\x93\x02\x17\"\x12/v1/sessions/login:\x01*\x92\x41\x02\x62\x00\x12\xaf\x01\n\tCreateKey\x12\x1c.ownmfa.api.CreateKeyRequest\x1a\x1d.ownmfa.api.CreateKeyResponse\"e\x82\xd3\xe4\x93\x02\x18\"\x11/v1/sessions/keys:\x03key\x92\x41\x44JB\n\x03\x32\x30\x31\x12;\n\x16\x41 successful response.\x12!\n\x1f\x1a\x1d.ownmfa.api.CreateKeyResponse\x12\x87\x01\n\tDeleteKey\x12\x1c.ownmfa.api.DeleteKeyRequest\x1a\x16.google.protobuf.Empty\"D\x82\xd3\xe4\x93\x02\x18*\x16/v1/sessions/keys/{id}\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x12`\n\x08ListKeys\x12\x1b.ownmfa.api.ListKeysRequest\x1a\x1c.ownmfa.api.ListKeysResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/sessions/keysB\x1eZ\x1cgithub.com/ownmfa/api/go/apib\x06proto3')
 
 
 
-
-_LOGINREQUEST = _descriptor.Descriptor(
-  name='LoginRequest',
-  full_name='ownmfa.api.LoginRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='email', full_name='ownmfa.api.LoginRequest.email', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\340A\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='org_name', full_name='ownmfa.api.LoginRequest.org_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\340A\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='password', full_name='ownmfa.api.LoginRequest.password', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\340A\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=247,
-  serialized_end=327,
-)
-
-
-_LOGINRESPONSE = _descriptor.Descriptor(
-  name='LoginResponse',
-  full_name='ownmfa.api.LoginResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='token', full_name='ownmfa.api.LoginResponse.token', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='expires_at', full_name='ownmfa.api.LoginResponse.expires_at', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=329,
-  serialized_end=407,
-)
-
-
-_KEY = _descriptor.Descriptor(
-  name='Key',
-  full_name='ownmfa.api.Key',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='ownmfa.api.Key.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\340A\003', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='org_id', full_name='ownmfa.api.Key.org_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\340A\003', json_name='orgID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='ownmfa.api.Key.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372B\006r\004\020\005\030P\340A\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='role', full_name='ownmfa.api.Key.role', index=3,
-      number=4, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372B\013\202\001\010\030\004\030\010\030\014\030\017\340A\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='created_at', full_name='ownmfa.api.Key.created_at', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\340A\003', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=410,
-  serialized_end=592,
-)
-
-
-_CREATEKEYREQUEST = _descriptor.Descriptor(
-  name='CreateKeyRequest',
-  full_name='ownmfa.api.CreateKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='ownmfa.api.CreateKeyRequest.key', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372B\005\212\001\002\020\001\340A\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=594,
-  serialized_end=655,
-)
-
-
-_CREATEKEYRESPONSE = _descriptor.Descriptor(
-  name='CreateKeyResponse',
-  full_name='ownmfa.api.CreateKeyResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='ownmfa.api.CreateKeyResponse.key', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='token', full_name='ownmfa.api.CreateKeyResponse.token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=657,
-  serialized_end=721,
-)
-
-
-_DELETEKEYREQUEST = _descriptor.Descriptor(
-  name='DeleteKeyRequest',
-  full_name='ownmfa.api.DeleteKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='ownmfa.api.DeleteKeyRequest.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372B\005r\003\260\001\001\340A\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=723,
-  serialized_end=766,
-)
-
-
-_LISTKEYSREQUEST = _descriptor.Descriptor(
-  name='ListKeysRequest',
-  full_name='ownmfa.api.ListKeysRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='ownmfa.api.ListKeysRequest.page_size', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372B\005\032\003\030\372\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='ownmfa.api.ListKeysRequest.page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=768,
-  serialized_end=834,
-)
-
-
-_LISTKEYSRESPONSE = _descriptor.Descriptor(
-  name='ListKeysResponse',
-  full_name='ownmfa.api.ListKeysResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='keys', full_name='ownmfa.api.ListKeysResponse.keys', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='ownmfa.api.ListKeysResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='total_size', full_name='ownmfa.api.ListKeysResponse.total_size', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=836,
-  serialized_end=930,
-)
-
-_LOGINRESPONSE.fields_by_name['expires_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_KEY.fields_by_name['role'].enum_type = api_dot_role__pb2._ROLE
-_KEY.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_CREATEKEYREQUEST.fields_by_name['key'].message_type = _KEY
-_CREATEKEYRESPONSE.fields_by_name['key'].message_type = _KEY
-_LISTKEYSRESPONSE.fields_by_name['keys'].message_type = _KEY
-DESCRIPTOR.message_types_by_name['LoginRequest'] = _LOGINREQUEST
-DESCRIPTOR.message_types_by_name['LoginResponse'] = _LOGINRESPONSE
-DESCRIPTOR.message_types_by_name['Key'] = _KEY
-DESCRIPTOR.message_types_by_name['CreateKeyRequest'] = _CREATEKEYREQUEST
-DESCRIPTOR.message_types_by_name['CreateKeyResponse'] = _CREATEKEYRESPONSE
-DESCRIPTOR.message_types_by_name['DeleteKeyRequest'] = _DELETEKEYREQUEST
-DESCRIPTOR.message_types_by_name['ListKeysRequest'] = _LISTKEYSREQUEST
-DESCRIPTOR.message_types_by_name['ListKeysResponse'] = _LISTKEYSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_LOGINREQUEST = DESCRIPTOR.message_types_by_name['LoginRequest']
+_LOGINRESPONSE = DESCRIPTOR.message_types_by_name['LoginResponse']
+_KEY = DESCRIPTOR.message_types_by_name['Key']
+_CREATEKEYREQUEST = DESCRIPTOR.message_types_by_name['CreateKeyRequest']
+_CREATEKEYRESPONSE = DESCRIPTOR.message_types_by_name['CreateKeyResponse']
+_DELETEKEYREQUEST = DESCRIPTOR.message_types_by_name['DeleteKeyRequest']
+_LISTKEYSREQUEST = DESCRIPTOR.message_types_by_name['ListKeysRequest']
+_LISTKEYSRESPONSE = DESCRIPTOR.message_types_by_name['ListKeysResponse']
 LoginRequest = _reflection.GeneratedProtocolMessageType('LoginRequest', (_message.Message,), {
   'DESCRIPTOR' : _LOGINREQUEST,
   '__module__' : 'api.session_pb2'
@@ -437,73 +89,57 @@ ListKeysResponse = _reflection.GeneratedProtocolMessageType('ListKeysResponse', 
   })
 _sym_db.RegisterMessage(ListKeysResponse)
 
+_SESSIONSERVICE = DESCRIPTOR.services_by_name['SessionService']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_LOGINREQUEST.fields_by_name['email']._options = None
-_LOGINREQUEST.fields_by_name['org_name']._options = None
-_LOGINREQUEST.fields_by_name['password']._options = None
-_KEY.fields_by_name['id']._options = None
-_KEY.fields_by_name['org_id']._options = None
-_KEY.fields_by_name['name']._options = None
-_KEY.fields_by_name['role']._options = None
-_KEY.fields_by_name['created_at']._options = None
-_CREATEKEYREQUEST.fields_by_name['key']._options = None
-_DELETEKEYREQUEST.fields_by_name['id']._options = None
-_LISTKEYSREQUEST.fields_by_name['page_size']._options = None
-
-_SESSIONSERVICE = _descriptor.ServiceDescriptor(
-  name='SessionService',
-  full_name='ownmfa.api.SessionService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=933,
-  serialized_end=1461,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Login',
-    full_name='ownmfa.api.SessionService.Login',
-    index=0,
-    containing_service=None,
-    input_type=_LOGINREQUEST,
-    output_type=_LOGINRESPONSE,
-    serialized_options=b'\202\323\344\223\002\027\"\022/v1/sessions/login:\001*\222A\002b\000',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateKey',
-    full_name='ownmfa.api.SessionService.CreateKey',
-    index=1,
-    containing_service=None,
-    input_type=_CREATEKEYREQUEST,
-    output_type=_CREATEKEYRESPONSE,
-    serialized_options=b'\202\323\344\223\002\030\"\021/v1/sessions/keys:\003key\222ADJB\n\003201\022;\n\026A successful response.\022!\n\037\032\035.ownmfa.api.CreateKeyResponse',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteKey',
-    full_name='ownmfa.api.SessionService.DeleteKey',
-    index=2,
-    containing_service=None,
-    input_type=_DELETEKEYREQUEST,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    serialized_options=b'\202\323\344\223\002\030*\026/v1/sessions/keys/{id}\222A#J!\n\003204\022\032\n\026A successful response.\022\000',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListKeys',
-    full_name='ownmfa.api.SessionService.ListKeys',
-    index=3,
-    containing_service=None,
-    input_type=_LISTKEYSREQUEST,
-    output_type=_LISTKEYSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\023\022\021/v1/sessions/keys',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_SESSIONSERVICE)
-
-DESCRIPTOR.services_by_name['SessionService'] = _SESSIONSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z\034github.com/ownmfa/api/go/api'
+  _LOGINREQUEST.fields_by_name['email']._options = None
+  _LOGINREQUEST.fields_by_name['email']._serialized_options = b'\340A\002'
+  _LOGINREQUEST.fields_by_name['org_name']._options = None
+  _LOGINREQUEST.fields_by_name['org_name']._serialized_options = b'\340A\002'
+  _LOGINREQUEST.fields_by_name['password']._options = None
+  _LOGINREQUEST.fields_by_name['password']._serialized_options = b'\340A\002'
+  _KEY.fields_by_name['id']._options = None
+  _KEY.fields_by_name['id']._serialized_options = b'\340A\003'
+  _KEY.fields_by_name['org_id']._options = None
+  _KEY.fields_by_name['org_id']._serialized_options = b'\340A\003'
+  _KEY.fields_by_name['name']._options = None
+  _KEY.fields_by_name['name']._serialized_options = b'\372B\006r\004\020\005\030P\340A\002'
+  _KEY.fields_by_name['role']._options = None
+  _KEY.fields_by_name['role']._serialized_options = b'\372B\013\202\001\010\030\004\030\010\030\014\030\017\340A\002'
+  _KEY.fields_by_name['created_at']._options = None
+  _KEY.fields_by_name['created_at']._serialized_options = b'\340A\003'
+  _CREATEKEYREQUEST.fields_by_name['key']._options = None
+  _CREATEKEYREQUEST.fields_by_name['key']._serialized_options = b'\372B\005\212\001\002\020\001\340A\002'
+  _DELETEKEYREQUEST.fields_by_name['id']._options = None
+  _DELETEKEYREQUEST.fields_by_name['id']._serialized_options = b'\372B\005r\003\260\001\001\340A\002'
+  _LISTKEYSREQUEST.fields_by_name['page_size']._options = None
+  _LISTKEYSREQUEST.fields_by_name['page_size']._serialized_options = b'\372B\005\032\003\030\372\001'
+  _SESSIONSERVICE.methods_by_name['Login']._options = None
+  _SESSIONSERVICE.methods_by_name['Login']._serialized_options = b'\202\323\344\223\002\027\"\022/v1/sessions/login:\001*\222A\002b\000'
+  _SESSIONSERVICE.methods_by_name['CreateKey']._options = None
+  _SESSIONSERVICE.methods_by_name['CreateKey']._serialized_options = b'\202\323\344\223\002\030\"\021/v1/sessions/keys:\003key\222ADJB\n\003201\022;\n\026A successful response.\022!\n\037\032\035.ownmfa.api.CreateKeyResponse'
+  _SESSIONSERVICE.methods_by_name['DeleteKey']._options = None
+  _SESSIONSERVICE.methods_by_name['DeleteKey']._serialized_options = b'\202\323\344\223\002\030*\026/v1/sessions/keys/{id}\222A#J!\n\003204\022\032\n\026A successful response.\022\000'
+  _SESSIONSERVICE.methods_by_name['ListKeys']._options = None
+  _SESSIONSERVICE.methods_by_name['ListKeys']._serialized_options = b'\202\323\344\223\002\023\022\021/v1/sessions/keys'
+  _LOGINREQUEST._serialized_start=247
+  _LOGINREQUEST._serialized_end=327
+  _LOGINRESPONSE._serialized_start=329
+  _LOGINRESPONSE._serialized_end=407
+  _KEY._serialized_start=410
+  _KEY._serialized_end=592
+  _CREATEKEYREQUEST._serialized_start=594
+  _CREATEKEYREQUEST._serialized_end=655
+  _CREATEKEYRESPONSE._serialized_start=657
+  _CREATEKEYRESPONSE._serialized_end=721
+  _DELETEKEYREQUEST._serialized_start=723
+  _DELETEKEYREQUEST._serialized_end=766
+  _LISTKEYSREQUEST._serialized_start=768
+  _LISTKEYSREQUEST._serialized_end=834
+  _LISTKEYSRESPONSE._serialized_start=836
+  _LISTKEYSRESPONSE._serialized_end=930
+  _SESSIONSERVICE._serialized_start=933
+  _SESSIONSERVICE._serialized_end=1461
 # @@protoc_insertion_point(module_scope)
