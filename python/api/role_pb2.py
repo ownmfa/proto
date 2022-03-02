@@ -4,6 +4,7 @@
 """Generated protocol buffer code."""
 from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -14,55 +15,9 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='api/role.proto',
-  package='ownmfa.api',
-  syntax='proto3',
-  serialized_options=b'Z\034github.com/ownmfa/api/go/api',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0e\x61pi/role.proto\x12\nownmfa.api*U\n\x04Role\x12\x14\n\x10ROLE_UNSPECIFIED\x10\x00\x12\n\n\x06VIEWER\x10\x04\x12\x11\n\rAUTHENTICATOR\x10\x08\x12\t\n\x05\x41\x44MIN\x10\x0c\x12\r\n\tSYS_ADMIN\x10\x0f\x42\x1eZ\x1cgithub.com/ownmfa/api/go/apib\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0e\x61pi/role.proto\x12\nownmfa.api*U\n\x04Role\x12\x14\n\x10ROLE_UNSPECIFIED\x10\x00\x12\n\n\x06VIEWER\x10\x04\x12\x11\n\rAUTHENTICATOR\x10\x08\x12\t\n\x05\x41\x44MIN\x10\x0c\x12\r\n\tSYS_ADMIN\x10\x0f\x42\x1eZ\x1cgithub.com/ownmfa/api/go/apib\x06proto3')
 
-_ROLE = _descriptor.EnumDescriptor(
-  name='Role',
-  full_name='ownmfa.api.Role',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='ROLE_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='VIEWER', index=1, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='AUTHENTICATOR', index=2, number=8,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ADMIN', index=3, number=12,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='SYS_ADMIN', index=4, number=15,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=30,
-  serialized_end=115,
-)
-_sym_db.RegisterEnumDescriptor(_ROLE)
-
+_ROLE = DESCRIPTOR.enum_types_by_name['Role']
 Role = enum_type_wrapper.EnumTypeWrapper(_ROLE)
 ROLE_UNSPECIFIED = 0
 VIEWER = 4
@@ -71,9 +26,10 @@ ADMIN = 12
 SYS_ADMIN = 15
 
 
-DESCRIPTOR.enum_types_by_name['Role'] = _ROLE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z\034github.com/ownmfa/api/go/api'
+  _ROLE._serialized_start=30
+  _ROLE._serialized_end=115
 # @@protoc_insertion_point(module_scope)

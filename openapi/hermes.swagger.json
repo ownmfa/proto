@@ -3,7 +3,7 @@
   "info": {
     "title": "Hermes",
     "description": "Getting started with the Hermes API:\n- Log in with `/v1/sessions/login` using your provided credentials. Authorize below using the provided token.\n- Create an application with `/v1/applications`. For SMS and software token authentication methods, all template fields can be left empty.\n- (Optional) Create an `AUTHENTICATOR` role API key with `/v1/sessions/keys`. Re-authorize using the provided token.\n\nActivate an identity (single occurrence):\n- Create an identity with `/v1/applications/{identity.appID}/identities`. Only one method field is supported when creating an identity.\n- Issue the returned identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Activate the identity with `/v1/applications/{appID}/identities/{id}/activate` using the received or generated challenge.\n\nVerify an identity (ongoing):\n- Issue the identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Verify the identity with `/v1/applications/{appID}/identities/{id}/verify` using the received or generated challenge.",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "contact": {
       "name": "OwnMFA",
       "url": "https://www.ownmfa.com/",
@@ -102,7 +102,7 @@
         },
         "parameters": [
           {
-            "name": "body",
+            "name": "app",
             "description": "App message to create.",
             "in": "body",
             "required": true,
@@ -190,12 +190,61 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "app",
             "description": "App message to update.",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/App"
+              "type": "object",
+              "properties": {
+                "orgID": {
+                  "type": "string",
+                  "description": "Organization ID (UUID).",
+                  "readOnly": true
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Application name."
+                },
+                "displayName": {
+                  "type": "string",
+                  "description": "Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields."
+                },
+                "email": {
+                  "type": "string",
+                  "description": "Application email. Optional, used as the 'From' address in email notifications."
+                },
+                "pushoverKey": {
+                  "type": "string",
+                  "description": "Pushover application key. If not specified, the default OwnMFA Pushover application and templates will be used."
+                },
+                "subjectTemplate": {
+                  "type": "string",
+                  "description": "Application subject template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution is '{{.displayName}}'. Optional field, for notification methods that support subjects."
+                },
+                "textBodyTemplate": {
+                  "type": "string",
+                  "description": "Application text body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support text bodies. To prevent fraud, SMS notifications used a fixed body that includes the application display_name and verification code."
+                },
+                "htmlBodyTemplate": {
+                  "type": "string",
+                  "format": "byte",
+                  "description": "Application HTML body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support HTML bodies. When used in JSON, the value will be represented as a base64 string."
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Application creation timestamp.",
+                  "readOnly": true
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Application modification timestamp.",
+                  "readOnly": true
+                }
+              },
+              "title": "App message to update."
             }
           },
           {
@@ -236,12 +285,61 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "app",
             "description": "App message to update.",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/App"
+              "type": "object",
+              "properties": {
+                "orgID": {
+                  "type": "string",
+                  "description": "Organization ID (UUID).",
+                  "readOnly": true
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Application name."
+                },
+                "displayName": {
+                  "type": "string",
+                  "description": "Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields."
+                },
+                "email": {
+                  "type": "string",
+                  "description": "Application email. Optional, used as the 'From' address in email notifications."
+                },
+                "pushoverKey": {
+                  "type": "string",
+                  "description": "Pushover application key. If not specified, the default OwnMFA Pushover application and templates will be used."
+                },
+                "subjectTemplate": {
+                  "type": "string",
+                  "description": "Application subject template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution is '{{.displayName}}'. Optional field, for notification methods that support subjects."
+                },
+                "textBodyTemplate": {
+                  "type": "string",
+                  "description": "Application text body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support text bodies. To prevent fraud, SMS notifications used a fixed body that includes the application display_name and verification code."
+                },
+                "htmlBodyTemplate": {
+                  "type": "string",
+                  "format": "byte",
+                  "description": "Application HTML body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support HTML bodies. When used in JSON, the value will be represented as a base64 string."
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Application creation timestamp.",
+                  "readOnly": true
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Application modification timestamp.",
+                  "readOnly": true
+                }
+              },
+              "title": "App message to update."
             }
           },
           {
@@ -584,12 +682,99 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "identity",
             "description": "Identity message to create.",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Identity"
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Identity ID (UUID).",
+                  "readOnly": true
+                },
+                "orgID": {
+                  "type": "string",
+                  "description": "Organization ID (UUID).",
+                  "readOnly": true
+                },
+                "comment": {
+                  "type": "string",
+                  "description": "Identity comment. This should be an opaque identifier known to the consuming application.",
+                  "required": [
+                    "comment"
+                  ]
+                },
+                "status": {
+                  "$ref": "#/definitions/IdentityStatus",
+                  "description": "Identity status."
+                },
+                "softwareHOTPMethod": {
+                  "$ref": "#/definitions/SoftwareHOTPMethod",
+                  "description": "Software HOTP method configuration."
+                },
+                "softwareTOTPMethod": {
+                  "$ref": "#/definitions/SoftwareTOTPMethod",
+                  "description": "Software TOTP method configuration."
+                },
+                "googleAuthHOTPMethod": {
+                  "$ref": "#/definitions/GoogleAuthHOTPMethod",
+                  "description": "Google Authenticator HOTP method configuration."
+                },
+                "googleAuthTOTPMethod": {
+                  "$ref": "#/definitions/GoogleAuthTOTPMethod",
+                  "description": "Google Authenticator TOTP method configuration."
+                },
+                "appleiOSTOTPMethod": {
+                  "$ref": "#/definitions/AppleiOSTOTPMethod",
+                  "description": "Apple iOS TOTP method configuration."
+                },
+                "hardwareHOTPMethod": {
+                  "$ref": "#/definitions/HardwareHOTPMethod",
+                  "description": "Hardware HOTP method configuration."
+                },
+                "hardwareTOTPMethod": {
+                  "$ref": "#/definitions/HardwareTOTPMethod",
+                  "description": "Hardware TOTP method configuration."
+                },
+                "smsMethod": {
+                  "$ref": "#/definitions/SMSMethod",
+                  "description": "SMS method configuration."
+                },
+                "pushoverMethod": {
+                  "$ref": "#/definitions/PushoverMethod",
+                  "description": "Pushover method configuration."
+                },
+                "emailMethod": {
+                  "$ref": "#/definitions/EmailMethod",
+                  "description": "Email method configuration."
+                },
+                "backupCodesMethod": {
+                  "$ref": "#/definitions/BackupsCodesMethod",
+                  "description": "Backups codes method configuration."
+                },
+                "securityQuestionsMethod": {
+                  "$ref": "#/definitions/SecurityQuestionsMethod",
+                  "description": "Security questions method configuration."
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Identity creation timestamp.",
+                  "readOnly": true
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Identity modification timestamp.",
+                  "readOnly": true
+                }
+              },
+              "title": "Identity message to create.",
+              "required": [
+                "comment"
+              ]
             }
           }
         ],
@@ -815,7 +1000,7 @@
         },
         "parameters": [
           {
-            "name": "body",
+            "name": "org",
             "description": "Org message to create.",
             "in": "body",
             "required": true,
@@ -922,12 +1107,39 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "org",
             "description": "Org message to update.",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Org"
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Organization name."
+                },
+                "status": {
+                  "$ref": "#/definitions/api.Status",
+                  "description": "Organization status."
+                },
+                "plan": {
+                  "$ref": "#/definitions/Plan",
+                  "description": "Organization plan."
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Organization creation timestamp.",
+                  "readOnly": true
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Organization modification timestamp.",
+                  "readOnly": true
+                }
+              },
+              "title": "Org message to update."
             }
           },
           {
@@ -968,12 +1180,39 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "org",
             "description": "Org message to update.",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Org"
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Organization name."
+                },
+                "status": {
+                  "$ref": "#/definitions/api.Status",
+                  "description": "Organization status."
+                },
+                "plan": {
+                  "$ref": "#/definitions/Plan",
+                  "description": "Organization plan."
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Organization creation timestamp.",
+                  "readOnly": true
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Organization modification timestamp.",
+                  "readOnly": true
+                }
+              },
+              "title": "Org message to update."
             }
           },
           {
@@ -1053,7 +1292,7 @@
         },
         "parameters": [
           {
-            "name": "body",
+            "name": "key",
             "description": "Key message to create.",
             "in": "body",
             "required": true,
@@ -1201,7 +1440,7 @@
         },
         "parameters": [
           {
-            "name": "body",
+            "name": "user",
             "description": "User message to create.",
             "in": "body",
             "required": true,
@@ -1361,12 +1600,48 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "user",
             "description": "User message to update.",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "type": "object",
+              "properties": {
+                "orgID": {
+                  "type": "string",
+                  "description": "Organization ID (UUID).",
+                  "readOnly": true
+                },
+                "name": {
+                  "type": "string",
+                  "description": "User name."
+                },
+                "email": {
+                  "type": "string",
+                  "description": "User email."
+                },
+                "role": {
+                  "$ref": "#/definitions/Role",
+                  "description": "User role."
+                },
+                "status": {
+                  "$ref": "#/definitions/api.Status",
+                  "description": "User status."
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "User creation timestamp.",
+                  "readOnly": true
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "User modification timestamp.",
+                  "readOnly": true
+                }
+              },
+              "title": "User message to update."
             }
           },
           {
@@ -1407,12 +1682,48 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "user",
             "description": "User message to update.",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "type": "object",
+              "properties": {
+                "orgID": {
+                  "type": "string",
+                  "description": "Organization ID (UUID).",
+                  "readOnly": true
+                },
+                "name": {
+                  "type": "string",
+                  "description": "User name."
+                },
+                "email": {
+                  "type": "string",
+                  "description": "User email."
+                },
+                "role": {
+                  "$ref": "#/definitions/Role",
+                  "description": "User role."
+                },
+                "status": {
+                  "$ref": "#/definitions/api.Status",
+                  "description": "User status."
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "User creation timestamp.",
+                  "readOnly": true
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "User modification timestamp.",
+                  "readOnly": true
+                }
+              },
+              "title": "User message to update."
             }
           },
           {
@@ -1978,7 +2289,7 @@
           "type": "string",
           "description": "Organization name of the user to log in.",
           "required": [
-            "org_name"
+            "orgName"
           ]
         },
         "password": {
