@@ -969,12 +969,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateApp", runtime.WithHTTPPathPattern("/v1/applications"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateApp", runtime.WithHTTPPathPattern("/v1/applications"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_CreateApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_CreateApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -992,12 +993,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{identity.app_id}/identities"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{identity.app_id}/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_CreateIdentity_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_CreateIdentity_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1015,12 +1017,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ActivateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/activate"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ActivateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/activate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_ActivateIdentity_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_ActivateIdentity_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1038,12 +1041,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ChallengeIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/challenge"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ChallengeIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/challenge"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_ChallengeIdentity_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_ChallengeIdentity_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1061,12 +1065,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/VerifyIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/verify"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/VerifyIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/verify"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_VerifyIdentity_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_VerifyIdentity_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1084,12 +1089,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_GetApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_GetApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1107,12 +1113,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_GetIdentity_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_GetIdentity_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1130,12 +1137,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_UpdateApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_UpdateApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1153,12 +1161,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_UpdateApp_1(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_UpdateApp_1(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1176,12 +1185,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_DeleteApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_DeleteApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1199,12 +1209,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_DeleteIdentity_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_DeleteIdentity_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1222,12 +1233,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListApps", runtime.WithHTTPPathPattern("/v1/applications"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListApps", runtime.WithHTTPPathPattern("/v1/applications"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_ListApps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_ListApps_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1245,12 +1257,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_ListIdentities_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_ListIdentities_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1268,12 +1281,13 @@ func RegisterAppIdentityServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/identities"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppIdentityService_ListIdentities_1(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AppIdentityService_ListIdentities_1(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1330,12 +1344,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateApp", runtime.WithHTTPPathPattern("/v1/applications"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateApp", runtime.WithHTTPPathPattern("/v1/applications"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_CreateApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_CreateApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1350,12 +1365,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{identity.app_id}/identities"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/CreateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{identity.app_id}/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_CreateIdentity_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_CreateIdentity_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1370,12 +1386,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ActivateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/activate"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ActivateIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/activate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_ActivateIdentity_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_ActivateIdentity_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1390,12 +1407,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ChallengeIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/challenge"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ChallengeIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/challenge"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_ChallengeIdentity_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_ChallengeIdentity_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1410,12 +1428,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/VerifyIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/verify"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/VerifyIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}/verify"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_VerifyIdentity_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_VerifyIdentity_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1430,12 +1449,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_GetApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_GetApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1450,12 +1470,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/GetIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_GetIdentity_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_GetIdentity_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1470,12 +1491,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_UpdateApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_UpdateApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1490,12 +1512,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/UpdateApp", runtime.WithHTTPPathPattern("/v1/applications/{app.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_UpdateApp_1(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_UpdateApp_1(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1510,12 +1533,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteApp", runtime.WithHTTPPathPattern("/v1/applications/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_DeleteApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_DeleteApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1530,12 +1554,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/DeleteIdentity", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_DeleteIdentity_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_DeleteIdentity_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1550,12 +1575,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListApps", runtime.WithHTTPPathPattern("/v1/applications"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListApps", runtime.WithHTTPPathPattern("/v1/applications"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_ListApps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_ListApps_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1570,12 +1596,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/{app_id}/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_ListIdentities_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_ListIdentities_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1590,12 +1617,13 @@ func RegisterAppIdentityServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/identities"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/ownmfa.api.AppIdentityService/ListIdentities", runtime.WithHTTPPathPattern("/v1/applications/identities"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppIdentityService_ListIdentities_1(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AppIdentityService_ListIdentities_1(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
