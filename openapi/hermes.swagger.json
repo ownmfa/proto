@@ -3,7 +3,7 @@
   "info": {
     "title": "Hermes",
     "description": "Getting started with the Hermes API:\n- Log in with `/v1/sessions/login` using your provided credentials. Authorize below using the provided token.\n- Create an application with `/v1/applications`. For SMS and software token authentication methods, all template fields can be left empty.\n- (Optional) Create an `AUTHENTICATOR` role API key with `/v1/sessions/keys`. Re-authorize using the provided token.\n\nActivate an identity (single occurrence):\n- Create an identity with `/v1/applications/{identity.appID}/identities`. Only one method field is supported when creating an identity.\n- Issue the returned identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Activate the identity with `/v1/applications/{appID}/identities/{id}/activate` using the received or generated challenge.\n\nVerify an identity (ongoing):\n- Issue the identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Verify the identity with `/v1/applications/{appID}/identities/{id}/verify` using the received or generated challenge.",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "contact": {
       "name": "OwnMFA",
       "url": "https://www.ownmfa.com/",
@@ -1369,6 +1369,7 @@
         "parameters": [
           {
             "name": "body",
+            "description": "LoginRequest is sent to log in a user.",
             "in": "body",
             "required": true,
             "schema": {
