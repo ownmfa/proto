@@ -1284,6 +1284,7 @@ type Identity struct {
 	// Identity method.
 	//
 	// Types that are assignable to MethodOneof:
+	//
 	//	*Identity_SoftwareHotpMethod
 	//	*Identity_SoftwareTotpMethod
 	//	*Identity_GoogleAuthHotpMethod
