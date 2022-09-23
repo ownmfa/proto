@@ -5,6 +5,7 @@ services:
     command: sh -c "cd go && make"
     volumes:
       - .:/api
+
   python:
     build: ./python
     command: sh -c "cd python && make"

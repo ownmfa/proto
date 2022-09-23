@@ -17,13 +17,13 @@ api:
 	--go-grpc_out=. --go-grpc_opt=paths=source_relative \
 	--grpc-gateway_out=. --grpc-gateway_opt=paths=source_relative \
 	--validate_out=. --validate_opt=lang=go,paths=source_relative \
-	api/app_identity.proto \
-	api/event.proto \
-	api/org.proto \
-	api/role.proto \
-	api/session.proto \
-	api/status.proto \
-	api/user.proto
+	api/ownmfa_app_identity.proto \
+	api/ownmfa_event.proto \
+	api/ownmfa_org.proto \
+	api/ownmfa_role.proto \
+	api/ownmfa_session.proto \
+	api/ownmfa_status.proto \
+	api/ownmfa_user.proto
 
 mod:
 	echo 'module github.com/ownmfa/api/go' > go.mod
@@ -34,10 +34,10 @@ openapi:
 	protoc -I=../protobuf -I=/tmp/googleapis -I=/tmp/grpc-gateway -I=/tmp/pgv \
 	--openapiv2_out=../openapi \
 	--openapiv2_opt=allow_merge=true,merge_file_name=hermes,openapi_naming_strategy=simple \
-	api/openapi.proto \
-	api/app_identity.proto \
-	api/event.proto \
-	api/org.proto \
-	api/session.proto \
-	api/status.proto \
-	api/user.proto
+	api/ownmfa_openapi.proto \
+	api/ownmfa_app_identity.proto \
+	api/ownmfa_event.proto \
+	api/ownmfa_org.proto \
+	api/ownmfa_session.proto \
+	api/ownmfa_status.proto \
+	api/ownmfa_user.proto

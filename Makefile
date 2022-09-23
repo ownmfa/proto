@@ -1,6 +1,6 @@
 .PHONY: generate version go tag clean
 
-VERSION = 1.0.16
+VERSION = 1.0.17
 
 generate: version
 	docker compose build --no-cache --pull
@@ -8,8 +8,8 @@ generate: version
 	docker compose down
 
 version:
-	sed -e "s/APIVERSION/$(VERSION)/" protobuf/api/openapi-templ.proto > \
-	protobuf/api/openapi.proto
+	sed -e "s/APIVERSION/$(VERSION)/" \
+	protobuf/api/ownmfa_openapi-templ.proto > protobuf/api/ownmfa_openapi.proto
 
 go: version
 	docker compose build --no-cache --pull go_openapi
