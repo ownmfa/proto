@@ -19,6 +19,6 @@
 .DS_Store
 
 ### OwnMFA ###
-/protobuf/api/openapi.proto
+/protobuf/api/ownmfa_openapi.proto
 /go/example/login/login
 /go/example/identity/identity
