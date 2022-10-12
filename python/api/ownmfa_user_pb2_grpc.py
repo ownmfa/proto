@@ -53,21 +53,21 @@ class UserServiceServicer(object):
     """
 
     def CreateUser(self, request, context):
-        """Create a user. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+        """Create a user. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetUser(self, request, context):
-        """Get a user by ID. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+        """Get a user by ID. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateUser(self, request, context):
-        """Update a user. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+        """Update a user. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -81,14 +81,14 @@ class UserServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteUser(self, request, context):
-        """Delete a user by ID. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+        """Delete a user by ID. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListUsers(self, request, context):
-        """List users. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+        """List users. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
