@@ -15,7 +15,7 @@ option go_package = "github.com/ownmfa/api/go/api";
 
 // UserService contains functions to query and modify users.
 service UserService {
-  // Create a user. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  // Create a user. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
   rpc CreateUser(CreateUserRequest) returns (User) {
     option (google.api.http) = {
       post: "/v1/users"
@@ -36,14 +36,14 @@ service UserService {
     };
   }
 
-  // Get a user by ID. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  // Get a user by ID. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
   rpc GetUser(GetUserRequest) returns (User) {
     option (google.api.http) = {
       get: "/v1/users/{id}"
     };
   }
 
-  // Update a user. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  // Update a user. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
   rpc UpdateUser(UpdateUserRequest) returns (User) {
     option (google.api.http) = {
       put: "/v1/users/{user.id}"
@@ -63,7 +63,7 @@ service UserService {
     };
   }
 
-  // Delete a user by ID. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  // Delete a user by ID. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
   rpc DeleteUser(DeleteUserRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/v1/users/{id}"
@@ -79,7 +79,7 @@ service UserService {
     };
   }
 
-  // List users. Users can log in to and interact with the Hermes API and OwnMFA website, based on the limits of their role.
+  // List users. Users can log in and use the Hermes API and OwnMFA website based on the limits of their role.
   rpc ListUsers(ListUsersRequest) returns (ListUsersResponse) {
     option (google.api.http) = {
       get: "/v1/users"

@@ -14,7 +14,7 @@ option go_package = "github.com/ownmfa/api/go/api";
 
 // OrgService contains functions to query and modify organizations.
 service OrgService {
-  // Create an organization. An organization is the top level resource and contains users, applications, and all derived resources.
+  // Create an organization. An organization is the top level resource and contains users, applications, and derived resources.
   rpc CreateOrg(CreateOrgRequest) returns (Org) {
     option (google.api.http) = {
       post: "/v1/organizations"
@@ -35,14 +35,14 @@ service OrgService {
     };
   }
 
-  // Get an organization by ID. An organization is the top level resource and contains users, applications, and all derived resources.
+  // Get an organization by ID. An organization is the top level resource and contains users, applications, and derived resources.
   rpc GetOrg(GetOrgRequest) returns (Org) {
     option (google.api.http) = {
       get: "/v1/organizations/{id}"
     };
   }
 
-  // Update an organization. An organization is the top level resource and contains users, applications, and all derived resources.
+  // Update an organization. An organization is the top level resource and contains users, applications, and derived resources.
   rpc UpdateOrg(UpdateOrgRequest) returns (Org) {
     option (google.api.http) = {
       put: "/v1/organizations/{org.id}"
@@ -54,7 +54,7 @@ service OrgService {
     };
   }
 
-  // Delete an organization by ID. An organization is the top level resource and contains users, applications, and all derived resources.
+  // Delete an organization by ID. An organization is the top level resource and contains users, applications, and derived resources.
   rpc DeleteOrg(DeleteOrgRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/v1/organizations/{id}"
@@ -70,7 +70,7 @@ service OrgService {
     };
   }
 
-  // List all organizations. An organization is the top level resource and contains users, applications, and all derived resources.
+  // List all organizations. An organization is the top level resource and contains users, applications, and derived resources.
   rpc ListOrgs(ListOrgsRequest) returns (ListOrgsResponse) {
     option (google.api.http) = {
       get: "/v1/organizations"
