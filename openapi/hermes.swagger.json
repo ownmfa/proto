@@ -107,7 +107,10 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/App"
+              "$ref": "#/definitions/App",
+              "required": [
+                "app"
+              ]
             }
           }
         ],
@@ -701,43 +704,57 @@
                   "description": "Identity comment. This should be an opaque identifier known to the consuming application."
                 },
                 "status": {
-                  "$ref": "#/definitions/IdentityStatus"
+                  "$ref": "#/definitions/IdentityStatus",
+                  "description": "Identity status.",
+                  "readOnly": true
                 },
                 "softwareHOTPMethod": {
-                  "$ref": "#/definitions/SoftwareHOTPMethod"
+                  "$ref": "#/definitions/SoftwareHOTPMethod",
+                  "description": "Software HOTP method configuration."
                 },
                 "softwareTOTPMethod": {
-                  "$ref": "#/definitions/SoftwareTOTPMethod"
+                  "$ref": "#/definitions/SoftwareTOTPMethod",
+                  "description": "Software TOTP method configuration."
                 },
                 "googleAuthHOTPMethod": {
-                  "$ref": "#/definitions/GoogleAuthHOTPMethod"
+                  "$ref": "#/definitions/GoogleAuthHOTPMethod",
+                  "description": "Google Authenticator HOTP method configuration."
                 },
                 "googleAuthTOTPMethod": {
-                  "$ref": "#/definitions/GoogleAuthTOTPMethod"
+                  "$ref": "#/definitions/GoogleAuthTOTPMethod",
+                  "description": "Google Authenticator TOTP method configuration."
                 },
                 "appleiOSTOTPMethod": {
-                  "$ref": "#/definitions/AppleiOSTOTPMethod"
+                  "$ref": "#/definitions/AppleiOSTOTPMethod",
+                  "description": "Apple iOS TOTP method configuration."
                 },
                 "hardwareHOTPMethod": {
-                  "$ref": "#/definitions/HardwareHOTPMethod"
+                  "$ref": "#/definitions/HardwareHOTPMethod",
+                  "description": "Hardware HOTP method configuration."
                 },
                 "hardwareTOTPMethod": {
-                  "$ref": "#/definitions/HardwareTOTPMethod"
+                  "$ref": "#/definitions/HardwareTOTPMethod",
+                  "description": "Hardware TOTP method configuration."
                 },
                 "smsMethod": {
-                  "$ref": "#/definitions/SMSMethod"
+                  "$ref": "#/definitions/SMSMethod",
+                  "description": "SMS method configuration."
                 },
                 "pushoverMethod": {
-                  "$ref": "#/definitions/PushoverMethod"
+                  "$ref": "#/definitions/PushoverMethod",
+                  "description": "Pushover method configuration."
                 },
                 "emailMethod": {
-                  "$ref": "#/definitions/EmailMethod"
+                  "$ref": "#/definitions/EmailMethod",
+                  "description": "Email method configuration."
                 },
                 "backupCodesMethod": {
-                  "$ref": "#/definitions/BackupsCodesMethod"
+                  "$ref": "#/definitions/BackupsCodesMethod",
+                  "description": "Backups codes method configuration."
                 },
                 "securityQuestionsMethod": {
-                  "$ref": "#/definitions/SecurityQuestionsMethod"
+                  "$ref": "#/definitions/SecurityQuestionsMethod",
+                  "description": "Security questions method configuration."
                 },
                 "createdAt": {
                   "type": "string",
@@ -987,7 +1004,10 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Org"
+              "$ref": "#/definitions/Org",
+              "required": [
+                "org"
+              ]
             }
           }
         ],
@@ -1102,10 +1122,13 @@
                   "description": "Organization name."
                 },
                 "status": {
-                  "$ref": "#/definitions/api.Status"
+                  "$ref": "#/definitions/api.Status",
+                  "description": "Organization status."
                 },
                 "plan": {
-                  "$ref": "#/definitions/Plan"
+                  "$ref": "#/definitions/Plan",
+                  "description": "Organization plan.",
+                  "readOnly": true
                 },
                 "createdAt": {
                   "type": "string",
@@ -1173,10 +1196,13 @@
                   "description": "Organization name."
                 },
                 "status": {
-                  "$ref": "#/definitions/api.Status"
+                  "$ref": "#/definitions/api.Status",
+                  "description": "Organization status."
                 },
                 "plan": {
-                  "$ref": "#/definitions/Plan"
+                  "$ref": "#/definitions/Plan",
+                  "description": "Organization plan.",
+                  "readOnly": true
                 },
                 "createdAt": {
                   "type": "string",
@@ -1276,7 +1302,10 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Key"
+              "$ref": "#/definitions/Key",
+              "required": [
+                "key"
+              ]
             }
           }
         ],
@@ -1426,7 +1455,10 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/definitions/User",
+              "required": [
+                "user"
+              ]
             }
           }
         ],
@@ -1601,10 +1633,12 @@
                   "description": "User email."
                 },
                 "role": {
-                  "$ref": "#/definitions/Role"
+                  "$ref": "#/definitions/Role",
+                  "description": "User role."
                 },
                 "status": {
-                  "$ref": "#/definitions/api.Status"
+                  "$ref": "#/definitions/api.Status",
+                  "description": "User status."
                 },
                 "createdAt": {
                   "type": "string",
@@ -1681,10 +1715,12 @@
                   "description": "User email."
                 },
                 "role": {
-                  "$ref": "#/definitions/Role"
+                  "$ref": "#/definitions/Role",
+                  "description": "User role."
                 },
                 "status": {
-                  "$ref": "#/definitions/api.Status"
+                  "$ref": "#/definitions/api.Status",
+                  "description": "User status."
                 },
                 "createdAt": {
                   "type": "string",
@@ -1802,7 +1838,8 @@
       "type": "object",
       "properties": {
         "identity": {
-          "$ref": "#/definitions/Identity"
+          "$ref": "#/definitions/Identity",
+          "description": "Identity message created."
         },
         "secret": {
           "type": "string",
@@ -1827,7 +1864,8 @@
       "type": "object",
       "properties": {
         "key": {
-          "$ref": "#/definitions/Key"
+          "$ref": "#/definitions/Key",
+          "description": "Key message created."
         },
         "token": {
           "type": "string",
@@ -1862,7 +1900,8 @@
           "description": "Identity ID (UUID)."
         },
         "status": {
-          "$ref": "#/definitions/EventStatus"
+          "$ref": "#/definitions/EventStatus",
+          "description": "Event status."
         },
         "error": {
           "type": "string",
@@ -1921,7 +1960,8 @@
       "type": "object",
       "properties": {
         "hash": {
-          "$ref": "#/definitions/Hash"
+          "$ref": "#/definitions/Hash",
+          "description": "Hardware HOTP hash function. Defaults to SHA512 if not specified."
         },
         "digits": {
           "type": "integer",
@@ -1945,7 +1985,8 @@
       "type": "object",
       "properties": {
         "hash": {
-          "$ref": "#/definitions/Hash"
+          "$ref": "#/definitions/Hash",
+          "description": "Hardware TOTP hash function. Defaults to SHA512 if not specified."
         },
         "digits": {
           "type": "integer",
@@ -1993,43 +2034,57 @@
           "description": "Identity comment. This should be an opaque identifier known to the consuming application."
         },
         "status": {
-          "$ref": "#/definitions/IdentityStatus"
+          "$ref": "#/definitions/IdentityStatus",
+          "description": "Identity status.",
+          "readOnly": true
         },
         "softwareHOTPMethod": {
-          "$ref": "#/definitions/SoftwareHOTPMethod"
+          "$ref": "#/definitions/SoftwareHOTPMethod",
+          "description": "Software HOTP method configuration."
         },
         "softwareTOTPMethod": {
-          "$ref": "#/definitions/SoftwareTOTPMethod"
+          "$ref": "#/definitions/SoftwareTOTPMethod",
+          "description": "Software TOTP method configuration."
         },
         "googleAuthHOTPMethod": {
-          "$ref": "#/definitions/GoogleAuthHOTPMethod"
+          "$ref": "#/definitions/GoogleAuthHOTPMethod",
+          "description": "Google Authenticator HOTP method configuration."
         },
         "googleAuthTOTPMethod": {
-          "$ref": "#/definitions/GoogleAuthTOTPMethod"
+          "$ref": "#/definitions/GoogleAuthTOTPMethod",
+          "description": "Google Authenticator TOTP method configuration."
         },
         "appleiOSTOTPMethod": {
-          "$ref": "#/definitions/AppleiOSTOTPMethod"
+          "$ref": "#/definitions/AppleiOSTOTPMethod",
+          "description": "Apple iOS TOTP method configuration."
         },
         "hardwareHOTPMethod": {
-          "$ref": "#/definitions/HardwareHOTPMethod"
+          "$ref": "#/definitions/HardwareHOTPMethod",
+          "description": "Hardware HOTP method configuration."
         },
         "hardwareTOTPMethod": {
-          "$ref": "#/definitions/HardwareTOTPMethod"
+          "$ref": "#/definitions/HardwareTOTPMethod",
+          "description": "Hardware TOTP method configuration."
         },
         "smsMethod": {
-          "$ref": "#/definitions/SMSMethod"
+          "$ref": "#/definitions/SMSMethod",
+          "description": "SMS method configuration."
         },
         "pushoverMethod": {
-          "$ref": "#/definitions/PushoverMethod"
+          "$ref": "#/definitions/PushoverMethod",
+          "description": "Pushover method configuration."
         },
         "emailMethod": {
-          "$ref": "#/definitions/EmailMethod"
+          "$ref": "#/definitions/EmailMethod",
+          "description": "Email method configuration."
         },
         "backupCodesMethod": {
-          "$ref": "#/definitions/BackupsCodesMethod"
+          "$ref": "#/definitions/BackupsCodesMethod",
+          "description": "Backups codes method configuration."
         },
         "securityQuestionsMethod": {
-          "$ref": "#/definitions/SecurityQuestionsMethod"
+          "$ref": "#/definitions/SecurityQuestionsMethod",
+          "description": "Security questions method configuration."
         },
         "createdAt": {
           "type": "string",
@@ -2076,7 +2131,8 @@
           "description": "Key name."
         },
         "role": {
-          "$ref": "#/definitions/Role"
+          "$ref": "#/definitions/Role",
+          "description": "Key role."
         },
         "createdAt": {
           "type": "string",
@@ -2278,10 +2334,13 @@
           "description": "Organization name."
         },
         "status": {
-          "$ref": "#/definitions/api.Status"
+          "$ref": "#/definitions/api.Status",
+          "description": "Organization status."
         },
         "plan": {
-          "$ref": "#/definitions/Plan"
+          "$ref": "#/definitions/Plan",
+          "description": "Organization plan.",
+          "readOnly": true
         },
         "createdAt": {
           "type": "string",
@@ -2356,7 +2415,8 @@
       "type": "object",
       "properties": {
         "hash": {
-          "$ref": "#/definitions/Hash"
+          "$ref": "#/definitions/Hash",
+          "description": "Software HOTP hash function. Defaults to SHA512 if not specified."
         },
         "digits": {
           "type": "integer",
@@ -2379,7 +2439,8 @@
       "type": "object",
       "properties": {
         "hash": {
-          "$ref": "#/definitions/Hash"
+          "$ref": "#/definitions/Hash",
+          "description": "Software TOTP hash function. Defaults to SHA512 if not specified."
         },
         "digits": {
           "type": "integer",
@@ -2415,10 +2476,12 @@
           "description": "User email."
         },
         "role": {
-          "$ref": "#/definitions/Role"
+          "$ref": "#/definitions/Role",
+          "description": "User role."
         },
         "status": {
-          "$ref": "#/definitions/api.Status"
+          "$ref": "#/definitions/api.Status",
+          "description": "User status."
         },
         "createdAt": {
           "type": "string",
