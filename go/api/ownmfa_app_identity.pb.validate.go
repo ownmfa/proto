@@ -2681,9 +2681,20 @@ func (m *Identity) validate(all bool) error {
 		}
 	}
 
-	switch m.MethodOneof.(type) {
-
+	oneofMethodOneofPresent := false
+	switch v := m.MethodOneof.(type) {
 	case *Identity_SoftwareHotpMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetSoftwareHotpMethod()).(type) {
@@ -2715,6 +2726,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_SoftwareTotpMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetSoftwareTotpMethod()).(type) {
@@ -2746,6 +2768,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_GoogleAuthHotpMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetGoogleAuthHotpMethod()).(type) {
@@ -2777,6 +2810,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_GoogleAuthTotpMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetGoogleAuthTotpMethod()).(type) {
@@ -2808,6 +2852,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_AppleIosTotpMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetAppleIosTotpMethod()).(type) {
@@ -2839,6 +2894,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_HardwareHotpMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetHardwareHotpMethod()).(type) {
@@ -2870,6 +2936,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_HardwareTotpMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetHardwareTotpMethod()).(type) {
@@ -2901,6 +2978,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_SmsMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetSmsMethod()).(type) {
@@ -2932,6 +3020,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_PushoverMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetPushoverMethod()).(type) {
@@ -2963,6 +3062,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_EmailMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetEmailMethod()).(type) {
@@ -2994,6 +3104,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_BackupCodesMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetBackupCodesMethod()).(type) {
@@ -3025,6 +3146,17 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	case *Identity_SecurityQuestionsMethod:
+		if v == nil {
+			err := IdentityValidationError{
+				field:  "MethodOneof",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+		oneofMethodOneofPresent = true
 
 		if all {
 			switch v := interface{}(m.GetSecurityQuestionsMethod()).(type) {
@@ -3056,6 +3188,9 @@ func (m *Identity) validate(all bool) error {
 		}
 
 	default:
+		_ = v // ensures v is used
+	}
+	if !oneofMethodOneofPresent {
 		err := IdentityValidationError{
 			field:  "MethodOneof",
 			reason: "value is required",
@@ -3064,7 +3199,6 @@ func (m *Identity) validate(all bool) error {
 			return err
 		}
 		errors = append(errors, err)
-
 	}
 
 	if len(errors) > 0 {
