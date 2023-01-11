@@ -7,7 +7,8 @@ deps:
 
 api:
 	python -m grpc_tools.protoc -I=../protobuf -I=/tmp/googleapis \
-	-I=/tmp/grpc-gateway -I=/tmp/pgv --python_out=. --grpc_python_out=. \
+	-I=/tmp/grpc-gateway -I=/tmp/pgv --python_out=. --pyi_out=. \
+	--grpc_python_out=. \
 	api/ownmfa_app_identity.proto \
 	api/ownmfa_event.proto \
 	api/ownmfa_org.proto \
