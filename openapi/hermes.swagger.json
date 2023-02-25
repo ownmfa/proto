@@ -3,7 +3,7 @@
   "info": {
     "title": "Hermes",
     "description": "Getting started with the Hermes API:\n- Log in with `/v1/sessions/login` using your provided credentials. Click `Authorize` below and enter the returned token.\n- Create an application with `/v1/applications`. For SMS and software token authentication methods, all template fields can be left empty.\n- (Optional) Create an `AUTHENTICATOR` role API key with `/v1/sessions/keys`. Re-authorize using the returned token.\n\nActivate an identity (single occurrence):\n- Create an identity with `/v1/applications/{identity.appID}/identities`. Only one method field is supported when creating an identity.\n- Issue the returned identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Activate the identity with `/v1/applications/{appID}/identities/{id}/activate` using the received or generated challenge.\n\nVerify an identity (ongoing):\n- Issue the identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Verify the identity with `/v1/applications/{appID}/identities/{id}/verify` using the received or generated challenge.",
-    "version": "1.0.23",
+    "version": "1.0.24",
     "contact": {
       "name": "OwnMFA",
       "url": "https://www.ownmfa.com/",
@@ -344,13 +344,6 @@
               },
               "title": "App message to update."
             }
-          },
-          {
-            "name": "updateMask",
-            "description": "Fields to update. Automatically populated by a PATCH request. If not present, a full resource update is performed.",
-            "in": "query",
-            "required": false,
-            "type": "string"
           }
         ],
         "tags": [
@@ -1219,13 +1212,6 @@
               },
               "title": "Org message to update."
             }
-          },
-          {
-            "name": "updateMask",
-            "description": "Fields to update. Automatically populated by a PATCH request. If not present, a full resource update is performed.",
-            "in": "query",
-            "required": false,
-            "type": "string"
           }
         ],
         "tags": [
@@ -1737,13 +1723,6 @@
               },
               "title": "User message to update."
             }
-          },
-          {
-            "name": "updateMask",
-            "description": "Fields to update. Automatically populated by a PATCH request. If not present, a full resource update is performed.",
-            "in": "query",
-            "required": false,
-            "type": "string"
           }
         ],
         "tags": [
@@ -2153,6 +2132,7 @@
         "events": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/Event"
           },
           "description": "Event array, ordered by descending created_at timestamp."
@@ -2166,6 +2146,7 @@
         "apps": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/App"
           },
           "description": "App array, ordered by ascending created_at timestamp."
@@ -2188,6 +2169,7 @@
         "events": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/Event"
           },
           "description": "Event array, ordered by descending created_at timestamp."
@@ -2201,6 +2183,7 @@
         "identities": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/Identity"
           },
           "description": "Identity array, ordered by ascending created_at timestamp."
@@ -2223,6 +2206,7 @@
         "keys": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/Key"
           },
           "description": "Key array, ordered by ascending created_at timestamp."
@@ -2245,6 +2229,7 @@
         "orgs": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/Org"
           },
           "description": "Org array, ordered by ascending created_at timestamp."
@@ -2267,6 +2252,7 @@
         "users": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/User"
           },
           "description": "User array, ordered by ascending created_at timestamp. The completeness of the array will depend on whether the request was made by an admin user, non-admin user, or API key."
@@ -2521,6 +2507,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/Any"
           }
         }
