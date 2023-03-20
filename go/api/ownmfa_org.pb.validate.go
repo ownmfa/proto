@@ -75,7 +75,7 @@ func (m *Org) validate(all bool) error {
 	if _, ok := _Org_Status_InLookup[m.GetStatus()]; !ok {
 		err := OrgValidationError{
 			field:  "Status",
-			reason: "value must be in list [3 6]",
+			reason: "value must be in list [ACTIVE DISABLED]",
 		}
 		if !all {
 			return err
