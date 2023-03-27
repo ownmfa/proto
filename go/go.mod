@@ -3,10 +3,10 @@ module github.com/ownmfa/api/go
 go 1.20
 
 require (
-	github.com/envoyproxy/protoc-gen-validate v0.10.0
+	github.com/envoyproxy/protoc-gen-validate v0.10.1
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.2
-	google.golang.org/genproto v0.0.0-20230306155012-7f2fa6fef1f4
-	google.golang.org/grpc v1.53.0
+	google.golang.org/genproto v0.0.0-20230327152035-dc694ad2151e
+	google.golang.org/grpc v1.54.0
 	google.golang.org/protobuf v1.30.0
 )
 
