@@ -12,6 +12,38 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class LoginRequest(_message.Message):
+    __slots__ = ["email", "org_name", "password"]
+    EMAIL_FIELD_NUMBER: _ClassVar[int]
+    ORG_NAME_FIELD_NUMBER: _ClassVar[int]
+    PASSWORD_FIELD_NUMBER: _ClassVar[int]
+    email: str
+    org_name: str
+    password: str
+    def __init__(self, email: _Optional[str] = ..., org_name: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
+
+class LoginResponse(_message.Message):
+    __slots__ = ["token", "expires_at"]
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
+    token: str
+    expires_at: _timestamp_pb2.Timestamp
+    def __init__(self, token: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class Key(_message.Message):
+    __slots__ = ["id", "org_id", "name", "role", "created_at"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ROLE_FIELD_NUMBER: _ClassVar[int]
+    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    org_id: str
+    name: str
+    role: _ownmfa_role_pb2.Role
+    created_at: _timestamp_pb2.Timestamp
+    def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., name: _Optional[str] = ..., role: _Optional[_Union[_ownmfa_role_pb2.Role, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
 class CreateKeyRequest(_message.Message):
     __slots__ = ["key"]
     KEY_FIELD_NUMBER: _ClassVar[int]
@@ -32,20 +64,6 @@ class DeleteKeyRequest(_message.Message):
     id: str
     def __init__(self, id: _Optional[str] = ...) -> None: ...
 
-class Key(_message.Message):
-    __slots__ = ["created_at", "id", "name", "org_id", "role"]
-    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
-    ID_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    ORG_ID_FIELD_NUMBER: _ClassVar[int]
-    ROLE_FIELD_NUMBER: _ClassVar[int]
-    created_at: _timestamp_pb2.Timestamp
-    id: str
-    name: str
-    org_id: str
-    role: _ownmfa_role_pb2.Role
-    def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., name: _Optional[str] = ..., role: _Optional[_Union[_ownmfa_role_pb2.Role, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
-
 class ListKeysRequest(_message.Message):
     __slots__ = ["page_size", "page_token"]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -63,21 +81,3 @@ class ListKeysResponse(_message.Message):
     next_page_token: str
     total_size: int
     def __init__(self, keys: _Optional[_Iterable[_Union[Key, _Mapping]]] = ..., next_page_token: _Optional[str] = ..., total_size: _Optional[int] = ...) -> None: ...
-
-class LoginRequest(_message.Message):
-    __slots__ = ["email", "org_name", "password"]
-    EMAIL_FIELD_NUMBER: _ClassVar[int]
-    ORG_NAME_FIELD_NUMBER: _ClassVar[int]
-    PASSWORD_FIELD_NUMBER: _ClassVar[int]
-    email: str
-    org_name: str
-    password: str
-    def __init__(self, email: _Optional[str] = ..., org_name: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
-
-class LoginResponse(_message.Message):
-    __slots__ = ["expires_at", "token"]
-    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
-    TOKEN_FIELD_NUMBER: _ClassVar[int]
-    expires_at: _timestamp_pb2.Timestamp
-    token: str
-    def __init__(self, token: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
