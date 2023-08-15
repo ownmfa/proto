@@ -1,6 +1,6 @@
 # Use Debian to avoid long compile times
 # aarch64: https://pypi.org/project/grpcio/#files
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 RUN apt update && apt upgrade -y
 RUN apt install -y --no-install-recommends git make

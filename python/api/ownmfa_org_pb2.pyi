@@ -13,11 +13,35 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
-ENTERPRISE: Plan
-PAYMENT_FAIL: Plan
+
+class Plan(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = []
+    PLAN_UNSPECIFIED: _ClassVar[Plan]
+    PAYMENT_FAIL: _ClassVar[Plan]
+    STARTER: _ClassVar[Plan]
+    PRO: _ClassVar[Plan]
+    ENTERPRISE: _ClassVar[Plan]
 PLAN_UNSPECIFIED: Plan
-PRO: Plan
+PAYMENT_FAIL: Plan
 STARTER: Plan
+PRO: Plan
+ENTERPRISE: Plan
+
+class Org(_message.Message):
+    __slots__ = ["id", "name", "status", "plan", "created_at", "updated_at"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    PLAN_FIELD_NUMBER: _ClassVar[int]
+    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+    UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    name: str
+    status: _ownmfa_status_pb2.Status
+    plan: Plan
+    created_at: _timestamp_pb2.Timestamp
+    updated_at: _timestamp_pb2.Timestamp
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., status: _Optional[_Union[_ownmfa_status_pb2.Status, str]] = ..., plan: _Optional[_Union[Plan, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateOrgRequest(_message.Message):
     __slots__ = ["org"]
@@ -25,13 +49,21 @@ class CreateOrgRequest(_message.Message):
     org: Org
     def __init__(self, org: _Optional[_Union[Org, _Mapping]] = ...) -> None: ...
 
-class DeleteOrgRequest(_message.Message):
+class GetOrgRequest(_message.Message):
     __slots__ = ["id"]
     ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     def __init__(self, id: _Optional[str] = ...) -> None: ...
 
-class GetOrgRequest(_message.Message):
+class UpdateOrgRequest(_message.Message):
+    __slots__ = ["org", "update_mask"]
+    ORG_FIELD_NUMBER: _ClassVar[int]
+    UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
+    org: Org
+    update_mask: _field_mask_pb2.FieldMask
+    def __init__(self, org: _Optional[_Union[Org, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
+class DeleteOrgRequest(_message.Message):
     __slots__ = ["id"]
     ID_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -46,38 +78,11 @@ class ListOrgsRequest(_message.Message):
     def __init__(self, page_size: _Optional[int] = ..., page_token: _Optional[str] = ...) -> None: ...
 
 class ListOrgsResponse(_message.Message):
-    __slots__ = ["next_page_token", "orgs", "total_size"]
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["orgs", "next_page_token", "total_size"]
     ORGS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     TOTAL_SIZE_FIELD_NUMBER: _ClassVar[int]
-    next_page_token: str
     orgs: _containers.RepeatedCompositeFieldContainer[Org]
+    next_page_token: str
     total_size: int
     def __init__(self, orgs: _Optional[_Iterable[_Union[Org, _Mapping]]] = ..., next_page_token: _Optional[str] = ..., total_size: _Optional[int] = ...) -> None: ...
-
-class Org(_message.Message):
-    __slots__ = ["created_at", "id", "name", "plan", "status", "updated_at"]
-    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
-    ID_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    PLAN_FIELD_NUMBER: _ClassVar[int]
-    STATUS_FIELD_NUMBER: _ClassVar[int]
-    UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
-    created_at: _timestamp_pb2.Timestamp
-    id: str
-    name: str
-    plan: Plan
-    status: _ownmfa_status_pb2.Status
-    updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., status: _Optional[_Union[_ownmfa_status_pb2.Status, str]] = ..., plan: _Optional[_Union[Plan, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
-
-class UpdateOrgRequest(_message.Message):
-    __slots__ = ["org", "update_mask"]
-    ORG_FIELD_NUMBER: _ClassVar[int]
-    UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
-    org: Org
-    update_mask: _field_mask_pb2.FieldMask
-    def __init__(self, org: _Optional[_Union[Org, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
-
-class Plan(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
