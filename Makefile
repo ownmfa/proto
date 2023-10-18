@@ -1,6 +1,6 @@
 .PHONY: generate version go python tag clean
 
-VERSION = 1.0.27
+VERSION = 1.0.28
 
 generate: version
 	docker-compose build --progress=plain --no-cache --pull
