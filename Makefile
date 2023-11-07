@@ -3,7 +3,7 @@
 VERSION = 1.0.28
 
 generate: version
-	docker-compose build --progress=plain --no-cache --pull
+	docker-compose --progress=plain build --no-cache --pull
 	docker-compose up
 	docker-compose down
 
@@ -12,12 +12,12 @@ version:
 	protobuf/api/ownmfa_openapi-templ.proto > protobuf/api/ownmfa_openapi.proto
 
 go: version
-	docker-compose build --progress=plain --no-cache --pull go_openapi
+	docker-compose --progress=plain build --no-cache --pull go_openapi
 	docker-compose up go_openapi
 	docker-compose down
 
 python: version
-	docker-compose build --progress=plain --no-cache --pull python
+	docker-compose --progress=plain build --no-cache --pull python
 	docker-compose up python
 	docker-compose down
 
