@@ -9,7 +9,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/ownmfa/api/go/api"
+	"github.com/ownmfa/proto/go/api"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/encoding/gzip"
@@ -23,7 +23,8 @@ type credential struct {
 // GetRequestMetadata returns authentication metadata and implements the
 // PerRPCCredentials interface.
 func (c *credential) GetRequestMetadata(ctx context.Context,
-	uri ...string) (map[string]string, error) {
+	uri ...string,
+) (map[string]string, error) {
 	return map[string]string{
 		"authorization": "Bearer " + c.token,
 	}, nil

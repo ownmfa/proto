@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Role(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     ROLE_UNSPECIFIED: _ClassVar[Role]
     VIEWER: _ClassVar[Role]
     AUTHENTICATOR: _ClassVar[Role]

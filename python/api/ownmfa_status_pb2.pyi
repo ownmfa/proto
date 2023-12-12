@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     STATUS_UNSPECIFIED: _ClassVar[Status]
     ACTIVE: _ClassVar[Status]
     DISABLED: _ClassVar[Status]

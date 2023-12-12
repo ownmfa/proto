@@ -6,7 +6,7 @@ import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
 import "validate/validate.proto";
 
-option go_package = "github.com/ownmfa/api/go/api";
+option go_package = "github.com/ownmfa/proto/go/api";
 
 // EventService contains functions to query identity events.
 service EventService {

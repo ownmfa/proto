@@ -26,7 +26,7 @@ api:
 	api/ownmfa_user.proto
 
 mod:
-	echo 'module github.com/ownmfa/api/go' > go.mod
+	echo 'module github.com/ownmfa/proto/go' > go.mod
 	go get -t -u ./...
 	go mod tidy -v
 
