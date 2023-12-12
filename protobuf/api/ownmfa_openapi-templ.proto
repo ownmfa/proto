@@ -3,7 +3,7 @@ package ownmfa.api;
 
 import "protoc-gen-openapiv2/options/annotations.proto";
 
-option go_package = "github.com/ownmfa/api/go/api";
+option go_package = "github.com/ownmfa/proto/go/api";
 
 option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
   info: {
@@ -17,12 +17,12 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
     description: "Getting started with the Hermes API:\n- Log in with `/v1/sessions/login` using your provided credentials. Click `Authorize` below and enter the returned token.\n- Create an application with `/v1/applications`. For SMS and software token authentication methods, all template fields can be left empty.\n- (Optional) Create an `AUTHENTICATOR` role API key with `/v1/sessions/keys`. Re-authorize using the returned token.\n\nActivate an identity (single occurrence):\n- Create an identity with `/v1/applications/{identity.appID}/identities`. Only one method field is supported when creating an identity.\n- Issue the returned identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Activate the identity with `/v1/applications/{appID}/identities/{id}/activate` using the received or generated challenge.\n\nVerify an identity (ongoing):\n- Issue the identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Verify the identity with `/v1/applications/{appID}/identities/{id}/verify` using the received or generated challenge.",
     license: {
       name: "ISC License";
-      url: "https://github.com/ownmfa/api/blob/main/LICENSE";
+      url: "https://github.com/ownmfa/proto/blob/main/LICENSE";
     }
   }
   external_docs: {
     description: "API Protobuf + gRPC definitions and example code";
-    url: "https://github.com/ownmfa/api";
+    url: "https://github.com/ownmfa/proto";
   }
   security_definitions: {
     security: {

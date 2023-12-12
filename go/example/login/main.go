@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/ownmfa/api/go/api"
+	"github.com/ownmfa/proto/go/api"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/encoding/gzip"

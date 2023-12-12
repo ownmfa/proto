@@ -1,7 +1,7 @@
 syntax = "proto3";
 package ownmfa.api;
 
-option go_package = "github.com/ownmfa/api/go/api";
+option go_package = "github.com/ownmfa/proto/go/api";
 
 // Role represents the role of a user.
 enum Role {

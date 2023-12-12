@@ -15,7 +15,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ["id", "org_id", "name", "email", "role", "status", "created_at", "updated_at"]
+    __slots__ = ("id", "org_id", "name", "email", "role", "status", "created_at", "updated_at")
     ID_FIELD_NUMBER: _ClassVar[int]
     ORG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -35,19 +35,19 @@ class User(_message.Message):
     def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., name: _Optional[str] = ..., email: _Optional[str] = ..., role: _Optional[_Union[_ownmfa_role_pb2.Role, str]] = ..., status: _Optional[_Union[_ownmfa_status_pb2.Status, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateUserRequest(_message.Message):
-    __slots__ = ["user"]
+    __slots__ = ("user",)
     USER_FIELD_NUMBER: _ClassVar[int]
     user: User
     def __init__(self, user: _Optional[_Union[User, _Mapping]] = ...) -> None: ...
 
 class GetUserRequest(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     def __init__(self, id: _Optional[str] = ...) -> None: ...
 
 class UpdateUserRequest(_message.Message):
-    __slots__ = ["user", "update_mask"]
+    __slots__ = ("user", "update_mask")
     USER_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     user: User
@@ -55,7 +55,7 @@ class UpdateUserRequest(_message.Message):
     def __init__(self, user: _Optional[_Union[User, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateUserPasswordRequest(_message.Message):
-    __slots__ = ["id", "password"]
+    __slots__ = ("id", "password")
     ID_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -63,13 +63,13 @@ class UpdateUserPasswordRequest(_message.Message):
     def __init__(self, id: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class DeleteUserRequest(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     def __init__(self, id: _Optional[str] = ...) -> None: ...
 
 class ListUsersRequest(_message.Message):
-    __slots__ = ["page_size", "page_token"]
+    __slots__ = ("page_size", "page_token")
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     page_size: int
@@ -77,7 +77,7 @@ class ListUsersRequest(_message.Message):
     def __init__(self, page_size: _Optional[int] = ..., page_token: _Optional[str] = ...) -> None: ...
 
 class ListUsersResponse(_message.Message):
-    __slots__ = ["users", "next_page_token", "total_size"]
+    __slots__ = ("users", "next_page_token", "total_size")
     USERS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     TOTAL_SIZE_FIELD_NUMBER: _ClassVar[int]

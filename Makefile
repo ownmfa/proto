@@ -1,6 +1,6 @@
 .PHONY: generate version go python tag clean
 
-VERSION = 1.0.28
+VERSION = 1.1.0
 
 generate: version
 	docker-compose --progress=plain build --no-cache --pull
@@ -26,7 +26,7 @@ tag:
 	git tag -s go/v$(VERSION) -m "Version $(VERSION)"
 	git push --tags
 	# List may fail if repo is private
-	go list -m github.com/ownmfa/api/go@v$(VERSION)
+	go list -m github.com/ownmfa/proto/go@v$(VERSION)
 
 clean:
 	find . -name '*.pb*.go' -type f|xargs rm -v

@@ -9,7 +9,7 @@ import "google/api/field_behavior.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
 import "validate/validate.proto";
 
-option go_package = "github.com/ownmfa/api/go/api";
+option go_package = "github.com/ownmfa/proto/go/api";
 
 // SessionService contains functions to create sessions and keys.
 service SessionService {
