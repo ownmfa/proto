@@ -1,3 +1,4 @@
+// Package main runs the Login tool.
 package main
 
 import (

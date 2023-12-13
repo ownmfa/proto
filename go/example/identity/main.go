@@ -1,3 +1,4 @@
+// Package main runs the Identity tool.
 package main
 
 import (
@@ -22,9 +23,9 @@ type credential struct {
 
 // GetRequestMetadata returns authentication metadata and implements the
 // PerRPCCredentials interface.
-func (c *credential) GetRequestMetadata(ctx context.Context,
-	uri ...string,
-) (map[string]string, error) {
+func (c *credential) GetRequestMetadata(_ context.Context, _ ...string) (
+	map[string]string, error,
+) {
 	return map[string]string{
 		"authorization": "Bearer " + c.token,
 	}, nil
@@ -89,7 +90,7 @@ func main() {
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
 		grpc.WithTransportCredentials(credentials.NewTLS(
 			&tls.Config{MinVersion: tls.VersionTLS12})),
-		grpc.WithPerRPCCredentials(&credential{token: login.Token}),
+		grpc.WithPerRPCCredentials(&credential{token: login.GetToken()}),
 	}
 	loginConn, err := grpc.Dial(*grpcURI, opts...)
 	checkErr(err)
@@ -124,7 +125,7 @@ func main() {
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
 		grpc.WithTransportCredentials(credentials.NewTLS(
 			&tls.Config{MinVersion: tls.VersionTLS12})),
-		grpc.WithPerRPCCredentials(&credential{token: createKey.Token}),
+		grpc.WithPerRPCCredentials(&credential{token: createKey.GetToken()}),
 	}
 	keyConn, err := grpc.Dial(*grpcURI, opts...)
 	checkErr(err)
@@ -133,7 +134,7 @@ func main() {
 	aiCli = api.NewAppIdentityServiceClient(keyConn)
 	createIdentity, err := aiCli.CreateIdentity(ctx, &api.CreateIdentityRequest{
 		Identity: &api.Identity{
-			AppId: createApp.Id, Comment: flag.Arg(1) + "-example",
+			AppId: createApp.GetId(), Comment: flag.Arg(1) + "-example",
 			MethodOneof: &api.Identity_GoogleAuthTotpMethod{
 				GoogleAuthTotpMethod: &api.GoogleAuthTOTPMethod{
 					AccountName: flag.Arg(1),
@@ -144,7 +145,8 @@ func main() {
 	checkErr(err)
 	checkErr(keyConn.Close())
 
-	fmt.Fprintf(os.Stdout, "Identity: %+v\n", createIdentity.Identity)
+	fmt.Fprintf(os.Stdout, "Identity: %+v\n", createIdentity.GetIdentity())
 	fmt.Fprintf(os.Stdout, "QR code (run `echo '...base64...'|base64 -D > "+
-		"qr.png`):\n%v\n", base64.StdEncoding.EncodeToString(createIdentity.Qr))
+		"qr.png`):\n%v\n", base64.StdEncoding.EncodeToString(
+		createIdentity.GetQr()))
 }
