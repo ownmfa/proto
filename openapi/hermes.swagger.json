@@ -3,7 +3,7 @@
   "info": {
     "title": "Hermes",
     "description": "Getting started with the Hermes API:\n- Log in with `/v1/sessions/login` using your provided credentials. Click `Authorize` below and enter the returned token.\n- Create an application with `/v1/applications`. For SMS and software token authentication methods, all template fields can be left empty.\n- (Optional) Create an `AUTHENTICATOR` role API key with `/v1/sessions/keys`. Re-authorize using the returned token.\n\nActivate an identity (single occurrence):\n- Create an identity with `/v1/applications/{identity.appID}/identities`. Only one method field is supported when creating an identity.\n- Issue the returned identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Activate the identity with `/v1/applications/{appID}/identities/{id}/activate` using the received or generated challenge.\n\nVerify an identity (ongoing):\n- Issue the identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Verify the identity with `/v1/applications/{appID}/identities/{id}/verify` using the received or generated challenge.",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "contact": {
       "name": "OwnMFA",
       "url": "https://www.ownmfa.com/",
@@ -517,17 +517,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "passcode": {
-                  "type": "string",
-                  "description": "Passcode for verification. For security questions identity methods, this is the answer to the security question."
-                }
-              },
-              "description": "ActivateIdentityRequest is sent to activate an identity.",
-              "required": [
-                "passcode"
-              ]
+              "$ref": "#/definitions/ActivateIdentityBody"
             }
           }
         ],
@@ -623,17 +613,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "passcode": {
-                  "type": "string",
-                  "description": "Passcode for verification. For security questions identity methods, this is the answer to the security question."
-                }
-              },
-              "description": "VerifyIdentityRequest is sent to verify an identity. If verification fails, the request does not automatically fall through to a backup codes method. Consuming applications should design a workflow that either explicitly verifies by backup codes or falls through on failure.",
-              "required": [
-                "passcode"
-              ]
+              "$ref": "#/definitions/VerifyIdentityBody"
             }
           }
         ],
@@ -1552,17 +1532,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "password": {
-                  "type": "string",
-                  "description": "User password to update."
-                }
-              },
-              "description": "UpdateUserPasswordRequest is sent to update a user's password.",
-              "required": [
-                "password"
-              ]
+              "$ref": "#/definitions/UpdateUserPasswordBody"
             }
           }
         ],
@@ -1732,6 +1702,19 @@
     }
   },
   "definitions": {
+    "ActivateIdentityBody": {
+      "type": "object",
+      "properties": {
+        "passcode": {
+          "type": "string",
+          "description": "Passcode for verification. For security questions identity methods, this is the answer to the security question."
+        }
+      },
+      "description": "ActivateIdentityRequest is sent to activate an identity.",
+      "required": [
+        "passcode"
+      ]
+    },
     "Any": {
       "type": "object",
       "properties": {
@@ -2440,6 +2423,19 @@
       },
       "description": "SoftwareTOTPMethod configures a software OATH TOTP one-time password method."
     },
+    "UpdateUserPasswordBody": {
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string",
+          "description": "User password to update."
+        }
+      },
+      "description": "UpdateUserPasswordRequest is sent to update a user's password.",
+      "required": [
+        "password"
+      ]
+    },
     "User": {
       "type": "object",
       "properties": {
@@ -2483,6 +2479,19 @@
         }
       },
       "description": "User represents a user as stored in the database."
+    },
+    "VerifyIdentityBody": {
+      "type": "object",
+      "properties": {
+        "passcode": {
+          "type": "string",
+          "description": "Passcode for verification. For security questions identity methods, this is the answer to the security question."
+        }
+      },
+      "description": "VerifyIdentityRequest is sent to verify an identity. If verification fails, the request does not automatically fall through to a backup codes method. Consuming applications should design a workflow that either explicitly verifies by backup codes or falls through on failure.",
+      "required": [
+        "passcode"
+      ]
     },
     "api.Status": {
       "type": "string",
