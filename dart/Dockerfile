@@ -1,7 +1,8 @@
-FROM golang:1.21-alpine
+FROM dart:3
 
-RUN apk update && apk upgrade
-RUN apk add --no-cache git make protobuf-dev
+RUN apt update && apt upgrade -y
+RUN apt install -y --no-install-recommends git make protobuf-compiler \
+libprotobuf-dev
 RUN git clone --depth=1 https://github.com/googleapis/googleapis.git \
 /tmp/googleapis
 RUN git clone --depth=1 https://github.com/grpc-ecosystem/grpc-gateway.git \
