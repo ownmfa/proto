@@ -11,3 +11,9 @@ services:
     command: sh -c "cd python && make"
     volumes:
       - .:/api
+
+  dart:
+    build: ./dart
+    command: sh -c "cd dart && make"
+    volumes:
+      - .:/api

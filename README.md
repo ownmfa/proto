@@ -25,6 +25,13 @@ using the Protobuf definitions. See the
 [gRPC Python quick start](https://grpc.io/docs/languages/python/quickstart/) for
 more information.
 
+### Dart
+
+The Dart package can be copied locally from this repository or regenerated
+using the Protobuf definitions. See the
+[gRPC Dart quick start](https://grpc.io/docs/languages/dart/quickstart/) for
+more information.
+
 ## Building
 
 These instructions require
