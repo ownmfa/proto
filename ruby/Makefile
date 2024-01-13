@@ -3,8 +3,9 @@
 generate: api
 
 api:
-	protoc -I=../protobuf -I=/tmp/googleapis -I=/tmp/grpc-gateway -I=/tmp/pgv \
-	--ruby_out=grpc:. \
+	protoc --plugin=protoc-gen-grpc=/usr/bin/grpc_ruby_plugin -I=../protobuf \
+	-I=/tmp/googleapis -I=/tmp/grpc-gateway -I=/tmp/pgv --ruby_out=. \
+	--grpc_out=. \
 	api/ownmfa_app_identity.proto \
 	api/ownmfa_event.proto \
 	api/ownmfa_org.proto \

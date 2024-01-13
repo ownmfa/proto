@@ -1,14 +1,11 @@
-.PHONY: generate deps api
+.PHONY: generate api
 
-generate: deps api
-
-deps:
-	pip install grpcio-tools
+generate: api
 
 api:
-	python -m grpc_tools.protoc -I=../protobuf -I=/tmp/googleapis \
-	-I=/tmp/grpc-gateway -I=/tmp/pgv --python_out=. --pyi_out=. \
-	--grpc_python_out=. \
+	protoc --plugin=protoc-gen-grpc=/usr/bin/grpc_python_plugin -I=../protobuf \
+	-I=/tmp/googleapis -I=/tmp/grpc-gateway -I=/tmp/pgv --python_out=. \
+	--pyi_out=. --grpc_out=. \
 	api/ownmfa_app_identity.proto \
 	api/ownmfa_event.proto \
 	api/ownmfa_org.proto \

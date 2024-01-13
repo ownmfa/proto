@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EventStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     EVENT_STATUS_UNSPECIFIED: _ClassVar[EventStatus]
     IDENTITY_CREATED: _ClassVar[EventStatus]
     CHALLENGE_SENT: _ClassVar[EventStatus]
@@ -34,7 +34,7 @@ VERIFY_FAIL: EventStatus
 IDENTITY_DELETED: EventStatus
 
 class Event(_message.Message):
-    __slots__ = ("org_id", "app_id", "identity_id", "status", "error", "created_at", "trace_id")
+    __slots__ = ["org_id", "app_id", "identity_id", "status", "error", "created_at", "trace_id"]
     ORG_ID_FIELD_NUMBER: _ClassVar[int]
     APP_ID_FIELD_NUMBER: _ClassVar[int]
     IDENTITY_ID_FIELD_NUMBER: _ClassVar[int]
@@ -52,7 +52,7 @@ class Event(_message.Message):
     def __init__(self, org_id: _Optional[str] = ..., app_id: _Optional[str] = ..., identity_id: _Optional[str] = ..., status: _Optional[_Union[EventStatus, str]] = ..., error: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., trace_id: _Optional[str] = ...) -> None: ...
 
 class ListEventsRequest(_message.Message):
-    __slots__ = ("identity_id", "end_time", "start_time")
+    __slots__ = ["identity_id", "end_time", "start_time"]
     IDENTITY_ID_FIELD_NUMBER: _ClassVar[int]
     END_TIME_FIELD_NUMBER: _ClassVar[int]
     START_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -62,13 +62,13 @@ class ListEventsRequest(_message.Message):
     def __init__(self, identity_id: _Optional[str] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., start_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ListEventsResponse(_message.Message):
-    __slots__ = ("events",)
+    __slots__ = ["events"]
     EVENTS_FIELD_NUMBER: _ClassVar[int]
     events: _containers.RepeatedCompositeFieldContainer[Event]
     def __init__(self, events: _Optional[_Iterable[_Union[Event, _Mapping]]] = ...) -> None: ...
 
 class LatestEventsRequest(_message.Message):
-    __slots__ = ("app_id", "identity_id")
+    __slots__ = ["app_id", "identity_id"]
     APP_ID_FIELD_NUMBER: _ClassVar[int]
     IDENTITY_ID_FIELD_NUMBER: _ClassVar[int]
     app_id: str
@@ -76,7 +76,7 @@ class LatestEventsRequest(_message.Message):
     def __init__(self, app_id: _Optional[str] = ..., identity_id: _Optional[str] = ...) -> None: ...
 
 class LatestEventsResponse(_message.Message):
-    __slots__ = ("events",)
+    __slots__ = ["events"]
     EVENTS_FIELD_NUMBER: _ClassVar[int]
     events: _containers.RepeatedCompositeFieldContainer[Event]
     def __init__(self, events: _Optional[_Iterable[_Union[Event, _Mapping]]] = ...) -> None: ...
