@@ -17,3 +17,9 @@ services:
     command: sh -c "cd dart && make"
     volumes:
       - .:/api
+
+  ruby:
+    build: ./ruby
+    command: sh -c "cd ruby && make"
+    volumes:
+      - .:/api
