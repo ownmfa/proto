@@ -39,6 +39,13 @@ using the Protobuf definitions. See the
 [gRPC Ruby quick start](https://grpc.io/docs/languages/ruby/quickstart/) for
 more information.
 
+### C++
+
+The C++ package can be copied locally from this repository or regenerated
+using the Protobuf definitions. See the
+[gRPC C++ quick start](https://grpc.io/docs/languages/cpp/quickstart/) for
+more information.
+
 ## Building
 
 These instructions require

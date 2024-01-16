@@ -23,3 +23,9 @@ services:
     command: sh -c "cd ruby && make"
     volumes:
       - .:/api
+
+  cpp:
+    build: ./cpp
+    command: sh -c "cd cpp && make"
+    volumes:
+      - .:/api

@@ -1,4 +1,4 @@
-.PHONY: generate version go python dart ruby tag clean
+.PHONY: generate version go python dart ruby cpp tag clean
 
 VERSION = 1.1.1
 
@@ -31,6 +31,11 @@ ruby: version
 	docker-compose up ruby
 	docker-compose down
 
+cpp: version
+	docker-compose --progress=plain build --no-cache --pull cpp
+	docker-compose up cpp
+	docker-compose down
+
 tag:
 	git tag -s v$(VERSION) -m "Version $(VERSION)"
 	git tag -s go/v$(VERSION) -m "Version $(VERSION)"
@@ -43,6 +48,8 @@ clean:
 	find . -name '*_pb2*.py*' -type f|xargs rm -v
 	find . -name '*.pb*.dart' -type f|xargs rm -v
 	find . -name '*_pb.rb' -type f|xargs rm -v
+	find . -name '*.pb.h' -type f|xargs rm -v
+	find . -name '*.pb.cc' -type f|xargs rm -v
 	rm -fv openapi/hermes.swagger.json
 	rm -fv protobuf/api/ownmfa_openapi.proto
 	rm -fv go/example/login/login
