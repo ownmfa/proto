@@ -46,6 +46,13 @@ using the Protobuf definitions. See the
 [gRPC C++ quick start](https://grpc.io/docs/languages/cpp/quickstart/) for
 more information.
 
+### PHP
+
+The PHP package can be copied locally from this repository or regenerated
+using the Protobuf definitions. See the
+[gRPC PHP quick start](https://grpc.io/docs/languages/php/quickstart/) for
+more information.
+
 ## Building
 
 These instructions require
