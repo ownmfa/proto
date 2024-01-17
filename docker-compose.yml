@@ -29,3 +29,9 @@ services:
     command: sh -c "cd cpp && make"
     volumes:
       - .:/api
+
+  php:
+    build: ./php
+    command: sh -c "cd php && make"
+    volumes:
+      - .:/api
