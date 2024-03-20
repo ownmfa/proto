@@ -1,45 +1,45 @@
 .PHONY: generate version go python dart ruby cpp php tag clean
 
-VERSION = 1.1.2
+VERSION = 1.1.3
 
 generate: version
-	docker-compose --progress=plain build --no-cache --pull
-	docker-compose up
-	docker-compose down
+	docker compose --progress=plain build --no-cache --pull
+	docker compose up
+	docker compose down
 
 version:
 	sed -e "s/APIVERSION/$(VERSION)/" \
 	protobuf/api/ownmfa_openapi-templ.proto > protobuf/api/ownmfa_openapi.proto
 
 go: version
-	docker-compose --progress=plain build --no-cache --pull go_openapi
-	docker-compose up go_openapi
-	docker-compose down
+	docker compose --progress=plain build --no-cache --pull go_openapi
+	docker compose up go_openapi
+	docker compose down
 
 python: version
-	docker-compose --progress=plain build --no-cache --pull python
-	docker-compose up python
-	docker-compose down
+	docker compose --progress=plain build --no-cache --pull python
+	docker compose up python
+	docker compose down
 
 dart: version
-	docker-compose --progress=plain build --no-cache --pull dart
-	docker-compose up dart
-	docker-compose down
+	docker compose --progress=plain build --no-cache --pull dart
+	docker compose up dart
+	docker compose down
 
 ruby: version
-	docker-compose --progress=plain build --no-cache --pull ruby
-	docker-compose up ruby
-	docker-compose down
+	docker compose --progress=plain build --no-cache --pull ruby
+	docker compose up ruby
+	docker compose down
 
 cpp: version
-	docker-compose --progress=plain build --no-cache --pull cpp
-	docker-compose up cpp
-	docker-compose down
+	docker compose --progress=plain build --no-cache --pull cpp
+	docker compose up cpp
+	docker compose down
 
 php: version
-	docker-compose --progress=plain build --no-cache --pull php
-	docker-compose up php
-	docker-compose down
+	docker compose --progress=plain build --no-cache --pull php
+	docker compose up php
+	docker compose down
 
 tag:
 	git tag -s v$(VERSION) -m "Version $(VERSION)"
