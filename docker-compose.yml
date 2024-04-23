@@ -1,4 +1,3 @@
-version: "3"
 services:
   go_openapi:
     build: ./go
