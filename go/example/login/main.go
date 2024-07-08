@@ -20,8 +20,17 @@ const usage = `Usage:
 `
 
 func main() {
+	checkErr := func(err error) {
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
+	}
+
 	flag.Usage = func() {
-		fmt.Fprintf(flag.CommandLine.Output(), usage, os.Args[0])
+		_, err := fmt.Fprintf(flag.CommandLine.Output(), usage, os.Args[0])
+		checkErr(err)
+
 		flag.PrintDefaults()
 	}
 
@@ -33,21 +42,13 @@ func main() {
 		os.Exit(2)
 	}
 
-	checkErr := func(err error) {
-		if err != nil {
-			fmt.Fprintln(os.Stderr, err)
-			os.Exit(1)
-		}
-	}
-
 	// Build unauthenticated gRPC connection.
 	opts := []grpc.DialOption{
-		grpc.WithBlock(),
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
 		grpc.WithTransportCredentials(credentials.NewTLS(
 			&tls.Config{MinVersion: tls.VersionTLS12})),
 	}
-	conn, err := grpc.Dial(*grpcURI, opts...)
+	conn, err := grpc.NewClient(*grpcURI, opts...)
 	checkErr(err)
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
@@ -61,5 +62,6 @@ func main() {
 	checkErr(err)
 	checkErr(conn.Close())
 
-	fmt.Fprintf(os.Stdout, "Login: %+v\n", login)
+	_, err = fmt.Fprintf(os.Stdout, "Login: %+v\n", login)
+	checkErr(err)
 }

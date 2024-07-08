@@ -41,8 +41,17 @@ const usage = `Usage:
 `
 
 func main() {
+	checkErr := func(err error) {
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
+	}
+
 	flag.Usage = func() {
-		fmt.Fprintf(flag.CommandLine.Output(), usage, os.Args[0])
+		_, err := fmt.Fprintf(flag.CommandLine.Output(), usage, os.Args[0])
+		checkErr(err)
+
 		flag.PrintDefaults()
 	}
 
@@ -54,21 +63,13 @@ func main() {
 		os.Exit(2)
 	}
 
-	checkErr := func(err error) {
-		if err != nil {
-			fmt.Fprintln(os.Stderr, err)
-			os.Exit(1)
-		}
-	}
-
 	// Build unauthenticated gRPC connection.
 	opts := []grpc.DialOption{
-		grpc.WithBlock(),
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
 		grpc.WithTransportCredentials(credentials.NewTLS(
 			&tls.Config{MinVersion: tls.VersionTLS12})),
 	}
-	conn, err := grpc.Dial(*grpcURI, opts...)
+	conn, err := grpc.NewClient(*grpcURI, opts...)
 	checkErr(err)
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Minute)
@@ -82,17 +83,17 @@ func main() {
 	checkErr(err)
 	checkErr(conn.Close())
 
-	fmt.Fprintf(os.Stdout, "Login: %+v\n", login)
+	_, err = fmt.Fprintf(os.Stdout, "Login: %+v\n", login)
+	checkErr(err)
 
 	// Build login-authenticated gRPC connection.
 	opts = []grpc.DialOption{
-		grpc.WithBlock(),
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
 		grpc.WithTransportCredentials(credentials.NewTLS(
 			&tls.Config{MinVersion: tls.VersionTLS12})),
 		grpc.WithPerRPCCredentials(&credential{token: login.GetToken()}),
 	}
-	loginConn, err := grpc.Dial(*grpcURI, opts...)
+	loginConn, err := grpc.NewClient(*grpcURI, opts...)
 	checkErr(err)
 
 	// Create an application.
@@ -105,7 +106,8 @@ func main() {
 	})
 	checkErr(err)
 
-	fmt.Fprintf(os.Stdout, "App: %+v\n", createApp)
+	_, err = fmt.Fprintf(os.Stdout, "App: %+v\n", createApp)
+	checkErr(err)
 
 	// Create an API key (optional).
 	sessCli = api.NewSessionServiceClient(loginConn)
@@ -117,17 +119,17 @@ func main() {
 	checkErr(err)
 	checkErr(loginConn.Close())
 
-	fmt.Fprintf(os.Stdout, "Key: %+v\n", createKey)
+	_, err = fmt.Fprintf(os.Stdout, "Key: %+v\n", createKey)
+	checkErr(err)
 
 	// Build key-authenticated gRPC connection (optional).
 	opts = []grpc.DialOption{
-		grpc.WithBlock(),
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
 		grpc.WithTransportCredentials(credentials.NewTLS(
 			&tls.Config{MinVersion: tls.VersionTLS12})),
 		grpc.WithPerRPCCredentials(&credential{token: createKey.GetToken()}),
 	}
-	keyConn, err := grpc.Dial(*grpcURI, opts...)
+	keyConn, err := grpc.NewClient(*grpcURI, opts...)
 	checkErr(err)
 
 	// Create an identity.
@@ -145,8 +147,12 @@ func main() {
 	checkErr(err)
 	checkErr(keyConn.Close())
 
-	fmt.Fprintf(os.Stdout, "Identity: %+v\n", createIdentity.GetIdentity())
-	fmt.Fprintf(os.Stdout, "QR code (run `echo '...base64...'|base64 -D > "+
-		"qr.png`):\n%v\n", base64.StdEncoding.EncodeToString(
+	_, err = fmt.Fprintf(os.Stdout, "Identity: %+v\n",
+		createIdentity.GetIdentity())
+	checkErr(err)
+
+	_, err = fmt.Fprintf(os.Stdout, "QR code (run `echo '...base64...'|base64 "+
+		"-D > qr.png`):\n%v\n", base64.StdEncoding.EncodeToString(
 		createIdentity.GetQr()))
+	checkErr(err)
 }
