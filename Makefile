@@ -1,10 +1,10 @@
 .PHONY: generate version go python dart ruby cpp php tag clean
 
-VERSION = 1.1.8
+VERSION = 1.1.9
 
 generate: version
 	docker compose --progress=plain build --no-cache --pull
-	docker compose up
+	docker compose up --menu=false
 	docker compose down
 
 version:
@@ -13,32 +13,32 @@ version:
 
 go: version
 	docker compose --progress=plain build --no-cache --pull go_openapi
-	docker compose up go_openapi
+	docker compose up go_openapi --menu=false
 	docker compose down
 
 python: version
 	docker compose --progress=plain build --no-cache --pull python
-	docker compose up python
+	docker compose up python --menu=false
 	docker compose down
 
 dart: version
 	docker compose --progress=plain build --no-cache --pull dart
-	docker compose up dart
+	docker compose up dart --menu=false
 	docker compose down
 
 ruby: version
 	docker compose --progress=plain build --no-cache --pull ruby
-	docker compose up ruby
+	docker compose up ruby --menu=false
 	docker compose down
 
 cpp: version
 	docker compose --progress=plain build --no-cache --pull cpp
-	docker compose up cpp
+	docker compose up cpp --menu=false
 	docker compose down
 
 php: version
 	docker compose --progress=plain build --no-cache --pull php
-	docker compose up php
+	docker compose up php --menu=false
 	docker compose down
 
 tag:
