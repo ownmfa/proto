@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_org.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -112,24 +112,24 @@ abstract class OrgServiceBase extends $grpc.Service {
         ($3.ListOrgsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$3.Org> createOrg_Pre($grpc.ServiceCall call, $async.Future<$3.CreateOrgRequest> request) async {
-    return createOrg(call, await request);
+  $async.Future<$3.Org> createOrg_Pre($grpc.ServiceCall $call, $async.Future<$3.CreateOrgRequest> $request) async {
+    return createOrg($call, await $request);
   }
 
-  $async.Future<$3.Org> getOrg_Pre($grpc.ServiceCall call, $async.Future<$3.GetOrgRequest> request) async {
-    return getOrg(call, await request);
+  $async.Future<$3.Org> getOrg_Pre($grpc.ServiceCall $call, $async.Future<$3.GetOrgRequest> $request) async {
+    return getOrg($call, await $request);
   }
 
-  $async.Future<$3.Org> updateOrg_Pre($grpc.ServiceCall call, $async.Future<$3.UpdateOrgRequest> request) async {
-    return updateOrg(call, await request);
+  $async.Future<$3.Org> updateOrg_Pre($grpc.ServiceCall $call, $async.Future<$3.UpdateOrgRequest> $request) async {
+    return updateOrg($call, await $request);
   }
 
-  $async.Future<$1.Empty> deleteOrg_Pre($grpc.ServiceCall call, $async.Future<$3.DeleteOrgRequest> request) async {
-    return deleteOrg(call, await request);
+  $async.Future<$1.Empty> deleteOrg_Pre($grpc.ServiceCall $call, $async.Future<$3.DeleteOrgRequest> $request) async {
+    return deleteOrg($call, await $request);
   }
 
-  $async.Future<$3.ListOrgsResponse> listOrgs_Pre($grpc.ServiceCall call, $async.Future<$3.ListOrgsRequest> request) async {
-    return listOrgs(call, await request);
+  $async.Future<$3.ListOrgsResponse> listOrgs_Pre($grpc.ServiceCall $call, $async.Future<$3.ListOrgsRequest> $request) async {
+    return listOrgs($call, await $request);
   }
 
   $async.Future<$3.Org> createOrg($grpc.ServiceCall call, $3.CreateOrgRequest request);

@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_user.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -127,28 +127,28 @@ abstract class UserServiceBase extends $grpc.Service {
         ($5.ListUsersResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$5.User> createUser_Pre($grpc.ServiceCall call, $async.Future<$5.CreateUserRequest> request) async {
-    return createUser(call, await request);
+  $async.Future<$5.User> createUser_Pre($grpc.ServiceCall $call, $async.Future<$5.CreateUserRequest> $request) async {
+    return createUser($call, await $request);
   }
 
-  $async.Future<$5.User> getUser_Pre($grpc.ServiceCall call, $async.Future<$5.GetUserRequest> request) async {
-    return getUser(call, await request);
+  $async.Future<$5.User> getUser_Pre($grpc.ServiceCall $call, $async.Future<$5.GetUserRequest> $request) async {
+    return getUser($call, await $request);
   }
 
-  $async.Future<$5.User> updateUser_Pre($grpc.ServiceCall call, $async.Future<$5.UpdateUserRequest> request) async {
-    return updateUser(call, await request);
+  $async.Future<$5.User> updateUser_Pre($grpc.ServiceCall $call, $async.Future<$5.UpdateUserRequest> $request) async {
+    return updateUser($call, await $request);
   }
 
-  $async.Future<$1.Empty> updateUserPassword_Pre($grpc.ServiceCall call, $async.Future<$5.UpdateUserPasswordRequest> request) async {
-    return updateUserPassword(call, await request);
+  $async.Future<$1.Empty> updateUserPassword_Pre($grpc.ServiceCall $call, $async.Future<$5.UpdateUserPasswordRequest> $request) async {
+    return updateUserPassword($call, await $request);
   }
 
-  $async.Future<$1.Empty> deleteUser_Pre($grpc.ServiceCall call, $async.Future<$5.DeleteUserRequest> request) async {
-    return deleteUser(call, await request);
+  $async.Future<$1.Empty> deleteUser_Pre($grpc.ServiceCall $call, $async.Future<$5.DeleteUserRequest> $request) async {
+    return deleteUser($call, await $request);
   }
 
-  $async.Future<$5.ListUsersResponse> listUsers_Pre($grpc.ServiceCall call, $async.Future<$5.ListUsersRequest> request) async {
-    return listUsers(call, await request);
+  $async.Future<$5.ListUsersResponse> listUsers_Pre($grpc.ServiceCall $call, $async.Future<$5.ListUsersRequest> $request) async {
+    return listUsers($call, await $request);
   }
 
   $async.Future<$5.User> createUser($grpc.ServiceCall call, $5.CreateUserRequest request);

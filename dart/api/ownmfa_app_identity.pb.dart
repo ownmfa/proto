@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_app_identity.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -16,6 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../google/protobuf/field_mask.pb.dart' as $7;
 import '../google/protobuf/timestamp.pb.dart' as $6;
 import 'ownmfa_app_identity.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'ownmfa_app_identity.pbenum.dart';
 
@@ -118,7 +120,7 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Organization ID (UUID).
   @$pb.TagNumber(2)
@@ -128,7 +130,7 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasOrgId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOrgId() => clearField(2);
+  void clearOrgId() => $_clearField(2);
 
   /// Application name.
   @$pb.TagNumber(3)
@@ -138,7 +140,7 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearName() => $_clearField(3);
 
   /// Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields.
   @$pb.TagNumber(4)
@@ -148,7 +150,7 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasDisplayName() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDisplayName() => clearField(4);
+  void clearDisplayName() => $_clearField(4);
 
   /// Application email. Optional, used as the 'From' address in email notifications.
   @$pb.TagNumber(5)
@@ -158,7 +160,7 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasEmail() => $_has(4);
   @$pb.TagNumber(5)
-  void clearEmail() => clearField(5);
+  void clearEmail() => $_clearField(5);
 
   /// Pushover application key. If not specified, the default OwnMFA Pushover application and templates will be used.
   @$pb.TagNumber(6)
@@ -168,7 +170,7 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasPushoverKey() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPushoverKey() => clearField(6);
+  void clearPushoverKey() => $_clearField(6);
 
   /// Application subject template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution is '{{.displayName}}'. Optional field, for notification methods that support subjects.
   @$pb.TagNumber(7)
@@ -178,7 +180,7 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasSubjectTemplate() => $_has(6);
   @$pb.TagNumber(7)
-  void clearSubjectTemplate() => clearField(7);
+  void clearSubjectTemplate() => $_clearField(7);
 
   /// Application text body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support text bodies. To prevent fraud, SMS notifications used a fixed body that includes the application display_name and verification code.
   @$pb.TagNumber(8)
@@ -188,7 +190,7 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasTextBodyTemplate() => $_has(7);
   @$pb.TagNumber(8)
-  void clearTextBodyTemplate() => clearField(8);
+  void clearTextBodyTemplate() => $_clearField(8);
 
   /// Application HTML body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support HTML bodies. When used in JSON, the value will be represented as a base64 string.
   @$pb.TagNumber(9)
@@ -198,17 +200,17 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasHtmlBodyTemplate() => $_has(8);
   @$pb.TagNumber(9)
-  void clearHtmlBodyTemplate() => clearField(9);
+  void clearHtmlBodyTemplate() => $_clearField(9);
 
   /// Application creation timestamp.
   @$pb.TagNumber(10)
   $6.Timestamp get createdAt => $_getN(9);
   @$pb.TagNumber(10)
-  set createdAt($6.Timestamp v) { setField(10, v); }
+  set createdAt($6.Timestamp v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasCreatedAt() => $_has(9);
   @$pb.TagNumber(10)
-  void clearCreatedAt() => clearField(10);
+  void clearCreatedAt() => $_clearField(10);
   @$pb.TagNumber(10)
   $6.Timestamp ensureCreatedAt() => $_ensure(9);
 
@@ -216,11 +218,11 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $6.Timestamp get updatedAt => $_getN(10);
   @$pb.TagNumber(11)
-  set updatedAt($6.Timestamp v) { setField(11, v); }
+  set updatedAt($6.Timestamp v) { $_setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasUpdatedAt() => $_has(10);
   @$pb.TagNumber(11)
-  void clearUpdatedAt() => clearField(11);
+  void clearUpdatedAt() => $_clearField(11);
   @$pb.TagNumber(11)
   $6.Timestamp ensureUpdatedAt() => $_ensure(10);
 }
@@ -270,11 +272,11 @@ class CreateAppRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   App get app => $_getN(0);
   @$pb.TagNumber(1)
-  set app(App v) { setField(1, v); }
+  set app(App v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasApp() => $_has(0);
   @$pb.TagNumber(1)
-  void clearApp() => clearField(1);
+  void clearApp() => $_clearField(1);
   @$pb.TagNumber(1)
   App ensureApp() => $_ensure(0);
 }
@@ -328,7 +330,7 @@ class GetAppRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 /// UpdateAppRequest is sent to update an application.
@@ -381,11 +383,11 @@ class UpdateAppRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   App get app => $_getN(0);
   @$pb.TagNumber(1)
-  set app(App v) { setField(1, v); }
+  set app(App v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasApp() => $_has(0);
   @$pb.TagNumber(1)
-  void clearApp() => clearField(1);
+  void clearApp() => $_clearField(1);
   @$pb.TagNumber(1)
   App ensureApp() => $_ensure(0);
 
@@ -393,11 +395,11 @@ class UpdateAppRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $7.FieldMask get updateMask => $_getN(1);
   @$pb.TagNumber(2)
-  set updateMask($7.FieldMask v) { setField(2, v); }
+  set updateMask($7.FieldMask v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasUpdateMask() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUpdateMask() => clearField(2);
+  void clearUpdateMask() => $_clearField(2);
   @$pb.TagNumber(2)
   $7.FieldMask ensureUpdateMask() => $_ensure(1);
 }
@@ -451,7 +453,7 @@ class DeleteAppRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 /// ListAppsRequest is sent to list applications.
@@ -508,7 +510,7 @@ class ListAppsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPageSize() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPageSize() => clearField(1);
+  void clearPageSize() => $_clearField(1);
 
   /// Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
   @$pb.TagNumber(2)
@@ -518,7 +520,7 @@ class ListAppsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPageToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPageToken() => clearField(2);
+  void clearPageToken() => $_clearField(2);
 }
 
 /// ListAppsResponse is sent in response to an application list.
@@ -574,7 +576,7 @@ class ListAppsResponse extends $pb.GeneratedMessage {
 
   /// App array, ordered by ascending created_at timestamp.
   @$pb.TagNumber(1)
-  $core.List<App> get apps => $_getList(0);
+  $pb.PbList<App> get apps => $_getList(0);
 
   /// Pagination token used to retrieve the next page of results. Not returned for the last page.
   @$pb.TagNumber(2)
@@ -584,7 +586,7 @@ class ListAppsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNextPageToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNextPageToken() => clearField(2);
+  void clearNextPageToken() => $_clearField(2);
 
   /// Total number of applications available.
   @$pb.TagNumber(3)
@@ -594,7 +596,7 @@ class ListAppsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasTotalSize() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTotalSize() => clearField(3);
+  void clearTotalSize() => $_clearField(3);
 }
 
 /// SoftwareHOTPMethod configures a software OATH HOTP one-time password method.
@@ -657,11 +659,11 @@ class SoftwareHOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Hash get hash => $_getN(0);
   @$pb.TagNumber(1)
-  set hash(Hash v) { setField(1, v); }
+  set hash(Hash v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHash() => $_has(0);
   @$pb.TagNumber(1)
-  void clearHash() => clearField(1);
+  void clearHash() => $_clearField(1);
 
   /// Passcode digits length. Defaults to 7 if not specified.
   @$pb.TagNumber(2)
@@ -671,7 +673,7 @@ class SoftwareHOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDigits() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDigits() => clearField(2);
+  void clearDigits() => $_clearField(2);
 
   /// Software HOTP starting counter. Only included during identity creation. Defaults to 0 if not specified.
   @$pb.TagNumber(3)
@@ -681,7 +683,7 @@ class SoftwareHOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasCounter() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCounter() => clearField(3);
+  void clearCounter() => $_clearField(3);
 
   /// Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
   @$pb.TagNumber(4)
@@ -691,7 +693,7 @@ class SoftwareHOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasAccountName() => $_has(3);
   @$pb.TagNumber(4)
-  void clearAccountName() => clearField(4);
+  void clearAccountName() => $_clearField(4);
 }
 
 /// SoftwareTOTPMethod configures a software OATH TOTP one-time password method.
@@ -749,11 +751,11 @@ class SoftwareTOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Hash get hash => $_getN(0);
   @$pb.TagNumber(1)
-  set hash(Hash v) { setField(1, v); }
+  set hash(Hash v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHash() => $_has(0);
   @$pb.TagNumber(1)
-  void clearHash() => clearField(1);
+  void clearHash() => $_clearField(1);
 
   /// Passcode digits length. Defaults to 7 if not specified.
   @$pb.TagNumber(2)
@@ -763,7 +765,7 @@ class SoftwareTOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDigits() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDigits() => clearField(2);
+  void clearDigits() => $_clearField(2);
 
   /// Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
   @$pb.TagNumber(3)
@@ -773,7 +775,7 @@ class SoftwareTOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasAccountName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAccountName() => clearField(3);
+  void clearAccountName() => $_clearField(3);
 }
 
 /// GoogleAuthHOTPMethod configures a Google Authenticator HOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function.
@@ -825,7 +827,7 @@ class GoogleAuthHOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAccountName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAccountName() => clearField(1);
+  void clearAccountName() => $_clearField(1);
 }
 
 /// GoogleAuthTOTPMethod configures a Google Authenticator or Microsoft Authenticator TOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function.
@@ -877,7 +879,7 @@ class GoogleAuthTOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAccountName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAccountName() => clearField(1);
+  void clearAccountName() => $_clearField(1);
 }
 
 /// AppleiOSTOTPMethod configures an Apple iOS TOTP one-time password method.
@@ -973,11 +975,11 @@ class HardwareHOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Hash get hash => $_getN(0);
   @$pb.TagNumber(1)
-  set hash(Hash v) { setField(1, v); }
+  set hash(Hash v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHash() => $_has(0);
   @$pb.TagNumber(1)
-  void clearHash() => clearField(1);
+  void clearHash() => $_clearField(1);
 
   /// Passcode digits length.
   @$pb.TagNumber(2)
@@ -987,7 +989,7 @@ class HardwareHOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDigits() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDigits() => clearField(2);
+  void clearDigits() => $_clearField(2);
 
   /// Hardware HOTP starting counter. Only included during identity creation. Defaults to 0 if not specified.
   @$pb.TagNumber(3)
@@ -997,7 +999,7 @@ class HardwareHOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasCounter() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCounter() => clearField(3);
+  void clearCounter() => $_clearField(3);
 
   /// Hardware HOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
   @$pb.TagNumber(4)
@@ -1007,7 +1009,7 @@ class HardwareHOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasSecret() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSecret() => clearField(4);
+  void clearSecret() => $_clearField(4);
 }
 
 /// HardwareTOTPMethod configures a hardware OATH TOTP one-time password method.
@@ -1065,11 +1067,11 @@ class HardwareTOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Hash get hash => $_getN(0);
   @$pb.TagNumber(1)
-  set hash(Hash v) { setField(1, v); }
+  set hash(Hash v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHash() => $_has(0);
   @$pb.TagNumber(1)
-  void clearHash() => clearField(1);
+  void clearHash() => $_clearField(1);
 
   /// Passcode digits length.
   @$pb.TagNumber(2)
@@ -1079,7 +1081,7 @@ class HardwareTOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDigits() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDigits() => clearField(2);
+  void clearDigits() => $_clearField(2);
 
   /// Hardware TOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
   @$pb.TagNumber(3)
@@ -1089,7 +1091,7 @@ class HardwareTOTPMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasSecret() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSecret() => clearField(3);
+  void clearSecret() => $_clearField(3);
 }
 
 /// SMSMethod configures an SMS passcode method.
@@ -1141,7 +1143,7 @@ class SMSMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPhone() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPhone() => clearField(1);
+  void clearPhone() => $_clearField(1);
 }
 
 /// PushoverMethod configures a Pushover passcode method.
@@ -1193,7 +1195,7 @@ class PushoverMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPushoverKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPushoverKey() => clearField(1);
+  void clearPushoverKey() => $_clearField(1);
 }
 
 /// EmailMethod configures an email passcode method.
@@ -1245,7 +1247,7 @@ class EmailMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasEmail() => $_has(0);
   @$pb.TagNumber(1)
-  void clearEmail() => clearField(1);
+  void clearEmail() => $_clearField(1);
 }
 
 /// BackupsCodesMethod configures a backup codes method. Identities using this method are immediately activated and do not require activation.
@@ -1297,7 +1299,7 @@ class BackupsCodesMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPasscodes() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPasscodes() => clearField(1);
+  void clearPasscodes() => $_clearField(1);
 }
 
 /// SecurityQuestionsMethod configures a security questions method. Identities using this method are immediately activated and do not require activation.
@@ -1349,7 +1351,7 @@ class SecurityQuestionsMethod extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAnswer() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAnswer() => clearField(1);
+  void clearAnswer() => $_clearField(1);
 }
 
 enum Identity_MethodOneof {
@@ -1516,7 +1518,7 @@ class Identity extends $pb.GeneratedMessage {
   static Identity? _defaultInstance;
 
   Identity_MethodOneof whichMethodOneof() => _Identity_MethodOneofByTag[$_whichOneof(0)]!;
-  void clearMethodOneof() => clearField($_whichOneof(0));
+  void clearMethodOneof() => $_clearField($_whichOneof(0));
 
   /// Identity ID (UUID).
   @$pb.TagNumber(1)
@@ -1526,7 +1528,7 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Organization ID (UUID).
   @$pb.TagNumber(2)
@@ -1536,7 +1538,7 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasOrgId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOrgId() => clearField(2);
+  void clearOrgId() => $_clearField(2);
 
   /// Application ID (UUID).
   @$pb.TagNumber(3)
@@ -1546,7 +1548,7 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasAppId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAppId() => clearField(3);
+  void clearAppId() => $_clearField(3);
 
   /// Identity comment. This should be an opaque identifier known to the consuming application.
   @$pb.TagNumber(4)
@@ -1556,27 +1558,27 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasComment() => $_has(3);
   @$pb.TagNumber(4)
-  void clearComment() => clearField(4);
+  void clearComment() => $_clearField(4);
 
   /// Identity status.
   @$pb.TagNumber(5)
   IdentityStatus get status => $_getN(4);
   @$pb.TagNumber(5)
-  set status(IdentityStatus v) { setField(5, v); }
+  set status(IdentityStatus v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStatus() => $_has(4);
   @$pb.TagNumber(5)
-  void clearStatus() => clearField(5);
+  void clearStatus() => $_clearField(5);
 
   /// Software TOTP method configuration.
   @$pb.TagNumber(6)
   SoftwareTOTPMethod get softwareTotpMethod => $_getN(5);
   @$pb.TagNumber(6)
-  set softwareTotpMethod(SoftwareTOTPMethod v) { setField(6, v); }
+  set softwareTotpMethod(SoftwareTOTPMethod v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasSoftwareTotpMethod() => $_has(5);
   @$pb.TagNumber(6)
-  void clearSoftwareTotpMethod() => clearField(6);
+  void clearSoftwareTotpMethod() => $_clearField(6);
   @$pb.TagNumber(6)
   SoftwareTOTPMethod ensureSoftwareTotpMethod() => $_ensure(5);
 
@@ -1584,11 +1586,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   GoogleAuthTOTPMethod get googleAuthTotpMethod => $_getN(6);
   @$pb.TagNumber(7)
-  set googleAuthTotpMethod(GoogleAuthTOTPMethod v) { setField(7, v); }
+  set googleAuthTotpMethod(GoogleAuthTOTPMethod v) { $_setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasGoogleAuthTotpMethod() => $_has(6);
   @$pb.TagNumber(7)
-  void clearGoogleAuthTotpMethod() => clearField(7);
+  void clearGoogleAuthTotpMethod() => $_clearField(7);
   @$pb.TagNumber(7)
   GoogleAuthTOTPMethod ensureGoogleAuthTotpMethod() => $_ensure(6);
 
@@ -1596,11 +1598,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   SMSMethod get smsMethod => $_getN(7);
   @$pb.TagNumber(8)
-  set smsMethod(SMSMethod v) { setField(8, v); }
+  set smsMethod(SMSMethod v) { $_setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasSmsMethod() => $_has(7);
   @$pb.TagNumber(8)
-  void clearSmsMethod() => clearField(8);
+  void clearSmsMethod() => $_clearField(8);
   @$pb.TagNumber(8)
   SMSMethod ensureSmsMethod() => $_ensure(7);
 
@@ -1608,11 +1610,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   EmailMethod get emailMethod => $_getN(8);
   @$pb.TagNumber(9)
-  set emailMethod(EmailMethod v) { setField(9, v); }
+  set emailMethod(EmailMethod v) { $_setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasEmailMethod() => $_has(8);
   @$pb.TagNumber(9)
-  void clearEmailMethod() => clearField(9);
+  void clearEmailMethod() => $_clearField(9);
   @$pb.TagNumber(9)
   EmailMethod ensureEmailMethod() => $_ensure(8);
 
@@ -1620,11 +1622,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   BackupsCodesMethod get backupCodesMethod => $_getN(9);
   @$pb.TagNumber(10)
-  set backupCodesMethod(BackupsCodesMethod v) { setField(10, v); }
+  set backupCodesMethod(BackupsCodesMethod v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasBackupCodesMethod() => $_has(9);
   @$pb.TagNumber(10)
-  void clearBackupCodesMethod() => clearField(10);
+  void clearBackupCodesMethod() => $_clearField(10);
   @$pb.TagNumber(10)
   BackupsCodesMethod ensureBackupCodesMethod() => $_ensure(9);
 
@@ -1632,11 +1634,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   $6.Timestamp get createdAt => $_getN(10);
   @$pb.TagNumber(14)
-  set createdAt($6.Timestamp v) { setField(14, v); }
+  set createdAt($6.Timestamp v) { $_setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasCreatedAt() => $_has(10);
   @$pb.TagNumber(14)
-  void clearCreatedAt() => clearField(14);
+  void clearCreatedAt() => $_clearField(14);
   @$pb.TagNumber(14)
   $6.Timestamp ensureCreatedAt() => $_ensure(10);
 
@@ -1644,11 +1646,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   $6.Timestamp get updatedAt => $_getN(11);
   @$pb.TagNumber(15)
-  set updatedAt($6.Timestamp v) { setField(15, v); }
+  set updatedAt($6.Timestamp v) { $_setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasUpdatedAt() => $_has(11);
   @$pb.TagNumber(15)
-  void clearUpdatedAt() => clearField(15);
+  void clearUpdatedAt() => $_clearField(15);
   @$pb.TagNumber(15)
   $6.Timestamp ensureUpdatedAt() => $_ensure(11);
 
@@ -1656,11 +1658,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(16)
   SoftwareHOTPMethod get softwareHotpMethod => $_getN(12);
   @$pb.TagNumber(16)
-  set softwareHotpMethod(SoftwareHOTPMethod v) { setField(16, v); }
+  set softwareHotpMethod(SoftwareHOTPMethod v) { $_setField(16, v); }
   @$pb.TagNumber(16)
   $core.bool hasSoftwareHotpMethod() => $_has(12);
   @$pb.TagNumber(16)
-  void clearSoftwareHotpMethod() => clearField(16);
+  void clearSoftwareHotpMethod() => $_clearField(16);
   @$pb.TagNumber(16)
   SoftwareHOTPMethod ensureSoftwareHotpMethod() => $_ensure(12);
 
@@ -1668,11 +1670,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(17)
   GoogleAuthHOTPMethod get googleAuthHotpMethod => $_getN(13);
   @$pb.TagNumber(17)
-  set googleAuthHotpMethod(GoogleAuthHOTPMethod v) { setField(17, v); }
+  set googleAuthHotpMethod(GoogleAuthHOTPMethod v) { $_setField(17, v); }
   @$pb.TagNumber(17)
   $core.bool hasGoogleAuthHotpMethod() => $_has(13);
   @$pb.TagNumber(17)
-  void clearGoogleAuthHotpMethod() => clearField(17);
+  void clearGoogleAuthHotpMethod() => $_clearField(17);
   @$pb.TagNumber(17)
   GoogleAuthHOTPMethod ensureGoogleAuthHotpMethod() => $_ensure(13);
 
@@ -1680,11 +1682,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(18)
   HardwareHOTPMethod get hardwareHotpMethod => $_getN(14);
   @$pb.TagNumber(18)
-  set hardwareHotpMethod(HardwareHOTPMethod v) { setField(18, v); }
+  set hardwareHotpMethod(HardwareHOTPMethod v) { $_setField(18, v); }
   @$pb.TagNumber(18)
   $core.bool hasHardwareHotpMethod() => $_has(14);
   @$pb.TagNumber(18)
-  void clearHardwareHotpMethod() => clearField(18);
+  void clearHardwareHotpMethod() => $_clearField(18);
   @$pb.TagNumber(18)
   HardwareHOTPMethod ensureHardwareHotpMethod() => $_ensure(14);
 
@@ -1692,11 +1694,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(19)
   HardwareTOTPMethod get hardwareTotpMethod => $_getN(15);
   @$pb.TagNumber(19)
-  set hardwareTotpMethod(HardwareTOTPMethod v) { setField(19, v); }
+  set hardwareTotpMethod(HardwareTOTPMethod v) { $_setField(19, v); }
   @$pb.TagNumber(19)
   $core.bool hasHardwareTotpMethod() => $_has(15);
   @$pb.TagNumber(19)
-  void clearHardwareTotpMethod() => clearField(19);
+  void clearHardwareTotpMethod() => $_clearField(19);
   @$pb.TagNumber(19)
   HardwareTOTPMethod ensureHardwareTotpMethod() => $_ensure(15);
 
@@ -1704,11 +1706,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(20)
   PushoverMethod get pushoverMethod => $_getN(16);
   @$pb.TagNumber(20)
-  set pushoverMethod(PushoverMethod v) { setField(20, v); }
+  set pushoverMethod(PushoverMethod v) { $_setField(20, v); }
   @$pb.TagNumber(20)
   $core.bool hasPushoverMethod() => $_has(16);
   @$pb.TagNumber(20)
-  void clearPushoverMethod() => clearField(20);
+  void clearPushoverMethod() => $_clearField(20);
   @$pb.TagNumber(20)
   PushoverMethod ensurePushoverMethod() => $_ensure(16);
 
@@ -1716,11 +1718,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(21)
   SecurityQuestionsMethod get securityQuestionsMethod => $_getN(17);
   @$pb.TagNumber(21)
-  set securityQuestionsMethod(SecurityQuestionsMethod v) { setField(21, v); }
+  set securityQuestionsMethod(SecurityQuestionsMethod v) { $_setField(21, v); }
   @$pb.TagNumber(21)
   $core.bool hasSecurityQuestionsMethod() => $_has(17);
   @$pb.TagNumber(21)
-  void clearSecurityQuestionsMethod() => clearField(21);
+  void clearSecurityQuestionsMethod() => $_clearField(21);
   @$pb.TagNumber(21)
   SecurityQuestionsMethod ensureSecurityQuestionsMethod() => $_ensure(17);
 
@@ -1728,11 +1730,11 @@ class Identity extends $pb.GeneratedMessage {
   @$pb.TagNumber(22)
   AppleiOSTOTPMethod get appleIosTotpMethod => $_getN(18);
   @$pb.TagNumber(22)
-  set appleIosTotpMethod(AppleiOSTOTPMethod v) { setField(22, v); }
+  set appleIosTotpMethod(AppleiOSTOTPMethod v) { $_setField(22, v); }
   @$pb.TagNumber(22)
   $core.bool hasAppleIosTotpMethod() => $_has(18);
   @$pb.TagNumber(22)
-  void clearAppleIosTotpMethod() => clearField(22);
+  void clearAppleIosTotpMethod() => $_clearField(22);
   @$pb.TagNumber(22)
   AppleiOSTOTPMethod ensureAppleIosTotpMethod() => $_ensure(18);
 }
@@ -1782,11 +1784,11 @@ class CreateIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Identity get identity => $_getN(0);
   @$pb.TagNumber(1)
-  set identity(Identity v) { setField(1, v); }
+  set identity(Identity v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasIdentity() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIdentity() => clearField(1);
+  void clearIdentity() => $_clearField(1);
   @$pb.TagNumber(1)
   Identity ensureIdentity() => $_ensure(0);
 }
@@ -1851,11 +1853,11 @@ class CreateIdentityResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Identity get identity => $_getN(0);
   @$pb.TagNumber(1)
-  set identity(Identity v) { setField(1, v); }
+  set identity(Identity v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasIdentity() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIdentity() => clearField(1);
+  void clearIdentity() => $_clearField(1);
   @$pb.TagNumber(1)
   Identity ensureIdentity() => $_ensure(0);
 
@@ -1867,7 +1869,7 @@ class CreateIdentityResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasSecret() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSecret() => clearField(2);
+  void clearSecret() => $_clearField(2);
 
   /// Identity QR code, in Google Authenticator-compatible format, as a PNG image. For identity methods that provide secrets. Only returned once, upon identity creation. When used in JSON, the value will be represented as a base64 string.
   @$pb.TagNumber(3)
@@ -1877,11 +1879,11 @@ class CreateIdentityResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasQr() => $_has(2);
   @$pb.TagNumber(3)
-  void clearQr() => clearField(3);
+  void clearQr() => $_clearField(3);
 
   /// Passcode array, for identity methods that provide pregenerated passcodes. Only returned once, upon identity creation.
   @$pb.TagNumber(4)
-  $core.List<$core.String> get passcodes => $_getList(3);
+  $pb.PbList<$core.String> get passcodes => $_getList(3);
 }
 
 /// ActivateIdentityRequest is sent to activate an identity.
@@ -1943,7 +1945,7 @@ class ActivateIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Application ID (UUID).
   @$pb.TagNumber(2)
@@ -1953,7 +1955,7 @@ class ActivateIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAppId() => clearField(2);
+  void clearAppId() => $_clearField(2);
 
   /// Passcode for verification. For security questions identity methods, this is the answer to the security question.
   @$pb.TagNumber(3)
@@ -1963,7 +1965,7 @@ class ActivateIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPasscode() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPasscode() => clearField(3);
+  void clearPasscode() => $_clearField(3);
 }
 
 /// ChallengeIdentityRequest is sent to issue a challenge to an identity.
@@ -2020,7 +2022,7 @@ class ChallengeIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Application ID (UUID).
   @$pb.TagNumber(2)
@@ -2030,7 +2032,7 @@ class ChallengeIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAppId() => clearField(2);
+  void clearAppId() => $_clearField(2);
 }
 
 /// VerifyIdentityRequest is sent to verify an identity. If verification fails, the request does not automatically fall through to a backup codes method. Consuming applications should design a workflow that either explicitly verifies by backup codes or falls through on failure.
@@ -2092,7 +2094,7 @@ class VerifyIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Application ID (UUID).
   @$pb.TagNumber(2)
@@ -2102,7 +2104,7 @@ class VerifyIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAppId() => clearField(2);
+  void clearAppId() => $_clearField(2);
 
   /// Passcode for verification. For security questions identity methods, this is the answer to the security question.
   @$pb.TagNumber(3)
@@ -2112,7 +2114,7 @@ class VerifyIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPasscode() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPasscode() => clearField(3);
+  void clearPasscode() => $_clearField(3);
 }
 
 /// GetIdentityRequest is sent to get an identity.
@@ -2169,7 +2171,7 @@ class GetIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Application ID (UUID).
   @$pb.TagNumber(2)
@@ -2179,7 +2181,7 @@ class GetIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAppId() => clearField(2);
+  void clearAppId() => $_clearField(2);
 }
 
 /// DeleteIdentityRequest is sent to delete an identity.
@@ -2236,7 +2238,7 @@ class DeleteIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Application ID (UUID).
   @$pb.TagNumber(2)
@@ -2246,7 +2248,7 @@ class DeleteIdentityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAppId() => clearField(2);
+  void clearAppId() => $_clearField(2);
 }
 
 /// ListIdentitiesRequest is sent to list identities.
@@ -2308,7 +2310,7 @@ class ListIdentitiesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPageSize() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPageSize() => clearField(1);
+  void clearPageSize() => $_clearField(1);
 
   /// Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
   @$pb.TagNumber(2)
@@ -2318,7 +2320,7 @@ class ListIdentitiesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPageToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPageToken() => clearField(2);
+  void clearPageToken() => $_clearField(2);
 
   /// Application ID (UUID). If not specified, all rules are included.
   @$pb.TagNumber(3)
@@ -2328,7 +2330,7 @@ class ListIdentitiesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasAppId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAppId() => clearField(3);
+  void clearAppId() => $_clearField(3);
 }
 
 /// ListIdentitiesResponse is sent in response to an identity list.
@@ -2384,7 +2386,7 @@ class ListIdentitiesResponse extends $pb.GeneratedMessage {
 
   /// Identity array, ordered by ascending created_at timestamp.
   @$pb.TagNumber(1)
-  $core.List<Identity> get identities => $_getList(0);
+  $pb.PbList<Identity> get identities => $_getList(0);
 
   /// Pagination token used to retrieve the next page of results. Not returned for the last page.
   @$pb.TagNumber(2)
@@ -2394,7 +2396,7 @@ class ListIdentitiesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNextPageToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNextPageToken() => clearField(2);
+  void clearNextPageToken() => $_clearField(2);
 
   /// Total number of identities available.
   @$pb.TagNumber(3)
@@ -2404,7 +2406,7 @@ class ListIdentitiesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasTotalSize() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTotalSize() => clearField(3);
+  void clearTotalSize() => $_clearField(3);
 }
 
 

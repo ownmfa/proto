@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_event.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -15,6 +15,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../google/protobuf/timestamp.pb.dart' as $6;
 import 'ownmfa_event.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'ownmfa_event.pbenum.dart';
 
@@ -97,7 +99,7 @@ class Event extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasOrgId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearOrgId() => clearField(1);
+  void clearOrgId() => $_clearField(1);
 
   /// Application ID (UUID).
   @$pb.TagNumber(2)
@@ -107,7 +109,7 @@ class Event extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAppId() => clearField(2);
+  void clearAppId() => $_clearField(2);
 
   /// Identity ID (UUID).
   @$pb.TagNumber(3)
@@ -117,17 +119,17 @@ class Event extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasIdentityId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearIdentityId() => clearField(3);
+  void clearIdentityId() => $_clearField(3);
 
   /// Event status.
   @$pb.TagNumber(4)
   EventStatus get status => $_getN(3);
   @$pb.TagNumber(4)
-  set status(EventStatus v) { setField(4, v); }
+  set status(EventStatus v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasStatus() => $_has(3);
   @$pb.TagNumber(4)
-  void clearStatus() => clearField(4);
+  void clearStatus() => $_clearField(4);
 
   /// Error message. This field will be empty if no error was encountered.
   @$pb.TagNumber(5)
@@ -137,17 +139,17 @@ class Event extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasError() => $_has(4);
   @$pb.TagNumber(5)
-  void clearError() => clearField(5);
+  void clearError() => $_clearField(5);
 
   /// Event creation timestamp.
   @$pb.TagNumber(6)
   $6.Timestamp get createdAt => $_getN(5);
   @$pb.TagNumber(6)
-  set createdAt($6.Timestamp v) { setField(6, v); }
+  set createdAt($6.Timestamp v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCreatedAt() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCreatedAt() => clearField(6);
+  void clearCreatedAt() => $_clearField(6);
   @$pb.TagNumber(6)
   $6.Timestamp ensureCreatedAt() => $_ensure(5);
 
@@ -159,7 +161,7 @@ class Event extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasTraceId() => $_has(6);
   @$pb.TagNumber(7)
-  void clearTraceId() => clearField(7);
+  void clearTraceId() => $_clearField(7);
 }
 
 /// ListEventsRequest is sent to list identity events in an [end, start) time range, in descending timestamp order.
@@ -221,17 +223,17 @@ class ListEventsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasIdentityId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIdentityId() => clearField(1);
+  void clearIdentityId() => $_clearField(1);
 
   /// Events range end time. Defaults to current time if not specified. Maximum supported time range is 90 days.
   @$pb.TagNumber(2)
   $6.Timestamp get endTime => $_getN(1);
   @$pb.TagNumber(2)
-  set endTime($6.Timestamp v) { setField(2, v); }
+  set endTime($6.Timestamp v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEndTime() => $_has(1);
   @$pb.TagNumber(2)
-  void clearEndTime() => clearField(2);
+  void clearEndTime() => $_clearField(2);
   @$pb.TagNumber(2)
   $6.Timestamp ensureEndTime() => $_ensure(1);
 
@@ -239,11 +241,11 @@ class ListEventsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $6.Timestamp get startTime => $_getN(2);
   @$pb.TagNumber(3)
-  set startTime($6.Timestamp v) { setField(3, v); }
+  set startTime($6.Timestamp v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStartTime() => $_has(2);
   @$pb.TagNumber(3)
-  void clearStartTime() => clearField(3);
+  void clearStartTime() => $_clearField(3);
   @$pb.TagNumber(3)
   $6.Timestamp ensureStartTime() => $_ensure(2);
 }
@@ -291,7 +293,7 @@ class ListEventsResponse extends $pb.GeneratedMessage {
 
   /// Event array, ordered by descending created_at timestamp.
   @$pb.TagNumber(1)
-  $core.List<Event> get events => $_getList(0);
+  $pb.PbList<Event> get events => $_getList(0);
 }
 
 /// LatestEventsRequest is sent to list latest organization events.
@@ -348,7 +350,7 @@ class LatestEventsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAppId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAppId() => clearField(1);
+  void clearAppId() => $_clearField(1);
 
   /// Identity ID (UUID). If not specified, all identities are included.
   @$pb.TagNumber(2)
@@ -358,7 +360,7 @@ class LatestEventsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasIdentityId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearIdentityId() => clearField(2);
+  void clearIdentityId() => $_clearField(2);
 }
 
 /// LatestEventsResponse is sent in response to an organization latest list.
@@ -404,7 +406,7 @@ class LatestEventsResponse extends $pb.GeneratedMessage {
 
   /// Event array, ordered by descending created_at timestamp.
   @$pb.TagNumber(1)
-  $core.List<Event> get events => $_getList(0);
+  $pb.PbList<Event> get events => $_getList(0);
 }
 
 

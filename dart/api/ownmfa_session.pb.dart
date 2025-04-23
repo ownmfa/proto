@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_session.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -15,6 +15,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../google/protobuf/timestamp.pb.dart' as $6;
 import 'ownmfa_role.pbenum.dart' as $9;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 /// LoginRequest is sent to log in a user.
 class LoginRequest extends $pb.GeneratedMessage {
@@ -75,7 +77,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasEmail() => $_has(0);
   @$pb.TagNumber(1)
-  void clearEmail() => clearField(1);
+  void clearEmail() => $_clearField(1);
 
   /// Organization name of the user to log in.
   @$pb.TagNumber(2)
@@ -85,7 +87,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasOrgName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOrgName() => clearField(2);
+  void clearOrgName() => $_clearField(2);
 
   /// Password of the user to log in.
   @$pb.TagNumber(3)
@@ -95,7 +97,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPassword() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPassword() => clearField(3);
+  void clearPassword() => $_clearField(3);
 }
 
 /// LoginResponse is sent in response to a user login.
@@ -152,17 +154,17 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasToken() => $_has(0);
   @$pb.TagNumber(1)
-  void clearToken() => clearField(1);
+  void clearToken() => $_clearField(1);
 
   /// Token expiration timestamp.
   @$pb.TagNumber(2)
   $6.Timestamp get expiresAt => $_getN(1);
   @$pb.TagNumber(2)
-  set expiresAt($6.Timestamp v) { setField(2, v); }
+  set expiresAt($6.Timestamp v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasExpiresAt() => $_has(1);
   @$pb.TagNumber(2)
-  void clearExpiresAt() => clearField(2);
+  void clearExpiresAt() => $_clearField(2);
   @$pb.TagNumber(2)
   $6.Timestamp ensureExpiresAt() => $_ensure(1);
 }
@@ -236,7 +238,7 @@ class Key extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Organization ID (UUID).
   @$pb.TagNumber(2)
@@ -246,7 +248,7 @@ class Key extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasOrgId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOrgId() => clearField(2);
+  void clearOrgId() => $_clearField(2);
 
   /// Key name.
   @$pb.TagNumber(3)
@@ -256,27 +258,27 @@ class Key extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearName() => $_clearField(3);
 
   /// Key role.
   @$pb.TagNumber(4)
   $9.Role get role => $_getN(3);
   @$pb.TagNumber(4)
-  set role($9.Role v) { setField(4, v); }
+  set role($9.Role v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasRole() => $_has(3);
   @$pb.TagNumber(4)
-  void clearRole() => clearField(4);
+  void clearRole() => $_clearField(4);
 
   /// Key creation timestamp.
   @$pb.TagNumber(5)
   $6.Timestamp get createdAt => $_getN(4);
   @$pb.TagNumber(5)
-  set createdAt($6.Timestamp v) { setField(5, v); }
+  set createdAt($6.Timestamp v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
-  void clearCreatedAt() => clearField(5);
+  void clearCreatedAt() => $_clearField(5);
   @$pb.TagNumber(5)
   $6.Timestamp ensureCreatedAt() => $_ensure(4);
 }
@@ -326,11 +328,11 @@ class CreateKeyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Key get key => $_getN(0);
   @$pb.TagNumber(1)
-  set key(Key v) { setField(1, v); }
+  set key(Key v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearKey() => clearField(1);
+  void clearKey() => $_clearField(1);
   @$pb.TagNumber(1)
   Key ensureKey() => $_ensure(0);
 }
@@ -385,11 +387,11 @@ class CreateKeyResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Key get key => $_getN(0);
   @$pb.TagNumber(1)
-  set key(Key v) { setField(1, v); }
+  set key(Key v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearKey() => clearField(1);
+  void clearKey() => $_clearField(1);
   @$pb.TagNumber(1)
   Key ensureKey() => $_ensure(0);
 
@@ -401,7 +403,7 @@ class CreateKeyResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearToken() => clearField(2);
+  void clearToken() => $_clearField(2);
 }
 
 /// DeleteKeyRequest is sent to delete an API key.
@@ -453,7 +455,7 @@ class DeleteKeyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 /// ListKeysRequest is sent to list API keys.
@@ -510,7 +512,7 @@ class ListKeysRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPageSize() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPageSize() => clearField(1);
+  void clearPageSize() => $_clearField(1);
 
   /// Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
   @$pb.TagNumber(2)
@@ -520,7 +522,7 @@ class ListKeysRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPageToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPageToken() => clearField(2);
+  void clearPageToken() => $_clearField(2);
 }
 
 /// ListKeysResponse is sent in response to an API key list.
@@ -576,7 +578,7 @@ class ListKeysResponse extends $pb.GeneratedMessage {
 
   /// Key array, ordered by ascending created_at timestamp.
   @$pb.TagNumber(1)
-  $core.List<Key> get keys => $_getList(0);
+  $pb.PbList<Key> get keys => $_getList(0);
 
   /// Pagination token used to retrieve the next page of results. Not returned for the last page.
   @$pb.TagNumber(2)
@@ -586,7 +588,7 @@ class ListKeysResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNextPageToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNextPageToken() => clearField(2);
+  void clearNextPageToken() => $_clearField(2);
 
   /// Total number of API keys available.
   @$pb.TagNumber(3)
@@ -596,7 +598,7 @@ class ListKeysResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasTotalSize() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTotalSize() => clearField(3);
+  void clearTotalSize() => $_clearField(3);
 }
 
 

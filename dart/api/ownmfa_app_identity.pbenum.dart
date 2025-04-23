@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_app_identity.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -15,7 +15,9 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 /// IdentityStatus represents the status of an identity.
 class IdentityStatus extends $pb.ProtobufEnum {
+  /// Identity is not yet verified.
   static const IdentityStatus UNVERIFIED = IdentityStatus._(0, _omitEnumNames ? '' : 'UNVERIFIED');
+  /// Identity has been activated.
   static const IdentityStatus ACTIVATED = IdentityStatus._(3, _omitEnumNames ? '' : 'ACTIVATED');
 
   static const $core.List<IdentityStatus> values = <IdentityStatus> [
@@ -26,13 +28,16 @@ class IdentityStatus extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, IdentityStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
   static IdentityStatus? valueOf($core.int value) => _byValue[value];
 
-  const IdentityStatus._($core.int v, $core.String n) : super(v, n);
+  const IdentityStatus._(super.v, super.n);
 }
 
 /// Hash represents a hash function.
 class Hash extends $pb.ProtobufEnum {
+  /// SHA-2 512 bits.
   static const Hash SHA512 = Hash._(0, _omitEnumNames ? '' : 'SHA512');
+  /// SHA-2 256 bits.
   static const Hash SHA256 = Hash._(1, _omitEnumNames ? '' : 'SHA256');
+  /// SHA-1.
   static const Hash SHA1 = Hash._(2, _omitEnumNames ? '' : 'SHA1');
 
   static const $core.List<Hash> values = <Hash> [
@@ -44,7 +49,7 @@ class Hash extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, Hash> _byValue = $pb.ProtobufEnum.initByValue(values);
   static Hash? valueOf($core.int value) => _byValue[value];
 
-  const Hash._($core.int v, $core.String n) : super(v, n);
+  const Hash._(super.v, super.n);
 }
 
 

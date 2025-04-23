@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_event.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -66,12 +66,12 @@ abstract class EventServiceBase extends $grpc.Service {
         ($2.LatestEventsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$2.ListEventsResponse> listEvents_Pre($grpc.ServiceCall call, $async.Future<$2.ListEventsRequest> request) async {
-    return listEvents(call, await request);
+  $async.Future<$2.ListEventsResponse> listEvents_Pre($grpc.ServiceCall $call, $async.Future<$2.ListEventsRequest> $request) async {
+    return listEvents($call, await $request);
   }
 
-  $async.Future<$2.LatestEventsResponse> latestEvents_Pre($grpc.ServiceCall call, $async.Future<$2.LatestEventsRequest> request) async {
-    return latestEvents(call, await request);
+  $async.Future<$2.LatestEventsResponse> latestEvents_Pre($grpc.ServiceCall $call, $async.Future<$2.LatestEventsRequest> $request) async {
+    return latestEvents($call, await $request);
   }
 
   $async.Future<$2.ListEventsResponse> listEvents($grpc.ServiceCall call, $2.ListEventsRequest request);
