@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_session.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -97,20 +97,20 @@ abstract class SessionServiceBase extends $grpc.Service {
         ($4.ListKeysResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$4.LoginResponse> login_Pre($grpc.ServiceCall call, $async.Future<$4.LoginRequest> request) async {
-    return login(call, await request);
+  $async.Future<$4.LoginResponse> login_Pre($grpc.ServiceCall $call, $async.Future<$4.LoginRequest> $request) async {
+    return login($call, await $request);
   }
 
-  $async.Future<$4.CreateKeyResponse> createKey_Pre($grpc.ServiceCall call, $async.Future<$4.CreateKeyRequest> request) async {
-    return createKey(call, await request);
+  $async.Future<$4.CreateKeyResponse> createKey_Pre($grpc.ServiceCall $call, $async.Future<$4.CreateKeyRequest> $request) async {
+    return createKey($call, await $request);
   }
 
-  $async.Future<$1.Empty> deleteKey_Pre($grpc.ServiceCall call, $async.Future<$4.DeleteKeyRequest> request) async {
-    return deleteKey(call, await request);
+  $async.Future<$1.Empty> deleteKey_Pre($grpc.ServiceCall $call, $async.Future<$4.DeleteKeyRequest> $request) async {
+    return deleteKey($call, await $request);
   }
 
-  $async.Future<$4.ListKeysResponse> listKeys_Pre($grpc.ServiceCall call, $async.Future<$4.ListKeysRequest> request) async {
-    return listKeys(call, await request);
+  $async.Future<$4.ListKeysResponse> listKeys_Pre($grpc.ServiceCall $call, $async.Future<$4.ListKeysRequest> $request) async {
+    return listKeys($call, await $request);
   }
 
   $async.Future<$4.LoginResponse> login($grpc.ServiceCall call, $4.LoginRequest request);

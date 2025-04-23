@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_app_identity.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -217,52 +217,52 @@ abstract class AppIdentityServiceBase extends $grpc.Service {
         ($0.ListIdentitiesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.App> createApp_Pre($grpc.ServiceCall call, $async.Future<$0.CreateAppRequest> request) async {
-    return createApp(call, await request);
+  $async.Future<$0.App> createApp_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateAppRequest> $request) async {
+    return createApp($call, await $request);
   }
 
-  $async.Future<$0.CreateIdentityResponse> createIdentity_Pre($grpc.ServiceCall call, $async.Future<$0.CreateIdentityRequest> request) async {
-    return createIdentity(call, await request);
+  $async.Future<$0.CreateIdentityResponse> createIdentity_Pre($grpc.ServiceCall $call, $async.Future<$0.CreateIdentityRequest> $request) async {
+    return createIdentity($call, await $request);
   }
 
-  $async.Future<$0.Identity> activateIdentity_Pre($grpc.ServiceCall call, $async.Future<$0.ActivateIdentityRequest> request) async {
-    return activateIdentity(call, await request);
+  $async.Future<$0.Identity> activateIdentity_Pre($grpc.ServiceCall $call, $async.Future<$0.ActivateIdentityRequest> $request) async {
+    return activateIdentity($call, await $request);
   }
 
-  $async.Future<$1.Empty> challengeIdentity_Pre($grpc.ServiceCall call, $async.Future<$0.ChallengeIdentityRequest> request) async {
-    return challengeIdentity(call, await request);
+  $async.Future<$1.Empty> challengeIdentity_Pre($grpc.ServiceCall $call, $async.Future<$0.ChallengeIdentityRequest> $request) async {
+    return challengeIdentity($call, await $request);
   }
 
-  $async.Future<$1.Empty> verifyIdentity_Pre($grpc.ServiceCall call, $async.Future<$0.VerifyIdentityRequest> request) async {
-    return verifyIdentity(call, await request);
+  $async.Future<$1.Empty> verifyIdentity_Pre($grpc.ServiceCall $call, $async.Future<$0.VerifyIdentityRequest> $request) async {
+    return verifyIdentity($call, await $request);
   }
 
-  $async.Future<$0.App> getApp_Pre($grpc.ServiceCall call, $async.Future<$0.GetAppRequest> request) async {
-    return getApp(call, await request);
+  $async.Future<$0.App> getApp_Pre($grpc.ServiceCall $call, $async.Future<$0.GetAppRequest> $request) async {
+    return getApp($call, await $request);
   }
 
-  $async.Future<$0.Identity> getIdentity_Pre($grpc.ServiceCall call, $async.Future<$0.GetIdentityRequest> request) async {
-    return getIdentity(call, await request);
+  $async.Future<$0.Identity> getIdentity_Pre($grpc.ServiceCall $call, $async.Future<$0.GetIdentityRequest> $request) async {
+    return getIdentity($call, await $request);
   }
 
-  $async.Future<$0.App> updateApp_Pre($grpc.ServiceCall call, $async.Future<$0.UpdateAppRequest> request) async {
-    return updateApp(call, await request);
+  $async.Future<$0.App> updateApp_Pre($grpc.ServiceCall $call, $async.Future<$0.UpdateAppRequest> $request) async {
+    return updateApp($call, await $request);
   }
 
-  $async.Future<$1.Empty> deleteApp_Pre($grpc.ServiceCall call, $async.Future<$0.DeleteAppRequest> request) async {
-    return deleteApp(call, await request);
+  $async.Future<$1.Empty> deleteApp_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteAppRequest> $request) async {
+    return deleteApp($call, await $request);
   }
 
-  $async.Future<$1.Empty> deleteIdentity_Pre($grpc.ServiceCall call, $async.Future<$0.DeleteIdentityRequest> request) async {
-    return deleteIdentity(call, await request);
+  $async.Future<$1.Empty> deleteIdentity_Pre($grpc.ServiceCall $call, $async.Future<$0.DeleteIdentityRequest> $request) async {
+    return deleteIdentity($call, await $request);
   }
 
-  $async.Future<$0.ListAppsResponse> listApps_Pre($grpc.ServiceCall call, $async.Future<$0.ListAppsRequest> request) async {
-    return listApps(call, await request);
+  $async.Future<$0.ListAppsResponse> listApps_Pre($grpc.ServiceCall $call, $async.Future<$0.ListAppsRequest> $request) async {
+    return listApps($call, await $request);
   }
 
-  $async.Future<$0.ListIdentitiesResponse> listIdentities_Pre($grpc.ServiceCall call, $async.Future<$0.ListIdentitiesRequest> request) async {
-    return listIdentities(call, await request);
+  $async.Future<$0.ListIdentitiesResponse> listIdentities_Pre($grpc.ServiceCall $call, $async.Future<$0.ListIdentitiesRequest> $request) async {
+    return listIdentities($call, await $request);
   }
 
   $async.Future<$0.App> createApp($grpc.ServiceCall call, $0.CreateAppRequest request);

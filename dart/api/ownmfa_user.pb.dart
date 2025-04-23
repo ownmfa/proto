@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: api/ownmfa_user.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -17,6 +17,8 @@ import '../google/protobuf/field_mask.pb.dart' as $7;
 import '../google/protobuf/timestamp.pb.dart' as $6;
 import 'ownmfa_role.pbenum.dart' as $9;
 import 'ownmfa_status.pbenum.dart' as $8;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 /// User represents a user as stored in the database.
 class User extends $pb.GeneratedMessage {
@@ -102,7 +104,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Organization ID (UUID).
   @$pb.TagNumber(2)
@@ -112,7 +114,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasOrgId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOrgId() => clearField(2);
+  void clearOrgId() => $_clearField(2);
 
   /// User name.
   @$pb.TagNumber(3)
@@ -122,7 +124,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearName() => $_clearField(3);
 
   /// User email.
   @$pb.TagNumber(4)
@@ -132,37 +134,37 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasEmail() => $_has(3);
   @$pb.TagNumber(4)
-  void clearEmail() => clearField(4);
+  void clearEmail() => $_clearField(4);
 
   /// User role.
   @$pb.TagNumber(5)
   $9.Role get role => $_getN(4);
   @$pb.TagNumber(5)
-  set role($9.Role v) { setField(5, v); }
+  set role($9.Role v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasRole() => $_has(4);
   @$pb.TagNumber(5)
-  void clearRole() => clearField(5);
+  void clearRole() => $_clearField(5);
 
   /// User status.
   @$pb.TagNumber(6)
   $8.Status get status => $_getN(5);
   @$pb.TagNumber(6)
-  set status($8.Status v) { setField(6, v); }
+  set status($8.Status v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
-  void clearStatus() => clearField(6);
+  void clearStatus() => $_clearField(6);
 
   /// User creation timestamp.
   @$pb.TagNumber(7)
   $6.Timestamp get createdAt => $_getN(6);
   @$pb.TagNumber(7)
-  set createdAt($6.Timestamp v) { setField(7, v); }
+  set createdAt($6.Timestamp v) { $_setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCreatedAt() => $_has(6);
   @$pb.TagNumber(7)
-  void clearCreatedAt() => clearField(7);
+  void clearCreatedAt() => $_clearField(7);
   @$pb.TagNumber(7)
   $6.Timestamp ensureCreatedAt() => $_ensure(6);
 
@@ -170,11 +172,11 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $6.Timestamp get updatedAt => $_getN(7);
   @$pb.TagNumber(8)
-  set updatedAt($6.Timestamp v) { setField(8, v); }
+  set updatedAt($6.Timestamp v) { $_setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasUpdatedAt() => $_has(7);
   @$pb.TagNumber(8)
-  void clearUpdatedAt() => clearField(8);
+  void clearUpdatedAt() => $_clearField(8);
   @$pb.TagNumber(8)
   $6.Timestamp ensureUpdatedAt() => $_ensure(7);
 }
@@ -224,11 +226,11 @@ class CreateUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   User get user => $_getN(0);
   @$pb.TagNumber(1)
-  set user(User v) { setField(1, v); }
+  set user(User v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUser() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUser() => clearField(1);
+  void clearUser() => $_clearField(1);
   @$pb.TagNumber(1)
   User ensureUser() => $_ensure(0);
 }
@@ -282,7 +284,7 @@ class GetUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 /// UpdateUserRequest is sent to update a user.
@@ -335,11 +337,11 @@ class UpdateUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   User get user => $_getN(0);
   @$pb.TagNumber(1)
-  set user(User v) { setField(1, v); }
+  set user(User v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUser() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUser() => clearField(1);
+  void clearUser() => $_clearField(1);
   @$pb.TagNumber(1)
   User ensureUser() => $_ensure(0);
 
@@ -347,11 +349,11 @@ class UpdateUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $7.FieldMask get updateMask => $_getN(1);
   @$pb.TagNumber(2)
-  set updateMask($7.FieldMask v) { setField(2, v); }
+  set updateMask($7.FieldMask v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasUpdateMask() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUpdateMask() => clearField(2);
+  void clearUpdateMask() => $_clearField(2);
   @$pb.TagNumber(2)
   $7.FieldMask ensureUpdateMask() => $_ensure(1);
 }
@@ -410,7 +412,7 @@ class UpdateUserPasswordRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// User password to update.
   @$pb.TagNumber(2)
@@ -420,7 +422,7 @@ class UpdateUserPasswordRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPassword() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPassword() => clearField(2);
+  void clearPassword() => $_clearField(2);
 }
 
 /// DeleteUserRequest is sent to delete a user.
@@ -472,7 +474,7 @@ class DeleteUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 /// ListUsersRequest is sent to list users.
@@ -529,7 +531,7 @@ class ListUsersRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPageSize() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPageSize() => clearField(1);
+  void clearPageSize() => $_clearField(1);
 
   /// Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
   @$pb.TagNumber(2)
@@ -539,7 +541,7 @@ class ListUsersRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPageToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPageToken() => clearField(2);
+  void clearPageToken() => $_clearField(2);
 }
 
 /// ListUsersResponse is sent in response to a user list.
@@ -595,7 +597,7 @@ class ListUsersResponse extends $pb.GeneratedMessage {
 
   /// User array, ordered by ascending created_at timestamp. The completeness of the array will depend on whether the request was made by an admin user, non-admin user, or API key.
   @$pb.TagNumber(1)
-  $core.List<User> get users => $_getList(0);
+  $pb.PbList<User> get users => $_getList(0);
 
   /// Pagination token used to retrieve the next page of results. Not returned for the last page.
   @$pb.TagNumber(2)
@@ -605,7 +607,7 @@ class ListUsersResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNextPageToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNextPageToken() => clearField(2);
+  void clearNextPageToken() => $_clearField(2);
 
   /// Total number of users available.
   @$pb.TagNumber(3)
@@ -615,7 +617,7 @@ class ListUsersResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasTotalSize() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTotalSize() => clearField(3);
+  void clearTotalSize() => $_clearField(3);
 }
 
 
