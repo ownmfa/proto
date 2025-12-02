@@ -1,13 +1,15 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: api/ownmfa_session.proto
-//
+// Generated from api/ownmfa_session.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -33,7 +35,14 @@ const LoginResponse$json = {
   '1': 'LoginResponse',
   '2': [
     {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
-    {'1': 'expires_at', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expiresAt'},
+    {
+      '1': 'expires_at',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
   ],
 };
 
@@ -49,8 +58,24 @@ const Key$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'id'},
     {'1': 'org_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'orgID'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'name'},
-    {'1': 'role', '3': 4, '4': 1, '5': 14, '6': '.ownmfa.api.Role', '8': {}, '10': 'role'},
-    {'1': 'created_at', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdAt'},
+    {
+      '1': 'role',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.Role',
+      '8': {},
+      '10': 'role'
+    },
+    {
+      '1': 'created_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'createdAt'
+    },
   ],
 };
 
@@ -65,7 +90,15 @@ final $typed_data.Uint8List keyDescriptor = $convert.base64Decode(
 const CreateKeyRequest$json = {
   '1': 'CreateKeyRequest',
   '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 11, '6': '.ownmfa.api.Key', '8': {}, '10': 'key'},
+    {
+      '1': 'key',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.Key',
+      '8': {},
+      '10': 'key'
+    },
   ],
 };
 
@@ -118,7 +151,14 @@ final $typed_data.Uint8List listKeysRequestDescriptor = $convert.base64Decode(
 const ListKeysResponse$json = {
   '1': 'ListKeysResponse',
   '2': [
-    {'1': 'keys', '3': 1, '4': 3, '5': 11, '6': '.ownmfa.api.Key', '10': 'keys'},
+    {
+      '1': 'keys',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.ownmfa.api.Key',
+      '10': 'keys'
+    },
     {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
     {'1': 'total_size', '3': 3, '4': 1, '5': 5, '10': 'totalSize'},
   ],
@@ -129,4 +169,3 @@ final $typed_data.Uint8List listKeysResponseDescriptor = $convert.base64Decode(
     'ChBMaXN0S2V5c1Jlc3BvbnNlEiMKBGtleXMYASADKAsyDy5vd25tZmEuYXBpLktleVIEa2V5cx'
     'ImCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAlSDW5leHRQYWdlVG9rZW4SHQoKdG90YWxfc2l6ZRgD'
     'IAEoBVIJdG90YWxTaXpl');
-

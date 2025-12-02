@@ -20,27 +20,27 @@ class OrgServiceStub(object):
                 '/ownmfa.api.OrgService/CreateOrg',
                 request_serializer=api_dot_ownmfa__org__pb2.CreateOrgRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__org__pb2.Org.FromString,
-                )
+                _registered_method=True)
         self.GetOrg = channel.unary_unary(
                 '/ownmfa.api.OrgService/GetOrg',
                 request_serializer=api_dot_ownmfa__org__pb2.GetOrgRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__org__pb2.Org.FromString,
-                )
+                _registered_method=True)
         self.UpdateOrg = channel.unary_unary(
                 '/ownmfa.api.OrgService/UpdateOrg',
                 request_serializer=api_dot_ownmfa__org__pb2.UpdateOrgRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__org__pb2.Org.FromString,
-                )
+                _registered_method=True)
         self.DeleteOrg = channel.unary_unary(
                 '/ownmfa.api.OrgService/DeleteOrg',
                 request_serializer=api_dot_ownmfa__org__pb2.DeleteOrgRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
+                _registered_method=True)
         self.ListOrgs = channel.unary_unary(
                 '/ownmfa.api.OrgService/ListOrgs',
                 request_serializer=api_dot_ownmfa__org__pb2.ListOrgsRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__org__pb2.ListOrgsResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class OrgServiceServicer(object):
@@ -114,6 +114,7 @@ def add_OrgServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'ownmfa.api.OrgService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('ownmfa.api.OrgService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -132,11 +133,21 @@ class OrgService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.OrgService/CreateOrg',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.OrgService/CreateOrg',
             api_dot_ownmfa__org__pb2.CreateOrgRequest.SerializeToString,
             api_dot_ownmfa__org__pb2.Org.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetOrg(request,
@@ -149,11 +160,21 @@ class OrgService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.OrgService/GetOrg',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.OrgService/GetOrg',
             api_dot_ownmfa__org__pb2.GetOrgRequest.SerializeToString,
             api_dot_ownmfa__org__pb2.Org.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def UpdateOrg(request,
@@ -166,11 +187,21 @@ class OrgService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.OrgService/UpdateOrg',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.OrgService/UpdateOrg',
             api_dot_ownmfa__org__pb2.UpdateOrgRequest.SerializeToString,
             api_dot_ownmfa__org__pb2.Org.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteOrg(request,
@@ -183,11 +214,21 @@ class OrgService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.OrgService/DeleteOrg',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.OrgService/DeleteOrg',
             api_dot_ownmfa__org__pb2.DeleteOrgRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ListOrgs(request,
@@ -200,8 +241,18 @@ class OrgService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.OrgService/ListOrgs',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.OrgService/ListOrgs',
             api_dot_ownmfa__org__pb2.ListOrgsRequest.SerializeToString,
             api_dot_ownmfa__org__pb2.ListOrgsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

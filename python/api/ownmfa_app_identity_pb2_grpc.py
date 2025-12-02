@@ -20,62 +20,62 @@ class AppIdentityServiceStub(object):
                 '/ownmfa.api.AppIdentityService/CreateApp',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.CreateAppRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__app__identity__pb2.App.FromString,
-                )
+                _registered_method=True)
         self.CreateIdentity = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/CreateIdentity',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.CreateIdentityRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__app__identity__pb2.CreateIdentityResponse.FromString,
-                )
+                _registered_method=True)
         self.ActivateIdentity = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/ActivateIdentity',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.ActivateIdentityRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__app__identity__pb2.Identity.FromString,
-                )
+                _registered_method=True)
         self.ChallengeIdentity = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/ChallengeIdentity',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.ChallengeIdentityRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
+                _registered_method=True)
         self.VerifyIdentity = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/VerifyIdentity',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.VerifyIdentityRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
+                _registered_method=True)
         self.GetApp = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/GetApp',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.GetAppRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__app__identity__pb2.App.FromString,
-                )
+                _registered_method=True)
         self.GetIdentity = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/GetIdentity',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.GetIdentityRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__app__identity__pb2.Identity.FromString,
-                )
+                _registered_method=True)
         self.UpdateApp = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/UpdateApp',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.UpdateAppRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__app__identity__pb2.App.FromString,
-                )
+                _registered_method=True)
         self.DeleteApp = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/DeleteApp',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.DeleteAppRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
+                _registered_method=True)
         self.DeleteIdentity = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/DeleteIdentity',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.DeleteIdentityRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
+                _registered_method=True)
         self.ListApps = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/ListApps',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.ListAppsRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__app__identity__pb2.ListAppsResponse.FromString,
-                )
+                _registered_method=True)
         self.ListIdentities = channel.unary_unary(
                 '/ownmfa.api.AppIdentityService/ListIdentities',
                 request_serializer=api_dot_ownmfa__app__identity__pb2.ListIdentitiesRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__app__identity__pb2.ListIdentitiesResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class AppIdentityServiceServicer(object):
@@ -233,6 +233,7 @@ def add_AppIdentityServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'ownmfa.api.AppIdentityService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('ownmfa.api.AppIdentityService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -251,11 +252,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/CreateApp',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/CreateApp',
             api_dot_ownmfa__app__identity__pb2.CreateAppRequest.SerializeToString,
             api_dot_ownmfa__app__identity__pb2.App.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def CreateIdentity(request,
@@ -268,11 +279,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/CreateIdentity',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/CreateIdentity',
             api_dot_ownmfa__app__identity__pb2.CreateIdentityRequest.SerializeToString,
             api_dot_ownmfa__app__identity__pb2.CreateIdentityResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ActivateIdentity(request,
@@ -285,11 +306,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/ActivateIdentity',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/ActivateIdentity',
             api_dot_ownmfa__app__identity__pb2.ActivateIdentityRequest.SerializeToString,
             api_dot_ownmfa__app__identity__pb2.Identity.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ChallengeIdentity(request,
@@ -302,11 +333,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/ChallengeIdentity',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/ChallengeIdentity',
             api_dot_ownmfa__app__identity__pb2.ChallengeIdentityRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def VerifyIdentity(request,
@@ -319,11 +360,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/VerifyIdentity',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/VerifyIdentity',
             api_dot_ownmfa__app__identity__pb2.VerifyIdentityRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetApp(request,
@@ -336,11 +387,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/GetApp',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/GetApp',
             api_dot_ownmfa__app__identity__pb2.GetAppRequest.SerializeToString,
             api_dot_ownmfa__app__identity__pb2.App.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetIdentity(request,
@@ -353,11 +414,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/GetIdentity',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/GetIdentity',
             api_dot_ownmfa__app__identity__pb2.GetIdentityRequest.SerializeToString,
             api_dot_ownmfa__app__identity__pb2.Identity.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def UpdateApp(request,
@@ -370,11 +441,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/UpdateApp',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/UpdateApp',
             api_dot_ownmfa__app__identity__pb2.UpdateAppRequest.SerializeToString,
             api_dot_ownmfa__app__identity__pb2.App.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteApp(request,
@@ -387,11 +468,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/DeleteApp',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/DeleteApp',
             api_dot_ownmfa__app__identity__pb2.DeleteAppRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteIdentity(request,
@@ -404,11 +495,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/DeleteIdentity',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/DeleteIdentity',
             api_dot_ownmfa__app__identity__pb2.DeleteIdentityRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ListApps(request,
@@ -421,11 +522,21 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/ListApps',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/ListApps',
             api_dot_ownmfa__app__identity__pb2.ListAppsRequest.SerializeToString,
             api_dot_ownmfa__app__identity__pb2.ListAppsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ListIdentities(request,
@@ -438,8 +549,18 @@ class AppIdentityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.AppIdentityService/ListIdentities',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.AppIdentityService/ListIdentities',
             api_dot_ownmfa__app__identity__pb2.ListIdentitiesRequest.SerializeToString,
             api_dot_ownmfa__app__identity__pb2.ListIdentitiesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

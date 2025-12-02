@@ -1,13 +1,15 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: api/ownmfa_org.proto
-//
+// Generated from api/ownmfa_org.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -36,10 +38,42 @@ const Org$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'name'},
-    {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.ownmfa.api.Status', '8': {}, '10': 'status'},
-    {'1': 'plan', '3': 6, '4': 1, '5': 14, '6': '.ownmfa.api.Plan', '8': {}, '10': 'plan'},
-    {'1': 'created_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdAt'},
-    {'1': 'updated_at', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'updatedAt'},
+    {
+      '1': 'status',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.Status',
+      '8': {},
+      '10': 'status'
+    },
+    {
+      '1': 'plan',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.Plan',
+      '8': {},
+      '10': 'plan'
+    },
+    {
+      '1': 'created_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -56,7 +90,15 @@ final $typed_data.Uint8List orgDescriptor = $convert.base64Decode(
 const CreateOrgRequest$json = {
   '1': 'CreateOrgRequest',
   '2': [
-    {'1': 'org', '3': 1, '4': 1, '5': 11, '6': '.ownmfa.api.Org', '8': {}, '10': 'org'},
+    {
+      '1': 'org',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.Org',
+      '8': {},
+      '10': 'org'
+    },
   ],
 };
 
@@ -81,8 +123,23 @@ final $typed_data.Uint8List getOrgRequestDescriptor = $convert.base64Decode(
 const UpdateOrgRequest$json = {
   '1': 'UpdateOrgRequest',
   '2': [
-    {'1': 'org', '3': 1, '4': 1, '5': 11, '6': '.ownmfa.api.Org', '8': {}, '10': 'org'},
-    {'1': 'update_mask', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.FieldMask', '10': 'updateMask'},
+    {
+      '1': 'org',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.Org',
+      '8': {},
+      '10': 'org'
+    },
+    {
+      '1': 'update_mask',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.FieldMask',
+      '10': 'updateMask'
+    },
   ],
 };
 
@@ -122,7 +179,14 @@ final $typed_data.Uint8List listOrgsRequestDescriptor = $convert.base64Decode(
 const ListOrgsResponse$json = {
   '1': 'ListOrgsResponse',
   '2': [
-    {'1': 'orgs', '3': 1, '4': 3, '5': 11, '6': '.ownmfa.api.Org', '10': 'orgs'},
+    {
+      '1': 'orgs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.ownmfa.api.Org',
+      '10': 'orgs'
+    },
     {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
     {'1': 'total_size', '3': 3, '4': 1, '5': 5, '10': 'totalSize'},
   ],
@@ -133,4 +197,3 @@ final $typed_data.Uint8List listOrgsResponseDescriptor = $convert.base64Decode(
     'ChBMaXN0T3Jnc1Jlc3BvbnNlEiMKBG9yZ3MYASADKAsyDy5vd25tZmEuYXBpLk9yZ1IEb3Jncx'
     'ImCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAlSDW5leHRQYWdlVG9rZW4SHQoKdG90YWxfc2l6ZRgD'
     'IAEoBVIJdG90YWxTaXpl');
-

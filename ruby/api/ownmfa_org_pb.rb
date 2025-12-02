@@ -17,30 +17,7 @@ require 'validate/validate_pb'
 descriptor_data = "\n\x14\x61pi/ownmfa_org.proto\x12\nownmfa.api\x1a\x17\x61pi/ownmfa_status.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x17validate/validate.proto\"\xee\x01\n\x03Org\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x17\n\x04name\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x05\x18(\x12.\n\x06status\x18\x05 \x01(\x0e\x32\x12.ownmfa.api.StatusB\n\xfa\x42\x07\x82\x01\x04\x18\x03\x18\x06\x12#\n\x04plan\x18\x06 \x01(\x0e\x32\x10.ownmfa.api.PlanB\x03\xe0\x41\x03\x12\x33\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x33\n\nupdated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\"=\n\x10\x43reateOrgRequest\x12)\n\x03org\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.OrgB\x0b\xe0\x41\x02\xfa\x42\x05\x8a\x01\x02\x10\x01\"(\n\rGetOrgRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xe0\x41\x02\xfa\x42\x05r\x03\xb0\x01\x01\"n\n\x10UpdateOrgRequest\x12)\n\x03org\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.OrgB\x0b\xe0\x41\x02\xfa\x42\x05\x8a\x01\x02\x10\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"+\n\x10\x44\x65leteOrgRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xe0\x41\x02\xfa\x42\x05r\x03\xb0\x01\x01\"B\n\x0fListOrgsRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListOrgsResponse\x12\x1d\n\x04orgs\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.Org\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05*T\n\x04Plan\x12\x14\n\x10PLAN_UNSPECIFIED\x10\x00\x12\x10\n\x0cPAYMENT_FAIL\x10\x03\x12\x0b\n\x07STARTER\x10\x06\x12\x07\n\x03PRO\x10\t\x12\x0e\n\nENTERPRISE\x10\x0c\x32\xed\x04\n\nOrgService\x12\x93\x01\n\tCreateOrg\x12\x1c.ownmfa.api.CreateOrgRequest\x1a\x0f.ownmfa.api.Org\"W\x92\x41\x36J4\n\x03\x32\x30\x31\x12-\n\x16\x41 successful response.\x12\x13\n\x11\x1a\x0f.ownmfa.api.Org\x82\xd3\xe4\x93\x02\x18\"\x11/v1/organizations:\x03org\x12T\n\x06GetOrg\x12\x19.ownmfa.api.GetOrgRequest\x1a\x0f.ownmfa.api.Org\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/organizations/{id}\x12\x86\x01\n\tUpdateOrg\x12\x1c.ownmfa.api.UpdateOrgRequest\x1a\x0f.ownmfa.api.Org\"J\x82\xd3\xe4\x93\x02\x44\x1a\x1a/v1/organizations/{org.id}:\x03orgZ!2\x1a/v1/organizations/{org.id}:\x03org\x12\x87\x01\n\tDeleteOrg\x12\x1c.ownmfa.api.DeleteOrgRequest\x1a\x16.google.protobuf.Empty\"D\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x82\xd3\xe4\x93\x02\x18*\x16/v1/organizations/{id}\x12`\n\x08ListOrgs\x12\x1b.ownmfa.api.ListOrgsRequest\x1a\x1c.ownmfa.api.ListOrgsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/organizationsB Z\x1egithub.com/ownmfa/proto/go/apib\x06proto3"
 
 pool = Google::Protobuf::DescriptorPool.generated_pool
-
-begin
-  pool.add_serialized_file(descriptor_data)
-rescue TypeError => e
-  # Compatibility code: will be removed in the next major version.
-  require 'google/protobuf/descriptor_pb'
-  parsed = Google::Protobuf::FileDescriptorProto.decode(descriptor_data)
-  parsed.clear_dependency
-  serialized = parsed.class.encode(parsed)
-  file = pool.add_serialized_file(serialized)
-  warn "Warning: Protobuf detected an import path issue while loading generated file #{__FILE__}"
-  imports = [
-    ["google.protobuf.Timestamp", "google/protobuf/timestamp.proto"],
-    ["google.protobuf.FieldMask", "google/protobuf/field_mask.proto"],
-  ]
-  imports.each do |type_name, expected_filename|
-    import_file = pool.lookup(type_name).file_descriptor
-    if import_file.name != expected_filename
-      warn "- #{file.name} imports #{expected_filename}, but that import was loaded as #{import_file.name}"
-    end
-  end
-  warn "Each proto file must use a consistent fully-qualified name."
-  warn "This will become an error in the next major version."
-end
+pool.add_serialized_file(descriptor_data)
 
 module Ownmfa
   module Api
