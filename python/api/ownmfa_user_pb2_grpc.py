@@ -20,32 +20,32 @@ class UserServiceStub(object):
                 '/ownmfa.api.UserService/CreateUser',
                 request_serializer=api_dot_ownmfa__user__pb2.CreateUserRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__user__pb2.User.FromString,
-                )
+                _registered_method=True)
         self.GetUser = channel.unary_unary(
                 '/ownmfa.api.UserService/GetUser',
                 request_serializer=api_dot_ownmfa__user__pb2.GetUserRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__user__pb2.User.FromString,
-                )
+                _registered_method=True)
         self.UpdateUser = channel.unary_unary(
                 '/ownmfa.api.UserService/UpdateUser',
                 request_serializer=api_dot_ownmfa__user__pb2.UpdateUserRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__user__pb2.User.FromString,
-                )
+                _registered_method=True)
         self.UpdateUserPassword = channel.unary_unary(
                 '/ownmfa.api.UserService/UpdateUserPassword',
                 request_serializer=api_dot_ownmfa__user__pb2.UpdateUserPasswordRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
+                _registered_method=True)
         self.DeleteUser = channel.unary_unary(
                 '/ownmfa.api.UserService/DeleteUser',
                 request_serializer=api_dot_ownmfa__user__pb2.DeleteUserRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
+                _registered_method=True)
         self.ListUsers = channel.unary_unary(
                 '/ownmfa.api.UserService/ListUsers',
                 request_serializer=api_dot_ownmfa__user__pb2.ListUsersRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__user__pb2.ListUsersResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class UserServiceServicer(object):
@@ -131,6 +131,7 @@ def add_UserServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'ownmfa.api.UserService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('ownmfa.api.UserService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -149,11 +150,21 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.UserService/CreateUser',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.UserService/CreateUser',
             api_dot_ownmfa__user__pb2.CreateUserRequest.SerializeToString,
             api_dot_ownmfa__user__pb2.User.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetUser(request,
@@ -166,11 +177,21 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.UserService/GetUser',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.UserService/GetUser',
             api_dot_ownmfa__user__pb2.GetUserRequest.SerializeToString,
             api_dot_ownmfa__user__pb2.User.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def UpdateUser(request,
@@ -183,11 +204,21 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.UserService/UpdateUser',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.UserService/UpdateUser',
             api_dot_ownmfa__user__pb2.UpdateUserRequest.SerializeToString,
             api_dot_ownmfa__user__pb2.User.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def UpdateUserPassword(request,
@@ -200,11 +231,21 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.UserService/UpdateUserPassword',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.UserService/UpdateUserPassword',
             api_dot_ownmfa__user__pb2.UpdateUserPasswordRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteUser(request,
@@ -217,11 +258,21 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.UserService/DeleteUser',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.UserService/DeleteUser',
             api_dot_ownmfa__user__pb2.DeleteUserRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ListUsers(request,
@@ -234,8 +285,18 @@ class UserService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.UserService/ListUsers',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.UserService/ListUsers',
             api_dot_ownmfa__user__pb2.ListUsersRequest.SerializeToString,
             api_dot_ownmfa__user__pb2.ListUsersResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

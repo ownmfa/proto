@@ -20,22 +20,22 @@ class SessionServiceStub(object):
                 '/ownmfa.api.SessionService/Login',
                 request_serializer=api_dot_ownmfa__session__pb2.LoginRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__session__pb2.LoginResponse.FromString,
-                )
+                _registered_method=True)
         self.CreateKey = channel.unary_unary(
                 '/ownmfa.api.SessionService/CreateKey',
                 request_serializer=api_dot_ownmfa__session__pb2.CreateKeyRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__session__pb2.CreateKeyResponse.FromString,
-                )
+                _registered_method=True)
         self.DeleteKey = channel.unary_unary(
                 '/ownmfa.api.SessionService/DeleteKey',
                 request_serializer=api_dot_ownmfa__session__pb2.DeleteKeyRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
+                _registered_method=True)
         self.ListKeys = channel.unary_unary(
                 '/ownmfa.api.SessionService/ListKeys',
                 request_serializer=api_dot_ownmfa__session__pb2.ListKeysRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__session__pb2.ListKeysResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class SessionServiceServicer(object):
@@ -97,6 +97,7 @@ def add_SessionServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'ownmfa.api.SessionService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('ownmfa.api.SessionService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -115,11 +116,21 @@ class SessionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.SessionService/Login',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.SessionService/Login',
             api_dot_ownmfa__session__pb2.LoginRequest.SerializeToString,
             api_dot_ownmfa__session__pb2.LoginResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def CreateKey(request,
@@ -132,11 +143,21 @@ class SessionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.SessionService/CreateKey',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.SessionService/CreateKey',
             api_dot_ownmfa__session__pb2.CreateKeyRequest.SerializeToString,
             api_dot_ownmfa__session__pb2.CreateKeyResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteKey(request,
@@ -149,11 +170,21 @@ class SessionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.SessionService/DeleteKey',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.SessionService/DeleteKey',
             api_dot_ownmfa__session__pb2.DeleteKeyRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ListKeys(request,
@@ -166,8 +197,18 @@ class SessionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.SessionService/ListKeys',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.SessionService/ListKeys',
             api_dot_ownmfa__session__pb2.ListKeysRequest.SerializeToString,
             api_dot_ownmfa__session__pb2.ListKeysResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

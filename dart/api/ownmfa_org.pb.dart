@@ -1,22 +1,25 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: api/ownmfa_org.proto
-//
+// Generated from api/ownmfa_org.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/field_mask.pb.dart'
+    as $3;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $2;
 
-import '../google/protobuf/field_mask.pb.dart' as $7;
-import '../google/protobuf/timestamp.pb.dart' as $6;
 import 'ownmfa_org.pbenum.dart';
-import 'ownmfa_status.pbenum.dart' as $8;
+import 'ownmfa_status.pbenum.dart' as $4;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -27,72 +30,68 @@ class Org extends $pb.GeneratedMessage {
   factory Org({
     $core.String? id,
     $core.String? name,
-    $6.Timestamp? createdAt,
-    $6.Timestamp? updatedAt,
-    $8.Status? status,
+    $2.Timestamp? createdAt,
+    $2.Timestamp? updatedAt,
+    $4.Status? status,
     Plan? plan,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (createdAt != null) {
-      $result.createdAt = createdAt;
-    }
-    if (updatedAt != null) {
-      $result.updatedAt = updatedAt;
-    }
-    if (status != null) {
-      $result.status = status;
-    }
-    if (plan != null) {
-      $result.plan = plan;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    if (status != null) result.status = status;
+    if (plan != null) result.plan = plan;
+    return result;
   }
-  Org._() : super();
-  factory Org.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Org.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Org', package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'), createEmptyInstance: create)
+  Org._();
+
+  factory Org.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Org.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Org',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOM<$6.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $6.Timestamp.create)
-    ..aOM<$6.Timestamp>(4, _omitFieldNames ? '' : 'updatedAt', subBuilder: $6.Timestamp.create)
-    ..e<$8.Status>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: $8.Status.STATUS_UNSPECIFIED, valueOf: $8.Status.valueOf, enumValues: $8.Status.values)
-    ..e<Plan>(6, _omitFieldNames ? '' : 'plan', $pb.PbFieldType.OE, defaultOrMaker: Plan.PLAN_UNSPECIFIED, valueOf: Plan.valueOf, enumValues: Plan.values)
-    ..hasRequiredFields = false
-  ;
+    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $2.Timestamp.create)
+    ..aE<$4.Status>(5, _omitFieldNames ? '' : 'status',
+        enumValues: $4.Status.values)
+    ..aE<Plan>(6, _omitFieldNames ? '' : 'plan', enumValues: Plan.values)
+    ..hasRequiredFields = false;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Org clone() => Org()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Org copyWith(void Function(Org) updates) => super.copyWith((message) => updates(message as Org)) as Org;
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Org clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Org copyWith(void Function(Org) updates) =>
+      super.copyWith((message) => updates(message as Org)) as Org;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static Org create() => Org._();
+  @$core.override
   Org createEmptyInstance() => create();
-  static $pb.PbList<Org> createRepeated() => $pb.PbList<Org>();
   @$core.pragma('dart2js:noInline')
-  static Org getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Org>(create);
+  static Org getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Org>(create);
   static Org? _defaultInstance;
 
   /// Organization ID (UUID).
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
+  set id($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -102,7 +101,7 @@ class Org extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set name($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
@@ -110,33 +109,33 @@ class Org extends $pb.GeneratedMessage {
 
   /// Organization creation timestamp.
   @$pb.TagNumber(3)
-  $6.Timestamp get createdAt => $_getN(2);
+  $2.Timestamp get createdAt => $_getN(2);
   @$pb.TagNumber(3)
-  set createdAt($6.Timestamp v) { $_setField(3, v); }
+  set createdAt($2.Timestamp value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasCreatedAt() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedAt() => $_clearField(3);
   @$pb.TagNumber(3)
-  $6.Timestamp ensureCreatedAt() => $_ensure(2);
+  $2.Timestamp ensureCreatedAt() => $_ensure(2);
 
   /// Organization modification timestamp.
   @$pb.TagNumber(4)
-  $6.Timestamp get updatedAt => $_getN(3);
+  $2.Timestamp get updatedAt => $_getN(3);
   @$pb.TagNumber(4)
-  set updatedAt($6.Timestamp v) { $_setField(4, v); }
+  set updatedAt($2.Timestamp value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasUpdatedAt() => $_has(3);
   @$pb.TagNumber(4)
   void clearUpdatedAt() => $_clearField(4);
   @$pb.TagNumber(4)
-  $6.Timestamp ensureUpdatedAt() => $_ensure(3);
+  $2.Timestamp ensureUpdatedAt() => $_ensure(3);
 
   /// Organization status.
   @$pb.TagNumber(5)
-  $8.Status get status => $_getN(4);
+  $4.Status get status => $_getN(4);
   @$pb.TagNumber(5)
-  set status($8.Status v) { $_setField(5, v); }
+  set status($4.Status value) => $_setField(5, value);
   @$pb.TagNumber(5)
   $core.bool hasStatus() => $_has(4);
   @$pb.TagNumber(5)
@@ -146,7 +145,7 @@ class Org extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   Plan get plan => $_getN(5);
   @$pb.TagNumber(6)
-  set plan(Plan v) { $_setField(6, v); }
+  set plan(Plan value) => $_setField(6, value);
   @$pb.TagNumber(6)
   $core.bool hasPlan() => $_has(5);
   @$pb.TagNumber(6)
@@ -158,47 +157,51 @@ class CreateOrgRequest extends $pb.GeneratedMessage {
   factory CreateOrgRequest({
     Org? org,
   }) {
-    final $result = create();
-    if (org != null) {
-      $result.org = org;
-    }
-    return $result;
+    final result = create();
+    if (org != null) result.org = org;
+    return result;
   }
-  CreateOrgRequest._() : super();
-  factory CreateOrgRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateOrgRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateOrgRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'), createEmptyInstance: create)
+  CreateOrgRequest._();
+
+  factory CreateOrgRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrgRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrgRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'),
+      createEmptyInstance: create)
     ..aOM<Org>(1, _omitFieldNames ? '' : 'org', subBuilder: Org.create)
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CreateOrgRequest clone() => CreateOrgRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CreateOrgRequest copyWith(void Function(CreateOrgRequest) updates) => super.copyWith((message) => updates(message as CreateOrgRequest)) as CreateOrgRequest;
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrgRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrgRequest copyWith(void Function(CreateOrgRequest) updates) =>
+      super.copyWith((message) => updates(message as CreateOrgRequest))
+          as CreateOrgRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static CreateOrgRequest create() => CreateOrgRequest._();
+  @$core.override
   CreateOrgRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateOrgRequest> createRepeated() => $pb.PbList<CreateOrgRequest>();
   @$core.pragma('dart2js:noInline')
-  static CreateOrgRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateOrgRequest>(create);
+  static CreateOrgRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateOrgRequest>(create);
   static CreateOrgRequest? _defaultInstance;
 
   /// Org message to create.
   @$pb.TagNumber(1)
   Org get org => $_getN(0);
   @$pb.TagNumber(1)
-  set org(Org v) { $_setField(1, v); }
+  set org(Org value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasOrg() => $_has(0);
   @$pb.TagNumber(1)
@@ -212,47 +215,51 @@ class GetOrgRequest extends $pb.GeneratedMessage {
   factory GetOrgRequest({
     $core.String? id,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
   }
-  GetOrgRequest._() : super();
-  factory GetOrgRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetOrgRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrgRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'), createEmptyInstance: create)
+  GetOrgRequest._();
+
+  factory GetOrgRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetOrgRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetOrgRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetOrgRequest clone() => GetOrgRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetOrgRequest copyWith(void Function(GetOrgRequest) updates) => super.copyWith((message) => updates(message as GetOrgRequest)) as GetOrgRequest;
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOrgRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOrgRequest copyWith(void Function(GetOrgRequest) updates) =>
+      super.copyWith((message) => updates(message as GetOrgRequest))
+          as GetOrgRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetOrgRequest create() => GetOrgRequest._();
+  @$core.override
   GetOrgRequest createEmptyInstance() => create();
-  static $pb.PbList<GetOrgRequest> createRepeated() => $pb.PbList<GetOrgRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetOrgRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOrgRequest>(create);
+  static GetOrgRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetOrgRequest>(create);
   static GetOrgRequest? _defaultInstance;
 
   /// Organization ID (UUID) to get.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
+  set id($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -263,53 +270,56 @@ class GetOrgRequest extends $pb.GeneratedMessage {
 class UpdateOrgRequest extends $pb.GeneratedMessage {
   factory UpdateOrgRequest({
     Org? org,
-    $7.FieldMask? updateMask,
+    $3.FieldMask? updateMask,
   }) {
-    final $result = create();
-    if (org != null) {
-      $result.org = org;
-    }
-    if (updateMask != null) {
-      $result.updateMask = updateMask;
-    }
-    return $result;
+    final result = create();
+    if (org != null) result.org = org;
+    if (updateMask != null) result.updateMask = updateMask;
+    return result;
   }
-  UpdateOrgRequest._() : super();
-  factory UpdateOrgRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateOrgRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrgRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'), createEmptyInstance: create)
+  UpdateOrgRequest._();
+
+  factory UpdateOrgRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateOrgRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateOrgRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'),
+      createEmptyInstance: create)
     ..aOM<Org>(1, _omitFieldNames ? '' : 'org', subBuilder: Org.create)
-    ..aOM<$7.FieldMask>(2, _omitFieldNames ? '' : 'updateMask', subBuilder: $7.FieldMask.create)
-    ..hasRequiredFields = false
-  ;
+    ..aOM<$3.FieldMask>(2, _omitFieldNames ? '' : 'updateMask',
+        subBuilder: $3.FieldMask.create)
+    ..hasRequiredFields = false;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UpdateOrgRequest clone() => UpdateOrgRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UpdateOrgRequest copyWith(void Function(UpdateOrgRequest) updates) => super.copyWith((message) => updates(message as UpdateOrgRequest)) as UpdateOrgRequest;
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateOrgRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateOrgRequest copyWith(void Function(UpdateOrgRequest) updates) =>
+      super.copyWith((message) => updates(message as UpdateOrgRequest))
+          as UpdateOrgRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static UpdateOrgRequest create() => UpdateOrgRequest._();
+  @$core.override
   UpdateOrgRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateOrgRequest> createRepeated() => $pb.PbList<UpdateOrgRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateOrgRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrgRequest>(create);
+  static UpdateOrgRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateOrgRequest>(create);
   static UpdateOrgRequest? _defaultInstance;
 
   /// Org message to update.
   @$pb.TagNumber(1)
   Org get org => $_getN(0);
   @$pb.TagNumber(1)
-  set org(Org v) { $_setField(1, v); }
+  set org(Org value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasOrg() => $_has(0);
   @$pb.TagNumber(1)
@@ -319,15 +329,15 @@ class UpdateOrgRequest extends $pb.GeneratedMessage {
 
   /// Fields to update. Automatically populated by a PATCH request. If not present, a full resource update is performed.
   @$pb.TagNumber(2)
-  $7.FieldMask get updateMask => $_getN(1);
+  $3.FieldMask get updateMask => $_getN(1);
   @$pb.TagNumber(2)
-  set updateMask($7.FieldMask v) { $_setField(2, v); }
+  set updateMask($3.FieldMask value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasUpdateMask() => $_has(1);
   @$pb.TagNumber(2)
   void clearUpdateMask() => $_clearField(2);
   @$pb.TagNumber(2)
-  $7.FieldMask ensureUpdateMask() => $_ensure(1);
+  $3.FieldMask ensureUpdateMask() => $_ensure(1);
 }
 
 /// DeleteOrgRequest is sent to delete an organization.
@@ -335,47 +345,51 @@ class DeleteOrgRequest extends $pb.GeneratedMessage {
   factory DeleteOrgRequest({
     $core.String? id,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
   }
-  DeleteOrgRequest._() : super();
-  factory DeleteOrgRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteOrgRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteOrgRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'), createEmptyInstance: create)
+  DeleteOrgRequest._();
+
+  factory DeleteOrgRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteOrgRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteOrgRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  DeleteOrgRequest clone() => DeleteOrgRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  DeleteOrgRequest copyWith(void Function(DeleteOrgRequest) updates) => super.copyWith((message) => updates(message as DeleteOrgRequest)) as DeleteOrgRequest;
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteOrgRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteOrgRequest copyWith(void Function(DeleteOrgRequest) updates) =>
+      super.copyWith((message) => updates(message as DeleteOrgRequest))
+          as DeleteOrgRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static DeleteOrgRequest create() => DeleteOrgRequest._();
+  @$core.override
   DeleteOrgRequest createEmptyInstance() => create();
-  static $pb.PbList<DeleteOrgRequest> createRepeated() => $pb.PbList<DeleteOrgRequest>();
   @$core.pragma('dart2js:noInline')
-  static DeleteOrgRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteOrgRequest>(create);
+  static DeleteOrgRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteOrgRequest>(create);
   static DeleteOrgRequest? _defaultInstance;
 
   /// Organization ID (UUID) to delete.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
+  set id($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -388,51 +402,53 @@ class ListOrgsRequest extends $pb.GeneratedMessage {
     $core.int? pageSize,
     $core.String? pageToken,
   }) {
-    final $result = create();
-    if (pageSize != null) {
-      $result.pageSize = pageSize;
-    }
-    if (pageToken != null) {
-      $result.pageToken = pageToken;
-    }
-    return $result;
+    final result = create();
+    if (pageSize != null) result.pageSize = pageSize;
+    if (pageToken != null) result.pageToken = pageToken;
+    return result;
   }
-  ListOrgsRequest._() : super();
-  factory ListOrgsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListOrgsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListOrgsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.O3)
+  ListOrgsRequest._();
+
+  factory ListOrgsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListOrgsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListOrgsRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'pageSize')
     ..aOS(2, _omitFieldNames ? '' : 'pageToken')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ListOrgsRequest clone() => ListOrgsRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListOrgsRequest copyWith(void Function(ListOrgsRequest) updates) => super.copyWith((message) => updates(message as ListOrgsRequest)) as ListOrgsRequest;
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListOrgsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListOrgsRequest copyWith(void Function(ListOrgsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListOrgsRequest))
+          as ListOrgsRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ListOrgsRequest create() => ListOrgsRequest._();
+  @$core.override
   ListOrgsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListOrgsRequest> createRepeated() => $pb.PbList<ListOrgsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListOrgsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListOrgsRequest>(create);
+  static ListOrgsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListOrgsRequest>(create);
   static ListOrgsRequest? _defaultInstance;
 
   /// Number of organizations to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
   @$pb.TagNumber(1)
   $core.int get pageSize => $_getIZ(0);
   @$pb.TagNumber(1)
-  set pageSize($core.int v) { $_setSignedInt32(0, v); }
+  set pageSize($core.int value) => $_setSignedInt32(0, value);
   @$pb.TagNumber(1)
   $core.bool hasPageSize() => $_has(0);
   @$pb.TagNumber(1)
@@ -442,7 +458,7 @@ class ListOrgsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get pageToken => $_getSZ(1);
   @$pb.TagNumber(2)
-  set pageToken($core.String v) { $_setString(1, v); }
+  set pageToken($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasPageToken() => $_has(1);
   @$pb.TagNumber(2)
@@ -456,48 +472,48 @@ class ListOrgsResponse extends $pb.GeneratedMessage {
     $core.String? nextPageToken,
     $core.int? totalSize,
   }) {
-    final $result = create();
-    if (orgs != null) {
-      $result.orgs.addAll(orgs);
-    }
-    if (nextPageToken != null) {
-      $result.nextPageToken = nextPageToken;
-    }
-    if (totalSize != null) {
-      $result.totalSize = totalSize;
-    }
-    return $result;
+    final result = create();
+    if (orgs != null) result.orgs.addAll(orgs);
+    if (nextPageToken != null) result.nextPageToken = nextPageToken;
+    if (totalSize != null) result.totalSize = totalSize;
+    return result;
   }
-  ListOrgsResponse._() : super();
-  factory ListOrgsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListOrgsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListOrgsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'), createEmptyInstance: create)
-    ..pc<Org>(1, _omitFieldNames ? '' : 'orgs', $pb.PbFieldType.PM, subBuilder: Org.create)
+  ListOrgsResponse._();
+
+  factory ListOrgsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListOrgsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListOrgsResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'ownmfa.api'),
+      createEmptyInstance: create)
+    ..pPM<Org>(1, _omitFieldNames ? '' : 'orgs', subBuilder: Org.create)
     ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'totalSize', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(3, _omitFieldNames ? '' : 'totalSize')
+    ..hasRequiredFields = false;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ListOrgsResponse clone() => ListOrgsResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListOrgsResponse copyWith(void Function(ListOrgsResponse) updates) => super.copyWith((message) => updates(message as ListOrgsResponse)) as ListOrgsResponse;
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListOrgsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListOrgsResponse copyWith(void Function(ListOrgsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListOrgsResponse))
+          as ListOrgsResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ListOrgsResponse create() => ListOrgsResponse._();
+  @$core.override
   ListOrgsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListOrgsResponse> createRepeated() => $pb.PbList<ListOrgsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListOrgsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListOrgsResponse>(create);
+  static ListOrgsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListOrgsResponse>(create);
   static ListOrgsResponse? _defaultInstance;
 
   /// Org array, ordered by ascending created_at timestamp.
@@ -508,7 +524,7 @@ class ListOrgsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get nextPageToken => $_getSZ(1);
   @$pb.TagNumber(2)
-  set nextPageToken($core.String v) { $_setString(1, v); }
+  set nextPageToken($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasNextPageToken() => $_has(1);
   @$pb.TagNumber(2)
@@ -518,13 +534,14 @@ class ListOrgsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.int get totalSize => $_getIZ(2);
   @$pb.TagNumber(3)
-  set totalSize($core.int v) { $_setSignedInt32(2, v); }
+  set totalSize($core.int value) => $_setSignedInt32(2, value);
   @$pb.TagNumber(3)
   $core.bool hasTotalSize() => $_has(2);
   @$pb.TagNumber(3)
   void clearTotalSize() => $_clearField(3);
 }
 
-
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

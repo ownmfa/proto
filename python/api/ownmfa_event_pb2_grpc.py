@@ -19,12 +19,12 @@ class EventServiceStub(object):
                 '/ownmfa.api.EventService/ListEvents',
                 request_serializer=api_dot_ownmfa__event__pb2.ListEventsRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__event__pb2.ListEventsResponse.FromString,
-                )
+                _registered_method=True)
         self.LatestEvents = channel.unary_unary(
                 '/ownmfa.api.EventService/LatestEvents',
                 request_serializer=api_dot_ownmfa__event__pb2.LatestEventsRequest.SerializeToString,
                 response_deserializer=api_dot_ownmfa__event__pb2.LatestEventsResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class EventServiceServicer(object):
@@ -62,6 +62,7 @@ def add_EventServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'ownmfa.api.EventService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('ownmfa.api.EventService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -80,11 +81,21 @@ class EventService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.EventService/ListEvents',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.EventService/ListEvents',
             api_dot_ownmfa__event__pb2.ListEventsRequest.SerializeToString,
             api_dot_ownmfa__event__pb2.ListEventsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def LatestEvents(request,
@@ -97,8 +108,18 @@ class EventService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ownmfa.api.EventService/LatestEvents',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/ownmfa.api.EventService/LatestEvents',
             api_dot_ownmfa__event__pb2.LatestEventsRequest.SerializeToString,
             api_dot_ownmfa__event__pb2.LatestEventsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

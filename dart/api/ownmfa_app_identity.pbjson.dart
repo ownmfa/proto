@@ -1,13 +1,15 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: api/ownmfa_app_identity.proto
-//
+// Generated from api/ownmfa_app_identity.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -37,8 +39,8 @@ const Hash$json = {
 };
 
 /// Descriptor for `Hash`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List hashDescriptor = $convert.base64Decode(
-    'CgRIYXNoEgoKBlNIQTUxMhAAEgoKBlNIQTI1NhABEggKBFNIQTEQAg==');
+final $typed_data.Uint8List hashDescriptor = $convert
+    .base64Decode('CgRIYXNoEgoKBlNIQTUxMhAAEgoKBlNIQTI1NhABEggKBFNIQTEQAg==');
 
 @$core.Deprecated('Use appDescriptor instead')
 const App$json = {
@@ -50,11 +52,48 @@ const App$json = {
     {'1': 'display_name', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'displayName'},
     {'1': 'email', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'email'},
     {'1': 'pushover_key', '3': 6, '4': 1, '5': 9, '8': {}, '10': 'pushoverKey'},
-    {'1': 'subject_template', '3': 7, '4': 1, '5': 9, '8': {}, '10': 'subjectTemplate'},
-    {'1': 'text_body_template', '3': 8, '4': 1, '5': 9, '8': {}, '10': 'textBodyTemplate'},
-    {'1': 'html_body_template', '3': 9, '4': 1, '5': 12, '8': {}, '10': 'htmlBodyTemplate'},
-    {'1': 'created_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdAt'},
-    {'1': 'updated_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'updatedAt'},
+    {
+      '1': 'subject_template',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '8': {},
+      '10': 'subjectTemplate'
+    },
+    {
+      '1': 'text_body_template',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '8': {},
+      '10': 'textBodyTemplate'
+    },
+    {
+      '1': 'html_body_template',
+      '3': 9,
+      '4': 1,
+      '5': 12,
+      '8': {},
+      '10': 'htmlBodyTemplate'
+    },
+    {
+      '1': 'created_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -75,7 +114,15 @@ final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
 const CreateAppRequest$json = {
   '1': 'CreateAppRequest',
   '2': [
-    {'1': 'app', '3': 1, '4': 1, '5': 11, '6': '.ownmfa.api.App', '8': {}, '10': 'app'},
+    {
+      '1': 'app',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.App',
+      '8': {},
+      '10': 'app'
+    },
   ],
 };
 
@@ -100,8 +147,23 @@ final $typed_data.Uint8List getAppRequestDescriptor = $convert.base64Decode(
 const UpdateAppRequest$json = {
   '1': 'UpdateAppRequest',
   '2': [
-    {'1': 'app', '3': 1, '4': 1, '5': 11, '6': '.ownmfa.api.App', '8': {}, '10': 'app'},
-    {'1': 'update_mask', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.FieldMask', '10': 'updateMask'},
+    {
+      '1': 'app',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.App',
+      '8': {},
+      '10': 'app'
+    },
+    {
+      '1': 'update_mask',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.FieldMask',
+      '10': 'updateMask'
+    },
   ],
 };
 
@@ -141,7 +203,14 @@ final $typed_data.Uint8List listAppsRequestDescriptor = $convert.base64Decode(
 const ListAppsResponse$json = {
   '1': 'ListAppsResponse',
   '2': [
-    {'1': 'apps', '3': 1, '4': 3, '5': 11, '6': '.ownmfa.api.App', '10': 'apps'},
+    {
+      '1': 'apps',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.ownmfa.api.App',
+      '10': 'apps'
+    },
     {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
     {'1': 'total_size', '3': 3, '4': 1, '5': 5, '10': 'totalSize'},
   ],
@@ -157,7 +226,14 @@ final $typed_data.Uint8List listAppsResponseDescriptor = $convert.base64Decode(
 const SoftwareHOTPMethod$json = {
   '1': 'SoftwareHOTPMethod',
   '2': [
-    {'1': 'hash', '3': 1, '4': 1, '5': 14, '6': '.ownmfa.api.Hash', '10': 'hash'},
+    {
+      '1': 'hash',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.Hash',
+      '10': 'hash'
+    },
     {'1': 'digits', '3': 2, '4': 1, '5': 5, '8': {}, '10': 'digits'},
     {'1': 'counter', '3': 3, '4': 1, '5': 5, '10': 'counter'},
     {'1': 'account_name', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'accountName'},
@@ -174,7 +250,14 @@ final $typed_data.Uint8List softwareHOTPMethodDescriptor = $convert.base64Decode
 const SoftwareTOTPMethod$json = {
   '1': 'SoftwareTOTPMethod',
   '2': [
-    {'1': 'hash', '3': 1, '4': 1, '5': 14, '6': '.ownmfa.api.Hash', '10': 'hash'},
+    {
+      '1': 'hash',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.Hash',
+      '10': 'hash'
+    },
     {'1': 'digits', '3': 2, '4': 1, '5': 5, '8': {}, '10': 'digits'},
     {'1': 'account_name', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'accountName'},
   ],
@@ -218,14 +301,21 @@ const AppleiOSTOTPMethod$json = {
 };
 
 /// Descriptor for `AppleiOSTOTPMethod`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List appleiOSTOTPMethodDescriptor = $convert.base64Decode(
-    'ChJBcHBsZWlPU1RPVFBNZXRob2Q=');
+final $typed_data.Uint8List appleiOSTOTPMethodDescriptor =
+    $convert.base64Decode('ChJBcHBsZWlPU1RPVFBNZXRob2Q=');
 
 @$core.Deprecated('Use hardwareHOTPMethodDescriptor instead')
 const HardwareHOTPMethod$json = {
   '1': 'HardwareHOTPMethod',
   '2': [
-    {'1': 'hash', '3': 1, '4': 1, '5': 14, '6': '.ownmfa.api.Hash', '10': 'hash'},
+    {
+      '1': 'hash',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.Hash',
+      '10': 'hash'
+    },
     {'1': 'digits', '3': 2, '4': 1, '5': 5, '8': {}, '10': 'digits'},
     {'1': 'counter', '3': 3, '4': 1, '5': 5, '10': 'counter'},
     {'1': 'secret', '3': 4, '4': 1, '5': 12, '8': {}, '10': 'secret'},
@@ -242,7 +332,14 @@ final $typed_data.Uint8List hardwareHOTPMethodDescriptor = $convert.base64Decode
 const HardwareTOTPMethod$json = {
   '1': 'HardwareTOTPMethod',
   '2': [
-    {'1': 'hash', '3': 1, '4': 1, '5': 14, '6': '.ownmfa.api.Hash', '10': 'hash'},
+    {
+      '1': 'hash',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.Hash',
+      '10': 'hash'
+    },
     {'1': 'digits', '3': 2, '4': 1, '5': 5, '8': {}, '10': 'digits'},
     {'1': 'secret', '3': 3, '4': 1, '5': 12, '8': {}, '10': 'secret'},
   ],
@@ -313,9 +410,10 @@ const SecurityQuestionsMethod$json = {
 };
 
 /// Descriptor for `SecurityQuestionsMethod`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List securityQuestionsMethodDescriptor = $convert.base64Decode(
-    'ChdTZWN1cml0eVF1ZXN0aW9uc01ldGhvZBIhCgZhbnN3ZXIYASABKAlCCfpCBnIEEAMYUFIGYW'
-    '5zd2Vy');
+final $typed_data.Uint8List securityQuestionsMethodDescriptor =
+    $convert.base64Decode(
+        'ChdTZWN1cml0eVF1ZXN0aW9uc01ldGhvZBIhCgZhbnN3ZXIYASABKAlCCfpCBnIEEAMYUFIGYW'
+        '5zd2Vy');
 
 @$core.Deprecated('Use identityDescriptor instead')
 const Identity$json = {
@@ -325,21 +423,141 @@ const Identity$json = {
     {'1': 'org_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'orgID'},
     {'1': 'app_id', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'appID'},
     {'1': 'comment', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'comment'},
-    {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.ownmfa.api.IdentityStatus', '8': {}, '10': 'status'},
-    {'1': 'software_hotp_method', '3': 16, '4': 1, '5': 11, '6': '.ownmfa.api.SoftwareHOTPMethod', '9': 0, '10': 'softwareHOTPMethod'},
-    {'1': 'software_totp_method', '3': 6, '4': 1, '5': 11, '6': '.ownmfa.api.SoftwareTOTPMethod', '9': 0, '10': 'softwareTOTPMethod'},
-    {'1': 'google_auth_hotp_method', '3': 17, '4': 1, '5': 11, '6': '.ownmfa.api.GoogleAuthHOTPMethod', '9': 0, '10': 'googleAuthHOTPMethod'},
-    {'1': 'google_auth_totp_method', '3': 7, '4': 1, '5': 11, '6': '.ownmfa.api.GoogleAuthTOTPMethod', '9': 0, '10': 'googleAuthTOTPMethod'},
-    {'1': 'apple_ios_totp_method', '3': 22, '4': 1, '5': 11, '6': '.ownmfa.api.AppleiOSTOTPMethod', '9': 0, '10': 'appleiOSTOTPMethod'},
-    {'1': 'hardware_hotp_method', '3': 18, '4': 1, '5': 11, '6': '.ownmfa.api.HardwareHOTPMethod', '9': 0, '10': 'hardwareHOTPMethod'},
-    {'1': 'hardware_totp_method', '3': 19, '4': 1, '5': 11, '6': '.ownmfa.api.HardwareTOTPMethod', '9': 0, '10': 'hardwareTOTPMethod'},
-    {'1': 'sms_method', '3': 8, '4': 1, '5': 11, '6': '.ownmfa.api.SMSMethod', '9': 0, '10': 'smsMethod'},
-    {'1': 'pushover_method', '3': 20, '4': 1, '5': 11, '6': '.ownmfa.api.PushoverMethod', '9': 0, '10': 'pushoverMethod'},
-    {'1': 'email_method', '3': 9, '4': 1, '5': 11, '6': '.ownmfa.api.EmailMethod', '9': 0, '10': 'emailMethod'},
-    {'1': 'backup_codes_method', '3': 10, '4': 1, '5': 11, '6': '.ownmfa.api.BackupsCodesMethod', '9': 0, '10': 'backupCodesMethod'},
-    {'1': 'security_questions_method', '3': 21, '4': 1, '5': 11, '6': '.ownmfa.api.SecurityQuestionsMethod', '9': 0, '10': 'securityQuestionsMethod'},
-    {'1': 'created_at', '3': 14, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdAt'},
-    {'1': 'updated_at', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'updatedAt'},
+    {
+      '1': 'status',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.IdentityStatus',
+      '8': {},
+      '10': 'status'
+    },
+    {
+      '1': 'software_hotp_method',
+      '3': 16,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.SoftwareHOTPMethod',
+      '9': 0,
+      '10': 'softwareHOTPMethod'
+    },
+    {
+      '1': 'software_totp_method',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.SoftwareTOTPMethod',
+      '9': 0,
+      '10': 'softwareTOTPMethod'
+    },
+    {
+      '1': 'google_auth_hotp_method',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.GoogleAuthHOTPMethod',
+      '9': 0,
+      '10': 'googleAuthHOTPMethod'
+    },
+    {
+      '1': 'google_auth_totp_method',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.GoogleAuthTOTPMethod',
+      '9': 0,
+      '10': 'googleAuthTOTPMethod'
+    },
+    {
+      '1': 'apple_ios_totp_method',
+      '3': 22,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.AppleiOSTOTPMethod',
+      '9': 0,
+      '10': 'appleiOSTOTPMethod'
+    },
+    {
+      '1': 'hardware_hotp_method',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.HardwareHOTPMethod',
+      '9': 0,
+      '10': 'hardwareHOTPMethod'
+    },
+    {
+      '1': 'hardware_totp_method',
+      '3': 19,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.HardwareTOTPMethod',
+      '9': 0,
+      '10': 'hardwareTOTPMethod'
+    },
+    {
+      '1': 'sms_method',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.SMSMethod',
+      '9': 0,
+      '10': 'smsMethod'
+    },
+    {
+      '1': 'pushover_method',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.PushoverMethod',
+      '9': 0,
+      '10': 'pushoverMethod'
+    },
+    {
+      '1': 'email_method',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.EmailMethod',
+      '9': 0,
+      '10': 'emailMethod'
+    },
+    {
+      '1': 'backup_codes_method',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.BackupsCodesMethod',
+      '9': 0,
+      '10': 'backupCodesMethod'
+    },
+    {
+      '1': 'security_questions_method',
+      '3': 21,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.SecurityQuestionsMethod',
+      '9': 0,
+      '10': 'securityQuestionsMethod'
+    },
+    {
+      '1': 'created_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'updatedAt'
+    },
   ],
   '8': [
     {'1': 'method_oneof', '2': {}},
@@ -377,7 +595,15 @@ final $typed_data.Uint8List identityDescriptor = $convert.base64Decode(
 const CreateIdentityRequest$json = {
   '1': 'CreateIdentityRequest',
   '2': [
-    {'1': 'identity', '3': 1, '4': 1, '5': 11, '6': '.ownmfa.api.Identity', '8': {}, '10': 'identity'},
+    {
+      '1': 'identity',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.Identity',
+      '8': {},
+      '10': 'identity'
+    },
   ],
 };
 
@@ -390,7 +616,14 @@ final $typed_data.Uint8List createIdentityRequestDescriptor = $convert.base64Dec
 const CreateIdentityResponse$json = {
   '1': 'CreateIdentityResponse',
   '2': [
-    {'1': 'identity', '3': 1, '4': 1, '5': 11, '6': '.ownmfa.api.Identity', '10': 'identity'},
+    {
+      '1': 'identity',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.Identity',
+      '10': 'identity'
+    },
     {'1': 'secret', '3': 2, '4': 1, '5': 9, '10': 'secret'},
     {'1': 'qr', '3': 3, '4': 1, '5': 12, '10': 'qr'},
     {'1': 'passcodes', '3': 4, '4': 3, '5': 9, '10': 'passcodes'},
@@ -429,9 +662,10 @@ const ChallengeIdentityRequest$json = {
 };
 
 /// Descriptor for `ChallengeIdentityRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List challengeIdentityRequestDescriptor = $convert.base64Decode(
-    'ChhDaGFsbGVuZ2VJZGVudGl0eVJlcXVlc3QSGwoCaWQYASABKAlCC/pCBXIDsAEB4EECUgJpZB'
-    'IiCgZhcHBfaWQYAiABKAlCC/pCBXIDsAEB4EECUgVhcHBJRA==');
+final $typed_data.Uint8List challengeIdentityRequestDescriptor =
+    $convert.base64Decode(
+        'ChhDaGFsbGVuZ2VJZGVudGl0eVJlcXVlc3QSGwoCaWQYASABKAlCC/pCBXIDsAEB4EECUgJpZB'
+        'IiCgZhcHBfaWQYAiABKAlCC/pCBXIDsAEB4EECUgVhcHBJRA==');
 
 @$core.Deprecated('Use verifyIdentityRequestDescriptor instead')
 const VerifyIdentityRequest$json = {
@@ -497,7 +731,14 @@ final $typed_data.Uint8List listIdentitiesRequestDescriptor = $convert.base64Dec
 const ListIdentitiesResponse$json = {
   '1': 'ListIdentitiesResponse',
   '2': [
-    {'1': 'identities', '3': 1, '4': 3, '5': 11, '6': '.ownmfa.api.Identity', '10': 'identities'},
+    {
+      '1': 'identities',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.ownmfa.api.Identity',
+      '10': 'identities'
+    },
     {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
     {'1': 'total_size', '3': 3, '4': 1, '5': 5, '10': 'totalSize'},
   ],
@@ -508,4 +749,3 @@ final $typed_data.Uint8List listIdentitiesResponseDescriptor = $convert.base64De
     'ChZMaXN0SWRlbnRpdGllc1Jlc3BvbnNlEjQKCmlkZW50aXRpZXMYASADKAsyFC5vd25tZmEuYX'
     'BpLklkZW50aXR5UgppZGVudGl0aWVzEiYKD25leHRfcGFnZV90b2tlbhgCIAEoCVINbmV4dFBh'
     'Z2VUb2tlbhIdCgp0b3RhbF9zaXplGAMgASgFUgl0b3RhbFNpemU=');
-

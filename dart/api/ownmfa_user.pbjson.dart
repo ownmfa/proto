@@ -1,13 +1,15 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: api/ownmfa_user.proto
-//
+// Generated from api/ownmfa_user.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -21,10 +23,42 @@ const User$json = {
     {'1': 'org_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'orgID'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'name'},
     {'1': 'email', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'email'},
-    {'1': 'role', '3': 5, '4': 1, '5': 14, '6': '.ownmfa.api.Role', '8': {}, '10': 'role'},
-    {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.ownmfa.api.Status', '8': {}, '10': 'status'},
-    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdAt'},
-    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'updatedAt'},
+    {
+      '1': 'role',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.Role',
+      '8': {},
+      '10': 'role'
+    },
+    {
+      '1': 'status',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.ownmfa.api.Status',
+      '8': {},
+      '10': 'status'
+    },
+    {
+      '1': 'created_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '8': {},
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -42,7 +76,15 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
 const CreateUserRequest$json = {
   '1': 'CreateUserRequest',
   '2': [
-    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.ownmfa.api.User', '8': {}, '10': 'user'},
+    {
+      '1': 'user',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.User',
+      '8': {},
+      '10': 'user'
+    },
   ],
 };
 
@@ -67,8 +109,23 @@ final $typed_data.Uint8List getUserRequestDescriptor = $convert.base64Decode(
 const UpdateUserRequest$json = {
   '1': 'UpdateUserRequest',
   '2': [
-    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.ownmfa.api.User', '8': {}, '10': 'user'},
-    {'1': 'update_mask', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.FieldMask', '10': 'updateMask'},
+    {
+      '1': 'user',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ownmfa.api.User',
+      '8': {},
+      '10': 'user'
+    },
+    {
+      '1': 'update_mask',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.FieldMask',
+      '10': 'updateMask'
+    },
   ],
 };
 
@@ -88,9 +145,10 @@ const UpdateUserPasswordRequest$json = {
 };
 
 /// Descriptor for `UpdateUserPasswordRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateUserPasswordRequestDescriptor = $convert.base64Decode(
-    'ChlVcGRhdGVVc2VyUGFzc3dvcmRSZXF1ZXN0EhsKAmlkGAEgASgJQgv6QgVyA7ABAeBBA1ICaW'
-    'QSKAoIcGFzc3dvcmQYAiABKAlCDPpCBnIEEAoYZOBBAlIIcGFzc3dvcmQ=');
+final $typed_data.Uint8List updateUserPasswordRequestDescriptor =
+    $convert.base64Decode(
+        'ChlVcGRhdGVVc2VyUGFzc3dvcmRSZXF1ZXN0EhsKAmlkGAEgASgJQgv6QgVyA7ABAeBBA1ICaW'
+        'QSKAoIcGFzc3dvcmQYAiABKAlCDPpCBnIEEAoYZOBBAlIIcGFzc3dvcmQ=');
 
 @$core.Deprecated('Use deleteUserRequestDescriptor instead')
 const DeleteUserRequest$json = {
@@ -122,7 +180,14 @@ final $typed_data.Uint8List listUsersRequestDescriptor = $convert.base64Decode(
 const ListUsersResponse$json = {
   '1': 'ListUsersResponse',
   '2': [
-    {'1': 'users', '3': 1, '4': 3, '5': 11, '6': '.ownmfa.api.User', '10': 'users'},
+    {
+      '1': 'users',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.ownmfa.api.User',
+      '10': 'users'
+    },
     {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
     {'1': 'total_size', '3': 3, '4': 1, '5': 5, '10': 'totalSize'},
   ],
@@ -133,4 +198,3 @@ final $typed_data.Uint8List listUsersResponseDescriptor = $convert.base64Decode(
     'ChFMaXN0VXNlcnNSZXNwb25zZRImCgV1c2VycxgBIAMoCzIQLm93bm1mYS5hcGkuVXNlclIFdX'
     'NlcnMSJgoPbmV4dF9wYWdlX3Rva2VuGAIgASgJUg1uZXh0UGFnZVRva2VuEh0KCnRvdGFsX3Np'
     'emUYAyABKAVSCXRvdGFsU2l6ZQ==');
-

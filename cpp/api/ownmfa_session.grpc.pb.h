@@ -24,6 +24,7 @@
 #include <grpcpp/support/status.h>
 #include <grpcpp/support/stub_options.h>
 #include <grpcpp/support/sync_stream.h>
+#include <grpcpp/ports_def.inc>
 
 namespace ownmfa {
 namespace api {
@@ -723,4 +724,5 @@ class SessionService final {
 }  // namespace ownmfa
 
 
+#include <grpcpp/ports_undef.inc>
 #endif  // GRPC_api_2fownmfa_5fsession_2eproto__INCLUDED

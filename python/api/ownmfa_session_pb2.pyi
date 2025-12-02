@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LoginRequest(_message.Message):
-    __slots__ = ["email", "org_name", "password"]
+    __slots__ = ("email", "org_name", "password")
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     ORG_NAME_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -23,7 +23,7 @@ class LoginRequest(_message.Message):
     def __init__(self, email: _Optional[str] = ..., org_name: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class LoginResponse(_message.Message):
-    __slots__ = ["token", "expires_at"]
+    __slots__ = ("token", "expires_at")
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
     token: str
@@ -31,7 +31,7 @@ class LoginResponse(_message.Message):
     def __init__(self, token: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class Key(_message.Message):
-    __slots__ = ["id", "org_id", "name", "role", "created_at"]
+    __slots__ = ("id", "org_id", "name", "role", "created_at")
     ID_FIELD_NUMBER: _ClassVar[int]
     ORG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -45,13 +45,13 @@ class Key(_message.Message):
     def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., name: _Optional[str] = ..., role: _Optional[_Union[_ownmfa_role_pb2.Role, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateKeyRequest(_message.Message):
-    __slots__ = ["key"]
+    __slots__ = ("key",)
     KEY_FIELD_NUMBER: _ClassVar[int]
     key: Key
     def __init__(self, key: _Optional[_Union[Key, _Mapping]] = ...) -> None: ...
 
 class CreateKeyResponse(_message.Message):
-    __slots__ = ["key", "token"]
+    __slots__ = ("key", "token")
     KEY_FIELD_NUMBER: _ClassVar[int]
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     key: Key
@@ -59,13 +59,13 @@ class CreateKeyResponse(_message.Message):
     def __init__(self, key: _Optional[_Union[Key, _Mapping]] = ..., token: _Optional[str] = ...) -> None: ...
 
 class DeleteKeyRequest(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     def __init__(self, id: _Optional[str] = ...) -> None: ...
 
 class ListKeysRequest(_message.Message):
-    __slots__ = ["page_size", "page_token"]
+    __slots__ = ("page_size", "page_token")
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     page_size: int
@@ -73,7 +73,7 @@ class ListKeysRequest(_message.Message):
     def __init__(self, page_size: _Optional[int] = ..., page_token: _Optional[str] = ...) -> None: ...
 
 class ListKeysResponse(_message.Message):
-    __slots__ = ["keys", "next_page_token", "total_size"]
+    __slots__ = ("keys", "next_page_token", "total_size")
     KEYS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     TOTAL_SIZE_FIELD_NUMBER: _ClassVar[int]
