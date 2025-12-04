@@ -22,7 +22,7 @@ class OrgServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\CreateOrgRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\Org>
      */
     public function CreateOrg(\Ownmfa\Api\CreateOrgRequest $argument,
       $metadata = [], $options = []) {
@@ -37,7 +37,7 @@ class OrgServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\GetOrgRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\Org>
      */
     public function GetOrg(\Ownmfa\Api\GetOrgRequest $argument,
       $metadata = [], $options = []) {
@@ -52,7 +52,7 @@ class OrgServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\UpdateOrgRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\Org>
      */
     public function UpdateOrg(\Ownmfa\Api\UpdateOrgRequest $argument,
       $metadata = [], $options = []) {
@@ -67,7 +67,7 @@ class OrgServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\DeleteOrgRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function DeleteOrg(\Ownmfa\Api\DeleteOrgRequest $argument,
       $metadata = [], $options = []) {
@@ -82,7 +82,7 @@ class OrgServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\ListOrgsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\ListOrgsResponse>
      */
     public function ListOrgs(\Ownmfa\Api\ListOrgsRequest $argument,
       $metadata = [], $options = []) {

@@ -6,8 +6,8 @@
 namespace Ownmfa\Api;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * ListUsersResponse is sent in response to a user list.
@@ -41,7 +41,7 @@ class ListUsersResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Ownmfa\Api\User>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type \Ownmfa\Api\User[] $users
      *           User array, ordered by ascending created_at timestamp. The completeness of the array will depend on whether the request was made by an admin user, non-admin user, or API key.
      *     @type string $next_page_token
      *           Pagination token used to retrieve the next page of results. Not returned for the last page.
@@ -58,7 +58,7 @@ class ListUsersResponse extends \Google\Protobuf\Internal\Message
      * User array, ordered by ascending created_at timestamp. The completeness of the array will depend on whether the request was made by an admin user, non-admin user, or API key.
      *
      * Generated from protobuf field <code>repeated .ownmfa.api.User users = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Ownmfa\Api\User>
      */
     public function getUsers()
     {
@@ -69,7 +69,7 @@ class ListUsersResponse extends \Google\Protobuf\Internal\Message
      * User array, ordered by ascending created_at timestamp. The completeness of the array will depend on whether the request was made by an admin user, non-admin user, or API key.
      *
      * Generated from protobuf field <code>repeated .ownmfa.api.User users = 1;</code>
-     * @param array<\Ownmfa\Api\User>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Ownmfa\Api\User[] $var
      * @return $this
      */
     public function setUsers($var)

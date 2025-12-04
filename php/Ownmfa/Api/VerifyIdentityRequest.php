@@ -6,8 +6,8 @@
 namespace Ownmfa\Api;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * VerifyIdentityRequest is sent to verify an identity. If verification fails, the request does not automatically fall through to a backup codes method. Consuming applications should design a workflow that either explicitly verifies by backup codes or falls through on failure.

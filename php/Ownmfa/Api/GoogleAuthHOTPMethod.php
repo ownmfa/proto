@@ -6,8 +6,8 @@
 namespace Ownmfa\Api;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * GoogleAuthHOTPMethod configures a Google Authenticator HOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function.

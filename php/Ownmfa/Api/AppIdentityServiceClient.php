@@ -22,7 +22,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\CreateAppRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\App>
      */
     public function CreateApp(\Ownmfa\Api\CreateAppRequest $argument,
       $metadata = [], $options = []) {
@@ -37,7 +37,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\CreateIdentityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\CreateIdentityResponse>
      */
     public function CreateIdentity(\Ownmfa\Api\CreateIdentityRequest $argument,
       $metadata = [], $options = []) {
@@ -52,7 +52,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\ActivateIdentityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\Identity>
      */
     public function ActivateIdentity(\Ownmfa\Api\ActivateIdentityRequest $argument,
       $metadata = [], $options = []) {
@@ -67,7 +67,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\ChallengeIdentityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function ChallengeIdentity(\Ownmfa\Api\ChallengeIdentityRequest $argument,
       $metadata = [], $options = []) {
@@ -82,7 +82,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\VerifyIdentityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function VerifyIdentity(\Ownmfa\Api\VerifyIdentityRequest $argument,
       $metadata = [], $options = []) {
@@ -97,7 +97,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\GetAppRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\App>
      */
     public function GetApp(\Ownmfa\Api\GetAppRequest $argument,
       $metadata = [], $options = []) {
@@ -112,7 +112,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\GetIdentityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\Identity>
      */
     public function GetIdentity(\Ownmfa\Api\GetIdentityRequest $argument,
       $metadata = [], $options = []) {
@@ -127,7 +127,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\UpdateAppRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\App>
      */
     public function UpdateApp(\Ownmfa\Api\UpdateAppRequest $argument,
       $metadata = [], $options = []) {
@@ -142,7 +142,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\DeleteAppRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function DeleteApp(\Ownmfa\Api\DeleteAppRequest $argument,
       $metadata = [], $options = []) {
@@ -157,7 +157,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\DeleteIdentityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function DeleteIdentity(\Ownmfa\Api\DeleteIdentityRequest $argument,
       $metadata = [], $options = []) {
@@ -172,7 +172,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\ListAppsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\ListAppsResponse>
      */
     public function ListApps(\Ownmfa\Api\ListAppsRequest $argument,
       $metadata = [], $options = []) {
@@ -187,7 +187,7 @@ class AppIdentityServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\ListIdentitiesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\ListIdentitiesResponse>
      */
     public function ListIdentities(\Ownmfa\Api\ListIdentitiesRequest $argument,
       $metadata = [], $options = []) {

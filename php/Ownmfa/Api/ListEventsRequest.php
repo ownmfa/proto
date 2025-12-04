@@ -6,8 +6,8 @@
 namespace Ownmfa\Api;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * ListEventsRequest is sent to list identity events in an [end, start) time range, in descending timestamp order.

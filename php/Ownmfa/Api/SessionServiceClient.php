@@ -22,7 +22,7 @@ class SessionServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\LoginRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\LoginResponse>
      */
     public function Login(\Ownmfa\Api\LoginRequest $argument,
       $metadata = [], $options = []) {
@@ -37,7 +37,7 @@ class SessionServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\CreateKeyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\CreateKeyResponse>
      */
     public function CreateKey(\Ownmfa\Api\CreateKeyRequest $argument,
       $metadata = [], $options = []) {
@@ -52,7 +52,7 @@ class SessionServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\DeleteKeyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Google\Protobuf\GPBEmpty>
      */
     public function DeleteKey(\Ownmfa\Api\DeleteKeyRequest $argument,
       $metadata = [], $options = []) {
@@ -67,7 +67,7 @@ class SessionServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\ListKeysRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\ListKeysResponse>
      */
     public function ListKeys(\Ownmfa\Api\ListKeysRequest $argument,
       $metadata = [], $options = []) {

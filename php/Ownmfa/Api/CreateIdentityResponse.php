@@ -6,8 +6,8 @@
 namespace Ownmfa\Api;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * CreateIdentityResponse is sent in response to an identity creation.
@@ -53,7 +53,7 @@ class CreateIdentityResponse extends \Google\Protobuf\Internal\Message
      *           Secret in base32 format, for identity methods that provide secrets. Only returned once, upon identity creation.
      *     @type string $qr
      *           Identity QR code, in Google Authenticator-compatible format, as a PNG image. For identity methods that provide secrets. Only returned once, upon identity creation. When used in JSON, the value will be represented as a base64 string.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $passcodes
+     *     @type string[] $passcodes
      *           Passcode array, for identity methods that provide pregenerated passcodes. Only returned once, upon identity creation.
      * }
      */
@@ -154,7 +154,7 @@ class CreateIdentityResponse extends \Google\Protobuf\Internal\Message
      * Passcode array, for identity methods that provide pregenerated passcodes. Only returned once, upon identity creation.
      *
      * Generated from protobuf field <code>repeated string passcodes = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getPasscodes()
     {
@@ -165,7 +165,7 @@ class CreateIdentityResponse extends \Google\Protobuf\Internal\Message
      * Passcode array, for identity methods that provide pregenerated passcodes. Only returned once, upon identity creation.
      *
      * Generated from protobuf field <code>repeated string passcodes = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setPasscodes($var)

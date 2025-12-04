@@ -6,8 +6,8 @@
 namespace Ownmfa\Api;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * ListAppsResponse is sent in response to an application list.
@@ -41,7 +41,7 @@ class ListAppsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Ownmfa\Api\App>|\Google\Protobuf\Internal\RepeatedField $apps
+     *     @type \Ownmfa\Api\App[] $apps
      *           App array, ordered by ascending created_at timestamp.
      *     @type string $next_page_token
      *           Pagination token used to retrieve the next page of results. Not returned for the last page.
@@ -58,7 +58,7 @@ class ListAppsResponse extends \Google\Protobuf\Internal\Message
      * App array, ordered by ascending created_at timestamp.
      *
      * Generated from protobuf field <code>repeated .ownmfa.api.App apps = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Ownmfa\Api\App>
      */
     public function getApps()
     {
@@ -69,7 +69,7 @@ class ListAppsResponse extends \Google\Protobuf\Internal\Message
      * App array, ordered by ascending created_at timestamp.
      *
      * Generated from protobuf field <code>repeated .ownmfa.api.App apps = 1;</code>
-     * @param array<\Ownmfa\Api\App>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Ownmfa\Api\App[] $var
      * @return $this
      */
     public function setApps($var)
