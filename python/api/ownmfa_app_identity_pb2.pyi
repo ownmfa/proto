@@ -1,3 +1,5 @@
+import datetime
+
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
@@ -9,7 +11,8 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -53,7 +56,7 @@ class App(_message.Message):
     html_body_template: bytes
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., name: _Optional[str] = ..., display_name: _Optional[str] = ..., email: _Optional[str] = ..., pushover_key: _Optional[str] = ..., subject_template: _Optional[str] = ..., text_body_template: _Optional[str] = ..., html_body_template: _Optional[bytes] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., name: _Optional[str] = ..., display_name: _Optional[str] = ..., email: _Optional[str] = ..., pushover_key: _Optional[str] = ..., subject_template: _Optional[str] = ..., text_body_template: _Optional[str] = ..., html_body_template: _Optional[bytes] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateAppRequest(_message.Message):
     __slots__ = ("app",)
@@ -229,7 +232,7 @@ class Identity(_message.Message):
     security_questions_method: SecurityQuestionsMethod
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., app_id: _Optional[str] = ..., comment: _Optional[str] = ..., status: _Optional[_Union[IdentityStatus, str]] = ..., software_hotp_method: _Optional[_Union[SoftwareHOTPMethod, _Mapping]] = ..., software_totp_method: _Optional[_Union[SoftwareTOTPMethod, _Mapping]] = ..., google_auth_hotp_method: _Optional[_Union[GoogleAuthHOTPMethod, _Mapping]] = ..., google_auth_totp_method: _Optional[_Union[GoogleAuthTOTPMethod, _Mapping]] = ..., apple_ios_totp_method: _Optional[_Union[AppleiOSTOTPMethod, _Mapping]] = ..., hardware_hotp_method: _Optional[_Union[HardwareHOTPMethod, _Mapping]] = ..., hardware_totp_method: _Optional[_Union[HardwareTOTPMethod, _Mapping]] = ..., sms_method: _Optional[_Union[SMSMethod, _Mapping]] = ..., pushover_method: _Optional[_Union[PushoverMethod, _Mapping]] = ..., email_method: _Optional[_Union[EmailMethod, _Mapping]] = ..., backup_codes_method: _Optional[_Union[BackupsCodesMethod, _Mapping]] = ..., security_questions_method: _Optional[_Union[SecurityQuestionsMethod, _Mapping]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., app_id: _Optional[str] = ..., comment: _Optional[str] = ..., status: _Optional[_Union[IdentityStatus, str]] = ..., software_hotp_method: _Optional[_Union[SoftwareHOTPMethod, _Mapping]] = ..., software_totp_method: _Optional[_Union[SoftwareTOTPMethod, _Mapping]] = ..., google_auth_hotp_method: _Optional[_Union[GoogleAuthHOTPMethod, _Mapping]] = ..., google_auth_totp_method: _Optional[_Union[GoogleAuthTOTPMethod, _Mapping]] = ..., apple_ios_totp_method: _Optional[_Union[AppleiOSTOTPMethod, _Mapping]] = ..., hardware_hotp_method: _Optional[_Union[HardwareHOTPMethod, _Mapping]] = ..., hardware_totp_method: _Optional[_Union[HardwareTOTPMethod, _Mapping]] = ..., sms_method: _Optional[_Union[SMSMethod, _Mapping]] = ..., pushover_method: _Optional[_Union[PushoverMethod, _Mapping]] = ..., email_method: _Optional[_Union[EmailMethod, _Mapping]] = ..., backup_codes_method: _Optional[_Union[BackupsCodesMethod, _Mapping]] = ..., security_questions_method: _Optional[_Union[SecurityQuestionsMethod, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateIdentityRequest(_message.Message):
     __slots__ = ("identity",)

@@ -7,7 +7,7 @@ require 'google/protobuf'
 
 descriptor_data = "\n\x15\x61pi/ownmfa_role.proto\x12\nownmfa.api*U\n\x04Role\x12\x14\n\x10ROLE_UNSPECIFIED\x10\x00\x12\n\n\x06VIEWER\x10\x04\x12\x11\n\rAUTHENTICATOR\x10\x08\x12\t\n\x05\x41\x44MIN\x10\x0c\x12\r\n\tSYS_ADMIN\x10\x0f\x42 Z\x1egithub.com/ownmfa/proto/go/apib\x06proto3"
 
-pool = Google::Protobuf::DescriptorPool.generated_pool
+pool = ::Google::Protobuf::DescriptorPool.generated_pool
 pool.add_serialized_file(descriptor_data)
 
 module Ownmfa

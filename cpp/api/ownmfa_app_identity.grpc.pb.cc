@@ -19,6 +19,7 @@
 #include <grpcpp/server_context.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/support/sync_stream.h>
+#include <grpcpp/ports_def.inc>
 namespace ownmfa {
 namespace api {
 
@@ -547,4 +548,5 @@ AppIdentityService::Service::~Service() {
 
 }  // namespace ownmfa
 }  // namespace api
+#include <grpcpp/ports_undef.inc>
 

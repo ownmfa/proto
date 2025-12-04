@@ -1,3 +1,5 @@
+import datetime
+
 from api import ownmfa_role_pb2 as _ownmfa_role_pb2
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -8,7 +10,8 @@ from validate import validate_pb2 as _validate_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -28,7 +31,7 @@ class LoginResponse(_message.Message):
     EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
     token: str
     expires_at: _timestamp_pb2.Timestamp
-    def __init__(self, token: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, token: _Optional[str] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class Key(_message.Message):
     __slots__ = ("id", "org_id", "name", "role", "created_at")
@@ -42,7 +45,7 @@ class Key(_message.Message):
     name: str
     role: _ownmfa_role_pb2.Role
     created_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., name: _Optional[str] = ..., role: _Optional[_Union[_ownmfa_role_pb2.Role, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., org_id: _Optional[str] = ..., name: _Optional[str] = ..., role: _Optional[_Union[_ownmfa_role_pb2.Role, str]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateKeyRequest(_message.Message):
     __slots__ = ("key",)

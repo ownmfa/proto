@@ -22,7 +22,7 @@ class EventServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\ListEventsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\ListEventsResponse>
      */
     public function ListEvents(\Ownmfa\Api\ListEventsRequest $argument,
       $metadata = [], $options = []) {
@@ -37,7 +37,7 @@ class EventServiceClient extends \Grpc\BaseStub {
      * @param \Ownmfa\Api\LatestEventsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Ownmfa\Api\LatestEventsResponse>
      */
     public function LatestEvents(\Ownmfa\Api\LatestEventsRequest $argument,
       $metadata = [], $options = []) {
