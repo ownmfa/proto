@@ -56,7 +56,7 @@ clean:
 	find . -name '*.pb.h' -type f|xargs rm -v
 	find . -name '*.pb.cc' -type f|xargs rm -v
 	find . -name '*.php' -type f|xargs rm -v
-	rm -fv openapi/hermes.swagger.json
+	rm -fv openapi/hermes.*.json
 	rm -fv protobuf/api/ownmfa_openapi.proto
 	rm -fv go/example/login/login
 	rm -fv go/example/identity/identity

@@ -3,34 +3,34 @@ services:
     build: ./go
     command: sh -c "cd go && make"
     volumes:
-      - .:/api
+      - .:/proto
 
   python:
     build: ./python
     command: sh -c "cd python && make"
     volumes:
-      - .:/api
+      - .:/proto
 
   dart:
     build: ./dart
     command: sh -c "cd dart && make"
     volumes:
-      - .:/api
+      - .:/proto
 
   ruby:
     build: ./ruby
     command: sh -c "cd ruby && make"
     volumes:
-      - .:/api
+      - .:/proto
 
   cpp:
     build: ./cpp
     command: sh -c "cd cpp && make"
     volumes:
-      - .:/api
+      - .:/proto
 
   php:
     build: ./php
     command: sh -c "cd php && make"
     volumes:
-      - .:/api
+      - .:/proto
