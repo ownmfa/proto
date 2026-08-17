@@ -3,7 +3,7 @@
   "info": {
     "title": "Hermes",
     "description": "Getting started with the Hermes API:\n- Log in with `/v1/sessions/login` using your provided credentials. Click `Authorize` below and enter the returned token.\n- Create an application with `/v1/applications`. For SMS and software token authentication methods, all template fields can be left empty.\n- (Optional) Create an `AUTHENTICATOR` role API key with `/v1/sessions/keys`. Re-authorize using the returned token.\n\nActivate an identity (single occurrence):\n- Create an identity with `/v1/applications/{identity.appID}/identities`. Only one method field is supported when creating an identity.\n- Issue the returned identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Activate the identity with `/v1/applications/{appID}/identities/{id}/activate` using the received or generated challenge.\n\nVerify an identity (ongoing):\n- Issue the identity a challenge with `/v1/applications/{appID}/identities/{id}/challenge`.\n- Verify the identity with `/v1/applications/{appID}/identities/{id}/verify` using the received or generated challenge.",
-    "version": "1.1.17",
+    "version": "1.1.18",
     "contact": {
       "name": "OwnMFA",
       "url": "https://www.ownmfa.com/",
@@ -16,19 +16,24 @@
   },
   "tags": [
     {
-      "name": "AppIdentityService"
+      "name": "AppIdentityService",
+      "description": "AppIdentityService contains functions to query and modify applications and identities."
     },
     {
-      "name": "EventService"
+      "name": "EventService",
+      "description": "EventService contains functions to query identity events."
     },
     {
-      "name": "OrgService"
+      "name": "OrgService",
+      "description": "OrgService contains functions to query and modify organizations."
     },
     {
-      "name": "SessionService"
+      "name": "SessionService",
+      "description": "SessionService contains functions to create sessions and keys."
     },
     {
-      "name": "UserService"
+      "name": "UserService",
+      "description": "UserService contains functions to query and modify users."
     }
   ],
   "consumes": [
