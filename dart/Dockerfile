@@ -10,4 +10,4 @@ RUN git clone --depth=1 https://github.com/grpc-ecosystem/grpc-gateway.git \
 RUN git clone --depth=1 https://github.com/bufbuild/protoc-gen-validate.git \
 /tmp/pgv
 
-WORKDIR /api
+WORKDIR /proto
