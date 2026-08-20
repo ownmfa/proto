@@ -1,6 +1,6 @@
 .PHONY: generate version go python dart ruby cpp php tag clean
 
-VERSION = 1.1.19
+VERSION = 1.1.20
 
 generate: version
 	docker compose --progress=plain build --no-cache --pull

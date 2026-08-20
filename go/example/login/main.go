@@ -45,8 +45,9 @@ func main() {
 	// Build unauthenticated gRPC connection.
 	opts := []grpc.DialOption{
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
-		grpc.WithTransportCredentials(credentials.NewTLS(
-			&tls.Config{MinVersion: tls.VersionTLS12})),
+		grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{
+			MinVersion: tls.VersionTLS12,
+		})),
 	}
 	conn, err := grpc.NewClient(*grpcURI, opts...)
 	checkErr(err)

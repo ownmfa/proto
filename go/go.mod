@@ -1,6 +1,6 @@
 module github.com/ownmfa/proto/go
 
-go 1.26.6
+go 1.27.0
 
 require (
 	github.com/envoyproxy/protoc-gen-validate v1.3.3
