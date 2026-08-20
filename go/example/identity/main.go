@@ -66,8 +66,9 @@ func main() {
 	// Build unauthenticated gRPC connection.
 	opts := []grpc.DialOption{
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
-		grpc.WithTransportCredentials(credentials.NewTLS(
-			&tls.Config{MinVersion: tls.VersionTLS12})),
+		grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{
+			MinVersion: tls.VersionTLS12,
+		})),
 	}
 	conn, err := grpc.NewClient(*grpcURI, opts...)
 	checkErr(err)
@@ -89,8 +90,9 @@ func main() {
 	// Build login-authenticated gRPC connection.
 	opts = []grpc.DialOption{
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
-		grpc.WithTransportCredentials(credentials.NewTLS(
-			&tls.Config{MinVersion: tls.VersionTLS12})),
+		grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{
+			MinVersion: tls.VersionTLS12,
+		})),
 		grpc.WithPerRPCCredentials(&credential{token: login.GetToken()}),
 	}
 	loginConn, err := grpc.NewClient(*grpcURI, opts...)
@@ -125,8 +127,9 @@ func main() {
 	// Build key-authenticated gRPC connection (optional).
 	opts = []grpc.DialOption{
 		grpc.WithDefaultCallOptions(grpc.UseCompressor(gzip.Name)),
-		grpc.WithTransportCredentials(credentials.NewTLS(
-			&tls.Config{MinVersion: tls.VersionTLS12})),
+		grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{
+			MinVersion: tls.VersionTLS12,
+		})),
 		grpc.WithPerRPCCredentials(&credential{token: createKey.GetToken()}),
 	}
 	keyConn, err := grpc.NewClient(*grpcURI, opts...)
@@ -152,7 +155,7 @@ func main() {
 	checkErr(err)
 
 	_, err = fmt.Fprintf(os.Stdout, "QR code (run `echo '...base64...'|base64 "+
-		"-D > qr.png`):\n%v\n", base64.StdEncoding.EncodeToString(
-		createIdentity.GetQr()))
+		"-D > qr.png`):\n%v\n",
+		base64.StdEncoding.EncodeToString(createIdentity.GetQr()))
 	checkErr(err)
 }
