@@ -19,7 +19,7 @@ class ListEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID).
      *
-     * Generated from protobuf field <code>string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $identity_id = '';
     /**
@@ -57,7 +57,7 @@ class ListEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID).
      *
-     * Generated from protobuf field <code>string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getIdentityId()
@@ -68,7 +68,7 @@ class ListEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID).
      *
-     * Generated from protobuf field <code>string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

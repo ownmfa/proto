@@ -19,7 +19,7 @@ class BackupsCodesMethod extends \Google\Protobuf\Internal\Message
     /**
      * Number of passcodes provided.
      *
-     * Generated from protobuf field <code>int32 passcodes = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 passcodes = 1 [(.buf.validate.field) = {</code>
      */
     protected $passcodes = 0;
 
@@ -41,7 +41,7 @@ class BackupsCodesMethod extends \Google\Protobuf\Internal\Message
     /**
      * Number of passcodes provided.
      *
-     * Generated from protobuf field <code>int32 passcodes = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 passcodes = 1 [(.buf.validate.field) = {</code>
      * @return int
      */
     public function getPasscodes()
@@ -52,7 +52,7 @@ class BackupsCodesMethod extends \Google\Protobuf\Internal\Message
     /**
      * Number of passcodes provided.
      *
-     * Generated from protobuf field <code>int32 passcodes = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 passcodes = 1 [(.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */

@@ -1,13 +1,14 @@
 syntax = "proto3";
+
 package ownmfa.api;
 
-import "google/protobuf/empty.proto";
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/field_mask.proto";
+import "buf/validate/validate.proto";
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/timestamp.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
-import "validate/validate.proto";
 
 option go_package = "github.com/ownmfa/proto/go/api";
 
@@ -179,25 +180,25 @@ message App {
   string org_id = 2 [json_name = "orgID", (google.api.field_behavior) = OUTPUT_ONLY];
 
   // Application name.
-  string name = 3 [(validate.rules).string = {min_len: 5, max_len: 40}];
+  string name = 3 [(buf.validate.field).string = {min_len: 5, max_len: 40}];
 
   // Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields.
-  string display_name = 4 [(validate.rules).string = {min_len: 5, max_len: 80}];
+  string display_name = 4 [(buf.validate.field).string = {min_len: 5, max_len: 80}];
 
   // Application email. Optional, used as the 'From' address in email notifications.
-  string email = 5 [(validate.rules).string = {ignore_empty: true, email: true}];
+  string email = 5 [(buf.validate.field).string.email = true, (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE];
 
   // Pushover application key. If not specified, the default OwnMFA Pushover application and templates will be used.
-  string pushover_key = 6 [(validate.rules).string.max_len = 45];
+  string pushover_key = 6 [(buf.validate.field).string.max_len = 45];
 
   // Application subject template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution is '{{.displayName}}'. Optional field, for notification methods that support subjects.
-  string subject_template = 7 [(validate.rules).string.max_len = 1024];
+  string subject_template = 7 [(buf.validate.field).string.max_len = 1024];
 
   // Application text body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support text bodies. To prevent fraud, SMS notifications used a fixed body that includes the application display_name and verification code.
-  string text_body_template = 8 [(validate.rules).string.max_len = 4096];
+  string text_body_template = 8 [(buf.validate.field).string.max_len = 4096];
 
   // Application HTML body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support HTML bodies. When used in JSON, the value will be represented as a base64 string.
-  bytes html_body_template = 9 [(validate.rules).bytes.max_len = 4096];
+  bytes html_body_template = 9 [(buf.validate.field).bytes.max_len = 4096];
 
   // Application creation timestamp.
   google.protobuf.Timestamp created_at = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -209,19 +210,19 @@ message App {
 // CreateAppRequest is sent to create an application.
 message CreateAppRequest {
   // App message to create.
-  App app = 1 [(validate.rules).message.required = true, (google.api.field_behavior) = REQUIRED];
+  App app = 1 [(buf.validate.field).required = true, (google.api.field_behavior) = REQUIRED];
 }
 
 // GetAppRequest is sent to get an application.
 message GetAppRequest {
   // Application ID (UUID) to get.
-  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string id = 1 [(buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 }
 
 // UpdateAppRequest is sent to update an application.
 message UpdateAppRequest {
   // App message to update.
-  App app = 1 [(validate.rules).message.required = true, (google.api.field_behavior) = REQUIRED];
+  App app = 1 [(buf.validate.field).required = true, (google.api.field_behavior) = REQUIRED];
 
   // Fields to update. Automatically populated by a PATCH request. If not present, a full resource update is performed.
   google.protobuf.FieldMask update_mask = 2;
@@ -230,13 +231,13 @@ message UpdateAppRequest {
 // DeleteAppRequest is sent to delete an application.
 message DeleteAppRequest {
   // Application ID (UUID) to delete.
-  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string id = 1 [(buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 }
 
 // ListAppsRequest is sent to list applications.
 message ListAppsRequest {
   // Number of applications to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
-  int32 page_size = 1 [(validate.rules).int32.lte = 250];
+  int32 page_size = 1 [(buf.validate.field).int32.lte = 250];
 
   // Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
   string page_token = 2;
@@ -281,13 +282,13 @@ message SoftwareHOTPMethod {
   Hash hash = 1;
 
   // Passcode digits length. Defaults to 7 if not specified.
-  int32 digits = 2 [(validate.rules).int32 = {ignore_empty: true, gte: 6, lte: 10}];
+  int32 digits = 2 [(buf.validate.field).int32 = { gte: 6, lte: 10}, (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE];
 
   // Software HOTP starting counter. Only included during identity creation. Defaults to 0 if not specified.
   int32 counter = 3;
 
   // Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
-  string account_name = 4 [(validate.rules).string.max_len = 80];
+  string account_name = 4 [(buf.validate.field).string.max_len = 80];
 }
 
 // SoftwareTOTPMethod configures a software OATH TOTP one-time password method.
@@ -296,22 +297,22 @@ message SoftwareTOTPMethod {
   Hash hash = 1;
 
   // Passcode digits length. Defaults to 7 if not specified.
-  int32 digits = 2 [(validate.rules).int32 = {ignore_empty: true, gte: 6, lte: 10}];
+  int32 digits = 2 [(buf.validate.field).int32 = { gte: 6, lte: 10}, (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE];
 
   // Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
-  string account_name = 3 [(validate.rules).string.max_len = 80];
+  string account_name = 3 [(buf.validate.field).string.max_len = 80];
 }
 
 // GoogleAuthHOTPMethod configures a Google Authenticator HOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function.
 message GoogleAuthHOTPMethod {
   // Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
-  string account_name = 1 [(validate.rules).string.max_len = 80];
+  string account_name = 1 [(buf.validate.field).string.max_len = 80];
 }
 
 // GoogleAuthTOTPMethod configures a Google Authenticator or Microsoft Authenticator TOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function.
 message GoogleAuthTOTPMethod {
   // Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
-  string account_name = 1 [(validate.rules).string.max_len = 80];
+  string account_name = 1 [(buf.validate.field).string.max_len = 80];
 }
 
 // AppleiOSTOTPMethod configures an Apple iOS TOTP one-time password method.
@@ -323,13 +324,13 @@ message HardwareHOTPMethod {
   Hash hash = 1;
 
   // Passcode digits length.
-  int32 digits = 2 [(validate.rules).int32 = {gte: 6, lte: 10}];
+  int32 digits = 2 [(buf.validate.field).int32 = {gte: 6, lte: 10}];
 
   // Hardware HOTP starting counter. Only included during identity creation. Defaults to 0 if not specified.
   int32 counter = 3;
 
   // Hardware HOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
-  bytes secret = 4 [(validate.rules).bytes.min_len = 16];
+  bytes secret = 4 [(buf.validate.field).bytes.min_len = 16];
 }
 
 // HardwareTOTPMethod configures a hardware OATH TOTP one-time password method.
@@ -338,40 +339,40 @@ message HardwareTOTPMethod {
   Hash hash = 1;
 
   // Passcode digits length.
-  int32 digits = 2 [(validate.rules).int32 = {gte: 6, lte: 10}];
+  int32 digits = 2 [(buf.validate.field).int32 = {gte: 6, lte: 10}];
 
   // Hardware TOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
-  bytes secret = 3 [(validate.rules).bytes.min_len = 16];
+  bytes secret = 3 [(buf.validate.field).bytes.min_len = 16];
 }
 
 // SMSMethod configures an SMS passcode method.
 message SMSMethod {
   // Phone number. Must be in valid [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
-  string phone = 1 [(validate.rules).string = {min_len: 8, max_len: 16}];
+  string phone = 1 [(buf.validate.field).string = {min_len: 8, max_len: 16}];
 }
 
 // PushoverMethod configures a Pushover passcode method.
 message PushoverMethod {
   // Pushover user key.
-  string pushover_key = 1 [(validate.rules).string = {min_len: 25, max_len: 45}];
+  string pushover_key = 1 [(buf.validate.field).string = {min_len: 25, max_len: 45}];
 }
 
 // EmailMethod configures an email passcode method.
 message EmailMethod {
   // Email address.
-  string email = 1 [(validate.rules).string.email = true];
+  string email = 1 [(buf.validate.field).string.email = true];
 }
 
 // BackupsCodesMethod configures a backup codes method. Identities using this method are immediately activated and do not require activation.
 message BackupsCodesMethod {
   // Number of passcodes provided.
-  int32 passcodes = 1 [(validate.rules).int32 = {gte: 6, lte: 10}];
+  int32 passcodes = 1 [(buf.validate.field).int32 = {gte: 6, lte: 10}];
 }
 
 // SecurityQuestionsMethod configures a security questions method. Identities using this method are immediately activated and do not require activation.
 message SecurityQuestionsMethod {
   // Answer to the security question. Only included during identity creation. The security question should be stored out-of-band and queried of an external user by the consuming application.
-  string answer = 1 [(validate.rules).string = {min_len: 3, max_len: 80}];
+  string answer = 1 [(buf.validate.field).string = {min_len: 3, max_len: 80}];
 }
 
 // Identity represents an identity as stored in the database.
@@ -386,14 +387,14 @@ message Identity {
   string app_id = 3 [json_name = "appID", (google.api.field_behavior) = OUTPUT_ONLY];
 
   // Identity comment. This should be an opaque identifier known to the consuming application.
-  string comment = 4 [(validate.rules).string = {min_len: 5, max_len: 80}, (google.api.field_behavior) = REQUIRED];
+  string comment = 4 [(buf.validate.field).string = {min_len: 5, max_len: 80}, (google.api.field_behavior) = REQUIRED];
 
   // Identity status.
   IdentityStatus status = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Identity method.
   oneof method_oneof {
-    option (validate.required) = true;
+    option (buf.validate.oneof).required = true;
 
     // Software HOTP method configuration.
     SoftwareHOTPMethod software_hotp_method = 16 [json_name = "softwareHOTPMethod"];
@@ -442,7 +443,7 @@ message Identity {
 // CreateIdentityRequest is sent to create an identity.
 message CreateIdentityRequest {
   // Identity message to create.
-  Identity identity = 1 [(validate.rules).message.required = true, (google.api.field_behavior) = REQUIRED];
+  Identity identity = 1 [(buf.validate.field).required = true, (google.api.field_behavior) = REQUIRED];
 }
 
 // CreateIdentityResponse is sent in response to an identity creation.
@@ -463,64 +464,64 @@ message CreateIdentityResponse {
 // ActivateIdentityRequest is sent to activate an identity.
 message ActivateIdentityRequest {
   // Identity ID (UUID) to activate.
-  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string id = 1 [(buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
   // Application ID (UUID).
-  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string app_id = 2 [json_name = "appID", (buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
   // Passcode for verification. For security questions identity methods, this is the answer to the security question.
-  string passcode = 3 [(validate.rules).string = {min_len: 3, max_len: 80}, (google.api.field_behavior) = REQUIRED];
+  string passcode = 3 [(buf.validate.field).string = {min_len: 3, max_len: 80}, (google.api.field_behavior) = REQUIRED];
 }
 
 // ChallengeIdentityRequest is sent to issue a challenge to an identity.
 message ChallengeIdentityRequest {
   // Identity ID (UUID) to issue challenge. The rate limit for methods that send notifications is one challenge per identity every 30 seconds.
-  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string id = 1 [(buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
   // Application ID (UUID).
-  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string app_id = 2 [json_name = "appID", (buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 }
 
 // VerifyIdentityRequest is sent to verify an identity. If verification fails, the request does not automatically fall through to a backup codes method. Consuming applications should design a workflow that either explicitly verifies by backup codes or falls through on failure.
 message VerifyIdentityRequest {
   // Identity ID (UUID) to verify.
-  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string id = 1 [(buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
   // Application ID (UUID).
-  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string app_id = 2 [json_name = "appID", (buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
   // Passcode for verification. For security questions identity methods, this is the answer to the security question.
-  string passcode = 3 [(validate.rules).string = {min_len: 3, max_len: 80}, (google.api.field_behavior) = REQUIRED];
+  string passcode = 3 [(buf.validate.field).string = {min_len: 3, max_len: 80}, (google.api.field_behavior) = REQUIRED];
 }
 
 // GetIdentityRequest is sent to get an identity.
 message GetIdentityRequest {
   // Identity ID (UUID) to get. Identity method_oneof may be returned in simplified form.
-  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string id = 1 [(buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
   // Application ID (UUID).
-  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string app_id = 2 [json_name = "appID", (buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 }
 
 // DeleteIdentityRequest is sent to delete an identity.
 message DeleteIdentityRequest {
   // Identity ID (UUID) to delete.
-  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string id = 1 [(buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
   // Application ID (UUID).
-  string app_id = 2 [json_name = "appID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string app_id = 2 [json_name = "appID", (buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 }
 
 // ListIdentitiesRequest is sent to list identities.
 message ListIdentitiesRequest {
   // Number of identities to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
-  int32 page_size = 1 [(validate.rules).int32.lte = 250];
+  int32 page_size = 1 [(buf.validate.field).int32.lte = 250];
 
   // Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
   string page_token = 2;
 
   // Application ID (UUID). If not specified, all rules are included.
-  string app_id = 3 [json_name = "appID", (validate.rules).string = {ignore_empty: true, uuid: true}];
+  string app_id = 3 [json_name = "appID", (buf.validate.field).string.uuid = true, (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE];
 }
 
 // ListIdentitiesResponse is sent in response to an identity list.

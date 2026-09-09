@@ -19,7 +19,7 @@ class UpdateAppRequest extends \Google\Protobuf\Internal\Message
     /**
      * App message to update.
      *
-     * Generated from protobuf field <code>.ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $app = null;
     /**
@@ -49,7 +49,7 @@ class UpdateAppRequest extends \Google\Protobuf\Internal\Message
     /**
      * App message to update.
      *
-     * Generated from protobuf field <code>.ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return \Ownmfa\Api\App|null
      */
     public function getApp()
@@ -70,7 +70,7 @@ class UpdateAppRequest extends \Google\Protobuf\Internal\Message
     /**
      * App message to update.
      *
-     * Generated from protobuf field <code>.ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param \Ownmfa\Api\App $var
      * @return $this
      */

@@ -102,7 +102,7 @@ const ListEventsRequest$json = {
 
 /// Descriptor for `ListEventsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listEventsRequestDescriptor = $convert.base64Decode(
-    'ChFMaXN0RXZlbnRzUmVxdWVzdBIsCgtpZGVudGl0eV9pZBgBIAEoCUIL+kIFcgOwAQHgQQJSCm'
+    'ChFMaXN0RXZlbnRzUmVxdWVzdBIsCgtpZGVudGl0eV9pZBgBIAEoCUILukgFcgOwAQHgQQJSCm'
     'lkZW50aXR5SUQSNQoIZW5kX3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w'
     'UgdlbmRUaW1lEjkKCnN0YXJ0X3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW'
     '1wUglzdGFydFRpbWU=');
@@ -138,8 +138,8 @@ const LatestEventsRequest$json = {
 
 /// Descriptor for `LatestEventsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List latestEventsRequestDescriptor = $convert.base64Decode(
-    'ChNMYXRlc3RFdmVudHNSZXF1ZXN0EiIKBmFwcF9pZBgBIAEoCUIL+kIIcgawAQHQAQFSBWFwcE'
-    'lEEiwKC2lkZW50aXR5X2lkGAIgASgJQgv6QghyBrABAdABAVIKaWRlbnRpdHlJRA==');
+    'ChNMYXRlc3RFdmVudHNSZXF1ZXN0EiUKBmFwcF9pZBgBIAEoCUIOukgFcgOwAQG6SAPYAQFSBW'
+    'FwcElEEi8KC2lkZW50aXR5X2lkGAIgASgJQg66SAVyA7ABAbpIA9gBAVIKaWRlbnRpdHlJRA==');
 
 @$core.Deprecated('Use latestEventsResponseDescriptor instead')
 const LatestEventsResponse$json = {

@@ -19,7 +19,7 @@ class DeleteKeyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Key ID (UUID) to delete.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $id = '';
 
@@ -41,7 +41,7 @@ class DeleteKeyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Key ID (UUID) to delete.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getId()
@@ -52,7 +52,7 @@ class DeleteKeyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Key ID (UUID) to delete.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

@@ -7,7 +7,7 @@
 package api
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -421,7 +421,7 @@ var File_api_ownmfa_event_proto protoreflect.FileDescriptor
 const file_api_ownmfa_event_proto_rawDesc = "" +
 	"\n" +
 	"\x16api/ownmfa_event.proto\x12\n" +
-	"ownmfa.api\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x17validate/validate.proto\"\xf3\x01\n" +
+	"ownmfa.api\x1a\x1bbuf/validate/validate.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf3\x01\n" +
 	"\x05Event\x12\x15\n" +
 	"\x06org_id\x18\x01 \x01(\tR\x05orgID\x12\x15\n" +
 	"\x06app_id\x18\x02 \x01(\tR\x05appID\x12\x1f\n" +
@@ -433,7 +433,7 @@ const file_api_ownmfa_event_proto_rawDesc = "" +
 	"created_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12\x19\n" +
 	"\btrace_id\x18\a \x01(\tR\atraceId\"\xb3\x01\n" +
 	"\x11ListEventsRequest\x12,\n" +
-	"\videntity_id\x18\x01 \x01(\tB\v\xe0A\x02\xfaB\x05r\x03\xb0\x01\x01R\n" +
+	"\videntity_id\x18\x01 \x01(\tB\v\xe0A\x02\xbaH\x05r\x03\xb0\x01\x01R\n" +
 	"identityID\x125\n" +
 	"\bend_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\aendTime\x129\n" +
 	"\n" +
@@ -441,8 +441,8 @@ const file_api_ownmfa_event_proto_rawDesc = "" +
 	"\x12ListEventsResponse\x12)\n" +
 	"\x06events\x18\x01 \x03(\v2\x11.ownmfa.api.EventR\x06events\"g\n" +
 	"\x13LatestEventsRequest\x12\"\n" +
-	"\x06app_id\x18\x01 \x01(\tB\v\xfaB\br\x06\xd0\x01\x01\xb0\x01\x01R\x05appID\x12,\n" +
-	"\videntity_id\x18\x02 \x01(\tB\v\xfaB\br\x06\xd0\x01\x01\xb0\x01\x01R\n" +
+	"\x06app_id\x18\x01 \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\xb0\x01\x01R\x05appID\x12,\n" +
+	"\videntity_id\x18\x02 \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\xb0\x01\x01R\n" +
 	"identityID\"A\n" +
 	"\x14LatestEventsResponse\x12)\n" +
 	"\x06events\x18\x01 \x03(\v2\x11.ownmfa.api.EventR\x06events*\xe1\x01\n" +

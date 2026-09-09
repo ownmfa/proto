@@ -19,7 +19,7 @@ class SecurityQuestionsMethod extends \Google\Protobuf\Internal\Message
     /**
      * Answer to the security question. Only included during identity creation. The security question should be stored out-of-band and queried of an external user by the consuming application.
      *
-     * Generated from protobuf field <code>string answer = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string answer = 1 [(.buf.validate.field) = {</code>
      */
     protected $answer = '';
 
@@ -41,7 +41,7 @@ class SecurityQuestionsMethod extends \Google\Protobuf\Internal\Message
     /**
      * Answer to the security question. Only included during identity creation. The security question should be stored out-of-band and queried of an external user by the consuming application.
      *
-     * Generated from protobuf field <code>string answer = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string answer = 1 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getAnswer()
@@ -52,7 +52,7 @@ class SecurityQuestionsMethod extends \Google\Protobuf\Internal\Message
     /**
      * Answer to the security question. Only included during identity creation. The security question should be stored out-of-band and queried of an external user by the consuming application.
      *
-     * Generated from protobuf field <code>string answer = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string answer = 1 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

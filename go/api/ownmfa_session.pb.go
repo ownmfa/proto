@@ -7,7 +7,7 @@
 package api
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -498,7 +498,7 @@ var File_api_ownmfa_session_proto protoreflect.FileDescriptor
 const file_api_ownmfa_session_proto_rawDesc = "" +
 	"\n" +
 	"\x18api/ownmfa_session.proto\x12\n" +
-	"ownmfa.api\x1a\x15api/ownmfa_role.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x17validate/validate.proto\"j\n" +
+	"ownmfa.api\x1a\x15api/ownmfa_role.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"j\n" +
 	"\fLoginRequest\x12\x19\n" +
 	"\x05email\x18\x01 \x01(\tB\x03\xe0A\x02R\x05email\x12\x1e\n" +
 	"\borg_name\x18\x02 \x01(\tB\x03\xe0A\x02R\aorgName\x12\x1f\n" +
@@ -510,19 +510,19 @@ const file_api_ownmfa_session_proto_rawDesc = "" +
 	"\x03Key\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tB\x03\xe0A\x03R\x02id\x12\x1a\n" +
 	"\x06org_id\x18\x02 \x01(\tB\x03\xe0A\x03R\x05orgID\x12 \n" +
-	"\x04name\x18\x03 \x01(\tB\f\xe0A\x02\xfaB\x06r\x04\x10\x05\x18PR\x04name\x127\n" +
-	"\x04role\x18\x04 \x01(\x0e2\x10.ownmfa.api.RoleB\x11\xe0A\x02\xfaB\v\x82\x01\b\x18\x04\x18\b\x18\f\x18\x0fR\x04role\x12>\n" +
+	"\x04name\x18\x03 \x01(\tB\f\xe0A\x02\xbaH\x06r\x04\x10\x05\x18PR\x04name\x127\n" +
+	"\x04role\x18\x04 \x01(\x0e2\x10.ownmfa.api.RoleB\x11\xe0A\x02\xbaH\v\x82\x01\b\x18\x04\x18\b\x18\f\x18\x0fR\x04role\x12>\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampB\x03\xe0A\x03R\tcreatedAt\"B\n" +
-	"\x10CreateKeyRequest\x12.\n" +
-	"\x03key\x18\x01 \x01(\v2\x0f.ownmfa.api.KeyB\v\xe0A\x02\xfaB\x05\x8a\x01\x02\x10\x01R\x03key\"L\n" +
+	"created_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampB\x03\xe0A\x03R\tcreatedAt\"@\n" +
+	"\x10CreateKeyRequest\x12,\n" +
+	"\x03key\x18\x01 \x01(\v2\x0f.ownmfa.api.KeyB\t\xe0A\x02\xbaH\x03\xc8\x01\x01R\x03key\"L\n" +
 	"\x11CreateKeyResponse\x12!\n" +
 	"\x03key\x18\x01 \x01(\v2\x0f.ownmfa.api.KeyR\x03key\x12\x14\n" +
 	"\x05token\x18\x02 \x01(\tR\x05token\"/\n" +
 	"\x10DeleteKeyRequest\x12\x1b\n" +
-	"\x02id\x18\x01 \x01(\tB\v\xe0A\x02\xfaB\x05r\x03\xb0\x01\x01R\x02id\"W\n" +
+	"\x02id\x18\x01 \x01(\tB\v\xe0A\x02\xbaH\x05r\x03\xb0\x01\x01R\x02id\"W\n" +
 	"\x0fListKeysRequest\x12%\n" +
-	"\tpage_size\x18\x01 \x01(\x05B\b\xfaB\x05\x1a\x03\x18\xfa\x01R\bpageSize\x12\x1d\n" +
+	"\tpage_size\x18\x01 \x01(\x05B\b\xbaH\x05\x1a\x03\x18\xfa\x01R\bpageSize\x12\x1d\n" +
 	"\n" +
 	"page_token\x18\x02 \x01(\tR\tpageToken\"~\n" +
 	"\x10ListKeysResponse\x12#\n" +

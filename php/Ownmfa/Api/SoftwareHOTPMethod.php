@@ -25,7 +25,7 @@ class SoftwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Passcode digits length. Defaults to 7 if not specified.
      *
-     * Generated from protobuf field <code>int32 digits = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 digits = 2 [(.buf.validate.field) = {</code>
      */
     protected $digits = 0;
     /**
@@ -37,7 +37,7 @@ class SoftwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
      *
-     * Generated from protobuf field <code>string account_name = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string account_name = 4 [(.buf.validate.field) = {</code>
      */
     protected $account_name = '';
 
@@ -91,7 +91,7 @@ class SoftwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Passcode digits length. Defaults to 7 if not specified.
      *
-     * Generated from protobuf field <code>int32 digits = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 digits = 2 [(.buf.validate.field) = {</code>
      * @return int
      */
     public function getDigits()
@@ -102,7 +102,7 @@ class SoftwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Passcode digits length. Defaults to 7 if not specified.
      *
-     * Generated from protobuf field <code>int32 digits = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 digits = 2 [(.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
@@ -143,7 +143,7 @@ class SoftwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
      *
-     * Generated from protobuf field <code>string account_name = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string account_name = 4 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getAccountName()
@@ -154,7 +154,7 @@ class SoftwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
      *
-     * Generated from protobuf field <code>string account_name = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string account_name = 4 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

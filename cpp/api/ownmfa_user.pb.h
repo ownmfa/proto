@@ -30,14 +30,14 @@
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/unknown_field_set.h"
 #include "api/ownmfa_role.pb.h"
+#include "buf/validate/validate.pb.h"
 #include "api/ownmfa_status.pb.h"
-#include "google/protobuf/empty.pb.h"
-#include "google/protobuf/timestamp.pb.h"
-#include "google/protobuf/field_mask.pb.h"
 #include "google/api/annotations.pb.h"
 #include "google/api/field_behavior.pb.h"
+#include "google/protobuf/empty.pb.h"
+#include "google/protobuf/field_mask.pb.h"
+#include "google/protobuf/timestamp.pb.h"
 #include "protoc-gen-openapiv2/options/annotations.pb.h"
-#include "validate/validate.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -256,7 +256,7 @@ class UpdateUserPasswordRequest final : public ::google::protobuf::Message
     kIdFieldNumber = 1,
     kPasswordFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -271,7 +271,7 @@ class UpdateUserPasswordRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_password() ;
   const ::std::string& password() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -484,7 +484,7 @@ class ListUsersRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_page_token();
 
   public:
-  // int32 page_size = 1 [(.validate.rules) = {
+  // int32 page_size = 1 [(.buf.validate.field) = {
   void clear_page_size() ;
   ::int32_t page_size() const;
   void set_page_size(::int32_t value);
@@ -676,7 +676,7 @@ class GetUserRequest final : public ::google::protobuf::Message
   enum : int {
     kIdFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -872,7 +872,7 @@ class DeleteUserRequest final : public ::google::protobuf::Message
   enum : int {
     kIdFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1105,7 +1105,7 @@ class User final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_org_id();
 
   public:
-  // string name = 3 [(.validate.rules) = {
+  // string name = 3 [(.buf.validate.field) = {
   void clear_name() ;
   const ::std::string& name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1120,7 +1120,7 @@ class User final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_name();
 
   public:
-  // string email = 4 [(.validate.rules) = {
+  // string email = 4 [(.buf.validate.field) = {
   void clear_email() ;
   const ::std::string& email() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1165,7 +1165,7 @@ class User final : public ::google::protobuf::Message
   ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_updated_at();
 
   public:
-  // .ownmfa.api.Role role = 5 [(.validate.rules) = {
+  // .ownmfa.api.Role role = 5 [(.buf.validate.field) = {
   void clear_role() ;
   ::ownmfa::api::Role role() const;
   void set_role(::ownmfa::api::Role value);
@@ -1175,7 +1175,7 @@ class User final : public ::google::protobuf::Message
   void _internal_set_role(::ownmfa::api::Role value);
 
   public:
-  // .ownmfa.api.Status status = 6 [(.validate.rules) = {
+  // .ownmfa.api.Status status = 6 [(.buf.validate.field) = {
   void clear_status() ;
   ::ownmfa::api::Status status() const;
   void set_status(::ownmfa::api::Status value);
@@ -1374,7 +1374,7 @@ class UpdateUserRequest final : public ::google::protobuf::Message
     kUserFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
   };
-  // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   bool has_user() const;
   void clear_user() ;
   const ::ownmfa::api::User& user() const;
@@ -1813,7 +1813,7 @@ class CreateUserRequest final : public ::google::protobuf::Message
   enum : int {
     kUserFieldNumber = 1,
   };
-  // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   bool has_user() const;
   void clear_user() ;
   const ::ownmfa::api::User& user() const;
@@ -2009,7 +2009,7 @@ inline void User::set_allocated_org_id(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.User.org_id)
 }
 
-// string name = 3 [(.validate.rules) = {
+// string name = 3 [(.buf.validate.field) = {
 inline void User::clear_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.name_.ClearToEmpty();
@@ -2074,7 +2074,7 @@ inline void User::set_allocated_name(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.User.name)
 }
 
-// string email = 4 [(.validate.rules) = {
+// string email = 4 [(.buf.validate.field) = {
 inline void User::clear_email() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.email_.ClearToEmpty();
@@ -2139,7 +2139,7 @@ inline void User::set_allocated_email(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.User.email)
 }
 
-// .ownmfa.api.Role role = 5 [(.validate.rules) = {
+// .ownmfa.api.Role role = 5 [(.buf.validate.field) = {
 inline void User::clear_role() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.role_ = 0;
@@ -2163,7 +2163,7 @@ inline void User::_internal_set_role(::ownmfa::api::Role value) {
   _impl_.role_ = value;
 }
 
-// .ownmfa.api.Status status = 6 [(.validate.rules) = {
+// .ownmfa.api.Status status = 6 [(.buf.validate.field) = {
 inline void User::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_ = 0;
@@ -2377,7 +2377,7 @@ inline void User::set_allocated_updated_at(::google::protobuf::Timestamp* PROTOB
 
 // CreateUserRequest
 
-// .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline bool CreateUserRequest::has_user() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.user_ != nullptr);
@@ -2479,7 +2479,7 @@ inline void CreateUserRequest::set_allocated_user(::ownmfa::api::User* PROTOBUF_
 
 // GetUserRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void GetUserRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -2548,7 +2548,7 @@ inline void GetUserRequest::set_allocated_id(::std::string* PROTOBUF_NULLABLE va
 
 // UpdateUserRequest
 
-// .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline bool UpdateUserRequest::has_user() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.user_ != nullptr);
@@ -2743,7 +2743,7 @@ inline void UpdateUserRequest::set_allocated_update_mask(::google::protobuf::Fie
 
 // UpdateUserPasswordRequest
 
-// string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.buf.validate.field) = {
 inline void UpdateUserPasswordRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -2808,7 +2808,7 @@ inline void UpdateUserPasswordRequest::set_allocated_id(::std::string* PROTOBUF_
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.UpdateUserPasswordRequest.id)
 }
 
-// string password = 2 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string password = 2 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void UpdateUserPasswordRequest::clear_password() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.password_.ClearToEmpty();
@@ -2877,7 +2877,7 @@ inline void UpdateUserPasswordRequest::set_allocated_password(::std::string* PRO
 
 // DeleteUserRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void DeleteUserRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -2946,7 +2946,7 @@ inline void DeleteUserRequest::set_allocated_id(::std::string* PROTOBUF_NULLABLE
 
 // ListUsersRequest
 
-// int32 page_size = 1 [(.validate.rules) = {
+// int32 page_size = 1 [(.buf.validate.field) = {
 inline void ListUsersRequest::clear_page_size() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.page_size_ = 0;

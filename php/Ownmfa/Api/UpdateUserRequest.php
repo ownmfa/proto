@@ -19,7 +19,7 @@ class UpdateUserRequest extends \Google\Protobuf\Internal\Message
     /**
      * User message to update.
      *
-     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $user = null;
     /**
@@ -49,7 +49,7 @@ class UpdateUserRequest extends \Google\Protobuf\Internal\Message
     /**
      * User message to update.
      *
-     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return \Ownmfa\Api\User|null
      */
     public function getUser()
@@ -70,7 +70,7 @@ class UpdateUserRequest extends \Google\Protobuf\Internal\Message
     /**
      * User message to update.
      *
-     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param \Ownmfa\Api\User $var
      * @return $this
      */

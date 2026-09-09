@@ -19,7 +19,7 @@ class PushoverMethod extends \Google\Protobuf\Internal\Message
     /**
      * Pushover user key.
      *
-     * Generated from protobuf field <code>string pushover_key = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string pushover_key = 1 [(.buf.validate.field) = {</code>
      */
     protected $pushover_key = '';
 
@@ -41,7 +41,7 @@ class PushoverMethod extends \Google\Protobuf\Internal\Message
     /**
      * Pushover user key.
      *
-     * Generated from protobuf field <code>string pushover_key = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string pushover_key = 1 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getPushoverKey()
@@ -52,7 +52,7 @@ class PushoverMethod extends \Google\Protobuf\Internal\Message
     /**
      * Pushover user key.
      *
-     * Generated from protobuf field <code>string pushover_key = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string pushover_key = 1 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

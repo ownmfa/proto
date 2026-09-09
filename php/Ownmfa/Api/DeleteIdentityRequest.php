@@ -19,13 +19,13 @@ class DeleteIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID) to delete.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $id = '';
     /**
      * Application ID (UUID).
      *
-     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $app_id = '';
 
@@ -49,7 +49,7 @@ class DeleteIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID) to delete.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getId()
@@ -60,7 +60,7 @@ class DeleteIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID) to delete.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -75,7 +75,7 @@ class DeleteIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Application ID (UUID).
      *
-     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getAppId()
@@ -86,7 +86,7 @@ class DeleteIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Application ID (UUID).
      *
-     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

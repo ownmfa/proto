@@ -30,12 +30,12 @@
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/unknown_field_set.h"
 #include "api/ownmfa_role.pb.h"
-#include "google/protobuf/empty.pb.h"
-#include "google/protobuf/timestamp.pb.h"
+#include "buf/validate/validate.pb.h"
 #include "google/api/annotations.pb.h"
 #include "google/api/field_behavior.pb.h"
+#include "google/protobuf/empty.pb.h"
+#include "google/protobuf/timestamp.pb.h"
 #include "protoc-gen-openapiv2/options/annotations.pb.h"
-#include "validate/validate.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -499,7 +499,7 @@ class ListKeysRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_page_token();
 
   public:
-  // int32 page_size = 1 [(.validate.rules) = {
+  // int32 page_size = 1 [(.buf.validate.field) = {
   void clear_page_size() ;
   ::int32_t page_size() const;
   void set_page_size(::int32_t value);
@@ -691,7 +691,7 @@ class DeleteKeyRequest final : public ::google::protobuf::Message
   enum : int {
     kIdFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1134,7 +1134,7 @@ class Key final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_org_id();
 
   public:
-  // string name = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string name = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_name() ;
   const ::std::string& name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1164,7 +1164,7 @@ class Key final : public ::google::protobuf::Message
   ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_created_at();
 
   public:
-  // .ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_role() ;
   ::ownmfa::api::Role role() const;
   void set_role(::ownmfa::api::Role value);
@@ -1799,7 +1799,7 @@ class CreateKeyRequest final : public ::google::protobuf::Message
   enum : int {
     kKeyFieldNumber = 1,
   };
-  // .ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   bool has_key() const;
   void clear_key() ;
   const ::ownmfa::api::Key& key() const;
@@ -2356,7 +2356,7 @@ inline void Key::set_allocated_org_id(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.Key.org_id)
 }
 
-// string name = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string name = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void Key::clear_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.name_.ClearToEmpty();
@@ -2421,7 +2421,7 @@ inline void Key::set_allocated_name(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.Key.name)
 }
 
-// .ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// .ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void Key::clear_role() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.role_ = 0;
@@ -2542,7 +2542,7 @@ inline void Key::set_allocated_created_at(::google::protobuf::Timestamp* PROTOBU
 
 // CreateKeyRequest
 
-// .ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// .ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline bool CreateKeyRequest::has_key() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.key_ != nullptr);
@@ -2811,7 +2811,7 @@ inline void CreateKeyResponse::set_allocated_token(::std::string* PROTOBUF_NULLA
 
 // DeleteKeyRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void DeleteKeyRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -2880,7 +2880,7 @@ inline void DeleteKeyRequest::set_allocated_id(::std::string* PROTOBUF_NULLABLE 
 
 // ListKeysRequest
 
-// int32 page_size = 1 [(.validate.rules) = {
+// int32 page_size = 1 [(.buf.validate.field) = {
 inline void ListKeysRequest::clear_page_size() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.page_size_ = 0;

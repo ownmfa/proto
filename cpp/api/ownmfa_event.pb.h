@@ -30,10 +30,10 @@
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
-#include "google/protobuf/timestamp.pb.h"
+#include "buf/validate/validate.pb.h"
 #include "google/api/annotations.pb.h"
 #include "google/api/field_behavior.pb.h"
-#include "validate/validate.pb.h"
+#include "google/protobuf/timestamp.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -289,7 +289,7 @@ class LatestEventsRequest final : public ::google::protobuf::Message
     kAppIdFieldNumber = 1,
     kIdentityIdFieldNumber = 2,
   };
-  // string app_id = 1 [json_name = "appID", (.validate.rules) = {
+  // string app_id = 1 [json_name = "appID", (.buf.validate.field) = {
   void clear_app_id() ;
   const ::std::string& app_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -304,7 +304,7 @@ class LatestEventsRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_app_id();
 
   public:
-  // string identity_id = 2 [json_name = "identityID", (.validate.rules) = {
+  // string identity_id = 2 [json_name = "identityID", (.buf.validate.field) = {
   void clear_identity_id() ;
   const ::std::string& identity_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -503,7 +503,7 @@ class ListEventsRequest final : public ::google::protobuf::Message
     kEndTimeFieldNumber = 2,
     kStartTimeFieldNumber = 3,
   };
-  // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_identity_id() ;
   const ::std::string& identity_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1734,7 +1734,7 @@ inline void Event::set_allocated_trace_id(::std::string* PROTOBUF_NULLABLE value
 
 // ListEventsRequest
 
-// string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void ListEventsRequest::clear_identity_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.identity_id_.ClearToEmpty();
@@ -2043,7 +2043,7 @@ ListEventsResponse::_internal_mutable_events() {
 
 // LatestEventsRequest
 
-// string app_id = 1 [json_name = "appID", (.validate.rules) = {
+// string app_id = 1 [json_name = "appID", (.buf.validate.field) = {
 inline void LatestEventsRequest::clear_app_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.app_id_.ClearToEmpty();
@@ -2108,7 +2108,7 @@ inline void LatestEventsRequest::set_allocated_app_id(::std::string* PROTOBUF_NU
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.LatestEventsRequest.app_id)
 }
 
-// string identity_id = 2 [json_name = "identityID", (.validate.rules) = {
+// string identity_id = 2 [json_name = "identityID", (.buf.validate.field) = {
 inline void LatestEventsRequest::clear_identity_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.identity_id_.ClearToEmpty();

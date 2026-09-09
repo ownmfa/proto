@@ -31,25 +31,25 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * User name.
      *
-     * Generated from protobuf field <code>string name = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 3 [(.buf.validate.field) = {</code>
      */
     protected $name = '';
     /**
      * User email.
      *
-     * Generated from protobuf field <code>string email = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 4 [(.buf.validate.field) = {</code>
      */
     protected $email = '';
     /**
      * User role.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Role role = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Role role = 5 [(.buf.validate.field) = {</code>
      */
     protected $role = 0;
     /**
      * User status.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Status status = 6 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Status status = 6 [(.buf.validate.field) = {</code>
      */
     protected $status = 0;
     /**
@@ -149,7 +149,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * User name.
      *
-     * Generated from protobuf field <code>string name = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 3 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getName()
@@ -160,7 +160,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * User name.
      *
-     * Generated from protobuf field <code>string name = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 3 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -175,7 +175,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * User email.
      *
-     * Generated from protobuf field <code>string email = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 4 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getEmail()
@@ -186,7 +186,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * User email.
      *
-     * Generated from protobuf field <code>string email = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 4 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -201,7 +201,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * User role.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Role role = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Role role = 5 [(.buf.validate.field) = {</code>
      * @return int
      */
     public function getRole()
@@ -212,7 +212,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * User role.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Role role = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Role role = 5 [(.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
@@ -227,7 +227,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * User status.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Status status = 6 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Status status = 6 [(.buf.validate.field) = {</code>
      * @return int
      */
     public function getStatus()
@@ -238,7 +238,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * User status.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Status status = 6 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Status status = 6 [(.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */

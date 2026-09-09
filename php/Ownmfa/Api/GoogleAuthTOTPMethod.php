@@ -19,7 +19,7 @@ class GoogleAuthTOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
      *
-     * Generated from protobuf field <code>string account_name = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string account_name = 1 [(.buf.validate.field) = {</code>
      */
     protected $account_name = '';
 
@@ -41,7 +41,7 @@ class GoogleAuthTOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
      *
-     * Generated from protobuf field <code>string account_name = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string account_name = 1 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getAccountName()
@@ -52,7 +52,7 @@ class GoogleAuthTOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
      *
-     * Generated from protobuf field <code>string account_name = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string account_name = 1 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

@@ -31,13 +31,13 @@
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
-#include "google/protobuf/empty.pb.h"
-#include "google/protobuf/timestamp.pb.h"
-#include "google/protobuf/field_mask.pb.h"
+#include "buf/validate/validate.pb.h"
 #include "google/api/annotations.pb.h"
 #include "google/api/field_behavior.pb.h"
+#include "google/protobuf/empty.pb.h"
+#include "google/protobuf/field_mask.pb.h"
+#include "google/protobuf/timestamp.pb.h"
 #include "protoc-gen-openapiv2/options/annotations.pb.h"
-#include "validate/validate.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -424,7 +424,7 @@ class VerifyIdentityRequest final : public ::google::protobuf::Message
     kAppIdFieldNumber = 2,
     kPasscodeFieldNumber = 3,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -439,7 +439,7 @@ class VerifyIdentityRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_app_id() ;
   const ::std::string& app_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -454,7 +454,7 @@ class VerifyIdentityRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_app_id();
 
   public:
-  // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_passcode() ;
   const ::std::string& passcode() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -654,7 +654,7 @@ class SoftwareTOTPMethod final : public ::google::protobuf::Message
     kHashFieldNumber = 1,
     kDigitsFieldNumber = 2,
   };
-  // string account_name = 3 [(.validate.rules) = {
+  // string account_name = 3 [(.buf.validate.field) = {
   void clear_account_name() ;
   const ::std::string& account_name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -679,7 +679,7 @@ class SoftwareTOTPMethod final : public ::google::protobuf::Message
   void _internal_set_hash(::ownmfa::api::Hash value);
 
   public:
-  // int32 digits = 2 [(.validate.rules) = {
+  // int32 digits = 2 [(.buf.validate.field) = {
   void clear_digits() ;
   ::int32_t digits() const;
   void set_digits(::int32_t value);
@@ -875,7 +875,7 @@ class SoftwareHOTPMethod final : public ::google::protobuf::Message
     kDigitsFieldNumber = 2,
     kCounterFieldNumber = 3,
   };
-  // string account_name = 4 [(.validate.rules) = {
+  // string account_name = 4 [(.buf.validate.field) = {
   void clear_account_name() ;
   const ::std::string& account_name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -900,7 +900,7 @@ class SoftwareHOTPMethod final : public ::google::protobuf::Message
   void _internal_set_hash(::ownmfa::api::Hash value);
 
   public:
-  // int32 digits = 2 [(.validate.rules) = {
+  // int32 digits = 2 [(.buf.validate.field) = {
   void clear_digits() ;
   ::int32_t digits() const;
   void set_digits(::int32_t value);
@@ -1104,7 +1104,7 @@ class SecurityQuestionsMethod final : public ::google::protobuf::Message
   enum : int {
     kAnswerFieldNumber = 1,
   };
-  // string answer = 1 [(.validate.rules) = {
+  // string answer = 1 [(.buf.validate.field) = {
   void clear_answer() ;
   const ::std::string& answer() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1300,7 +1300,7 @@ class SMSMethod final : public ::google::protobuf::Message
   enum : int {
     kPhoneFieldNumber = 1,
   };
-  // string phone = 1 [(.validate.rules) = {
+  // string phone = 1 [(.buf.validate.field) = {
   void clear_phone() ;
   const ::std::string& phone() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1496,7 +1496,7 @@ class PushoverMethod final : public ::google::protobuf::Message
   enum : int {
     kPushoverKeyFieldNumber = 1,
   };
-  // string pushover_key = 1 [(.validate.rules) = {
+  // string pushover_key = 1 [(.buf.validate.field) = {
   void clear_pushover_key() ;
   const ::std::string& pushover_key() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1709,7 +1709,7 @@ class ListIdentitiesRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_page_token();
 
   public:
-  // string app_id = 3 [json_name = "appID", (.validate.rules) = {
+  // string app_id = 3 [json_name = "appID", (.buf.validate.field) = {
   void clear_app_id() ;
   const ::std::string& app_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1724,7 +1724,7 @@ class ListIdentitiesRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_app_id();
 
   public:
-  // int32 page_size = 1 [(.validate.rules) = {
+  // int32 page_size = 1 [(.buf.validate.field) = {
   void clear_page_size() ;
   ::int32_t page_size() const;
   void set_page_size(::int32_t value);
@@ -1933,7 +1933,7 @@ class ListAppsRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_page_token();
 
   public:
-  // int32 page_size = 1 [(.validate.rules) = {
+  // int32 page_size = 1 [(.buf.validate.field) = {
   void clear_page_size() ;
   ::int32_t page_size() const;
   void set_page_size(::int32_t value);
@@ -2127,7 +2127,7 @@ class HardwareTOTPMethod final : public ::google::protobuf::Message
     kHashFieldNumber = 1,
     kDigitsFieldNumber = 2,
   };
-  // bytes secret = 3 [(.validate.rules) = {
+  // bytes secret = 3 [(.buf.validate.field) = {
   void clear_secret() ;
   const ::std::string& secret() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -2152,7 +2152,7 @@ class HardwareTOTPMethod final : public ::google::protobuf::Message
   void _internal_set_hash(::ownmfa::api::Hash value);
 
   public:
-  // int32 digits = 2 [(.validate.rules) = {
+  // int32 digits = 2 [(.buf.validate.field) = {
   void clear_digits() ;
   ::int32_t digits() const;
   void set_digits(::int32_t value);
@@ -2348,7 +2348,7 @@ class HardwareHOTPMethod final : public ::google::protobuf::Message
     kDigitsFieldNumber = 2,
     kCounterFieldNumber = 3,
   };
-  // bytes secret = 4 [(.validate.rules) = {
+  // bytes secret = 4 [(.buf.validate.field) = {
   void clear_secret() ;
   const ::std::string& secret() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -2373,7 +2373,7 @@ class HardwareHOTPMethod final : public ::google::protobuf::Message
   void _internal_set_hash(::ownmfa::api::Hash value);
 
   public:
-  // int32 digits = 2 [(.validate.rules) = {
+  // int32 digits = 2 [(.buf.validate.field) = {
   void clear_digits() ;
   ::int32_t digits() const;
   void set_digits(::int32_t value);
@@ -2577,7 +2577,7 @@ class GoogleAuthTOTPMethod final : public ::google::protobuf::Message
   enum : int {
     kAccountNameFieldNumber = 1,
   };
-  // string account_name = 1 [(.validate.rules) = {
+  // string account_name = 1 [(.buf.validate.field) = {
   void clear_account_name() ;
   const ::std::string& account_name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -2773,7 +2773,7 @@ class GoogleAuthHOTPMethod final : public ::google::protobuf::Message
   enum : int {
     kAccountNameFieldNumber = 1,
   };
-  // string account_name = 1 [(.validate.rules) = {
+  // string account_name = 1 [(.buf.validate.field) = {
   void clear_account_name() ;
   const ::std::string& account_name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -2970,7 +2970,7 @@ class GetIdentityRequest final : public ::google::protobuf::Message
     kIdFieldNumber = 1,
     kAppIdFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -2985,7 +2985,7 @@ class GetIdentityRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_app_id() ;
   const ::std::string& app_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -3182,7 +3182,7 @@ class GetAppRequest final : public ::google::protobuf::Message
   enum : int {
     kIdFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -3378,7 +3378,7 @@ class EmailMethod final : public ::google::protobuf::Message
   enum : int {
     kEmailFieldNumber = 1,
   };
-  // string email = 1 [(.validate.rules) = {
+  // string email = 1 [(.buf.validate.field) = {
   void clear_email() ;
   const ::std::string& email() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -3575,7 +3575,7 @@ class DeleteIdentityRequest final : public ::google::protobuf::Message
     kIdFieldNumber = 1,
     kAppIdFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -3590,7 +3590,7 @@ class DeleteIdentityRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_app_id() ;
   const ::std::string& app_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -3787,7 +3787,7 @@ class DeleteAppRequest final : public ::google::protobuf::Message
   enum : int {
     kIdFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -3984,7 +3984,7 @@ class ChallengeIdentityRequest final : public ::google::protobuf::Message
     kIdFieldNumber = 1,
     kAppIdFieldNumber = 2,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -3999,7 +3999,7 @@ class ChallengeIdentityRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_app_id() ;
   const ::std::string& app_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -4196,7 +4196,7 @@ class BackupsCodesMethod final : public ::google::protobuf::Message
   enum : int {
     kPasscodesFieldNumber = 1,
   };
-  // int32 passcodes = 1 [(.validate.rules) = {
+  // int32 passcodes = 1 [(.buf.validate.field) = {
   void clear_passcodes() ;
   ::int32_t passcodes() const;
   void set_passcodes(::int32_t value);
@@ -4535,7 +4535,7 @@ class ActivateIdentityRequest final : public ::google::protobuf::Message
     kAppIdFieldNumber = 2,
     kPasscodeFieldNumber = 3,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -4550,7 +4550,7 @@ class ActivateIdentityRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_app_id() ;
   const ::std::string& app_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -4565,7 +4565,7 @@ class ActivateIdentityRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_app_id();
 
   public:
-  // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_passcode() ;
   const ::std::string& passcode() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -4841,7 +4841,7 @@ class Identity final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_app_id();
 
   public:
-  // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_comment() ;
   const ::std::string& comment() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -5384,7 +5384,7 @@ class App final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_org_id();
 
   public:
-  // string name = 3 [(.validate.rules) = {
+  // string name = 3 [(.buf.validate.field) = {
   void clear_name() ;
   const ::std::string& name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -5399,7 +5399,7 @@ class App final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_name();
 
   public:
-  // string display_name = 4 [(.validate.rules) = {
+  // string display_name = 4 [(.buf.validate.field) = {
   void clear_display_name() ;
   const ::std::string& display_name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -5414,7 +5414,7 @@ class App final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_display_name();
 
   public:
-  // string email = 5 [(.validate.rules) = {
+  // string email = 5 [(.buf.validate.field) = {
   void clear_email() ;
   const ::std::string& email() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -5429,7 +5429,7 @@ class App final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_email();
 
   public:
-  // string pushover_key = 6 [(.validate.rules) = {
+  // string pushover_key = 6 [(.buf.validate.field) = {
   void clear_pushover_key() ;
   const ::std::string& pushover_key() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -5444,7 +5444,7 @@ class App final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_pushover_key();
 
   public:
-  // string subject_template = 7 [(.validate.rules) = {
+  // string subject_template = 7 [(.buf.validate.field) = {
   void clear_subject_template() ;
   const ::std::string& subject_template() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -5459,7 +5459,7 @@ class App final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_subject_template();
 
   public:
-  // string text_body_template = 8 [(.validate.rules) = {
+  // string text_body_template = 8 [(.buf.validate.field) = {
   void clear_text_body_template() ;
   const ::std::string& text_body_template() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -5474,7 +5474,7 @@ class App final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_text_body_template();
 
   public:
-  // bytes html_body_template = 9 [(.validate.rules) = {
+  // bytes html_body_template = 9 [(.buf.validate.field) = {
   void clear_html_body_template() ;
   const ::std::string& html_body_template() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -5711,7 +5711,7 @@ class UpdateAppRequest final : public ::google::protobuf::Message
     kAppFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
   };
-  // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   bool has_app() const;
   void clear_app() ;
   const ::ownmfa::api::App& app() const;
@@ -6631,7 +6631,7 @@ class CreateIdentityRequest final : public ::google::protobuf::Message
   enum : int {
     kIdentityFieldNumber = 1,
   };
-  // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   bool has_identity() const;
   void clear_identity() ;
   const ::ownmfa::api::Identity& identity() const;
@@ -6827,7 +6827,7 @@ class CreateAppRequest final : public ::google::protobuf::Message
   enum : int {
     kAppFieldNumber = 1,
   };
-  // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   bool has_app() const;
   void clear_app() ;
   const ::ownmfa::api::App& app() const;
@@ -7023,7 +7023,7 @@ inline void App::set_allocated_org_id(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.App.org_id)
 }
 
-// string name = 3 [(.validate.rules) = {
+// string name = 3 [(.buf.validate.field) = {
 inline void App::clear_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.name_.ClearToEmpty();
@@ -7088,7 +7088,7 @@ inline void App::set_allocated_name(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.App.name)
 }
 
-// string display_name = 4 [(.validate.rules) = {
+// string display_name = 4 [(.buf.validate.field) = {
 inline void App::clear_display_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.display_name_.ClearToEmpty();
@@ -7153,7 +7153,7 @@ inline void App::set_allocated_display_name(::std::string* PROTOBUF_NULLABLE val
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.App.display_name)
 }
 
-// string email = 5 [(.validate.rules) = {
+// string email = 5 [(.buf.validate.field) = {
 inline void App::clear_email() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.email_.ClearToEmpty();
@@ -7218,7 +7218,7 @@ inline void App::set_allocated_email(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.App.email)
 }
 
-// string pushover_key = 6 [(.validate.rules) = {
+// string pushover_key = 6 [(.buf.validate.field) = {
 inline void App::clear_pushover_key() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pushover_key_.ClearToEmpty();
@@ -7283,7 +7283,7 @@ inline void App::set_allocated_pushover_key(::std::string* PROTOBUF_NULLABLE val
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.App.pushover_key)
 }
 
-// string subject_template = 7 [(.validate.rules) = {
+// string subject_template = 7 [(.buf.validate.field) = {
 inline void App::clear_subject_template() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.subject_template_.ClearToEmpty();
@@ -7348,7 +7348,7 @@ inline void App::set_allocated_subject_template(::std::string* PROTOBUF_NULLABLE
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.App.subject_template)
 }
 
-// string text_body_template = 8 [(.validate.rules) = {
+// string text_body_template = 8 [(.buf.validate.field) = {
 inline void App::clear_text_body_template() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.text_body_template_.ClearToEmpty();
@@ -7413,7 +7413,7 @@ inline void App::set_allocated_text_body_template(::std::string* PROTOBUF_NULLAB
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.App.text_body_template)
 }
 
-// bytes html_body_template = 9 [(.validate.rules) = {
+// bytes html_body_template = 9 [(.buf.validate.field) = {
 inline void App::clear_html_body_template() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.html_body_template_.ClearToEmpty();
@@ -7668,7 +7668,7 @@ inline void App::set_allocated_updated_at(::google::protobuf::Timestamp* PROTOBU
 
 // CreateAppRequest
 
-// .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline bool CreateAppRequest::has_app() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.app_ != nullptr);
@@ -7770,7 +7770,7 @@ inline void CreateAppRequest::set_allocated_app(::ownmfa::api::App* PROTOBUF_NUL
 
 // GetAppRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void GetAppRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -7839,7 +7839,7 @@ inline void GetAppRequest::set_allocated_id(::std::string* PROTOBUF_NULLABLE val
 
 // UpdateAppRequest
 
-// .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline bool UpdateAppRequest::has_app() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.app_ != nullptr);
@@ -8034,7 +8034,7 @@ inline void UpdateAppRequest::set_allocated_update_mask(::google::protobuf::Fiel
 
 // DeleteAppRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void DeleteAppRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -8103,7 +8103,7 @@ inline void DeleteAppRequest::set_allocated_id(::std::string* PROTOBUF_NULLABLE 
 
 // ListAppsRequest
 
-// int32 page_size = 1 [(.validate.rules) = {
+// int32 page_size = 1 [(.buf.validate.field) = {
 inline void ListAppsRequest::clear_page_size() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.page_size_ = 0;
@@ -8363,7 +8363,7 @@ inline void SoftwareHOTPMethod::_internal_set_hash(::ownmfa::api::Hash value) {
   _impl_.hash_ = value;
 }
 
-// int32 digits = 2 [(.validate.rules) = {
+// int32 digits = 2 [(.buf.validate.field) = {
 inline void SoftwareHOTPMethod::clear_digits() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.digits_ = 0;
@@ -8411,7 +8411,7 @@ inline void SoftwareHOTPMethod::_internal_set_counter(::int32_t value) {
   _impl_.counter_ = value;
 }
 
-// string account_name = 4 [(.validate.rules) = {
+// string account_name = 4 [(.buf.validate.field) = {
 inline void SoftwareHOTPMethod::clear_account_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.account_name_.ClearToEmpty();
@@ -8504,7 +8504,7 @@ inline void SoftwareTOTPMethod::_internal_set_hash(::ownmfa::api::Hash value) {
   _impl_.hash_ = value;
 }
 
-// int32 digits = 2 [(.validate.rules) = {
+// int32 digits = 2 [(.buf.validate.field) = {
 inline void SoftwareTOTPMethod::clear_digits() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.digits_ = 0;
@@ -8528,7 +8528,7 @@ inline void SoftwareTOTPMethod::_internal_set_digits(::int32_t value) {
   _impl_.digits_ = value;
 }
 
-// string account_name = 3 [(.validate.rules) = {
+// string account_name = 3 [(.buf.validate.field) = {
 inline void SoftwareTOTPMethod::clear_account_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.account_name_.ClearToEmpty();
@@ -8597,7 +8597,7 @@ inline void SoftwareTOTPMethod::set_allocated_account_name(::std::string* PROTOB
 
 // GoogleAuthHOTPMethod
 
-// string account_name = 1 [(.validate.rules) = {
+// string account_name = 1 [(.buf.validate.field) = {
 inline void GoogleAuthHOTPMethod::clear_account_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.account_name_.ClearToEmpty();
@@ -8666,7 +8666,7 @@ inline void GoogleAuthHOTPMethod::set_allocated_account_name(::std::string* PROT
 
 // GoogleAuthTOTPMethod
 
-// string account_name = 1 [(.validate.rules) = {
+// string account_name = 1 [(.buf.validate.field) = {
 inline void GoogleAuthTOTPMethod::clear_account_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.account_name_.ClearToEmpty();
@@ -8763,7 +8763,7 @@ inline void HardwareHOTPMethod::_internal_set_hash(::ownmfa::api::Hash value) {
   _impl_.hash_ = value;
 }
 
-// int32 digits = 2 [(.validate.rules) = {
+// int32 digits = 2 [(.buf.validate.field) = {
 inline void HardwareHOTPMethod::clear_digits() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.digits_ = 0;
@@ -8811,7 +8811,7 @@ inline void HardwareHOTPMethod::_internal_set_counter(::int32_t value) {
   _impl_.counter_ = value;
 }
 
-// bytes secret = 4 [(.validate.rules) = {
+// bytes secret = 4 [(.buf.validate.field) = {
 inline void HardwareHOTPMethod::clear_secret() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.secret_.ClearToEmpty();
@@ -8904,7 +8904,7 @@ inline void HardwareTOTPMethod::_internal_set_hash(::ownmfa::api::Hash value) {
   _impl_.hash_ = value;
 }
 
-// int32 digits = 2 [(.validate.rules) = {
+// int32 digits = 2 [(.buf.validate.field) = {
 inline void HardwareTOTPMethod::clear_digits() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.digits_ = 0;
@@ -8928,7 +8928,7 @@ inline void HardwareTOTPMethod::_internal_set_digits(::int32_t value) {
   _impl_.digits_ = value;
 }
 
-// bytes secret = 3 [(.validate.rules) = {
+// bytes secret = 3 [(.buf.validate.field) = {
 inline void HardwareTOTPMethod::clear_secret() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.secret_.ClearToEmpty();
@@ -8997,7 +8997,7 @@ inline void HardwareTOTPMethod::set_allocated_secret(::std::string* PROTOBUF_NUL
 
 // SMSMethod
 
-// string phone = 1 [(.validate.rules) = {
+// string phone = 1 [(.buf.validate.field) = {
 inline void SMSMethod::clear_phone() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.phone_.ClearToEmpty();
@@ -9066,7 +9066,7 @@ inline void SMSMethod::set_allocated_phone(::std::string* PROTOBUF_NULLABLE valu
 
 // PushoverMethod
 
-// string pushover_key = 1 [(.validate.rules) = {
+// string pushover_key = 1 [(.buf.validate.field) = {
 inline void PushoverMethod::clear_pushover_key() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pushover_key_.ClearToEmpty();
@@ -9135,7 +9135,7 @@ inline void PushoverMethod::set_allocated_pushover_key(::std::string* PROTOBUF_N
 
 // EmailMethod
 
-// string email = 1 [(.validate.rules) = {
+// string email = 1 [(.buf.validate.field) = {
 inline void EmailMethod::clear_email() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.email_.ClearToEmpty();
@@ -9204,7 +9204,7 @@ inline void EmailMethod::set_allocated_email(::std::string* PROTOBUF_NULLABLE va
 
 // BackupsCodesMethod
 
-// int32 passcodes = 1 [(.validate.rules) = {
+// int32 passcodes = 1 [(.buf.validate.field) = {
 inline void BackupsCodesMethod::clear_passcodes() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.passcodes_ = 0;
@@ -9232,7 +9232,7 @@ inline void BackupsCodesMethod::_internal_set_passcodes(::int32_t value) {
 
 // SecurityQuestionsMethod
 
-// string answer = 1 [(.validate.rules) = {
+// string answer = 1 [(.buf.validate.field) = {
 inline void SecurityQuestionsMethod::clear_answer() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.answer_.ClearToEmpty();
@@ -9496,7 +9496,7 @@ inline void Identity::set_allocated_app_id(::std::string* PROTOBUF_NULLABLE valu
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.Identity.app_id)
 }
 
-// string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void Identity::clear_comment() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.comment_.ClearToEmpty();
@@ -10756,7 +10756,7 @@ inline Identity::MethodOneofCase Identity::method_oneof_case() const {
 
 // CreateIdentityRequest
 
-// .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline bool CreateIdentityRequest::has_identity() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.identity_ != nullptr);
@@ -11154,7 +11154,7 @@ CreateIdentityResponse::_internal_mutable_passcodes() {
 
 // ActivateIdentityRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void ActivateIdentityRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -11219,7 +11219,7 @@ inline void ActivateIdentityRequest::set_allocated_id(::std::string* PROTOBUF_NU
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.ActivateIdentityRequest.id)
 }
 
-// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void ActivateIdentityRequest::clear_app_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.app_id_.ClearToEmpty();
@@ -11284,7 +11284,7 @@ inline void ActivateIdentityRequest::set_allocated_app_id(::std::string* PROTOBU
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.ActivateIdentityRequest.app_id)
 }
 
-// string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void ActivateIdentityRequest::clear_passcode() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.passcode_.ClearToEmpty();
@@ -11353,7 +11353,7 @@ inline void ActivateIdentityRequest::set_allocated_passcode(::std::string* PROTO
 
 // ChallengeIdentityRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void ChallengeIdentityRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -11418,7 +11418,7 @@ inline void ChallengeIdentityRequest::set_allocated_id(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.ChallengeIdentityRequest.id)
 }
 
-// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void ChallengeIdentityRequest::clear_app_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.app_id_.ClearToEmpty();
@@ -11487,7 +11487,7 @@ inline void ChallengeIdentityRequest::set_allocated_app_id(::std::string* PROTOB
 
 // VerifyIdentityRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void VerifyIdentityRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -11552,7 +11552,7 @@ inline void VerifyIdentityRequest::set_allocated_id(::std::string* PROTOBUF_NULL
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.VerifyIdentityRequest.id)
 }
 
-// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void VerifyIdentityRequest::clear_app_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.app_id_.ClearToEmpty();
@@ -11617,7 +11617,7 @@ inline void VerifyIdentityRequest::set_allocated_app_id(::std::string* PROTOBUF_
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.VerifyIdentityRequest.app_id)
 }
 
-// string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void VerifyIdentityRequest::clear_passcode() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.passcode_.ClearToEmpty();
@@ -11686,7 +11686,7 @@ inline void VerifyIdentityRequest::set_allocated_passcode(::std::string* PROTOBU
 
 // GetIdentityRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void GetIdentityRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -11751,7 +11751,7 @@ inline void GetIdentityRequest::set_allocated_id(::std::string* PROTOBUF_NULLABL
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.GetIdentityRequest.id)
 }
 
-// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void GetIdentityRequest::clear_app_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.app_id_.ClearToEmpty();
@@ -11820,7 +11820,7 @@ inline void GetIdentityRequest::set_allocated_app_id(::std::string* PROTOBUF_NUL
 
 // DeleteIdentityRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void DeleteIdentityRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -11885,7 +11885,7 @@ inline void DeleteIdentityRequest::set_allocated_id(::std::string* PROTOBUF_NULL
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.DeleteIdentityRequest.id)
 }
 
-// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void DeleteIdentityRequest::clear_app_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.app_id_.ClearToEmpty();
@@ -11954,7 +11954,7 @@ inline void DeleteIdentityRequest::set_allocated_app_id(::std::string* PROTOBUF_
 
 // ListIdentitiesRequest
 
-// int32 page_size = 1 [(.validate.rules) = {
+// int32 page_size = 1 [(.buf.validate.field) = {
 inline void ListIdentitiesRequest::clear_page_size() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.page_size_ = 0;
@@ -12043,7 +12043,7 @@ inline void ListIdentitiesRequest::set_allocated_page_token(::std::string* PROTO
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.ListIdentitiesRequest.page_token)
 }
 
-// string app_id = 3 [json_name = "appID", (.validate.rules) = {
+// string app_id = 3 [json_name = "appID", (.buf.validate.field) = {
 inline void ListIdentitiesRequest::clear_app_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.app_id_.ClearToEmpty();

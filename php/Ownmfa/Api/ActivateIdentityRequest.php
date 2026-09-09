@@ -19,19 +19,19 @@ class ActivateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID) to activate.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $id = '';
     /**
      * Application ID (UUID).
      *
-     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $app_id = '';
     /**
      * Passcode for verification. For security questions identity methods, this is the answer to the security question.
      *
-     * Generated from protobuf field <code>string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $passcode = '';
 
@@ -57,7 +57,7 @@ class ActivateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID) to activate.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getId()
@@ -68,7 +68,7 @@ class ActivateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID) to activate.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -83,7 +83,7 @@ class ActivateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Application ID (UUID).
      *
-     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getAppId()
@@ -94,7 +94,7 @@ class ActivateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Application ID (UUID).
      *
-     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -109,7 +109,7 @@ class ActivateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Passcode for verification. For security questions identity methods, this is the answer to the security question.
      *
-     * Generated from protobuf field <code>string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getPasscode()
@@ -120,7 +120,7 @@ class ActivateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Passcode for verification. For security questions identity methods, this is the answer to the security question.
      *
-     * Generated from protobuf field <code>string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

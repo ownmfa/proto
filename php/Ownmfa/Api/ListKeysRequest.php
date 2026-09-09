@@ -19,7 +19,7 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     /**
      * Number of API keys to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
      *
-     * Generated from protobuf field <code>int32 page_size = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 page_size = 1 [(.buf.validate.field) = {</code>
      */
     protected $page_size = 0;
     /**
@@ -49,7 +49,7 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     /**
      * Number of API keys to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
      *
-     * Generated from protobuf field <code>int32 page_size = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 page_size = 1 [(.buf.validate.field) = {</code>
      * @return int
      */
     public function getPageSize()
@@ -60,7 +60,7 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     /**
      * Number of API keys to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
      *
-     * Generated from protobuf field <code>int32 page_size = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 page_size = 1 [(.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
