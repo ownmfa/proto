@@ -241,51 +241,51 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 };
 const char descriptor_table_protodef_api_2fownmfa_5fevent_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
-    "\n\026api/ownmfa_event.proto\022\nownmfa.api\032\037go"
-    "ogle/protobuf/timestamp.proto\032\034google/ap"
-    "i/annotations.proto\032\037google/api/field_be"
-    "havior.proto\032\027validate/validate.proto\"\320\001"
-    "\n\005Event\022\025\n\006org_id\030\001 \001(\tR\005orgID\022\025\n\006app_id"
-    "\030\002 \001(\tR\005appID\022\037\n\013identity_id\030\003 \001(\tR\niden"
-    "tityID\022\'\n\006status\030\004 \001(\0162\027.ownmfa.api.Even"
-    "tStatus\022\r\n\005error\030\005 \001(\t\022.\n\ncreated_at\030\006 \001"
-    "(\0132\032.google.protobuf.Timestamp\022\020\n\010trace_"
-    "id\030\007 \001(\t\"\237\001\n\021ListEventsRequest\022,\n\013identi"
-    "ty_id\030\001 \001(\tB\013\340A\002\372B\005r\003\260\001\001R\nidentityID\022,\n\010"
-    "end_time\030\002 \001(\0132\032.google.protobuf.Timesta"
-    "mp\022.\n\nstart_time\030\003 \001(\0132\032.google.protobuf"
-    ".Timestamp\"7\n\022ListEventsResponse\022!\n\006even"
-    "ts\030\001 \003(\0132\021.ownmfa.api.Event\"g\n\023LatestEve"
-    "ntsRequest\022\"\n\006app_id\030\001 \001(\tB\013\372B\010r\006\260\001\001\320\001\001R"
-    "\005appID\022,\n\013identity_id\030\002 \001(\tB\013\372B\010r\006\260\001\001\320\001\001"
-    "R\nidentityID\"9\n\024LatestEventsResponse\022!\n\006"
-    "events\030\001 \003(\0132\021.ownmfa.api.Event*\341\001\n\013Even"
-    "tStatus\022\034\n\030EVENT_STATUS_UNSPECIFIED\020\000\022\024\n"
-    "\020IDENTITY_CREATED\020\001\022\022\n\016CHALLENGE_SENT\020\002\022"
-    "\022\n\016CHALLENGE_NOOP\020\003\022\022\n\016CHALLENGE_FAIL\020\004\022"
-    "\024\n\020ACTIVATE_SUCCESS\020\005\022\021\n\rACTIVATE_FAIL\020\006"
-    "\022\022\n\016VERIFY_SUCCESS\020\007\022\017\n\013VERIFY_FAIL\020\010\022\024\n"
-    "\020IDENTITY_DELETED\020\t2\335\001\n\014EventService\022_\n\n"
-    "ListEvents\022\035.ownmfa.api.ListEventsReques"
-    "t\032\036.ownmfa.api.ListEventsResponse\"\022\202\323\344\223\002"
-    "\014\022\n/v1/events\022l\n\014LatestEvents\022\037.ownmfa.a"
-    "pi.LatestEventsRequest\032 .ownmfa.api.Late"
-    "stEventsResponse\"\031\202\323\344\223\002\023\022\021/v1/events/lat"
-    "estB Z\036github.com/ownmfa/proto/go/apib\006p"
-    "roto3"
+    "\n\026api/ownmfa_event.proto\022\nownmfa.api\032\033bu"
+    "f/validate/validate.proto\032\034google/api/an"
+    "notations.proto\032\037google/api/field_behavi"
+    "or.proto\032\037google/protobuf/timestamp.prot"
+    "o\"\320\001\n\005Event\022\025\n\006org_id\030\001 \001(\tR\005orgID\022\025\n\006ap"
+    "p_id\030\002 \001(\tR\005appID\022\037\n\013identity_id\030\003 \001(\tR\n"
+    "identityID\022\'\n\006status\030\004 \001(\0162\027.ownmfa.api."
+    "EventStatus\022\r\n\005error\030\005 \001(\t\022.\n\ncreated_at"
+    "\030\006 \001(\0132\032.google.protobuf.Timestamp\022\020\n\010tr"
+    "ace_id\030\007 \001(\t\"\237\001\n\021ListEventsRequest\022,\n\013id"
+    "entity_id\030\001 \001(\tB\013\340A\002\272H\005r\003\260\001\001R\nidentityID"
+    "\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf.Tim"
+    "estamp\022.\n\nstart_time\030\003 \001(\0132\032.google.prot"
+    "obuf.Timestamp\"7\n\022ListEventsResponse\022!\n\006"
+    "events\030\001 \003(\0132\021.ownmfa.api.Event\"g\n\023Lates"
+    "tEventsRequest\022\"\n\006app_id\030\001 \001(\tB\013\272H\010r\003\260\001\001"
+    "\330\001\001R\005appID\022,\n\013identity_id\030\002 \001(\tB\013\272H\010r\003\260\001"
+    "\001\330\001\001R\nidentityID\"9\n\024LatestEventsResponse"
+    "\022!\n\006events\030\001 \003(\0132\021.ownmfa.api.Event*\341\001\n\013"
+    "EventStatus\022\034\n\030EVENT_STATUS_UNSPECIFIED\020"
+    "\000\022\024\n\020IDENTITY_CREATED\020\001\022\022\n\016CHALLENGE_SEN"
+    "T\020\002\022\022\n\016CHALLENGE_NOOP\020\003\022\022\n\016CHALLENGE_FAI"
+    "L\020\004\022\024\n\020ACTIVATE_SUCCESS\020\005\022\021\n\rACTIVATE_FA"
+    "IL\020\006\022\022\n\016VERIFY_SUCCESS\020\007\022\017\n\013VERIFY_FAIL\020"
+    "\010\022\024\n\020IDENTITY_DELETED\020\t2\335\001\n\014EventService"
+    "\022_\n\nListEvents\022\035.ownmfa.api.ListEventsRe"
+    "quest\032\036.ownmfa.api.ListEventsResponse\"\022\202"
+    "\323\344\223\002\014\022\n/v1/events\022l\n\014LatestEvents\022\037.ownm"
+    "fa.api.LatestEventsRequest\032 .ownmfa.api."
+    "LatestEventsResponse\"\031\202\323\344\223\002\023\022\021/v1/events"
+    "/latestB Z\036github.com/ownmfa/proto/go/ap"
+    "ib\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_api_2fownmfa_5fevent_2eproto_deps[4] = {
+        &::descriptor_table_buf_2fvalidate_2fvalidate_2eproto,
         &::descriptor_table_google_2fapi_2fannotations_2eproto,
         &::descriptor_table_google_2fapi_2ffield_5fbehavior_2eproto,
         &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
-        &::descriptor_table_validate_2fvalidate_2eproto,
 };
 static ::absl::once_flag descriptor_table_api_2fownmfa_5fevent_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_api_2fownmfa_5fevent_2eproto = {
     false,
     false,
-    1245,
+    1249,
     descriptor_table_protodef_api_2fownmfa_5fevent_2eproto,
     "api/ownmfa_event.proto",
     &descriptor_table_api_2fownmfa_5fevent_2eproto_once,
@@ -971,7 +971,7 @@ ListEventsRequest::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
-    // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(ListEventsRequest, _impl_.identity_id_)}},
     // .google.protobuf.Timestamp end_time = 2;
@@ -983,7 +983,7 @@ ListEventsRequest::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ListEventsRequest, _impl_.identity_id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // .google.protobuf.Timestamp end_time = 2;
@@ -1043,7 +1043,7 @@ PROTOBUF_NOINLINE void ListEventsRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_identity_id().empty()) {
       const ::std::string& _s = this_._internal_identity_id();
@@ -1094,7 +1094,7 @@ PROTOBUF_NOINLINE void ListEventsRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000007u) != 0) {
-    // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string identity_id = 1 [json_name = "identityID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_identity_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1564,19 +1564,19 @@ LatestEventsRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::LatestEventsRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string identity_id = 2 [json_name = "identityID", (.validate.rules) = {
+    // string identity_id = 2 [json_name = "identityID", (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(LatestEventsRequest, _impl_.identity_id_)}},
-    // string app_id = 1 [json_name = "appID", (.validate.rules) = {
+    // string app_id = 1 [json_name = "appID", (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(LatestEventsRequest, _impl_.app_id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string app_id = 1 [json_name = "appID", (.validate.rules) = {
+    // string app_id = 1 [json_name = "appID", (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(LatestEventsRequest, _impl_.app_id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string identity_id = 2 [json_name = "identityID", (.validate.rules) = {
+    // string identity_id = 2 [json_name = "identityID", (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(LatestEventsRequest, _impl_.identity_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -1623,7 +1623,7 @@ PROTOBUF_NOINLINE void LatestEventsRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string app_id = 1 [json_name = "appID", (.validate.rules) = {
+  // string app_id = 1 [json_name = "appID", (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_app_id().empty()) {
       const ::std::string& _s = this_._internal_app_id();
@@ -1633,7 +1633,7 @@ PROTOBUF_NOINLINE void LatestEventsRequest::Clear() {
     }
   }
 
-  // string identity_id = 2 [json_name = "identityID", (.validate.rules) = {
+  // string identity_id = 2 [json_name = "identityID", (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_identity_id().empty()) {
       const ::std::string& _s = this_._internal_identity_id();
@@ -1669,14 +1669,14 @@ PROTOBUF_NOINLINE void LatestEventsRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
-    // string app_id = 1 [json_name = "appID", (.validate.rules) = {
+    // string app_id = 1 [json_name = "appID", (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_app_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_app_id());
       }
     }
-    // string identity_id = 2 [json_name = "identityID", (.validate.rules) = {
+    // string identity_id = 2 [json_name = "identityID", (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_identity_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(

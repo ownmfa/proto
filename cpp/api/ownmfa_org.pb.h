@@ -31,13 +31,13 @@
 #include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
 #include "api/ownmfa_status.pb.h"
-#include "google/protobuf/empty.pb.h"
-#include "google/protobuf/timestamp.pb.h"
-#include "google/protobuf/field_mask.pb.h"
+#include "buf/validate/validate.pb.h"
 #include "google/api/annotations.pb.h"
 #include "google/api/field_behavior.pb.h"
+#include "google/protobuf/empty.pb.h"
+#include "google/protobuf/field_mask.pb.h"
+#include "google/protobuf/timestamp.pb.h"
 #include "protoc-gen-openapiv2/options/annotations.pb.h"
-#include "validate/validate.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -311,7 +311,7 @@ class ListOrgsRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_page_token();
 
   public:
-  // int32 page_size = 1 [(.validate.rules) = {
+  // int32 page_size = 1 [(.buf.validate.field) = {
   void clear_page_size() ;
   ::int32_t page_size() const;
   void set_page_size(::int32_t value);
@@ -503,7 +503,7 @@ class GetOrgRequest final : public ::google::protobuf::Message
   enum : int {
     kIdFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -699,7 +699,7 @@ class DeleteOrgRequest final : public ::google::protobuf::Message
   enum : int {
     kIdFieldNumber = 1,
   };
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   void clear_id() ;
   const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -915,7 +915,7 @@ class Org final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string name = 2 [(.validate.rules) = {
+  // string name = 2 [(.buf.validate.field) = {
   void clear_name() ;
   const ::std::string& name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -960,7 +960,7 @@ class Org final : public ::google::protobuf::Message
   ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_updated_at();
 
   public:
-  // .ownmfa.api.Status status = 5 [(.validate.rules) = {
+  // .ownmfa.api.Status status = 5 [(.buf.validate.field) = {
   void clear_status() ;
   ::ownmfa::api::Status status() const;
   void set_status(::ownmfa::api::Status value);
@@ -1167,7 +1167,7 @@ class UpdateOrgRequest final : public ::google::protobuf::Message
     kOrgFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
   };
-  // .ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   bool has_org() const;
   void clear_org() ;
   const ::ownmfa::api::Org& org() const;
@@ -1606,7 +1606,7 @@ class CreateOrgRequest final : public ::google::protobuf::Message
   enum : int {
     kOrgFieldNumber = 1,
   };
-  // .ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   bool has_org() const;
   void clear_org() ;
   const ::ownmfa::api::Org& org() const;
@@ -1737,7 +1737,7 @@ inline void Org::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.Org.id)
 }
 
-// string name = 2 [(.validate.rules) = {
+// string name = 2 [(.buf.validate.field) = {
 inline void Org::clear_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.name_.ClearToEmpty();
@@ -1802,7 +1802,7 @@ inline void Org::set_allocated_name(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:ownmfa.api.Org.name)
 }
 
-// .ownmfa.api.Status status = 5 [(.validate.rules) = {
+// .ownmfa.api.Status status = 5 [(.buf.validate.field) = {
 inline void Org::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_ = 0;
@@ -2040,7 +2040,7 @@ inline void Org::set_allocated_updated_at(::google::protobuf::Timestamp* PROTOBU
 
 // CreateOrgRequest
 
-// .ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// .ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline bool CreateOrgRequest::has_org() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.org_ != nullptr);
@@ -2142,7 +2142,7 @@ inline void CreateOrgRequest::set_allocated_org(::ownmfa::api::Org* PROTOBUF_NUL
 
 // GetOrgRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void GetOrgRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -2211,7 +2211,7 @@ inline void GetOrgRequest::set_allocated_id(::std::string* PROTOBUF_NULLABLE val
 
 // UpdateOrgRequest
 
-// .ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// .ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline bool UpdateOrgRequest::has_org() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.org_ != nullptr);
@@ -2406,7 +2406,7 @@ inline void UpdateOrgRequest::set_allocated_update_mask(::google::protobuf::Fiel
 
 // DeleteOrgRequest
 
-// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+// string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
 inline void DeleteOrgRequest::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
@@ -2475,7 +2475,7 @@ inline void DeleteOrgRequest::set_allocated_id(::std::string* PROTOBUF_NULLABLE 
 
 // ListOrgsRequest
 
-// int32 page_size = 1 [(.validate.rules) = {
+// int32 page_size = 1 [(.buf.validate.field) = {
 inline void ListOrgsRequest::clear_page_size() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.page_size_ = 0;

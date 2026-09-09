@@ -1210,171 +1210,171 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_api_2fownmfa_5fapp_5fidentity_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\035api/ownmfa_app_identity.proto\022\nownmfa."
-    "api\032\033google/protobuf/empty.proto\032\037google"
-    "/protobuf/timestamp.proto\032 google/protob"
-    "uf/field_mask.proto\032\034google/api/annotati"
-    "ons.proto\032\037google/api/field_behavior.pro"
-    "to\032.protoc-gen-openapiv2/options/annotat"
-    "ions.proto\032\027validate/validate.proto\"\200\003\n\003"
-    "App\022\017\n\002id\030\001 \001(\tB\003\340A\003\022\032\n\006org_id\030\002 \001(\tB\003\340A"
-    "\003R\005orgID\022\027\n\004name\030\003 \001(\tB\t\372B\006r\004\020\005\030(\022\037\n\014dis"
-    "play_name\030\004 \001(\tB\t\372B\006r\004\020\005\030P\022\031\n\005email\030\005 \001("
-    "\tB\n\372B\007r\005`\001\320\001\001\022\035\n\014pushover_key\030\006 \001(\tB\007\372B\004"
-    "r\002\030-\022\"\n\020subject_template\030\007 \001(\tB\010\372B\005r\003\030\200\010"
-    "\022$\n\022text_body_template\030\010 \001(\tB\010\372B\005r\003\030\200 \022$"
-    "\n\022html_body_template\030\t \001(\014B\010\372B\005z\003\030\200 \0223\n\n"
-    "created_at\030\n \001(\0132\032.google.protobuf.Times"
-    "tampB\003\340A\003\0223\n\nupdated_at\030\013 \001(\0132\032.google.p"
-    "rotobuf.TimestampB\003\340A\003\"=\n\020CreateAppReque"
-    "st\022)\n\003app\030\001 \001(\0132\017.ownmfa.api.AppB\013\340A\002\372B\005"
-    "\212\001\002\020\001\"(\n\rGetAppRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\372"
-    "B\005r\003\260\001\001\"n\n\020UpdateAppRequest\022)\n\003app\030\001 \001(\013"
-    "2\017.ownmfa.api.AppB\013\340A\002\372B\005\212\001\002\020\001\022/\n\013update"
+    "api\032\033buf/validate/validate.proto\032\034google"
+    "/api/annotations.proto\032\037google/api/field"
+    "_behavior.proto\032\033google/protobuf/empty.p"
+    "roto\032 google/protobuf/field_mask.proto\032\037"
+    "google/protobuf/timestamp.proto\032.protoc-"
+    "gen-openapiv2/options/annotations.proto\""
+    "\200\003\n\003App\022\017\n\002id\030\001 \001(\tB\003\340A\003\022\032\n\006org_id\030\002 \001(\t"
+    "B\003\340A\003R\005orgID\022\027\n\004name\030\003 \001(\tB\t\272H\006r\004\020\005\030(\022\037\n"
+    "\014display_name\030\004 \001(\tB\t\272H\006r\004\020\005\030P\022\031\n\005email\030"
+    "\005 \001(\tB\n\272H\007r\002`\001\330\001\001\022\035\n\014pushover_key\030\006 \001(\tB"
+    "\007\272H\004r\002\030-\022\"\n\020subject_template\030\007 \001(\tB\010\272H\005r"
+    "\003\030\200\010\022$\n\022text_body_template\030\010 \001(\tB\010\272H\005r\003\030"
+    "\200 \022$\n\022html_body_template\030\t \001(\014B\010\272H\005z\003\030\200 "
+    "\0223\n\ncreated_at\030\n \001(\0132\032.google.protobuf.T"
+    "imestampB\003\340A\003\0223\n\nupdated_at\030\013 \001(\0132\032.goog"
+    "le.protobuf.TimestampB\003\340A\003\";\n\020CreateAppR"
+    "equest\022\'\n\003app\030\001 \001(\0132\017.ownmfa.api.AppB\t\340A"
+    "\002\272H\003\310\001\001\"(\n\rGetAppRequest\022\027\n\002id\030\001 \001(\tB\013\340A"
+    "\002\272H\005r\003\260\001\001\"l\n\020UpdateAppRequest\022\'\n\003app\030\001 \001"
+    "(\0132\017.ownmfa.api.AppB\t\340A\002\272H\003\310\001\001\022/\n\013update"
     "_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\""
-    "+\n\020DeleteAppRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\372B\005r"
+    "+\n\020DeleteAppRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\272H\005r"
     "\003\260\001\001\"B\n\017ListAppsRequest\022\033\n\tpage_size\030\001 \001"
-    "(\005B\010\372B\005\032\003\030\372\001\022\022\n\npage_token\030\002 \001(\t\"^\n\020List"
+    "(\005B\010\272H\005\032\003\030\372\001\022\022\n\npage_token\030\002 \001(\t\"^\n\020List"
     "AppsResponse\022\035\n\004apps\030\001 \003(\0132\017.ownmfa.api."
     "App\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal_si"
-    "ze\030\003 \001(\005\"\201\001\n\022SoftwareHOTPMethod\022\036\n\004hash\030"
-    "\001 \001(\0162\020.ownmfa.api.Hash\022\033\n\006digits\030\002 \001(\005B"
-    "\013\372B\010\032\006\030\n(\006@\001\022\017\n\007counter\030\003 \001(\005\022\035\n\014account"
-    "_name\030\004 \001(\tB\007\372B\004r\002\030P\"p\n\022SoftwareTOTPMeth"
-    "od\022\036\n\004hash\030\001 \001(\0162\020.ownmfa.api.Hash\022\033\n\006di"
-    "gits\030\002 \001(\005B\013\372B\010\032\006\030\n(\006@\001\022\035\n\014account_name\030"
-    "\003 \001(\tB\007\372B\004r\002\030P\"5\n\024GoogleAuthHOTPMethod\022\035"
-    "\n\014account_name\030\001 \001(\tB\007\372B\004r\002\030P\"5\n\024GoogleA"
-    "uthTOTPMethod\022\035\n\014account_name\030\001 \001(\tB\007\372B\004"
-    "r\002\030P\"\024\n\022AppleiOSTOTPMethod\"y\n\022HardwareHO"
-    "TPMethod\022\036\n\004hash\030\001 \001(\0162\020.ownmfa.api.Hash"
-    "\022\031\n\006digits\030\002 \001(\005B\t\372B\006\032\004\030\n(\006\022\017\n\007counter\030\003"
-    " \001(\005\022\027\n\006secret\030\004 \001(\014B\007\372B\004z\002\020\020\"h\n\022Hardwar"
-    "eTOTPMethod\022\036\n\004hash\030\001 \001(\0162\020.ownmfa.api.H"
-    "ash\022\031\n\006digits\030\002 \001(\005B\t\372B\006\032\004\030\n(\006\022\027\n\006secret"
-    "\030\003 \001(\014B\007\372B\004z\002\020\020\"%\n\tSMSMethod\022\030\n\005phone\030\001 "
-    "\001(\tB\t\372B\006r\004\020\010\030\020\"1\n\016PushoverMethod\022\037\n\014push"
-    "over_key\030\001 \001(\tB\t\372B\006r\004\020\031\030-\"%\n\013EmailMethod"
-    "\022\026\n\005email\030\001 \001(\tB\007\372B\004r\002`\001\"2\n\022BackupsCodes"
-    "Method\022\034\n\tpasscodes\030\001 \001(\005B\t\372B\006\032\004\030\n(\006\"4\n\027"
-    "SecurityQuestionsMethod\022\031\n\006answer\030\001 \001(\tB"
-    "\t\372B\006r\004\020\003\030P\"\233\t\n\010Identity\022\017\n\002id\030\001 \001(\tB\003\340A\003"
-    "\022\032\n\006org_id\030\002 \001(\tB\003\340A\003R\005orgID\022\032\n\006app_id\030\003"
-    " \001(\tB\003\340A\003R\005appID\022\035\n\007comment\030\004 \001(\tB\014\340A\002\372B"
-    "\006r\004\020\005\030P\022/\n\006status\030\005 \001(\0162\032.ownmfa.api.Ide"
-    "ntityStatusB\003\340A\003\022R\n\024software_hotp_method"
-    "\030\020 \001(\0132\036.ownmfa.api.SoftwareHOTPMethodH\000"
-    "R\022softwareHOTPMethod\022R\n\024software_totp_me"
-    "thod\030\006 \001(\0132\036.ownmfa.api.SoftwareTOTPMeth"
-    "odH\000R\022softwareTOTPMethod\022Y\n\027google_auth_"
-    "hotp_method\030\021 \001(\0132 .ownmfa.api.GoogleAut"
-    "hHOTPMethodH\000R\024googleAuthHOTPMethod\022Y\n\027g"
-    "oogle_auth_totp_method\030\007 \001(\0132 .ownmfa.ap"
-    "i.GoogleAuthTOTPMethodH\000R\024googleAuthTOTP"
-    "Method\022S\n\025apple_ios_totp_method\030\026 \001(\0132\036."
-    "ownmfa.api.AppleiOSTOTPMethodH\000R\022appleiO"
-    "STOTPMethod\022R\n\024hardware_hotp_method\030\022 \001("
-    "\0132\036.ownmfa.api.HardwareHOTPMethodH\000R\022har"
-    "dwareHOTPMethod\022R\n\024hardware_totp_method\030"
-    "\023 \001(\0132\036.ownmfa.api.HardwareTOTPMethodH\000R"
-    "\022hardwareTOTPMethod\022+\n\nsms_method\030\010 \001(\0132"
-    "\025.ownmfa.api.SMSMethodH\000\0225\n\017pushover_met"
-    "hod\030\024 \001(\0132\032.ownmfa.api.PushoverMethodH\000\022"
-    "/\n\014email_method\030\t \001(\0132\027.ownmfa.api.Email"
-    "MethodH\000\022=\n\023backup_codes_method\030\n \001(\0132\036."
-    "ownmfa.api.BackupsCodesMethodH\000\022H\n\031secur"
-    "ity_questions_method\030\025 \001(\0132#.ownmfa.api."
-    "SecurityQuestionsMethodH\000\0223\n\ncreated_at\030"
-    "\016 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0223"
-    "\n\nupdated_at\030\017 \001(\0132\032.google.protobuf.Tim"
-    "estampB\003\340A\003B\023\n\014method_oneof\022\003\370B\001\"L\n\025Crea"
-    "teIdentityRequest\0223\n\010identity\030\001 \001(\0132\024.ow"
-    "nmfa.api.IdentityB\013\340A\002\372B\005\212\001\002\020\001\"o\n\026Create"
-    "IdentityResponse\022&\n\010identity\030\001 \001(\0132\024.own"
-    "mfa.api.Identity\022\016\n\006secret\030\002 \001(\t\022\n\n\002qr\030\003"
-    " \001(\014\022\021\n\tpasscodes\030\004 \003(\t\"v\n\027ActivateIdent"
-    "ityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\372B\005r\003\260\001\001\022\"\n\006a"
-    "pp_id\030\002 \001(\tB\013\340A\002\372B\005r\003\260\001\001R\005appID\022\036\n\010passc"
-    "ode\030\003 \001(\tB\014\340A\002\372B\006r\004\020\003\030P\"W\n\030ChallengeIden"
-    "tityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\372B\005r\003\260\001\001\022\"\n\006"
-    "app_id\030\002 \001(\tB\013\340A\002\372B\005r\003\260\001\001R\005appID\"t\n\025Veri"
-    "fyIdentityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\372B\005r\003\260"
-    "\001\001\022\"\n\006app_id\030\002 \001(\tB\013\340A\002\372B\005r\003\260\001\001R\005appID\022\036"
-    "\n\010passcode\030\003 \001(\tB\014\340A\002\372B\006r\004\020\003\030P\"Q\n\022GetIde"
-    "ntityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\372B\005r\003\260\001\001\022\"\n"
-    "\006app_id\030\002 \001(\tB\013\340A\002\372B\005r\003\260\001\001R\005appID\"T\n\025Del"
-    "eteIdentityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\372B\005r\003"
-    "\260\001\001\022\"\n\006app_id\030\002 \001(\tB\013\340A\002\372B\005r\003\260\001\001R\005appID\""
-    "l\n\025ListIdentitiesRequest\022\033\n\tpage_size\030\001 "
-    "\001(\005B\010\372B\005\032\003\030\372\001\022\022\n\npage_token\030\002 \001(\t\022\"\n\006app"
-    "_id\030\003 \001(\tB\013\372B\010r\006\260\001\001\320\001\001R\005appID\"o\n\026ListIde"
-    "ntitiesResponse\022(\n\nidentities\030\001 \003(\0132\024.ow"
-    "nmfa.api.Identity\022\027\n\017next_page_token\030\002 \001"
-    "(\t\022\022\n\ntotal_size\030\003 \001(\005*/\n\016IdentityStatus"
-    "\022\016\n\nUNVERIFIED\020\000\022\r\n\tACTIVATED\020\003*(\n\004Hash\022"
-    "\n\n\006SHA512\020\000\022\n\n\006SHA256\020\001\022\010\n\004SHA1\020\0022\222\016\n\022Ap"
-    "pIdentityService\022\222\001\n\tCreateApp\022\034.ownmfa."
-    "api.CreateAppRequest\032\017.ownmfa.api.App\"V\222"
-    "A6J4\n\003201\022-\n\026A successful response.\022\023\n\021\032"
-    "\017.ownmfa.api.App\202\323\344\223\002\027\"\020/v1/applications"
-    ":\003app\022\345\001\n\016CreateIdentity\022!.ownmfa.api.Cr"
-    "eateIdentityRequest\032\".ownmfa.api.CreateI"
-    "dentityResponse\"\213\001\222AIJG\n\003201\022@\n\026A succes"
-    "sful response.\022&\n$\032\".ownmfa.api.CreateId"
-    "entityResponse\202\323\344\223\0029\"-/v1/applications/{"
-    "identity.app_id}/identities:\010identity\022\214\001"
-    "\n\020ActivateIdentity\022#.ownmfa.api.Activate"
-    "IdentityRequest\032\024.ownmfa.api.Identity\"=\202"
-    "\323\344\223\0027\0322/v1/applications/{app_id}/identit"
-    "ies/{id}/activate:\001*\022\330\001\n\021ChallengeIdenti"
-    "ty\022$.ownmfa.api.ChallengeIdentityRequest"
-    "\032\026.google.protobuf.Empty\"\204\001\222AFJ!\n\003202\022\032\n"
-    "\026A successful response.\022\000J!\n\003204\022\032\n\026A su"
-    "ccessful response.\022\000\202\323\344\223\0025\"3/v1/applicat"
-    "ions/{app_id}/identities/{id}/challenge\022"
-    "\210\001\n\016VerifyIdentity\022!.ownmfa.api.VerifyId"
-    "entityRequest\032\026.google.protobuf.Empty\";\202"
-    "\323\344\223\0025\"0/v1/applications/{app_id}/identit"
-    "ies/{id}/verify:\001*\022S\n\006GetApp\022\031.ownmfa.ap"
-    "i.GetAppRequest\032\017.ownmfa.api.App\"\035\202\323\344\223\002\027"
-    "\022\025/v1/applications/{id}\022v\n\013GetIdentity\022\036"
-    ".ownmfa.api.GetIdentityRequest\032\024.ownmfa."
-    "api.Identity\"1\202\323\344\223\002+\022)/v1/applications/{"
-    "app_id}/identities/{id}\022\204\001\n\tUpdateApp\022\034."
-    "ownmfa.api.UpdateAppRequest\032\017.ownmfa.api"
-    ".App\"H\202\323\344\223\002B\032\031/v1/applications/{app.id}:"
-    "\003appZ 2\031/v1/applications/{app.id}:\003app\022\206"
-    "\001\n\tDeleteApp\022\034.ownmfa.api.DeleteAppReque"
-    "st\032\026.google.protobuf.Empty\"C\222A#J!\n\003204\022\032"
-    "\n\026A successful response.\022\000\202\323\344\223\002\027*\025/v1/ap"
-    "plications/{id}\022\244\001\n\016DeleteIdentity\022!.own"
-    "mfa.api.DeleteIdentityRequest\032\026.google.p"
-    "rotobuf.Empty\"W\222A#J!\n\003204\022\032\n\026A successfu"
-    "l response.\022\000\202\323\344\223\002+*)/v1/applications/{a"
-    "pp_id}/identities/{id}\022_\n\010ListApps\022\033.own"
-    "mfa.api.ListAppsRequest\032\034.ownmfa.api.Lis"
-    "tAppsResponse\"\030\202\323\344\223\002\022\022\020/v1/applications\022"
-    "\244\001\n\016ListIdentities\022!.ownmfa.api.ListIden"
-    "titiesRequest\032\".ownmfa.api.ListIdentitie"
-    "sResponse\"K\202\323\344\223\002E\022$/v1/applications/{app"
-    "_id}/identitiesZ\035\022\033/v1/applications/iden"
-    "titiesB Z\036github.com/ownmfa/proto/go/api"
-    "b\006proto3"
+    "ze\030\003 \001(\005\"\202\001\n\022SoftwareHOTPMethod\022\036\n\004hash\030"
+    "\001 \001(\0162\020.ownmfa.api.Hash\022\034\n\006digits\030\002 \001(\005B"
+    "\014\272H\t\032\004\030\n(\006\330\001\001\022\017\n\007counter\030\003 \001(\005\022\035\n\014accoun"
+    "t_name\030\004 \001(\tB\007\272H\004r\002\030P\"q\n\022SoftwareTOTPMet"
+    "hod\022\036\n\004hash\030\001 \001(\0162\020.ownmfa.api.Hash\022\034\n\006d"
+    "igits\030\002 \001(\005B\014\272H\t\032\004\030\n(\006\330\001\001\022\035\n\014account_nam"
+    "e\030\003 \001(\tB\007\272H\004r\002\030P\"5\n\024GoogleAuthHOTPMethod"
+    "\022\035\n\014account_name\030\001 \001(\tB\007\272H\004r\002\030P\"5\n\024Googl"
+    "eAuthTOTPMethod\022\035\n\014account_name\030\001 \001(\tB\007\272"
+    "H\004r\002\030P\"\024\n\022AppleiOSTOTPMethod\"y\n\022Hardware"
+    "HOTPMethod\022\036\n\004hash\030\001 \001(\0162\020.ownmfa.api.Ha"
+    "sh\022\031\n\006digits\030\002 \001(\005B\t\272H\006\032\004\030\n(\006\022\017\n\007counter"
+    "\030\003 \001(\005\022\027\n\006secret\030\004 \001(\014B\007\272H\004z\002\020\020\"h\n\022Hardw"
+    "areTOTPMethod\022\036\n\004hash\030\001 \001(\0162\020.ownmfa.api"
+    ".Hash\022\031\n\006digits\030\002 \001(\005B\t\272H\006\032\004\030\n(\006\022\027\n\006secr"
+    "et\030\003 \001(\014B\007\272H\004z\002\020\020\"%\n\tSMSMethod\022\030\n\005phone\030"
+    "\001 \001(\tB\t\272H\006r\004\020\010\030\020\"1\n\016PushoverMethod\022\037\n\014pu"
+    "shover_key\030\001 \001(\tB\t\272H\006r\004\020\031\030-\"%\n\013EmailMeth"
+    "od\022\026\n\005email\030\001 \001(\tB\007\272H\004r\002`\001\"2\n\022BackupsCod"
+    "esMethod\022\034\n\tpasscodes\030\001 \001(\005B\t\272H\006\032\004\030\n(\006\"4"
+    "\n\027SecurityQuestionsMethod\022\031\n\006answer\030\001 \001("
+    "\tB\t\272H\006r\004\020\003\030P\"\235\t\n\010Identity\022\017\n\002id\030\001 \001(\tB\003\340"
+    "A\003\022\032\n\006org_id\030\002 \001(\tB\003\340A\003R\005orgID\022\032\n\006app_id"
+    "\030\003 \001(\tB\003\340A\003R\005appID\022\035\n\007comment\030\004 \001(\tB\014\340A\002"
+    "\272H\006r\004\020\005\030P\022/\n\006status\030\005 \001(\0162\032.ownmfa.api.I"
+    "dentityStatusB\003\340A\003\022R\n\024software_hotp_meth"
+    "od\030\020 \001(\0132\036.ownmfa.api.SoftwareHOTPMethod"
+    "H\000R\022softwareHOTPMethod\022R\n\024software_totp_"
+    "method\030\006 \001(\0132\036.ownmfa.api.SoftwareTOTPMe"
+    "thodH\000R\022softwareTOTPMethod\022Y\n\027google_aut"
+    "h_hotp_method\030\021 \001(\0132 .ownmfa.api.GoogleA"
+    "uthHOTPMethodH\000R\024googleAuthHOTPMethod\022Y\n"
+    "\027google_auth_totp_method\030\007 \001(\0132 .ownmfa."
+    "api.GoogleAuthTOTPMethodH\000R\024googleAuthTO"
+    "TPMethod\022S\n\025apple_ios_totp_method\030\026 \001(\0132"
+    "\036.ownmfa.api.AppleiOSTOTPMethodH\000R\022apple"
+    "iOSTOTPMethod\022R\n\024hardware_hotp_method\030\022 "
+    "\001(\0132\036.ownmfa.api.HardwareHOTPMethodH\000R\022h"
+    "ardwareHOTPMethod\022R\n\024hardware_totp_metho"
+    "d\030\023 \001(\0132\036.ownmfa.api.HardwareTOTPMethodH"
+    "\000R\022hardwareTOTPMethod\022+\n\nsms_method\030\010 \001("
+    "\0132\025.ownmfa.api.SMSMethodH\000\0225\n\017pushover_m"
+    "ethod\030\024 \001(\0132\032.ownmfa.api.PushoverMethodH"
+    "\000\022/\n\014email_method\030\t \001(\0132\027.ownmfa.api.Ema"
+    "ilMethodH\000\022=\n\023backup_codes_method\030\n \001(\0132"
+    "\036.ownmfa.api.BackupsCodesMethodH\000\022H\n\031sec"
+    "urity_questions_method\030\025 \001(\0132#.ownmfa.ap"
+    "i.SecurityQuestionsMethodH\000\0223\n\ncreated_a"
+    "t\030\016 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+    "\0223\n\nupdated_at\030\017 \001(\0132\032.google.protobuf.T"
+    "imestampB\003\340A\003B\025\n\014method_oneof\022\005\272H\002\010\001\"J\n\025"
+    "CreateIdentityRequest\0221\n\010identity\030\001 \001(\0132"
+    "\024.ownmfa.api.IdentityB\t\340A\002\272H\003\310\001\001\"o\n\026Crea"
+    "teIdentityResponse\022&\n\010identity\030\001 \001(\0132\024.o"
+    "wnmfa.api.Identity\022\016\n\006secret\030\002 \001(\t\022\n\n\002qr"
+    "\030\003 \001(\014\022\021\n\tpasscodes\030\004 \003(\t\"v\n\027ActivateIde"
+    "ntityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\272H\005r\003\260\001\001\022\"\n"
+    "\006app_id\030\002 \001(\tB\013\340A\002\272H\005r\003\260\001\001R\005appID\022\036\n\010pas"
+    "scode\030\003 \001(\tB\014\340A\002\272H\006r\004\020\003\030P\"W\n\030ChallengeId"
+    "entityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\272H\005r\003\260\001\001\022\""
+    "\n\006app_id\030\002 \001(\tB\013\340A\002\272H\005r\003\260\001\001R\005appID\"t\n\025Ve"
+    "rifyIdentityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\272H\005r"
+    "\003\260\001\001\022\"\n\006app_id\030\002 \001(\tB\013\340A\002\272H\005r\003\260\001\001R\005appID"
+    "\022\036\n\010passcode\030\003 \001(\tB\014\340A\002\272H\006r\004\020\003\030P\"Q\n\022GetI"
+    "dentityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\272H\005r\003\260\001\001\022"
+    "\"\n\006app_id\030\002 \001(\tB\013\340A\002\272H\005r\003\260\001\001R\005appID\"T\n\025D"
+    "eleteIdentityRequest\022\027\n\002id\030\001 \001(\tB\013\340A\002\272H\005"
+    "r\003\260\001\001\022\"\n\006app_id\030\002 \001(\tB\013\340A\002\272H\005r\003\260\001\001R\005appI"
+    "D\"l\n\025ListIdentitiesRequest\022\033\n\tpage_size\030"
+    "\001 \001(\005B\010\272H\005\032\003\030\372\001\022\022\n\npage_token\030\002 \001(\t\022\"\n\006a"
+    "pp_id\030\003 \001(\tB\013\272H\010r\003\260\001\001\330\001\001R\005appID\"o\n\026ListI"
+    "dentitiesResponse\022(\n\nidentities\030\001 \003(\0132\024."
+    "ownmfa.api.Identity\022\027\n\017next_page_token\030\002"
+    " \001(\t\022\022\n\ntotal_size\030\003 \001(\005*/\n\016IdentityStat"
+    "us\022\016\n\nUNVERIFIED\020\000\022\r\n\tACTIVATED\020\003*(\n\004Has"
+    "h\022\n\n\006SHA512\020\000\022\n\n\006SHA256\020\001\022\010\n\004SHA1\020\0022\222\016\n\022"
+    "AppIdentityService\022\222\001\n\tCreateApp\022\034.ownmf"
+    "a.api.CreateAppRequest\032\017.ownmfa.api.App\""
+    "V\222A6J4\n\003201\022-\n\026A successful response.\022\023\n"
+    "\021\032\017.ownmfa.api.App\202\323\344\223\002\027\"\020/v1/applicatio"
+    "ns:\003app\022\345\001\n\016CreateIdentity\022!.ownmfa.api."
+    "CreateIdentityRequest\032\".ownmfa.api.Creat"
+    "eIdentityResponse\"\213\001\222AIJG\n\003201\022@\n\026A succ"
+    "essful response.\022&\n$\032\".ownmfa.api.Create"
+    "IdentityResponse\202\323\344\223\0029\"-/v1/applications"
+    "/{identity.app_id}/identities:\010identity\022"
+    "\214\001\n\020ActivateIdentity\022#.ownmfa.api.Activa"
+    "teIdentityRequest\032\024.ownmfa.api.Identity\""
+    "=\202\323\344\223\0027\0322/v1/applications/{app_id}/ident"
+    "ities/{id}/activate:\001*\022\330\001\n\021ChallengeIden"
+    "tity\022$.ownmfa.api.ChallengeIdentityReque"
+    "st\032\026.google.protobuf.Empty\"\204\001\222AFJ!\n\003202\022"
+    "\032\n\026A successful response.\022\000J!\n\003204\022\032\n\026A "
+    "successful response.\022\000\202\323\344\223\0025\"3/v1/applic"
+    "ations/{app_id}/identities/{id}/challeng"
+    "e\022\210\001\n\016VerifyIdentity\022!.ownmfa.api.Verify"
+    "IdentityRequest\032\026.google.protobuf.Empty\""
+    ";\202\323\344\223\0025\"0/v1/applications/{app_id}/ident"
+    "ities/{id}/verify:\001*\022S\n\006GetApp\022\031.ownmfa."
+    "api.GetAppRequest\032\017.ownmfa.api.App\"\035\202\323\344\223"
+    "\002\027\022\025/v1/applications/{id}\022v\n\013GetIdentity"
+    "\022\036.ownmfa.api.GetIdentityRequest\032\024.ownmf"
+    "a.api.Identity\"1\202\323\344\223\002+\022)/v1/applications"
+    "/{app_id}/identities/{id}\022\204\001\n\tUpdateApp\022"
+    "\034.ownmfa.api.UpdateAppRequest\032\017.ownmfa.a"
+    "pi.App\"H\202\323\344\223\002B\032\031/v1/applications/{app.id"
+    "}:\003appZ 2\031/v1/applications/{app.id}:\003app"
+    "\022\206\001\n\tDeleteApp\022\034.ownmfa.api.DeleteAppReq"
+    "uest\032\026.google.protobuf.Empty\"C\222A#J!\n\003204"
+    "\022\032\n\026A successful response.\022\000\202\323\344\223\002\027*\025/v1/"
+    "applications/{id}\022\244\001\n\016DeleteIdentity\022!.o"
+    "wnmfa.api.DeleteIdentityRequest\032\026.google"
+    ".protobuf.Empty\"W\222A#J!\n\003204\022\032\n\026A success"
+    "ful response.\022\000\202\323\344\223\002+*)/v1/applications/"
+    "{app_id}/identities/{id}\022_\n\010ListApps\022\033.o"
+    "wnmfa.api.ListAppsRequest\032\034.ownmfa.api.L"
+    "istAppsResponse\"\030\202\323\344\223\002\022\022\020/v1/application"
+    "s\022\244\001\n\016ListIdentities\022!.ownmfa.api.ListId"
+    "entitiesRequest\032\".ownmfa.api.ListIdentit"
+    "iesResponse\"K\202\323\344\223\002E\022$/v1/applications/{a"
+    "pp_id}/identitiesZ\035\022\033/v1/applications/id"
+    "entitiesB Z\036github.com/ownmfa/proto/go/a"
+    "pib\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_api_2fownmfa_5fapp_5fidentity_2eproto_deps[7] = {
+        &::descriptor_table_buf_2fvalidate_2fvalidate_2eproto,
         &::descriptor_table_google_2fapi_2fannotations_2eproto,
         &::descriptor_table_google_2fapi_2ffield_5fbehavior_2eproto,
         &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
         &::descriptor_table_google_2fprotobuf_2ffield_5fmask_2eproto,
         &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
         &::descriptor_table_protoc_2dgen_2dopenapiv2_2foptions_2fannotations_2eproto,
-        &::descriptor_table_validate_2fvalidate_2eproto,
 };
 static ::absl::once_flag descriptor_table_api_2fownmfa_5fapp_5fidentity_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_api_2fownmfa_5fapp_5fidentity_2eproto = {
     false,
     false,
-    5968,
+    5970,
     descriptor_table_protodef_api_2fownmfa_5fapp_5fidentity_2eproto,
     "api/ownmfa_app_identity.proto",
     &descriptor_table_api_2fownmfa_5fapp_5fidentity_2eproto_once,
@@ -1583,25 +1583,25 @@ App::_table_ = {
     // string org_id = 2 [json_name = "orgID", (.google.api.field_behavior) = OUTPUT_ONLY];
     {::_pbi::TcParser::FastUS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(App, _impl_.org_id_)}},
-    // string name = 3 [(.validate.rules) = {
+    // string name = 3 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(App, _impl_.name_)}},
-    // string display_name = 4 [(.validate.rules) = {
+    // string display_name = 4 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {34, 3, 0, PROTOBUF_FIELD_OFFSET(App, _impl_.display_name_)}},
-    // string email = 5 [(.validate.rules) = {
+    // string email = 5 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {42, 4, 0, PROTOBUF_FIELD_OFFSET(App, _impl_.email_)}},
-    // string pushover_key = 6 [(.validate.rules) = {
+    // string pushover_key = 6 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {50, 5, 0, PROTOBUF_FIELD_OFFSET(App, _impl_.pushover_key_)}},
-    // string subject_template = 7 [(.validate.rules) = {
+    // string subject_template = 7 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {58, 6, 0, PROTOBUF_FIELD_OFFSET(App, _impl_.subject_template_)}},
-    // string text_body_template = 8 [(.validate.rules) = {
+    // string text_body_template = 8 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {66, 7, 0, PROTOBUF_FIELD_OFFSET(App, _impl_.text_body_template_)}},
-    // bytes html_body_template = 9 [(.validate.rules) = {
+    // bytes html_body_template = 9 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastBS1,
      {74, 8, 0, PROTOBUF_FIELD_OFFSET(App, _impl_.html_body_template_)}},
     // .google.protobuf.Timestamp created_at = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1623,25 +1623,25 @@ App::_table_ = {
     // string org_id = 2 [json_name = "orgID", (.google.api.field_behavior) = OUTPUT_ONLY];
     {PROTOBUF_FIELD_OFFSET(App, _impl_.org_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string name = 3 [(.validate.rules) = {
+    // string name = 3 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(App, _impl_.name_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string display_name = 4 [(.validate.rules) = {
+    // string display_name = 4 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(App, _impl_.display_name_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string email = 5 [(.validate.rules) = {
+    // string email = 5 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(App, _impl_.email_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string pushover_key = 6 [(.validate.rules) = {
+    // string pushover_key = 6 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(App, _impl_.pushover_key_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string subject_template = 7 [(.validate.rules) = {
+    // string subject_template = 7 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(App, _impl_.subject_template_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string text_body_template = 8 [(.validate.rules) = {
+    // string text_body_template = 8 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(App, _impl_.text_body_template_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // bytes html_body_template = 9 [(.validate.rules) = {
+    // bytes html_body_template = 9 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(App, _impl_.html_body_template_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
     // .google.protobuf.Timestamp created_at = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1754,7 +1754,7 @@ PROTOBUF_NOINLINE void App::Clear() {
     }
   }
 
-  // string name = 3 [(.validate.rules) = {
+  // string name = 3 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (!this_._internal_name().empty()) {
       const ::std::string& _s = this_._internal_name();
@@ -1764,7 +1764,7 @@ PROTOBUF_NOINLINE void App::Clear() {
     }
   }
 
-  // string display_name = 4 [(.validate.rules) = {
+  // string display_name = 4 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
     if (!this_._internal_display_name().empty()) {
       const ::std::string& _s = this_._internal_display_name();
@@ -1774,7 +1774,7 @@ PROTOBUF_NOINLINE void App::Clear() {
     }
   }
 
-  // string email = 5 [(.validate.rules) = {
+  // string email = 5 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
     if (!this_._internal_email().empty()) {
       const ::std::string& _s = this_._internal_email();
@@ -1784,7 +1784,7 @@ PROTOBUF_NOINLINE void App::Clear() {
     }
   }
 
-  // string pushover_key = 6 [(.validate.rules) = {
+  // string pushover_key = 6 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
     if (!this_._internal_pushover_key().empty()) {
       const ::std::string& _s = this_._internal_pushover_key();
@@ -1794,7 +1794,7 @@ PROTOBUF_NOINLINE void App::Clear() {
     }
   }
 
-  // string subject_template = 7 [(.validate.rules) = {
+  // string subject_template = 7 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
     if (!this_._internal_subject_template().empty()) {
       const ::std::string& _s = this_._internal_subject_template();
@@ -1804,7 +1804,7 @@ PROTOBUF_NOINLINE void App::Clear() {
     }
   }
 
-  // string text_body_template = 8 [(.validate.rules) = {
+  // string text_body_template = 8 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
     if (!this_._internal_text_body_template().empty()) {
       const ::std::string& _s = this_._internal_text_body_template();
@@ -1814,7 +1814,7 @@ PROTOBUF_NOINLINE void App::Clear() {
     }
   }
 
-  // bytes html_body_template = 9 [(.validate.rules) = {
+  // bytes html_body_template = 9 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000100u) != 0) {
     if (!this_._internal_html_body_template().empty()) {
       const ::std::string& _s = this_._internal_html_body_template();
@@ -1877,42 +1877,42 @@ PROTOBUF_NOINLINE void App::Clear() {
                                         this_._internal_org_id());
       }
     }
-    // string name = 3 [(.validate.rules) = {
+    // string name = 3 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000004u) != 0) {
       if (!this_._internal_name().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_name());
       }
     }
-    // string display_name = 4 [(.validate.rules) = {
+    // string display_name = 4 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000008u) != 0) {
       if (!this_._internal_display_name().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_display_name());
       }
     }
-    // string email = 5 [(.validate.rules) = {
+    // string email = 5 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000010u) != 0) {
       if (!this_._internal_email().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_email());
       }
     }
-    // string pushover_key = 6 [(.validate.rules) = {
+    // string pushover_key = 6 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000020u) != 0) {
       if (!this_._internal_pushover_key().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_pushover_key());
       }
     }
-    // string subject_template = 7 [(.validate.rules) = {
+    // string subject_template = 7 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000040u) != 0) {
       if (!this_._internal_subject_template().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_subject_template());
       }
     }
-    // string text_body_template = 8 [(.validate.rules) = {
+    // string text_body_template = 8 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000080u) != 0) {
       if (!this_._internal_text_body_template().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1921,7 +1921,7 @@ PROTOBUF_NOINLINE void App::Clear() {
     }
   }
   if ((cached_has_bits & 0x00000700u) != 0) {
-    // bytes html_body_template = 9 [(.validate.rules) = {
+    // bytes html_body_template = 9 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000100u) != 0) {
       if (!this_._internal_html_body_template().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
@@ -2221,13 +2221,13 @@ CreateAppRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::CreateAppRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastMtS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(CreateAppRequest, _impl_.app_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(CreateAppRequest, _impl_.app_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
@@ -2269,7 +2269,7 @@ PROTOBUF_NOINLINE void CreateAppRequest::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((cached_has_bits & 0x00000001u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         1, *this_._impl_.app_, this_._impl_.app_->GetCachedSize(), target,
@@ -2300,7 +2300,7 @@ PROTOBUF_NOINLINE void CreateAppRequest::Clear() {
   (void)cached_has_bits;
 
    {
-    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       total_size += 1 +
@@ -2477,13 +2477,13 @@ GetAppRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::GetAppRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(GetAppRequest, _impl_.id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(GetAppRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -2524,7 +2524,7 @@ PROTOBUF_NOINLINE void GetAppRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -2558,7 +2558,7 @@ PROTOBUF_NOINLINE void GetAppRequest::Clear() {
   (void)cached_has_bits;
 
    {
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
@@ -2759,13 +2759,13 @@ UpdateAppRequest::_table_ = {
     // .google.protobuf.FieldMask update_mask = 2;
     {::_pbi::TcParser::FastMtS1,
      {18, 1, 1, PROTOBUF_FIELD_OFFSET(UpdateAppRequest, _impl_.update_mask_)}},
-    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastMtS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(UpdateAppRequest, _impl_.app_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(UpdateAppRequest, _impl_.app_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // .google.protobuf.FieldMask update_mask = 2;
@@ -2817,7 +2817,7 @@ PROTOBUF_NOINLINE void UpdateAppRequest::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((cached_has_bits & 0x00000001u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         1, *this_._impl_.app_, this_._impl_.app_->GetCachedSize(), target,
@@ -2857,7 +2857,7 @@ PROTOBUF_NOINLINE void UpdateAppRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
-    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.App app = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.app_);
@@ -3053,13 +3053,13 @@ DeleteAppRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::DeleteAppRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(DeleteAppRequest, _impl_.id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(DeleteAppRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -3100,7 +3100,7 @@ PROTOBUF_NOINLINE void DeleteAppRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -3134,7 +3134,7 @@ PROTOBUF_NOINLINE void DeleteAppRequest::Clear() {
   (void)cached_has_bits;
 
    {
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
@@ -3320,13 +3320,13 @@ ListAppsRequest::_table_ = {
     // string page_token = 2;
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(ListAppsRequest, _impl_.page_token_)}},
-    // int32 page_size = 1 [(.validate.rules) = {
+    // int32 page_size = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListAppsRequest, _impl_.page_size_), 1>(),
      {8, 1, 0, PROTOBUF_FIELD_OFFSET(ListAppsRequest, _impl_.page_size_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // int32 page_size = 1 [(.validate.rules) = {
+    // int32 page_size = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ListAppsRequest, _impl_.page_size_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // string page_token = 2;
@@ -3371,7 +3371,7 @@ PROTOBUF_NOINLINE void ListAppsRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // int32 page_size = 1 [(.validate.rules) = {
+  // int32 page_size = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (this_._internal_page_size() != 0) {
       target =
@@ -3423,7 +3423,7 @@ PROTOBUF_NOINLINE void ListAppsRequest::Clear() {
                                         this_._internal_page_token());
       }
     }
-    // int32 page_size = 1 [(.validate.rules) = {
+    // int32 page_size = 1 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (this_._internal_page_size() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
@@ -3967,13 +3967,13 @@ SoftwareHOTPMethod::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::SoftwareHOTPMethod>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string account_name = 4 [(.validate.rules) = {
+    // string account_name = 4 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {34, 0, 0, PROTOBUF_FIELD_OFFSET(SoftwareHOTPMethod, _impl_.account_name_)}},
     // .ownmfa.api.Hash hash = 1;
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SoftwareHOTPMethod, _impl_.hash_), 1>(),
      {8, 1, 0, PROTOBUF_FIELD_OFFSET(SoftwareHOTPMethod, _impl_.hash_)}},
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SoftwareHOTPMethod, _impl_.digits_), 2>(),
      {16, 2, 0, PROTOBUF_FIELD_OFFSET(SoftwareHOTPMethod, _impl_.digits_)}},
     // int32 counter = 3;
@@ -3985,13 +3985,13 @@ SoftwareHOTPMethod::_table_ = {
     // .ownmfa.api.Hash hash = 1;
     {PROTOBUF_FIELD_OFFSET(SoftwareHOTPMethod, _impl_.hash_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(SoftwareHOTPMethod, _impl_.digits_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // int32 counter = 3;
     {PROTOBUF_FIELD_OFFSET(SoftwareHOTPMethod, _impl_.counter_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-    // string account_name = 4 [(.validate.rules) = {
+    // string account_name = 4 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(SoftwareHOTPMethod, _impl_.account_name_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -4046,7 +4046,7 @@ PROTOBUF_NOINLINE void SoftwareHOTPMethod::Clear() {
     }
   }
 
-  // int32 digits = 2 [(.validate.rules) = {
+  // int32 digits = 2 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (this_._internal_digits() != 0) {
       target =
@@ -4064,7 +4064,7 @@ PROTOBUF_NOINLINE void SoftwareHOTPMethod::Clear() {
     }
   }
 
-  // string account_name = 4 [(.validate.rules) = {
+  // string account_name = 4 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_account_name().empty()) {
       const ::std::string& _s = this_._internal_account_name();
@@ -4100,7 +4100,7 @@ PROTOBUF_NOINLINE void SoftwareHOTPMethod::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x0000000fu) != 0) {
-    // string account_name = 4 [(.validate.rules) = {
+    // string account_name = 4 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_account_name().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -4114,7 +4114,7 @@ PROTOBUF_NOINLINE void SoftwareHOTPMethod::Clear() {
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_hash());
       }
     }
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000004u) != 0) {
       if (this_._internal_digits() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
@@ -4341,10 +4341,10 @@ SoftwareTOTPMethod::_table_ = {
     // .ownmfa.api.Hash hash = 1;
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SoftwareTOTPMethod, _impl_.hash_), 1>(),
      {8, 1, 0, PROTOBUF_FIELD_OFFSET(SoftwareTOTPMethod, _impl_.hash_)}},
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SoftwareTOTPMethod, _impl_.digits_), 2>(),
      {16, 2, 0, PROTOBUF_FIELD_OFFSET(SoftwareTOTPMethod, _impl_.digits_)}},
-    // string account_name = 3 [(.validate.rules) = {
+    // string account_name = 3 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {26, 0, 0, PROTOBUF_FIELD_OFFSET(SoftwareTOTPMethod, _impl_.account_name_)}},
   }}, {{
@@ -4353,10 +4353,10 @@ SoftwareTOTPMethod::_table_ = {
     // .ownmfa.api.Hash hash = 1;
     {PROTOBUF_FIELD_OFFSET(SoftwareTOTPMethod, _impl_.hash_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(SoftwareTOTPMethod, _impl_.digits_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-    // string account_name = 3 [(.validate.rules) = {
+    // string account_name = 3 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(SoftwareTOTPMethod, _impl_.account_name_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -4411,7 +4411,7 @@ PROTOBUF_NOINLINE void SoftwareTOTPMethod::Clear() {
     }
   }
 
-  // int32 digits = 2 [(.validate.rules) = {
+  // int32 digits = 2 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (this_._internal_digits() != 0) {
       target =
@@ -4420,7 +4420,7 @@ PROTOBUF_NOINLINE void SoftwareTOTPMethod::Clear() {
     }
   }
 
-  // string account_name = 3 [(.validate.rules) = {
+  // string account_name = 3 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_account_name().empty()) {
       const ::std::string& _s = this_._internal_account_name();
@@ -4456,7 +4456,7 @@ PROTOBUF_NOINLINE void SoftwareTOTPMethod::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000007u) != 0) {
-    // string account_name = 3 [(.validate.rules) = {
+    // string account_name = 3 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_account_name().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -4470,7 +4470,7 @@ PROTOBUF_NOINLINE void SoftwareTOTPMethod::Clear() {
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_hash());
       }
     }
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000004u) != 0) {
       if (this_._internal_digits() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
@@ -4668,13 +4668,13 @@ GoogleAuthHOTPMethod::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::GoogleAuthHOTPMethod>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string account_name = 1 [(.validate.rules) = {
+    // string account_name = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(GoogleAuthHOTPMethod, _impl_.account_name_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string account_name = 1 [(.validate.rules) = {
+    // string account_name = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(GoogleAuthHOTPMethod, _impl_.account_name_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -4715,7 +4715,7 @@ PROTOBUF_NOINLINE void GoogleAuthHOTPMethod::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string account_name = 1 [(.validate.rules) = {
+  // string account_name = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_account_name().empty()) {
       const ::std::string& _s = this_._internal_account_name();
@@ -4749,7 +4749,7 @@ PROTOBUF_NOINLINE void GoogleAuthHOTPMethod::Clear() {
   (void)cached_has_bits;
 
    {
-    // string account_name = 1 [(.validate.rules) = {
+    // string account_name = 1 [(.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_account_name().empty()) {
@@ -4930,13 +4930,13 @@ GoogleAuthTOTPMethod::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::GoogleAuthTOTPMethod>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string account_name = 1 [(.validate.rules) = {
+    // string account_name = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(GoogleAuthTOTPMethod, _impl_.account_name_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string account_name = 1 [(.validate.rules) = {
+    // string account_name = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(GoogleAuthTOTPMethod, _impl_.account_name_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -4977,7 +4977,7 @@ PROTOBUF_NOINLINE void GoogleAuthTOTPMethod::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string account_name = 1 [(.validate.rules) = {
+  // string account_name = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_account_name().empty()) {
       const ::std::string& _s = this_._internal_account_name();
@@ -5011,7 +5011,7 @@ PROTOBUF_NOINLINE void GoogleAuthTOTPMethod::Clear() {
   (void)cached_has_bits;
 
    {
-    // string account_name = 1 [(.validate.rules) = {
+    // string account_name = 1 [(.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_account_name().empty()) {
@@ -5314,13 +5314,13 @@ HardwareHOTPMethod::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::HardwareHOTPMethod>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // bytes secret = 4 [(.validate.rules) = {
+    // bytes secret = 4 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastBS1,
      {34, 0, 0, PROTOBUF_FIELD_OFFSET(HardwareHOTPMethod, _impl_.secret_)}},
     // .ownmfa.api.Hash hash = 1;
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(HardwareHOTPMethod, _impl_.hash_), 1>(),
      {8, 1, 0, PROTOBUF_FIELD_OFFSET(HardwareHOTPMethod, _impl_.hash_)}},
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(HardwareHOTPMethod, _impl_.digits_), 2>(),
      {16, 2, 0, PROTOBUF_FIELD_OFFSET(HardwareHOTPMethod, _impl_.digits_)}},
     // int32 counter = 3;
@@ -5332,13 +5332,13 @@ HardwareHOTPMethod::_table_ = {
     // .ownmfa.api.Hash hash = 1;
     {PROTOBUF_FIELD_OFFSET(HardwareHOTPMethod, _impl_.hash_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(HardwareHOTPMethod, _impl_.digits_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // int32 counter = 3;
     {PROTOBUF_FIELD_OFFSET(HardwareHOTPMethod, _impl_.counter_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-    // bytes secret = 4 [(.validate.rules) = {
+    // bytes secret = 4 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(HardwareHOTPMethod, _impl_.secret_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
   }},
@@ -5390,7 +5390,7 @@ PROTOBUF_NOINLINE void HardwareHOTPMethod::Clear() {
     }
   }
 
-  // int32 digits = 2 [(.validate.rules) = {
+  // int32 digits = 2 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (this_._internal_digits() != 0) {
       target =
@@ -5408,7 +5408,7 @@ PROTOBUF_NOINLINE void HardwareHOTPMethod::Clear() {
     }
   }
 
-  // bytes secret = 4 [(.validate.rules) = {
+  // bytes secret = 4 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_secret().empty()) {
       const ::std::string& _s = this_._internal_secret();
@@ -5442,7 +5442,7 @@ PROTOBUF_NOINLINE void HardwareHOTPMethod::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x0000000fu) != 0) {
-    // bytes secret = 4 [(.validate.rules) = {
+    // bytes secret = 4 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_secret().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
@@ -5456,7 +5456,7 @@ PROTOBUF_NOINLINE void HardwareHOTPMethod::Clear() {
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_hash());
       }
     }
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000004u) != 0) {
       if (this_._internal_digits() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
@@ -5683,10 +5683,10 @@ HardwareTOTPMethod::_table_ = {
     // .ownmfa.api.Hash hash = 1;
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(HardwareTOTPMethod, _impl_.hash_), 1>(),
      {8, 1, 0, PROTOBUF_FIELD_OFFSET(HardwareTOTPMethod, _impl_.hash_)}},
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(HardwareTOTPMethod, _impl_.digits_), 2>(),
      {16, 2, 0, PROTOBUF_FIELD_OFFSET(HardwareTOTPMethod, _impl_.digits_)}},
-    // bytes secret = 3 [(.validate.rules) = {
+    // bytes secret = 3 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastBS1,
      {26, 0, 0, PROTOBUF_FIELD_OFFSET(HardwareTOTPMethod, _impl_.secret_)}},
   }}, {{
@@ -5695,10 +5695,10 @@ HardwareTOTPMethod::_table_ = {
     // .ownmfa.api.Hash hash = 1;
     {PROTOBUF_FIELD_OFFSET(HardwareTOTPMethod, _impl_.hash_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(HardwareTOTPMethod, _impl_.digits_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-    // bytes secret = 3 [(.validate.rules) = {
+    // bytes secret = 3 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(HardwareTOTPMethod, _impl_.secret_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
   }},
@@ -5750,7 +5750,7 @@ PROTOBUF_NOINLINE void HardwareTOTPMethod::Clear() {
     }
   }
 
-  // int32 digits = 2 [(.validate.rules) = {
+  // int32 digits = 2 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (this_._internal_digits() != 0) {
       target =
@@ -5759,7 +5759,7 @@ PROTOBUF_NOINLINE void HardwareTOTPMethod::Clear() {
     }
   }
 
-  // bytes secret = 3 [(.validate.rules) = {
+  // bytes secret = 3 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_secret().empty()) {
       const ::std::string& _s = this_._internal_secret();
@@ -5793,7 +5793,7 @@ PROTOBUF_NOINLINE void HardwareTOTPMethod::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000007u) != 0) {
-    // bytes secret = 3 [(.validate.rules) = {
+    // bytes secret = 3 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_secret().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
@@ -5807,7 +5807,7 @@ PROTOBUF_NOINLINE void HardwareTOTPMethod::Clear() {
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_hash());
       }
     }
-    // int32 digits = 2 [(.validate.rules) = {
+    // int32 digits = 2 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000004u) != 0) {
       if (this_._internal_digits() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
@@ -6005,13 +6005,13 @@ SMSMethod::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::SMSMethod>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string phone = 1 [(.validate.rules) = {
+    // string phone = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(SMSMethod, _impl_.phone_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string phone = 1 [(.validate.rules) = {
+    // string phone = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(SMSMethod, _impl_.phone_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -6052,7 +6052,7 @@ PROTOBUF_NOINLINE void SMSMethod::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string phone = 1 [(.validate.rules) = {
+  // string phone = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_phone().empty()) {
       const ::std::string& _s = this_._internal_phone();
@@ -6086,7 +6086,7 @@ PROTOBUF_NOINLINE void SMSMethod::Clear() {
   (void)cached_has_bits;
 
    {
-    // string phone = 1 [(.validate.rules) = {
+    // string phone = 1 [(.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_phone().empty()) {
@@ -6267,13 +6267,13 @@ PushoverMethod::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::PushoverMethod>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string pushover_key = 1 [(.validate.rules) = {
+    // string pushover_key = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(PushoverMethod, _impl_.pushover_key_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string pushover_key = 1 [(.validate.rules) = {
+    // string pushover_key = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(PushoverMethod, _impl_.pushover_key_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -6314,7 +6314,7 @@ PROTOBUF_NOINLINE void PushoverMethod::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string pushover_key = 1 [(.validate.rules) = {
+  // string pushover_key = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_pushover_key().empty()) {
       const ::std::string& _s = this_._internal_pushover_key();
@@ -6348,7 +6348,7 @@ PROTOBUF_NOINLINE void PushoverMethod::Clear() {
   (void)cached_has_bits;
 
    {
-    // string pushover_key = 1 [(.validate.rules) = {
+    // string pushover_key = 1 [(.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_pushover_key().empty()) {
@@ -6529,13 +6529,13 @@ EmailMethod::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::EmailMethod>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string email = 1 [(.validate.rules) = {
+    // string email = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(EmailMethod, _impl_.email_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string email = 1 [(.validate.rules) = {
+    // string email = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(EmailMethod, _impl_.email_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -6576,7 +6576,7 @@ PROTOBUF_NOINLINE void EmailMethod::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string email = 1 [(.validate.rules) = {
+  // string email = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_email().empty()) {
       const ::std::string& _s = this_._internal_email();
@@ -6610,7 +6610,7 @@ PROTOBUF_NOINLINE void EmailMethod::Clear() {
   (void)cached_has_bits;
 
    {
-    // string email = 1 [(.validate.rules) = {
+    // string email = 1 [(.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_email().empty()) {
@@ -6777,13 +6777,13 @@ BackupsCodesMethod::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::BackupsCodesMethod>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // int32 passcodes = 1 [(.validate.rules) = {
+    // int32 passcodes = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BackupsCodesMethod, _impl_.passcodes_), 0>(),
      {8, 0, 0, PROTOBUF_FIELD_OFFSET(BackupsCodesMethod, _impl_.passcodes_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // int32 passcodes = 1 [(.validate.rules) = {
+    // int32 passcodes = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(BackupsCodesMethod, _impl_.passcodes_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
   }},
@@ -6818,7 +6818,7 @@ PROTOBUF_NOINLINE void BackupsCodesMethod::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // int32 passcodes = 1 [(.validate.rules) = {
+  // int32 passcodes = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (this_._internal_passcodes() != 0) {
       target =
@@ -6851,7 +6851,7 @@ PROTOBUF_NOINLINE void BackupsCodesMethod::Clear() {
   (void)cached_has_bits;
 
    {
-    // int32 passcodes = 1 [(.validate.rules) = {
+    // int32 passcodes = 1 [(.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (this_._internal_passcodes() != 0) {
@@ -7026,13 +7026,13 @@ SecurityQuestionsMethod::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::SecurityQuestionsMethod>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string answer = 1 [(.validate.rules) = {
+    // string answer = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(SecurityQuestionsMethod, _impl_.answer_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string answer = 1 [(.validate.rules) = {
+    // string answer = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(SecurityQuestionsMethod, _impl_.answer_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -7073,7 +7073,7 @@ PROTOBUF_NOINLINE void SecurityQuestionsMethod::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string answer = 1 [(.validate.rules) = {
+  // string answer = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_answer().empty()) {
       const ::std::string& _s = this_._internal_answer();
@@ -7107,7 +7107,7 @@ PROTOBUF_NOINLINE void SecurityQuestionsMethod::Clear() {
   (void)cached_has_bits;
 
    {
-    // string answer = 1 [(.validate.rules) = {
+    // string answer = 1 [(.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_answer().empty()) {
@@ -7646,7 +7646,7 @@ Identity::_table_ = {
     // string app_id = 3 [json_name = "appID", (.google.api.field_behavior) = OUTPUT_ONLY];
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(Identity, _impl_.app_id_)}},
-    // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {34, 3, 0, PROTOBUF_FIELD_OFFSET(Identity, _impl_.comment_)}},
     // .ownmfa.api.IdentityStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -7670,7 +7670,7 @@ Identity::_table_ = {
     // string app_id = 3 [json_name = "appID", (.google.api.field_behavior) = OUTPUT_ONLY];
     {PROTOBUF_FIELD_OFFSET(Identity, _impl_.app_id_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(Identity, _impl_.comment_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // .ownmfa.api.IdentityStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -7825,7 +7825,7 @@ PROTOBUF_NOINLINE void Identity::Clear() {
     }
   }
 
-  // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
     if (!this_._internal_comment().empty()) {
       const ::std::string& _s = this_._internal_comment();
@@ -7986,7 +7986,7 @@ PROTOBUF_NOINLINE void Identity::Clear() {
                                         this_._internal_app_id());
       }
     }
-    // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000008u) != 0) {
       if (!this_._internal_comment().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -8436,13 +8436,13 @@ CreateIdentityRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::CreateIdentityRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastMtS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(CreateIdentityRequest, _impl_.identity_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(CreateIdentityRequest, _impl_.identity_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
@@ -8484,7 +8484,7 @@ PROTOBUF_NOINLINE void CreateIdentityRequest::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((cached_has_bits & 0x00000001u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         1, *this_._impl_.identity_, this_._impl_.identity_->GetCachedSize(), target,
@@ -8515,7 +8515,7 @@ PROTOBUF_NOINLINE void CreateIdentityRequest::Clear() {
   (void)cached_has_bits;
 
    {
-    // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       total_size += 1 +
@@ -9087,25 +9087,25 @@ ActivateIdentityRequest::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(ActivateIdentityRequest, _impl_.id_)}},
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(ActivateIdentityRequest, _impl_.app_id_)}},
-    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(ActivateIdentityRequest, _impl_.passcode_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ActivateIdentityRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ActivateIdentityRequest, _impl_.app_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ActivateIdentityRequest, _impl_.passcode_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -9156,7 +9156,7 @@ PROTOBUF_NOINLINE void ActivateIdentityRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -9166,7 +9166,7 @@ PROTOBUF_NOINLINE void ActivateIdentityRequest::Clear() {
     }
   }
 
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_app_id().empty()) {
       const ::std::string& _s = this_._internal_app_id();
@@ -9176,7 +9176,7 @@ PROTOBUF_NOINLINE void ActivateIdentityRequest::Clear() {
     }
   }
 
-  // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (!this_._internal_passcode().empty()) {
       const ::std::string& _s = this_._internal_passcode();
@@ -9212,21 +9212,21 @@ PROTOBUF_NOINLINE void ActivateIdentityRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000007u) != 0) {
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_id());
       }
     }
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_app_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_app_id());
       }
     }
-    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000004u) != 0) {
       if (!this_._internal_passcode().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -9431,19 +9431,19 @@ ChallengeIdentityRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::ChallengeIdentityRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(ChallengeIdentityRequest, _impl_.app_id_)}},
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(ChallengeIdentityRequest, _impl_.id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ChallengeIdentityRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ChallengeIdentityRequest, _impl_.app_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -9490,7 +9490,7 @@ PROTOBUF_NOINLINE void ChallengeIdentityRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -9500,7 +9500,7 @@ PROTOBUF_NOINLINE void ChallengeIdentityRequest::Clear() {
     }
   }
 
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_app_id().empty()) {
       const ::std::string& _s = this_._internal_app_id();
@@ -9536,14 +9536,14 @@ PROTOBUF_NOINLINE void ChallengeIdentityRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_id());
       }
     }
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_app_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -9742,25 +9742,25 @@ VerifyIdentityRequest::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(VerifyIdentityRequest, _impl_.id_)}},
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(VerifyIdentityRequest, _impl_.app_id_)}},
-    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(VerifyIdentityRequest, _impl_.passcode_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(VerifyIdentityRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(VerifyIdentityRequest, _impl_.app_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(VerifyIdentityRequest, _impl_.passcode_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -9811,7 +9811,7 @@ PROTOBUF_NOINLINE void VerifyIdentityRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -9821,7 +9821,7 @@ PROTOBUF_NOINLINE void VerifyIdentityRequest::Clear() {
     }
   }
 
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_app_id().empty()) {
       const ::std::string& _s = this_._internal_app_id();
@@ -9831,7 +9831,7 @@ PROTOBUF_NOINLINE void VerifyIdentityRequest::Clear() {
     }
   }
 
-  // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (!this_._internal_passcode().empty()) {
       const ::std::string& _s = this_._internal_passcode();
@@ -9867,21 +9867,21 @@ PROTOBUF_NOINLINE void VerifyIdentityRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000007u) != 0) {
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_id());
       }
     }
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_app_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_app_id());
       }
     }
-    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string passcode = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000004u) != 0) {
       if (!this_._internal_passcode().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -10086,19 +10086,19 @@ GetIdentityRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::GetIdentityRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(GetIdentityRequest, _impl_.app_id_)}},
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(GetIdentityRequest, _impl_.id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(GetIdentityRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(GetIdentityRequest, _impl_.app_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -10145,7 +10145,7 @@ PROTOBUF_NOINLINE void GetIdentityRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -10155,7 +10155,7 @@ PROTOBUF_NOINLINE void GetIdentityRequest::Clear() {
     }
   }
 
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_app_id().empty()) {
       const ::std::string& _s = this_._internal_app_id();
@@ -10191,14 +10191,14 @@ PROTOBUF_NOINLINE void GetIdentityRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_id());
       }
     }
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_app_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -10393,19 +10393,19 @@ DeleteIdentityRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::DeleteIdentityRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(DeleteIdentityRequest, _impl_.app_id_)}},
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(DeleteIdentityRequest, _impl_.id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(DeleteIdentityRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(DeleteIdentityRequest, _impl_.app_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -10452,7 +10452,7 @@ PROTOBUF_NOINLINE void DeleteIdentityRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -10462,7 +10462,7 @@ PROTOBUF_NOINLINE void DeleteIdentityRequest::Clear() {
     }
   }
 
-  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_app_id().empty()) {
       const ::std::string& _s = this_._internal_app_id();
@@ -10498,14 +10498,14 @@ PROTOBUF_NOINLINE void DeleteIdentityRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_id());
       }
     }
-    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string app_id = 2 [json_name = "appID", (.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_app_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -10703,25 +10703,25 @@ ListIdentitiesRequest::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
-    // int32 page_size = 1 [(.validate.rules) = {
+    // int32 page_size = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListIdentitiesRequest, _impl_.page_size_), 2>(),
      {8, 2, 0, PROTOBUF_FIELD_OFFSET(ListIdentitiesRequest, _impl_.page_size_)}},
     // string page_token = 2;
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(ListIdentitiesRequest, _impl_.page_token_)}},
-    // string app_id = 3 [json_name = "appID", (.validate.rules) = {
+    // string app_id = 3 [json_name = "appID", (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {26, 1, 0, PROTOBUF_FIELD_OFFSET(ListIdentitiesRequest, _impl_.app_id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // int32 page_size = 1 [(.validate.rules) = {
+    // int32 page_size = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ListIdentitiesRequest, _impl_.page_size_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // string page_token = 2;
     {PROTOBUF_FIELD_OFFSET(ListIdentitiesRequest, _impl_.page_token_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string app_id = 3 [json_name = "appID", (.validate.rules) = {
+    // string app_id = 3 [json_name = "appID", (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ListIdentitiesRequest, _impl_.app_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -10769,7 +10769,7 @@ PROTOBUF_NOINLINE void ListIdentitiesRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // int32 page_size = 1 [(.validate.rules) = {
+  // int32 page_size = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (this_._internal_page_size() != 0) {
       target =
@@ -10788,7 +10788,7 @@ PROTOBUF_NOINLINE void ListIdentitiesRequest::Clear() {
     }
   }
 
-  // string app_id = 3 [json_name = "appID", (.validate.rules) = {
+  // string app_id = 3 [json_name = "appID", (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_app_id().empty()) {
       const ::std::string& _s = this_._internal_app_id();
@@ -10831,14 +10831,14 @@ PROTOBUF_NOINLINE void ListIdentitiesRequest::Clear() {
                                         this_._internal_page_token());
       }
     }
-    // string app_id = 3 [json_name = "appID", (.validate.rules) = {
+    // string app_id = 3 [json_name = "appID", (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_app_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_app_id());
       }
     }
-    // int32 page_size = 1 [(.validate.rules) = {
+    // int32 page_size = 1 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000004u) != 0) {
       if (this_._internal_page_size() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(

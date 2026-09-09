@@ -19,7 +19,7 @@ class UpdateOrgRequest extends \Google\Protobuf\Internal\Message
     /**
      * Org message to update.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $org = null;
     /**
@@ -49,7 +49,7 @@ class UpdateOrgRequest extends \Google\Protobuf\Internal\Message
     /**
      * Org message to update.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return \Ownmfa\Api\Org|null
      */
     public function getOrg()
@@ -70,7 +70,7 @@ class UpdateOrgRequest extends \Google\Protobuf\Internal\Message
     /**
      * Org message to update.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Org org = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param \Ownmfa\Api\Org $var
      * @return $this
      */

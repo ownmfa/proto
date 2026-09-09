@@ -357,31 +357,31 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_api_2fownmfa_5fuser_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\025api/ownmfa_user.proto\022\nownmfa.api\032\025api"
-    "/ownmfa_role.proto\032\027api/ownmfa_status.pr"
-    "oto\032\033google/protobuf/empty.proto\032\037google"
-    "/protobuf/timestamp.proto\032 google/protob"
-    "uf/field_mask.proto\032\034google/api/annotati"
-    "ons.proto\032\037google/api/field_behavior.pro"
-    "to\032.protoc-gen-openapiv2/options/annotat"
-    "ions.proto\032\027validate/validate.proto\"\256\002\n\004"
-    "User\022\017\n\002id\030\001 \001(\tB\003\340A\003\022\032\n\006org_id\030\002 \001(\tB\003\340"
-    "A\003R\005orgID\022\027\n\004name\030\003 \001(\tB\t\372B\006r\004\020\005\030P\022\026\n\005em"
-    "ail\030\004 \001(\tB\007\372B\004r\002`\001\022.\n\004role\030\005 \001(\0162\020.ownmf"
-    "a.api.RoleB\016\372B\013\202\001\010\030\004\030\010\030\014\030\017\022.\n\006status\030\006 \001"
-    "(\0162\022.ownmfa.api.StatusB\n\372B\007\202\001\004\030\003\030\006\0223\n\ncr"
-    "eated_at\030\007 \001(\0132\032.google.protobuf.Timesta"
-    "mpB\003\340A\003\0223\n\nupdated_at\030\010 \001(\0132\032.google.pro"
-    "tobuf.TimestampB\003\340A\003\"@\n\021CreateUserReques"
-    "t\022+\n\004user\030\001 \001(\0132\020.ownmfa.api.UserB\013\340A\002\372B"
-    "\005\212\001\002\020\001\")\n\016GetUserRequest\022\027\n\002id\030\001 \001(\tB\013\340A"
-    "\002\372B\005r\003\260\001\001\"q\n\021UpdateUserRequest\022+\n\004user\030\001"
-    " \001(\0132\020.ownmfa.api.UserB\013\340A\002\372B\005\212\001\002\020\001\022/\n\013u"
+    "/ownmfa_role.proto\032\033buf/validate/validat"
+    "e.proto\032\027api/ownmfa_status.proto\032\034google"
+    "/api/annotations.proto\032\037google/api/field"
+    "_behavior.proto\032\033google/protobuf/empty.p"
+    "roto\032 google/protobuf/field_mask.proto\032\037"
+    "google/protobuf/timestamp.proto\032.protoc-"
+    "gen-openapiv2/options/annotations.proto\""
+    "\256\002\n\004User\022\017\n\002id\030\001 \001(\tB\003\340A\003\022\032\n\006org_id\030\002 \001("
+    "\tB\003\340A\003R\005orgID\022\027\n\004name\030\003 \001(\tB\t\272H\006r\004\020\005\030P\022\026"
+    "\n\005email\030\004 \001(\tB\007\272H\004r\002`\001\022.\n\004role\030\005 \001(\0162\020.o"
+    "wnmfa.api.RoleB\016\272H\013\202\001\010\030\004\030\010\030\014\030\017\022.\n\006status"
+    "\030\006 \001(\0162\022.ownmfa.api.StatusB\n\272H\007\202\001\004\030\003\030\006\0223"
+    "\n\ncreated_at\030\007 \001(\0132\032.google.protobuf.Tim"
+    "estampB\003\340A\003\0223\n\nupdated_at\030\010 \001(\0132\032.google"
+    ".protobuf.TimestampB\003\340A\003\">\n\021CreateUserRe"
+    "quest\022)\n\004user\030\001 \001(\0132\020.ownmfa.api.UserB\t\340"
+    "A\002\272H\003\310\001\001\")\n\016GetUserRequest\022\027\n\002id\030\001 \001(\tB\013"
+    "\340A\002\272H\005r\003\260\001\001\"o\n\021UpdateUserRequest\022)\n\004user"
+    "\030\001 \001(\0132\020.ownmfa.api.UserB\t\340A\002\272H\003\310\001\001\022/\n\013u"
     "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field"
     "Mask\"T\n\031UpdateUserPasswordRequest\022\027\n\002id\030"
-    "\001 \001(\tB\013\340A\003\372B\005r\003\260\001\001\022\036\n\010password\030\002 \001(\tB\014\340A"
-    "\002\372B\006r\004\020\n\030d\",\n\021DeleteUserRequest\022\027\n\002id\030\001 "
-    "\001(\tB\013\340A\002\372B\005r\003\260\001\001\"C\n\020ListUsersRequest\022\033\n\t"
-    "page_size\030\001 \001(\005B\010\372B\005\032\003\030\372\001\022\022\n\npage_token\030"
+    "\001 \001(\tB\013\340A\003\272H\005r\003\260\001\001\022\036\n\010password\030\002 \001(\tB\014\340A"
+    "\002\272H\006r\004\020\n\030d\",\n\021DeleteUserRequest\022\027\n\002id\030\001 "
+    "\001(\tB\013\340A\002\272H\005r\003\260\001\001\"C\n\020ListUsersRequest\022\033\n\t"
+    "page_size\030\001 \001(\005B\010\272H\005\032\003\030\372\001\022\022\n\npage_token\030"
     "\002 \001(\t\"a\n\021ListUsersResponse\022\037\n\005users\030\001 \003("
     "\0132\020.ownmfa.api.User\022\027\n\017next_page_token\030\002"
     " \001(\t\022\022\n\ntotal_size\030\003 \001(\0052\312\005\n\013UserService"
@@ -409,13 +409,13 @@ static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_api_2fownmfa_5fuser_2eproto_deps[9] = {
         &::descriptor_table_api_2fownmfa_5frole_2eproto,
         &::descriptor_table_api_2fownmfa_5fstatus_2eproto,
+        &::descriptor_table_buf_2fvalidate_2fvalidate_2eproto,
         &::descriptor_table_google_2fapi_2fannotations_2eproto,
         &::descriptor_table_google_2fapi_2ffield_5fbehavior_2eproto,
         &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
         &::descriptor_table_google_2fprotobuf_2ffield_5fmask_2eproto,
         &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
         &::descriptor_table_protoc_2dgen_2dopenapiv2_2foptions_2fannotations_2eproto,
-        &::descriptor_table_validate_2fvalidate_2eproto,
 };
 static ::absl::once_flag descriptor_table_api_2fownmfa_5fuser_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_api_2fownmfa_5fuser_2eproto = {
@@ -612,16 +612,16 @@ User::_table_ = {
     // string org_id = 2 [json_name = "orgID", (.google.api.field_behavior) = OUTPUT_ONLY];
     {::_pbi::TcParser::FastUS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.org_id_)}},
-    // string name = 3 [(.validate.rules) = {
+    // string name = 3 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.name_)}},
-    // string email = 4 [(.validate.rules) = {
+    // string email = 4 [(.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {34, 3, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.email_)}},
-    // .ownmfa.api.Role role = 5 [(.validate.rules) = {
+    // .ownmfa.api.Role role = 5 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(User, _impl_.role_), 6>(),
      {40, 6, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.role_)}},
-    // .ownmfa.api.Status status = 6 [(.validate.rules) = {
+    // .ownmfa.api.Status status = 6 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(User, _impl_.status_), 7>(),
      {48, 7, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.status_)}},
     // .google.protobuf.Timestamp created_at = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -636,16 +636,16 @@ User::_table_ = {
     // string org_id = 2 [json_name = "orgID", (.google.api.field_behavior) = OUTPUT_ONLY];
     {PROTOBUF_FIELD_OFFSET(User, _impl_.org_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string name = 3 [(.validate.rules) = {
+    // string name = 3 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(User, _impl_.name_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string email = 4 [(.validate.rules) = {
+    // string email = 4 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(User, _impl_.email_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // .ownmfa.api.Role role = 5 [(.validate.rules) = {
+    // .ownmfa.api.Role role = 5 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(User, _impl_.role_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // .ownmfa.api.Status status = 6 [(.validate.rules) = {
+    // .ownmfa.api.Status status = 6 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(User, _impl_.status_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
     // .google.protobuf.Timestamp created_at = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -742,7 +742,7 @@ PROTOBUF_NOINLINE void User::Clear() {
     }
   }
 
-  // string name = 3 [(.validate.rules) = {
+  // string name = 3 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (!this_._internal_name().empty()) {
       const ::std::string& _s = this_._internal_name();
@@ -752,7 +752,7 @@ PROTOBUF_NOINLINE void User::Clear() {
     }
   }
 
-  // string email = 4 [(.validate.rules) = {
+  // string email = 4 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
     if (!this_._internal_email().empty()) {
       const ::std::string& _s = this_._internal_email();
@@ -762,7 +762,7 @@ PROTOBUF_NOINLINE void User::Clear() {
     }
   }
 
-  // .ownmfa.api.Role role = 5 [(.validate.rules) = {
+  // .ownmfa.api.Role role = 5 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
     if (this_._internal_role() != 0) {
       target = stream->EnsureSpace(target);
@@ -771,7 +771,7 @@ PROTOBUF_NOINLINE void User::Clear() {
     }
   }
 
-  // .ownmfa.api.Status status = 6 [(.validate.rules) = {
+  // .ownmfa.api.Status status = 6 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
     if (this_._internal_status() != 0) {
       target = stream->EnsureSpace(target);
@@ -835,14 +835,14 @@ PROTOBUF_NOINLINE void User::Clear() {
                                         this_._internal_org_id());
       }
     }
-    // string name = 3 [(.validate.rules) = {
+    // string name = 3 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000004u) != 0) {
       if (!this_._internal_name().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_name());
       }
     }
-    // string email = 4 [(.validate.rules) = {
+    // string email = 4 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000008u) != 0) {
       if (!this_._internal_email().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -859,14 +859,14 @@ PROTOBUF_NOINLINE void User::Clear() {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.updated_at_);
     }
-    // .ownmfa.api.Role role = 5 [(.validate.rules) = {
+    // .ownmfa.api.Role role = 5 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000040u) != 0) {
       if (this_._internal_role() != 0) {
         total_size += 1 +
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_role());
       }
     }
-    // .ownmfa.api.Status status = 6 [(.validate.rules) = {
+    // .ownmfa.api.Status status = 6 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000080u) != 0) {
       if (this_._internal_status() != 0) {
         total_size += 1 +
@@ -1114,13 +1114,13 @@ CreateUserRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::CreateUserRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastMtS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(CreateUserRequest, _impl_.user_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(CreateUserRequest, _impl_.user_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
@@ -1162,7 +1162,7 @@ PROTOBUF_NOINLINE void CreateUserRequest::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((cached_has_bits & 0x00000001u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         1, *this_._impl_.user_, this_._impl_.user_->GetCachedSize(), target,
@@ -1193,7 +1193,7 @@ PROTOBUF_NOINLINE void CreateUserRequest::Clear() {
   (void)cached_has_bits;
 
    {
-    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       total_size += 1 +
@@ -1370,13 +1370,13 @@ GetUserRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::GetUserRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(GetUserRequest, _impl_.id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(GetUserRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -1417,7 +1417,7 @@ PROTOBUF_NOINLINE void GetUserRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -1451,7 +1451,7 @@ PROTOBUF_NOINLINE void GetUserRequest::Clear() {
   (void)cached_has_bits;
 
    {
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
@@ -1652,13 +1652,13 @@ UpdateUserRequest::_table_ = {
     // .google.protobuf.FieldMask update_mask = 2;
     {::_pbi::TcParser::FastMtS1,
      {18, 1, 1, PROTOBUF_FIELD_OFFSET(UpdateUserRequest, _impl_.update_mask_)}},
-    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastMtS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(UpdateUserRequest, _impl_.user_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(UpdateUserRequest, _impl_.user_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // .google.protobuf.FieldMask update_mask = 2;
@@ -1710,7 +1710,7 @@ PROTOBUF_NOINLINE void UpdateUserRequest::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((cached_has_bits & 0x00000001u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         1, *this_._impl_.user_, this_._impl_.user_->GetCachedSize(), target,
@@ -1750,7 +1750,7 @@ PROTOBUF_NOINLINE void UpdateUserRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
-    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // .ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.user_);
@@ -1949,19 +1949,19 @@ UpdateUserPasswordRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::UpdateUserPasswordRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(UpdateUserPasswordRequest, _impl_.password_)}},
-    // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(UpdateUserPasswordRequest, _impl_.id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(UpdateUserPasswordRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(UpdateUserPasswordRequest, _impl_.password_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -2008,7 +2008,7 @@ PROTOBUF_NOINLINE void UpdateUserPasswordRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -2018,7 +2018,7 @@ PROTOBUF_NOINLINE void UpdateUserPasswordRequest::Clear() {
     }
   }
 
-  // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_password().empty()) {
       const ::std::string& _s = this_._internal_password();
@@ -2054,14 +2054,14 @@ PROTOBUF_NOINLINE void UpdateUserPasswordRequest::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
-    // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_id());
       }
     }
-    // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string password = 2 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_password().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -2253,13 +2253,13 @@ DeleteUserRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::ownmfa::api::DeleteUserRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(DeleteUserRequest, _impl_.id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(DeleteUserRequest, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -2300,7 +2300,7 @@ PROTOBUF_NOINLINE void DeleteUserRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+  // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
@@ -2334,7 +2334,7 @@ PROTOBUF_NOINLINE void DeleteUserRequest::Clear() {
   (void)cached_has_bits;
 
    {
-    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {
+    // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
@@ -2520,13 +2520,13 @@ ListUsersRequest::_table_ = {
     // string page_token = 2;
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(ListUsersRequest, _impl_.page_token_)}},
-    // int32 page_size = 1 [(.validate.rules) = {
+    // int32 page_size = 1 [(.buf.validate.field) = {
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListUsersRequest, _impl_.page_size_), 1>(),
      {8, 1, 0, PROTOBUF_FIELD_OFFSET(ListUsersRequest, _impl_.page_size_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // int32 page_size = 1 [(.validate.rules) = {
+    // int32 page_size = 1 [(.buf.validate.field) = {
     {PROTOBUF_FIELD_OFFSET(ListUsersRequest, _impl_.page_size_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // string page_token = 2;
@@ -2571,7 +2571,7 @@ PROTOBUF_NOINLINE void ListUsersRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // int32 page_size = 1 [(.validate.rules) = {
+  // int32 page_size = 1 [(.buf.validate.field) = {
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (this_._internal_page_size() != 0) {
       target =
@@ -2623,7 +2623,7 @@ PROTOBUF_NOINLINE void ListUsersRequest::Clear() {
                                         this_._internal_page_token());
       }
     }
-    // int32 page_size = 1 [(.validate.rules) = {
+    // int32 page_size = 1 [(.buf.validate.field) = {
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (this_._internal_page_size() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(

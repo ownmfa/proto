@@ -19,7 +19,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     /**
      * User message to create.
      *
-     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $user = null;
 
@@ -41,7 +41,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     /**
      * User message to create.
      *
-     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return \Ownmfa\Api\User|null
      */
     public function getUser()
@@ -62,7 +62,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     /**
      * User message to create.
      *
-     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.User user = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param \Ownmfa\Api\User $var
      * @return $this
      */

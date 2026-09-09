@@ -31,13 +31,13 @@ class Key extends \Google\Protobuf\Internal\Message
     /**
      * Key name.
      *
-     * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $name = '';
     /**
      * Key role.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $role = 0;
     /**
@@ -125,7 +125,7 @@ class Key extends \Google\Protobuf\Internal\Message
     /**
      * Key name.
      *
-     * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getName()
@@ -136,7 +136,7 @@ class Key extends \Google\Protobuf\Internal\Message
     /**
      * Key name.
      *
-     * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -151,7 +151,7 @@ class Key extends \Google\Protobuf\Internal\Message
     /**
      * Key role.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return int
      */
     public function getRole()
@@ -162,7 +162,7 @@ class Key extends \Google\Protobuf\Internal\Message
     /**
      * Key role.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Role role = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */

@@ -1,10 +1,11 @@
 syntax = "proto3";
+
 package ownmfa.api;
 
-import "google/protobuf/timestamp.proto";
+import "buf/validate/validate.proto";
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
-import "validate/validate.proto";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/ownmfa/proto/go/api";
 
@@ -85,7 +86,7 @@ message Event {
 // ListEventsRequest is sent to list identity events in an [end, start) time range, in descending timestamp order.
 message ListEventsRequest {
   // Identity ID (UUID).
-  string identity_id = 1 [json_name = "identityID", (validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string identity_id = 1 [json_name = "identityID", (buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 
   // Events range end time. Defaults to current time if not specified. Maximum supported time range is 90 days.
   google.protobuf.Timestamp end_time = 2;
@@ -103,10 +104,10 @@ message ListEventsResponse {
 // LatestEventsRequest is sent to list latest organization events.
 message LatestEventsRequest {
   // Application ID (UUID). If not specified, all applications are included.
-  string app_id = 1 [json_name = "appID", (validate.rules).string = {ignore_empty: true, uuid: true}];
+  string app_id = 1 [json_name = "appID", (buf.validate.field).string.uuid = true, (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE];
 
   // Identity ID (UUID). If not specified, all identities are included.
-  string identity_id = 2 [json_name = "identityID", (validate.rules).string = {ignore_empty: true, uuid: true}];
+  string identity_id = 2 [json_name = "identityID", (buf.validate.field).string.uuid = true, (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE];
 }
 
 // LatestEventsResponse is sent in response to an organization latest list.

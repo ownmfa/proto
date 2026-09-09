@@ -19,13 +19,13 @@ class LatestEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Application ID (UUID). If not specified, all applications are included.
      *
-     * Generated from protobuf field <code>string app_id = 1 [json_name = "appID", (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string app_id = 1 [json_name = "appID", (.buf.validate.field) = {</code>
      */
     protected $app_id = '';
     /**
      * Identity ID (UUID). If not specified, all identities are included.
      *
-     * Generated from protobuf field <code>string identity_id = 2 [json_name = "identityID", (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string identity_id = 2 [json_name = "identityID", (.buf.validate.field) = {</code>
      */
     protected $identity_id = '';
 
@@ -49,7 +49,7 @@ class LatestEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Application ID (UUID). If not specified, all applications are included.
      *
-     * Generated from protobuf field <code>string app_id = 1 [json_name = "appID", (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string app_id = 1 [json_name = "appID", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getAppId()
@@ -60,7 +60,7 @@ class LatestEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Application ID (UUID). If not specified, all applications are included.
      *
-     * Generated from protobuf field <code>string app_id = 1 [json_name = "appID", (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string app_id = 1 [json_name = "appID", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -75,7 +75,7 @@ class LatestEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID). If not specified, all identities are included.
      *
-     * Generated from protobuf field <code>string identity_id = 2 [json_name = "identityID", (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string identity_id = 2 [json_name = "identityID", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getIdentityId()
@@ -86,7 +86,7 @@ class LatestEventsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity ID (UUID). If not specified, all identities are included.
      *
-     * Generated from protobuf field <code>string identity_id = 2 [json_name = "identityID", (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string identity_id = 2 [json_name = "identityID", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

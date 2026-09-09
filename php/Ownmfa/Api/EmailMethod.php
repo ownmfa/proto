@@ -19,7 +19,7 @@ class EmailMethod extends \Google\Protobuf\Internal\Message
     /**
      * Email address.
      *
-     * Generated from protobuf field <code>string email = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 1 [(.buf.validate.field) = {</code>
      */
     protected $email = '';
 
@@ -41,7 +41,7 @@ class EmailMethod extends \Google\Protobuf\Internal\Message
     /**
      * Email address.
      *
-     * Generated from protobuf field <code>string email = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 1 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getEmail()
@@ -52,7 +52,7 @@ class EmailMethod extends \Google\Protobuf\Internal\Message
     /**
      * Email address.
      *
-     * Generated from protobuf field <code>string email = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 1 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

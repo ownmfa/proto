@@ -31,43 +31,43 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application name.
      *
-     * Generated from protobuf field <code>string name = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 3 [(.buf.validate.field) = {</code>
      */
     protected $name = '';
     /**
      * Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields.
      *
-     * Generated from protobuf field <code>string display_name = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string display_name = 4 [(.buf.validate.field) = {</code>
      */
     protected $display_name = '';
     /**
      * Application email. Optional, used as the 'From' address in email notifications.
      *
-     * Generated from protobuf field <code>string email = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 5 [(.buf.validate.field) = {</code>
      */
     protected $email = '';
     /**
      * Pushover application key. If not specified, the default OwnMFA Pushover application and templates will be used.
      *
-     * Generated from protobuf field <code>string pushover_key = 6 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string pushover_key = 6 [(.buf.validate.field) = {</code>
      */
     protected $pushover_key = '';
     /**
      * Application subject template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution is '{{.displayName}}'. Optional field, for notification methods that support subjects.
      *
-     * Generated from protobuf field <code>string subject_template = 7 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string subject_template = 7 [(.buf.validate.field) = {</code>
      */
     protected $subject_template = '';
     /**
      * Application text body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support text bodies. To prevent fraud, SMS notifications used a fixed body that includes the application display_name and verification code.
      *
-     * Generated from protobuf field <code>string text_body_template = 8 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string text_body_template = 8 [(.buf.validate.field) = {</code>
      */
     protected $text_body_template = '';
     /**
      * Application HTML body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support HTML bodies. When used in JSON, the value will be represented as a base64 string.
      *
-     * Generated from protobuf field <code>bytes html_body_template = 9 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>bytes html_body_template = 9 [(.buf.validate.field) = {</code>
      */
     protected $html_body_template = '';
     /**
@@ -173,7 +173,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application name.
      *
-     * Generated from protobuf field <code>string name = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 3 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getName()
@@ -184,7 +184,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application name.
      *
-     * Generated from protobuf field <code>string name = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 3 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -199,7 +199,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields.
      *
-     * Generated from protobuf field <code>string display_name = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string display_name = 4 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getDisplayName()
@@ -210,7 +210,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields.
      *
-     * Generated from protobuf field <code>string display_name = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string display_name = 4 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -225,7 +225,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application email. Optional, used as the 'From' address in email notifications.
      *
-     * Generated from protobuf field <code>string email = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 5 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getEmail()
@@ -236,7 +236,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application email. Optional, used as the 'From' address in email notifications.
      *
-     * Generated from protobuf field <code>string email = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 5 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -251,7 +251,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Pushover application key. If not specified, the default OwnMFA Pushover application and templates will be used.
      *
-     * Generated from protobuf field <code>string pushover_key = 6 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string pushover_key = 6 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getPushoverKey()
@@ -262,7 +262,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Pushover application key. If not specified, the default OwnMFA Pushover application and templates will be used.
      *
-     * Generated from protobuf field <code>string pushover_key = 6 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string pushover_key = 6 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -277,7 +277,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application subject template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution is '{{.displayName}}'. Optional field, for notification methods that support subjects.
      *
-     * Generated from protobuf field <code>string subject_template = 7 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string subject_template = 7 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getSubjectTemplate()
@@ -288,7 +288,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application subject template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution is '{{.displayName}}'. Optional field, for notification methods that support subjects.
      *
-     * Generated from protobuf field <code>string subject_template = 7 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string subject_template = 7 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -303,7 +303,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application text body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support text bodies. To prevent fraud, SMS notifications used a fixed body that includes the application display_name and verification code.
      *
-     * Generated from protobuf field <code>string text_body_template = 8 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string text_body_template = 8 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getTextBodyTemplate()
@@ -314,7 +314,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application text body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support text bodies. To prevent fraud, SMS notifications used a fixed body that includes the application display_name and verification code.
      *
-     * Generated from protobuf field <code>string text_body_template = 8 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string text_body_template = 8 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -329,7 +329,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application HTML body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support HTML bodies. When used in JSON, the value will be represented as a base64 string.
      *
-     * Generated from protobuf field <code>bytes html_body_template = 9 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>bytes html_body_template = 9 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getHtmlBodyTemplate()
@@ -340,7 +340,7 @@ class App extends \Google\Protobuf\Internal\Message
     /**
      * Application HTML body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support HTML bodies. When used in JSON, the value will be represented as a base64 string.
      *
-     * Generated from protobuf field <code>bytes html_body_template = 9 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>bytes html_body_template = 9 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

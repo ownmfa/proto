@@ -82,8 +82,8 @@ const Key$json = {
 /// Descriptor for `Key`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List keyDescriptor = $convert.base64Decode(
     'CgNLZXkSEwoCaWQYASABKAlCA+BBA1ICaWQSGgoGb3JnX2lkGAIgASgJQgPgQQNSBW9yZ0lEEi'
-    'AKBG5hbWUYAyABKAlCDPpCBnIEEAUYUOBBAlIEbmFtZRI3CgRyb2xlGAQgASgOMhAub3dubWZh'
-    'LmFwaS5Sb2xlQhH6QguCAQgYBBgIGAwYD+BBAlIEcm9sZRI+CgpjcmVhdGVkX2F0GAUgASgLMh'
+    'AKBG5hbWUYAyABKAlCDLpIBnIEEAUYUOBBAlIEbmFtZRI3CgRyb2xlGAQgASgOMhAub3dubWZh'
+    'LmFwaS5Sb2xlQhG6SAuCAQgYBBgIGAwYD+BBAlIEcm9sZRI+CgpjcmVhdGVkX2F0GAUgASgLMh'
     'ouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEID4EEDUgljcmVhdGVkQXQ=');
 
 @$core.Deprecated('Use createKeyRequestDescriptor instead')
@@ -104,8 +104,8 @@ const CreateKeyRequest$json = {
 
 /// Descriptor for `CreateKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createKeyRequestDescriptor = $convert.base64Decode(
-    'ChBDcmVhdGVLZXlSZXF1ZXN0Ei4KA2tleRgBIAEoCzIPLm93bm1mYS5hcGkuS2V5Qgv6QgWKAQ'
-    'IQAeBBAlIDa2V5');
+    'ChBDcmVhdGVLZXlSZXF1ZXN0EiwKA2tleRgBIAEoCzIPLm93bm1mYS5hcGkuS2V5Qgm6SAPIAQ'
+    'HgQQJSA2tleQ==');
 
 @$core.Deprecated('Use createKeyResponseDescriptor instead')
 const CreateKeyResponse$json = {
@@ -131,7 +131,7 @@ const DeleteKeyRequest$json = {
 
 /// Descriptor for `DeleteKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteKeyRequestDescriptor = $convert.base64Decode(
-    'ChBEZWxldGVLZXlSZXF1ZXN0EhsKAmlkGAEgASgJQgv6QgVyA7ABAeBBAlICaWQ=');
+    'ChBEZWxldGVLZXlSZXF1ZXN0EhsKAmlkGAEgASgJQgu6SAVyA7ABAeBBAlICaWQ=');
 
 @$core.Deprecated('Use listKeysRequestDescriptor instead')
 const ListKeysRequest$json = {
@@ -144,7 +144,7 @@ const ListKeysRequest$json = {
 
 /// Descriptor for `ListKeysRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listKeysRequestDescriptor = $convert.base64Decode(
-    'Cg9MaXN0S2V5c1JlcXVlc3QSJQoJcGFnZV9zaXplGAEgASgFQgj6QgUaAxj6AVIIcGFnZVNpem'
+    'Cg9MaXN0S2V5c1JlcXVlc3QSJQoJcGFnZV9zaXplGAEgASgFQgi6SAUaAxj6AVIIcGFnZVNpem'
     'USHQoKcGFnZV90b2tlbhgCIAEoCVIJcGFnZVRva2Vu');
 
 @$core.Deprecated('Use listKeysResponseDescriptor instead')

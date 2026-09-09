@@ -25,7 +25,7 @@ class HardwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Passcode digits length.
      *
-     * Generated from protobuf field <code>int32 digits = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 digits = 2 [(.buf.validate.field) = {</code>
      */
     protected $digits = 0;
     /**
@@ -37,7 +37,7 @@ class HardwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Hardware HOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
      *
-     * Generated from protobuf field <code>bytes secret = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>bytes secret = 4 [(.buf.validate.field) = {</code>
      */
     protected $secret = '';
 
@@ -91,7 +91,7 @@ class HardwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Passcode digits length.
      *
-     * Generated from protobuf field <code>int32 digits = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 digits = 2 [(.buf.validate.field) = {</code>
      * @return int
      */
     public function getDigits()
@@ -102,7 +102,7 @@ class HardwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Passcode digits length.
      *
-     * Generated from protobuf field <code>int32 digits = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>int32 digits = 2 [(.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
@@ -143,7 +143,7 @@ class HardwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Hardware HOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
      *
-     * Generated from protobuf field <code>bytes secret = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>bytes secret = 4 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getSecret()
@@ -154,7 +154,7 @@ class HardwareHOTPMethod extends \Google\Protobuf\Internal\Message
     /**
      * Hardware HOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
      *
-     * Generated from protobuf field <code>bytes secret = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>bytes secret = 4 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

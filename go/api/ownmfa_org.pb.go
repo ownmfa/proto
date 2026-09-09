@@ -7,7 +7,7 @@
 package api
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -496,29 +496,29 @@ var File_api_ownmfa_org_proto protoreflect.FileDescriptor
 const file_api_ownmfa_org_proto_rawDesc = "" +
 	"\n" +
 	"\x14api/ownmfa_org.proto\x12\n" +
-	"ownmfa.api\x1a\x17api/ownmfa_status.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x17validate/validate.proto\"\x9c\x02\n" +
+	"ownmfa.api\x1a\x17api/ownmfa_status.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x9c\x02\n" +
 	"\x03Org\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tB\x03\xe0A\x03R\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xfaB\x06r\x04\x10\x05\x18(R\x04name\x126\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x05\x18(R\x04name\x126\n" +
 	"\x06status\x18\x05 \x01(\x0e2\x12.ownmfa.api.StatusB\n" +
-	"\xfaB\a\x82\x01\x04\x18\x03\x18\x06R\x06status\x12)\n" +
+	"\xbaH\a\x82\x01\x04\x18\x03\x18\x06R\x06status\x12)\n" +
 	"\x04plan\x18\x06 \x01(\x0e2\x10.ownmfa.api.PlanB\x03\xe0A\x03R\x04plan\x12>\n" +
 	"\n" +
 	"created_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x03\xe0A\x03R\tcreatedAt\x12>\n" +
 	"\n" +
-	"updated_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampB\x03\xe0A\x03R\tupdatedAt\"B\n" +
-	"\x10CreateOrgRequest\x12.\n" +
-	"\x03org\x18\x01 \x01(\v2\x0f.ownmfa.api.OrgB\v\xe0A\x02\xfaB\x05\x8a\x01\x02\x10\x01R\x03org\",\n" +
+	"updated_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampB\x03\xe0A\x03R\tupdatedAt\"@\n" +
+	"\x10CreateOrgRequest\x12,\n" +
+	"\x03org\x18\x01 \x01(\v2\x0f.ownmfa.api.OrgB\t\xe0A\x02\xbaH\x03\xc8\x01\x01R\x03org\",\n" +
 	"\rGetOrgRequest\x12\x1b\n" +
-	"\x02id\x18\x01 \x01(\tB\v\xe0A\x02\xfaB\x05r\x03\xb0\x01\x01R\x02id\"\x7f\n" +
-	"\x10UpdateOrgRequest\x12.\n" +
-	"\x03org\x18\x01 \x01(\v2\x0f.ownmfa.api.OrgB\v\xe0A\x02\xfaB\x05\x8a\x01\x02\x10\x01R\x03org\x12;\n" +
+	"\x02id\x18\x01 \x01(\tB\v\xe0A\x02\xbaH\x05r\x03\xb0\x01\x01R\x02id\"}\n" +
+	"\x10UpdateOrgRequest\x12,\n" +
+	"\x03org\x18\x01 \x01(\v2\x0f.ownmfa.api.OrgB\t\xe0A\x02\xbaH\x03\xc8\x01\x01R\x03org\x12;\n" +
 	"\vupdate_mask\x18\x02 \x01(\v2\x1a.google.protobuf.FieldMaskR\n" +
 	"updateMask\"/\n" +
 	"\x10DeleteOrgRequest\x12\x1b\n" +
-	"\x02id\x18\x01 \x01(\tB\v\xe0A\x02\xfaB\x05r\x03\xb0\x01\x01R\x02id\"W\n" +
+	"\x02id\x18\x01 \x01(\tB\v\xe0A\x02\xbaH\x05r\x03\xb0\x01\x01R\x02id\"W\n" +
 	"\x0fListOrgsRequest\x12%\n" +
-	"\tpage_size\x18\x01 \x01(\x05B\b\xfaB\x05\x1a\x03\x18\xfa\x01R\bpageSize\x12\x1d\n" +
+	"\tpage_size\x18\x01 \x01(\x05B\b\xbaH\x05\x1a\x03\x18\xfa\x01R\bpageSize\x12\x1d\n" +
 	"\n" +
 	"page_token\x18\x02 \x01(\tR\tpageToken\"~\n" +
 	"\x10ListOrgsResponse\x12#\n" +

@@ -7,8 +7,8 @@ deps:
 
 api:
 	protoc --plugin=protoc-gen-dart=/root/.pub-cache/bin/protoc-gen-dart \
-	-I=../protobuf -I=/tmp/googleapis -I=/tmp/grpc-gateway -I=/tmp/pgv \
-	--dart_out=grpc:. \
+	-I=../protobuf -I=/tmp/googleapis -I=/tmp/grpc-gateway \
+	-I=/tmp/pv/proto/protovalidate --dart_out=grpc:. \
 	api/ownmfa_app_identity.proto \
 	api/ownmfa_event.proto \
 	api/ownmfa_org.proto \

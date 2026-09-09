@@ -19,13 +19,13 @@ class UpdateUserPasswordRequest extends \Google\Protobuf\Internal\Message
     /**
      * User ID (UUID) to update password.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.buf.validate.field) = {</code>
      */
     protected $id = '';
     /**
      * User password to update.
      *
-     * Generated from protobuf field <code>string password = 2 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string password = 2 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $password = '';
 
@@ -49,7 +49,7 @@ class UpdateUserPasswordRequest extends \Google\Protobuf\Internal\Message
     /**
      * User ID (UUID) to update password.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getId()
@@ -60,7 +60,7 @@ class UpdateUserPasswordRequest extends \Google\Protobuf\Internal\Message
     /**
      * User ID (UUID) to update password.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -75,7 +75,7 @@ class UpdateUserPasswordRequest extends \Google\Protobuf\Internal\Message
     /**
      * User password to update.
      *
-     * Generated from protobuf field <code>string password = 2 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string password = 2 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getPassword()
@@ -86,7 +86,7 @@ class UpdateUserPasswordRequest extends \Google\Protobuf\Internal\Message
     /**
      * User password to update.
      *
-     * Generated from protobuf field <code>string password = 2 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string password = 2 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

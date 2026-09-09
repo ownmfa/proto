@@ -1,13 +1,14 @@
 syntax = "proto3";
+
 package ownmfa.api;
 
 import "api/ownmfa_role.proto";
-import "google/protobuf/empty.proto";
-import "google/protobuf/timestamp.proto";
+import "buf/validate/validate.proto";
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
-import "validate/validate.proto";
 
 option go_package = "github.com/ownmfa/proto/go/api";
 
@@ -99,10 +100,10 @@ message Key {
   string org_id = 2 [json_name = "orgID", (google.api.field_behavior) = OUTPUT_ONLY];
 
   // Key name.
-  string name = 3 [(validate.rules).string = {min_len: 5, max_len: 80}, (google.api.field_behavior) = REQUIRED];
+  string name = 3 [(buf.validate.field).string = {min_len: 5, max_len: 80}, (google.api.field_behavior) = REQUIRED];
 
   // Key role.
-  Role role = 4 [(validate.rules).enum = {in: [4, 8, 12, 15]}, (google.api.field_behavior) = REQUIRED];
+  Role role = 4 [(buf.validate.field).enum = {in: [4, 8, 12, 15]}, (google.api.field_behavior) = REQUIRED];
 
   // Key creation timestamp.
   google.protobuf.Timestamp created_at = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -111,7 +112,7 @@ message Key {
 // CreateKeyRequest is sent to create an API key.
 message CreateKeyRequest {
   // Key message to create.
-  Key key = 1 [(validate.rules).message.required = true, (google.api.field_behavior) = REQUIRED];
+  Key key = 1 [(buf.validate.field).required = true, (google.api.field_behavior) = REQUIRED];
 }
 
 // CreateKeyResponse is sent in response to an API key creation.
@@ -126,13 +127,13 @@ message CreateKeyResponse {
 // DeleteKeyRequest is sent to delete an API key.
 message DeleteKeyRequest {
   // Key ID (UUID) to delete.
-  string id = 1 [(validate.rules).string.uuid = true, (google.api.field_behavior) = REQUIRED];
+  string id = 1 [(buf.validate.field).string.uuid = true, (google.api.field_behavior) = REQUIRED];
 }
 
 // ListKeysRequest is sent to list API keys.
 message ListKeysRequest {
   // Number of API keys to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
-  int32 page_size = 1 [(validate.rules).int32.lte = 250];
+  int32 page_size = 1 [(buf.validate.field).int32.lte = 250];
 
   // Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
   string page_token = 2;

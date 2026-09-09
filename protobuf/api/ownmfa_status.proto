@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package ownmfa.api;
 
 option go_package = "github.com/ownmfa/proto/go/api";

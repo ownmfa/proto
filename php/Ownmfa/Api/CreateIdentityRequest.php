@@ -19,7 +19,7 @@ class CreateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity message to create.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $identity = null;
 
@@ -41,7 +41,7 @@ class CreateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity message to create.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return \Ownmfa\Api\Identity|null
      */
     public function getIdentity()
@@ -62,7 +62,7 @@ class CreateIdentityRequest extends \Google\Protobuf\Internal\Message
     /**
      * Identity message to create.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Identity identity = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param \Ownmfa\Api\Identity $var
      * @return $this
      */

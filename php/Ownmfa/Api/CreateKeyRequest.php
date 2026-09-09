@@ -19,7 +19,7 @@ class CreateKeyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Key message to create.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $key = null;
 
@@ -41,7 +41,7 @@ class CreateKeyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Key message to create.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return \Ownmfa\Api\Key|null
      */
     public function getKey()
@@ -62,7 +62,7 @@ class CreateKeyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Key message to create.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param \Ownmfa\Api\Key $var
      * @return $this
      */

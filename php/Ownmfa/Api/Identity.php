@@ -37,7 +37,7 @@ class Identity extends \Google\Protobuf\Internal\Message
     /**
      * Identity comment. This should be an opaque identifier known to the consuming application.
      *
-     * Generated from protobuf field <code>string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      */
     protected $comment = '';
     /**
@@ -192,7 +192,7 @@ class Identity extends \Google\Protobuf\Internal\Message
     /**
      * Identity comment. This should be an opaque identifier known to the consuming application.
      *
-     * Generated from protobuf field <code>string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @return string
      */
     public function getComment()
@@ -203,7 +203,7 @@ class Identity extends \Google\Protobuf\Internal\Message
     /**
      * Identity comment. This should be an opaque identifier known to the consuming application.
      *
-     * Generated from protobuf field <code>string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.validate.rules) = {</code>
+     * Generated from protobuf field <code>string comment = 4 [(.google.api.field_behavior) = REQUIRED, (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

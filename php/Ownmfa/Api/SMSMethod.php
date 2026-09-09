@@ -19,7 +19,7 @@ class SMSMethod extends \Google\Protobuf\Internal\Message
     /**
      * Phone number. Must be in valid [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
      *
-     * Generated from protobuf field <code>string phone = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string phone = 1 [(.buf.validate.field) = {</code>
      */
     protected $phone = '';
 
@@ -41,7 +41,7 @@ class SMSMethod extends \Google\Protobuf\Internal\Message
     /**
      * Phone number. Must be in valid [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
      *
-     * Generated from protobuf field <code>string phone = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string phone = 1 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getPhone()
@@ -52,7 +52,7 @@ class SMSMethod extends \Google\Protobuf\Internal\Message
     /**
      * Phone number. Must be in valid [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
      *
-     * Generated from protobuf field <code>string phone = 1 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string phone = 1 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

@@ -25,13 +25,13 @@ class Org extends \Google\Protobuf\Internal\Message
     /**
      * Organization name.
      *
-     * Generated from protobuf field <code>string name = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 2 [(.buf.validate.field) = {</code>
      */
     protected $name = '';
     /**
      * Organization status.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Status status = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Status status = 5 [(.buf.validate.field) = {</code>
      */
     protected $status = 0;
     /**
@@ -107,7 +107,7 @@ class Org extends \Google\Protobuf\Internal\Message
     /**
      * Organization name.
      *
-     * Generated from protobuf field <code>string name = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 2 [(.buf.validate.field) = {</code>
      * @return string
      */
     public function getName()
@@ -118,7 +118,7 @@ class Org extends \Google\Protobuf\Internal\Message
     /**
      * Organization name.
      *
-     * Generated from protobuf field <code>string name = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string name = 2 [(.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -133,7 +133,7 @@ class Org extends \Google\Protobuf\Internal\Message
     /**
      * Organization status.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Status status = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Status status = 5 [(.buf.validate.field) = {</code>
      * @return int
      */
     public function getStatus()
@@ -144,7 +144,7 @@ class Org extends \Google\Protobuf\Internal\Message
     /**
      * Organization status.
      *
-     * Generated from protobuf field <code>.ownmfa.api.Status status = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>.ownmfa.api.Status status = 5 [(.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
