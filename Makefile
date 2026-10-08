@@ -1,4 +1,4 @@
-.PHONY: generate version go python dart ruby cpp php tag clean
+.PHONY: generate version go python ruby cpp php tag clean
 
 VERSION = 1.1.21
 
@@ -19,11 +19,6 @@ go: version
 python: version
 	docker compose --progress=plain build --no-cache --pull python
 	docker compose up python --menu=false
-	docker compose down
-
-dart: version
-	docker compose --progress=plain build --no-cache --pull dart
-	docker compose up dart --menu=false
 	docker compose down
 
 ruby: version
@@ -51,7 +46,6 @@ tag:
 clean:
 	find . -name '*.pb*.go' -type f|xargs rm -v
 	find . -name '*_pb2*.py*' -type f|xargs rm -v
-	find . -name '*.pb*.dart' -type f|xargs rm -v
 	find . -name '*_pb.rb' -type f|xargs rm -v
 	find . -name '*.pb.h' -type f|xargs rm -v
 	find . -name '*.pb.cc' -type f|xargs rm -v
