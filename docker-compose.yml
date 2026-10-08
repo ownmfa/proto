@@ -11,12 +11,6 @@ services:
     volumes:
       - .:/proto
 
-  dart:
-    build: ./dart
-    command: sh -c "cd dart && make"
-    volumes:
-      - .:/proto
-
   ruby:
     build: ./ruby
     command: sh -c "cd ruby && make"
