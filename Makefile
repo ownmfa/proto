@@ -1,9 +1,9 @@
 .PHONY: generate version go python ruby cpp php tag clean
 
-VERSION = 1.1.21
+VERSION = 1.1.22
 
 generate: version
-	docker compose --progress=plain build --no-cache --pull
+	docker compose --progress plain build --no-cache --pull
 	docker compose up --menu=false
 	docker compose down
 
@@ -12,27 +12,27 @@ version:
 	protobuf/api/ownmfa_openapi-templ.proto > protobuf/api/ownmfa_openapi.proto
 
 go: version
-	docker compose --progress=plain build --no-cache --pull go_openapi
+	docker compose --progress plain build --no-cache --pull go_openapi
 	docker compose up go_openapi --menu=false
 	docker compose down
 
 python: version
-	docker compose --progress=plain build --no-cache --pull python
+	docker compose --progress plain build --no-cache --pull python
 	docker compose up python --menu=false
 	docker compose down
 
 ruby: version
-	docker compose --progress=plain build --no-cache --pull ruby
+	docker compose --progress plain build --no-cache --pull ruby
 	docker compose up ruby --menu=false
 	docker compose down
 
 cpp: version
-	docker compose --progress=plain build --no-cache --pull cpp
+	docker compose --progress plain build --no-cache --pull cpp
 	docker compose up cpp --menu=false
 	docker compose down
 
 php: version
-	docker compose --progress=plain build --no-cache --pull php
+	docker compose --progress plain build --no-cache --pull php
 	docker compose up php --menu=false
 	docker compose down
 

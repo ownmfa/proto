@@ -431,9 +431,9 @@ const file_api_ownmfa_event_proto_rawDesc = "" +
 	"\x05error\x18\x05 \x01(\tR\x05error\x129\n" +
 	"\n" +
 	"created_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12\x19\n" +
-	"\btrace_id\x18\a \x01(\tR\atraceId\"\xb3\x01\n" +
-	"\x11ListEventsRequest\x12,\n" +
-	"\videntity_id\x18\x01 \x01(\tB\v\xe0A\x02\xbaH\x05r\x03\xb0\x01\x01R\n" +
+	"\btrace_id\x18\a \x01(\tR\atraceId\"\xb4\x01\n" +
+	"\x11ListEventsRequest\x12-\n" +
+	"\videntity_id\x18\x01 \x01(\tB\f\xe2A\x01\x02\xbaH\x05r\x03\xb0\x01\x01R\n" +
 	"identityID\x125\n" +
 	"\bend_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\aendTime\x129\n" +
 	"\n" +

@@ -32,7 +32,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61pi/ownmfa_org.proto\x12\nownmfa.api\x1a\x17\x61pi/ownmfa_status.proto\x1a\x1b\x62uf/validate/validate.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\xee\x01\n\x03Org\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x17\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x05\x18(\x12.\n\x06status\x18\x05 \x01(\x0e\x32\x12.ownmfa.api.StatusB\n\xbaH\x07\x82\x01\x04\x18\x03\x18\x06\x12#\n\x04plan\x18\x06 \x01(\x0e\x32\x10.ownmfa.api.PlanB\x03\xe0\x41\x03\x12\x33\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x33\n\nupdated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\";\n\x10\x43reateOrgRequest\x12\'\n\x03org\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.OrgB\t\xe0\x41\x02\xbaH\x03\xc8\x01\x01\"(\n\rGetOrgRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xe0\x41\x02\xbaH\x05r\x03\xb0\x01\x01\"l\n\x10UpdateOrgRequest\x12\'\n\x03org\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.OrgB\t\xe0\x41\x02\xbaH\x03\xc8\x01\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"+\n\x10\x44\x65leteOrgRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xe0\x41\x02\xbaH\x05r\x03\xb0\x01\x01\"B\n\x0fListOrgsRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xbaH\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListOrgsResponse\x12\x1d\n\x04orgs\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.Org\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05*T\n\x04Plan\x12\x14\n\x10PLAN_UNSPECIFIED\x10\x00\x12\x10\n\x0cPAYMENT_FAIL\x10\x03\x12\x0b\n\x07STARTER\x10\x06\x12\x07\n\x03PRO\x10\t\x12\x0e\n\nENTERPRISE\x10\x0c\x32\xed\x04\n\nOrgService\x12\x93\x01\n\tCreateOrg\x12\x1c.ownmfa.api.CreateOrgRequest\x1a\x0f.ownmfa.api.Org\"W\x92\x41\x36J4\n\x03\x32\x30\x31\x12-\n\x16\x41 successful response.\x12\x13\n\x11\x1a\x0f.ownmfa.api.Org\x82\xd3\xe4\x93\x02\x18\"\x11/v1/organizations:\x03org\x12T\n\x06GetOrg\x12\x19.ownmfa.api.GetOrgRequest\x1a\x0f.ownmfa.api.Org\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/organizations/{id}\x12\x86\x01\n\tUpdateOrg\x12\x1c.ownmfa.api.UpdateOrgRequest\x1a\x0f.ownmfa.api.Org\"J\x82\xd3\xe4\x93\x02\x44\x1a\x1a/v1/organizations/{org.id}:\x03orgZ!2\x1a/v1/organizations/{org.id}:\x03org\x12\x87\x01\n\tDeleteOrg\x12\x1c.ownmfa.api.DeleteOrgRequest\x1a\x16.google.protobuf.Empty\"D\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x82\xd3\xe4\x93\x02\x18*\x16/v1/organizations/{id}\x12`\n\x08ListOrgs\x12\x1b.ownmfa.api.ListOrgsRequest\x1a\x1c.ownmfa.api.ListOrgsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/organizationsB Z\x1egithub.com/ownmfa/proto/go/apib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61pi/ownmfa_org.proto\x12\nownmfa.api\x1a\x17\x61pi/ownmfa_status.proto\x1a\x1b\x62uf/validate/validate.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\xf2\x01\n\x03Org\x12\x10\n\x02id\x18\x01 \x01(\tB\x04\xe2\x41\x01\x03\x12\x17\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x05\x18(\x12.\n\x06status\x18\x05 \x01(\x0e\x32\x12.ownmfa.api.StatusB\n\xbaH\x07\x82\x01\x04\x18\x03\x18\x06\x12$\n\x04plan\x18\x06 \x01(\x0e\x32\x10.ownmfa.api.PlanB\x04\xe2\x41\x01\x03\x12\x34\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe2\x41\x01\x03\x12\x34\n\nupdated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe2\x41\x01\x03\"<\n\x10\x43reateOrgRequest\x12(\n\x03org\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.OrgB\n\xe2\x41\x01\x02\xbaH\x03\xc8\x01\x01\")\n\rGetOrgRequest\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\x41\x01\x02\xbaH\x05r\x03\xb0\x01\x01\"m\n\x10UpdateOrgRequest\x12(\n\x03org\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.OrgB\n\xe2\x41\x01\x02\xbaH\x03\xc8\x01\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\",\n\x10\x44\x65leteOrgRequest\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\x41\x01\x02\xbaH\x05r\x03\xb0\x01\x01\"B\n\x0fListOrgsRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xbaH\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListOrgsResponse\x12\x1d\n\x04orgs\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.Org\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05*T\n\x04Plan\x12\x14\n\x10PLAN_UNSPECIFIED\x10\x00\x12\x10\n\x0cPAYMENT_FAIL\x10\x03\x12\x0b\n\x07STARTER\x10\x06\x12\x07\n\x03PRO\x10\t\x12\x0e\n\nENTERPRISE\x10\x0c\x32\xed\x04\n\nOrgService\x12\x93\x01\n\tCreateOrg\x12\x1c.ownmfa.api.CreateOrgRequest\x1a\x0f.ownmfa.api.Org\"W\x92\x41\x36J4\n\x03\x32\x30\x31\x12-\n\x16\x41 successful response.\x12\x13\n\x11\x1a\x0f.ownmfa.api.Org\x82\xd3\xe4\x93\x02\x18\"\x11/v1/organizations:\x03org\x12T\n\x06GetOrg\x12\x19.ownmfa.api.GetOrgRequest\x1a\x0f.ownmfa.api.Org\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/organizations/{id}\x12\x86\x01\n\tUpdateOrg\x12\x1c.ownmfa.api.UpdateOrgRequest\x1a\x0f.ownmfa.api.Org\"J\x82\xd3\xe4\x93\x02\x44\x1a\x1a/v1/organizations/{org.id}:\x03orgZ!2\x1a/v1/organizations/{org.id}:\x03org\x12\x87\x01\n\tDeleteOrg\x12\x1c.ownmfa.api.DeleteOrgRequest\x1a\x16.google.protobuf.Empty\"D\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x82\xd3\xe4\x93\x02\x18*\x16/v1/organizations/{id}\x12`\n\x08ListOrgs\x12\x1b.ownmfa.api.ListOrgsRequest\x1a\x1c.ownmfa.api.ListOrgsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/organizationsB Z\x1egithub.com/ownmfa/proto/go/apib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,25 +41,25 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z\036github.com/ownmfa/proto/go/api'
   _globals['_ORG'].fields_by_name['id']._loaded_options = None
-  _globals['_ORG'].fields_by_name['id']._serialized_options = b'\340A\003'
+  _globals['_ORG'].fields_by_name['id']._serialized_options = b'\342A\001\003'
   _globals['_ORG'].fields_by_name['name']._loaded_options = None
   _globals['_ORG'].fields_by_name['name']._serialized_options = b'\272H\006r\004\020\005\030('
   _globals['_ORG'].fields_by_name['status']._loaded_options = None
   _globals['_ORG'].fields_by_name['status']._serialized_options = b'\272H\007\202\001\004\030\003\030\006'
   _globals['_ORG'].fields_by_name['plan']._loaded_options = None
-  _globals['_ORG'].fields_by_name['plan']._serialized_options = b'\340A\003'
+  _globals['_ORG'].fields_by_name['plan']._serialized_options = b'\342A\001\003'
   _globals['_ORG'].fields_by_name['created_at']._loaded_options = None
-  _globals['_ORG'].fields_by_name['created_at']._serialized_options = b'\340A\003'
+  _globals['_ORG'].fields_by_name['created_at']._serialized_options = b'\342A\001\003'
   _globals['_ORG'].fields_by_name['updated_at']._loaded_options = None
-  _globals['_ORG'].fields_by_name['updated_at']._serialized_options = b'\340A\003'
+  _globals['_ORG'].fields_by_name['updated_at']._serialized_options = b'\342A\001\003'
   _globals['_CREATEORGREQUEST'].fields_by_name['org']._loaded_options = None
-  _globals['_CREATEORGREQUEST'].fields_by_name['org']._serialized_options = b'\340A\002\272H\003\310\001\001'
+  _globals['_CREATEORGREQUEST'].fields_by_name['org']._serialized_options = b'\342A\001\002\272H\003\310\001\001'
   _globals['_GETORGREQUEST'].fields_by_name['id']._loaded_options = None
-  _globals['_GETORGREQUEST'].fields_by_name['id']._serialized_options = b'\340A\002\272H\005r\003\260\001\001'
+  _globals['_GETORGREQUEST'].fields_by_name['id']._serialized_options = b'\342A\001\002\272H\005r\003\260\001\001'
   _globals['_UPDATEORGREQUEST'].fields_by_name['org']._loaded_options = None
-  _globals['_UPDATEORGREQUEST'].fields_by_name['org']._serialized_options = b'\340A\002\272H\003\310\001\001'
+  _globals['_UPDATEORGREQUEST'].fields_by_name['org']._serialized_options = b'\342A\001\002\272H\003\310\001\001'
   _globals['_DELETEORGREQUEST'].fields_by_name['id']._loaded_options = None
-  _globals['_DELETEORGREQUEST'].fields_by_name['id']._serialized_options = b'\340A\002\272H\005r\003\260\001\001'
+  _globals['_DELETEORGREQUEST'].fields_by_name['id']._serialized_options = b'\342A\001\002\272H\005r\003\260\001\001'
   _globals['_LISTORGSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTORGSREQUEST'].fields_by_name['page_size']._serialized_options = b'\272H\005\032\003\030\372\001'
   _globals['_ORGSERVICE'].methods_by_name['CreateOrg']._loaded_options = None
@@ -72,22 +72,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ORGSERVICE'].methods_by_name['DeleteOrg']._serialized_options = b'\222A#J!\n\003204\022\032\n\026A successful response.\022\000\202\323\344\223\002\030*\026/v1/organizations/{id}'
   _globals['_ORGSERVICE'].methods_by_name['ListOrgs']._loaded_options = None
   _globals['_ORGSERVICE'].methods_by_name['ListOrgs']._serialized_options = b'\202\323\344\223\002\023\022\021/v1/organizations'
-  _globals['_PLAN']._serialized_start=960
-  _globals['_PLAN']._serialized_end=1044
+  _globals['_PLAN']._serialized_start=968
+  _globals['_PLAN']._serialized_end=1052
   _globals['_ORG']._serialized_start=298
-  _globals['_ORG']._serialized_end=536
-  _globals['_CREATEORGREQUEST']._serialized_start=538
-  _globals['_CREATEORGREQUEST']._serialized_end=597
-  _globals['_GETORGREQUEST']._serialized_start=599
-  _globals['_GETORGREQUEST']._serialized_end=639
-  _globals['_UPDATEORGREQUEST']._serialized_start=641
-  _globals['_UPDATEORGREQUEST']._serialized_end=749
-  _globals['_DELETEORGREQUEST']._serialized_start=751
-  _globals['_DELETEORGREQUEST']._serialized_end=794
-  _globals['_LISTORGSREQUEST']._serialized_start=796
-  _globals['_LISTORGSREQUEST']._serialized_end=862
-  _globals['_LISTORGSRESPONSE']._serialized_start=864
-  _globals['_LISTORGSRESPONSE']._serialized_end=958
-  _globals['_ORGSERVICE']._serialized_start=1047
-  _globals['_ORGSERVICE']._serialized_end=1668
+  _globals['_ORG']._serialized_end=540
+  _globals['_CREATEORGREQUEST']._serialized_start=542
+  _globals['_CREATEORGREQUEST']._serialized_end=602
+  _globals['_GETORGREQUEST']._serialized_start=604
+  _globals['_GETORGREQUEST']._serialized_end=645
+  _globals['_UPDATEORGREQUEST']._serialized_start=647
+  _globals['_UPDATEORGREQUEST']._serialized_end=756
+  _globals['_DELETEORGREQUEST']._serialized_start=758
+  _globals['_DELETEORGREQUEST']._serialized_end=802
+  _globals['_LISTORGSREQUEST']._serialized_start=804
+  _globals['_LISTORGSREQUEST']._serialized_end=870
+  _globals['_LISTORGSRESPONSE']._serialized_start=872
+  _globals['_LISTORGSRESPONSE']._serialized_end=966
+  _globals['_ORGSERVICE']._serialized_start=1055
+  _globals['_ORGSERVICE']._serialized_end=1676
 # @@protoc_insertion_point(module_scope)
