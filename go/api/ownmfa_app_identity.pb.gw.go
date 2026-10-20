@@ -378,7 +378,7 @@ func local_request_AppIdentityService_GetIdentity_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-var filter_AppIdentityService_UpdateApp_0 = &utilities.DoubleArray{Encoding: map[string]int{"app": 0, "id": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
+var filter_AppIdentityService_UpdateApp_0 = &utilities.DoubleArray{Encoding: map[string]int{"app": 0, "id": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 2, 2, 3}}
 
 func request_AppIdentityService_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppIdentityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
@@ -437,7 +437,7 @@ func local_request_AppIdentityService_UpdateApp_0(ctx context.Context, marshaler
 	return msg, metadata, err
 }
 
-var filter_AppIdentityService_UpdateApp_1 = &utilities.DoubleArray{Encoding: map[string]int{"app": 0, "id": 1}, Base: []int{1, 2, 1, 0, 0}, Check: []int{0, 1, 2, 3, 2}}
+var filter_AppIdentityService_UpdateApp_1 = &utilities.DoubleArray{Encoding: map[string]int{"app": 0, "id": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 2, 2, 3}}
 
 func request_AppIdentityService_UpdateApp_1(ctx context.Context, marshaler runtime.Marshaler, client AppIdentityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (

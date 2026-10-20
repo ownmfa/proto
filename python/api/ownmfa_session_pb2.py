@@ -31,7 +31,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pi/ownmfa_session.proto\x12\nownmfa.api\x1a\x15\x61pi/ownmfa_role.proto\x1a\x1b\x62uf/validate/validate.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"P\n\x0cLoginRequest\x12\x12\n\x05\x65mail\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08org_name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x15\n\x08password\x18\x03 \x01(\tB\x03\xe0\x41\x02\"N\n\rLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb6\x01\n\x03Key\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1a\n\x06org_id\x18\x02 \x01(\tB\x03\xe0\x41\x03R\x05orgID\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\xe0\x41\x02\xbaH\x06r\x04\x10\x05\x18P\x12\x31\n\x04role\x18\x04 \x01(\x0e\x32\x10.ownmfa.api.RoleB\x11\xe0\x41\x02\xbaH\x0b\x82\x01\x08\x18\x04\x18\x08\x18\x0c\x18\x0f\x12\x33\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\";\n\x10\x43reateKeyRequest\x12\'\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.KeyB\t\xe0\x41\x02\xbaH\x03\xc8\x01\x01\"@\n\x11\x43reateKeyResponse\x12\x1c\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.Key\x12\r\n\x05token\x18\x02 \x01(\t\"+\n\x10\x44\x65leteKeyRequest\x12\x17\n\x02id\x18\x01 \x01(\tB\x0b\xe0\x41\x02\xbaH\x05r\x03\xb0\x01\x01\"B\n\x0fListKeysRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xbaH\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListKeysResponse\x12\x1d\n\x04keys\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.Key\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\x32\x90\x04\n\x0eSessionService\x12`\n\x05Login\x12\x18.ownmfa.api.LoginRequest\x1a\x19.ownmfa.api.LoginResponse\"\"\x92\x41\x02\x62\x00\x82\xd3\xe4\x93\x02\x17\"\x12/v1/sessions/login:\x01*\x12\xaf\x01\n\tCreateKey\x12\x1c.ownmfa.api.CreateKeyRequest\x1a\x1d.ownmfa.api.CreateKeyResponse\"e\x92\x41\x44JB\n\x03\x32\x30\x31\x12;\n\x16\x41 successful response.\x12!\n\x1f\x1a\x1d.ownmfa.api.CreateKeyResponse\x82\xd3\xe4\x93\x02\x18\"\x11/v1/sessions/keys:\x03key\x12\x87\x01\n\tDeleteKey\x12\x1c.ownmfa.api.DeleteKeyRequest\x1a\x16.google.protobuf.Empty\"D\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x82\xd3\xe4\x93\x02\x18*\x16/v1/sessions/keys/{id}\x12`\n\x08ListKeys\x12\x1b.ownmfa.api.ListKeysRequest\x1a\x1c.ownmfa.api.ListKeysResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/sessions/keysB Z\x1egithub.com/ownmfa/proto/go/apib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pi/ownmfa_session.proto\x12\nownmfa.api\x1a\x15\x61pi/ownmfa_role.proto\x1a\x1b\x62uf/validate/validate.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"S\n\x0cLoginRequest\x12\x13\n\x05\x65mail\x18\x01 \x01(\tB\x04\xe2\x41\x01\x02\x12\x16\n\x08org_name\x18\x02 \x01(\tB\x04\xe2\x41\x01\x02\x12\x16\n\x08password\x18\x03 \x01(\tB\x04\xe2\x41\x01\x02\"N\n\rLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xbb\x01\n\x03Key\x12\x10\n\x02id\x18\x01 \x01(\tB\x04\xe2\x41\x01\x03\x12\x1b\n\x06org_id\x18\x02 \x01(\tB\x04\xe2\x41\x01\x03R\x05orgID\x12\x1b\n\x04name\x18\x03 \x01(\tB\r\xe2\x41\x01\x02\xbaH\x06r\x04\x10\x05\x18P\x12\x32\n\x04role\x18\x04 \x01(\x0e\x32\x10.ownmfa.api.RoleB\x12\xe2\x41\x01\x02\xbaH\x0b\x82\x01\x08\x18\x04\x18\x08\x18\x0c\x18\x0f\x12\x34\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe2\x41\x01\x03\"<\n\x10\x43reateKeyRequest\x12(\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.KeyB\n\xe2\x41\x01\x02\xbaH\x03\xc8\x01\x01\"@\n\x11\x43reateKeyResponse\x12\x1c\n\x03key\x18\x01 \x01(\x0b\x32\x0f.ownmfa.api.Key\x12\r\n\x05token\x18\x02 \x01(\t\",\n\x10\x44\x65leteKeyRequest\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\x41\x01\x02\xbaH\x05r\x03\xb0\x01\x01\"B\n\x0fListKeysRequest\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xbaH\x05\x1a\x03\x18\xfa\x01\x12\x12\n\npage_token\x18\x02 \x01(\t\"^\n\x10ListKeysResponse\x12\x1d\n\x04keys\x18\x01 \x03(\x0b\x32\x0f.ownmfa.api.Key\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\x32\x90\x04\n\x0eSessionService\x12`\n\x05Login\x12\x18.ownmfa.api.LoginRequest\x1a\x19.ownmfa.api.LoginResponse\"\"\x92\x41\x02\x62\x00\x82\xd3\xe4\x93\x02\x17\"\x12/v1/sessions/login:\x01*\x12\xaf\x01\n\tCreateKey\x12\x1c.ownmfa.api.CreateKeyRequest\x1a\x1d.ownmfa.api.CreateKeyResponse\"e\x92\x41\x44JB\n\x03\x32\x30\x31\x12;\n\x16\x41 successful response.\x12!\n\x1f\x1a\x1d.ownmfa.api.CreateKeyResponse\x82\xd3\xe4\x93\x02\x18\"\x11/v1/sessions/keys:\x03key\x12\x87\x01\n\tDeleteKey\x12\x1c.ownmfa.api.DeleteKeyRequest\x1a\x16.google.protobuf.Empty\"D\x92\x41#J!\n\x03\x32\x30\x34\x12\x1a\n\x16\x41 successful response.\x12\x00\x82\xd3\xe4\x93\x02\x18*\x16/v1/sessions/keys/{id}\x12`\n\x08ListKeys\x12\x1b.ownmfa.api.ListKeysRequest\x1a\x1c.ownmfa.api.ListKeysResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/sessions/keysB Z\x1egithub.com/ownmfa/proto/go/apib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,25 +40,25 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z\036github.com/ownmfa/proto/go/api'
   _globals['_LOGINREQUEST'].fields_by_name['email']._loaded_options = None
-  _globals['_LOGINREQUEST'].fields_by_name['email']._serialized_options = b'\340A\002'
+  _globals['_LOGINREQUEST'].fields_by_name['email']._serialized_options = b'\342A\001\002'
   _globals['_LOGINREQUEST'].fields_by_name['org_name']._loaded_options = None
-  _globals['_LOGINREQUEST'].fields_by_name['org_name']._serialized_options = b'\340A\002'
+  _globals['_LOGINREQUEST'].fields_by_name['org_name']._serialized_options = b'\342A\001\002'
   _globals['_LOGINREQUEST'].fields_by_name['password']._loaded_options = None
-  _globals['_LOGINREQUEST'].fields_by_name['password']._serialized_options = b'\340A\002'
+  _globals['_LOGINREQUEST'].fields_by_name['password']._serialized_options = b'\342A\001\002'
   _globals['_KEY'].fields_by_name['id']._loaded_options = None
-  _globals['_KEY'].fields_by_name['id']._serialized_options = b'\340A\003'
+  _globals['_KEY'].fields_by_name['id']._serialized_options = b'\342A\001\003'
   _globals['_KEY'].fields_by_name['org_id']._loaded_options = None
-  _globals['_KEY'].fields_by_name['org_id']._serialized_options = b'\340A\003'
+  _globals['_KEY'].fields_by_name['org_id']._serialized_options = b'\342A\001\003'
   _globals['_KEY'].fields_by_name['name']._loaded_options = None
-  _globals['_KEY'].fields_by_name['name']._serialized_options = b'\340A\002\272H\006r\004\020\005\030P'
+  _globals['_KEY'].fields_by_name['name']._serialized_options = b'\342A\001\002\272H\006r\004\020\005\030P'
   _globals['_KEY'].fields_by_name['role']._loaded_options = None
-  _globals['_KEY'].fields_by_name['role']._serialized_options = b'\340A\002\272H\013\202\001\010\030\004\030\010\030\014\030\017'
+  _globals['_KEY'].fields_by_name['role']._serialized_options = b'\342A\001\002\272H\013\202\001\010\030\004\030\010\030\014\030\017'
   _globals['_KEY'].fields_by_name['created_at']._loaded_options = None
-  _globals['_KEY'].fields_by_name['created_at']._serialized_options = b'\340A\003'
+  _globals['_KEY'].fields_by_name['created_at']._serialized_options = b'\342A\001\003'
   _globals['_CREATEKEYREQUEST'].fields_by_name['key']._loaded_options = None
-  _globals['_CREATEKEYREQUEST'].fields_by_name['key']._serialized_options = b'\340A\002\272H\003\310\001\001'
+  _globals['_CREATEKEYREQUEST'].fields_by_name['key']._serialized_options = b'\342A\001\002\272H\003\310\001\001'
   _globals['_DELETEKEYREQUEST'].fields_by_name['id']._loaded_options = None
-  _globals['_DELETEKEYREQUEST'].fields_by_name['id']._serialized_options = b'\340A\002\272H\005r\003\260\001\001'
+  _globals['_DELETEKEYREQUEST'].fields_by_name['id']._serialized_options = b'\342A\001\002\272H\005r\003\260\001\001'
   _globals['_LISTKEYSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTKEYSREQUEST'].fields_by_name['page_size']._serialized_options = b'\272H\005\032\003\030\372\001'
   _globals['_SESSIONSERVICE'].methods_by_name['Login']._loaded_options = None
@@ -70,21 +70,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SESSIONSERVICE'].methods_by_name['ListKeys']._loaded_options = None
   _globals['_SESSIONSERVICE'].methods_by_name['ListKeys']._serialized_options = b'\202\323\344\223\002\023\022\021/v1/sessions/keys'
   _globals['_LOGINREQUEST']._serialized_start=265
-  _globals['_LOGINREQUEST']._serialized_end=345
-  _globals['_LOGINRESPONSE']._serialized_start=347
-  _globals['_LOGINRESPONSE']._serialized_end=425
-  _globals['_KEY']._serialized_start=428
-  _globals['_KEY']._serialized_end=610
-  _globals['_CREATEKEYREQUEST']._serialized_start=612
-  _globals['_CREATEKEYREQUEST']._serialized_end=671
-  _globals['_CREATEKEYRESPONSE']._serialized_start=673
-  _globals['_CREATEKEYRESPONSE']._serialized_end=737
-  _globals['_DELETEKEYREQUEST']._serialized_start=739
-  _globals['_DELETEKEYREQUEST']._serialized_end=782
-  _globals['_LISTKEYSREQUEST']._serialized_start=784
-  _globals['_LISTKEYSREQUEST']._serialized_end=850
-  _globals['_LISTKEYSRESPONSE']._serialized_start=852
-  _globals['_LISTKEYSRESPONSE']._serialized_end=946
-  _globals['_SESSIONSERVICE']._serialized_start=949
-  _globals['_SESSIONSERVICE']._serialized_end=1477
+  _globals['_LOGINREQUEST']._serialized_end=348
+  _globals['_LOGINRESPONSE']._serialized_start=350
+  _globals['_LOGINRESPONSE']._serialized_end=428
+  _globals['_KEY']._serialized_start=431
+  _globals['_KEY']._serialized_end=618
+  _globals['_CREATEKEYREQUEST']._serialized_start=620
+  _globals['_CREATEKEYREQUEST']._serialized_end=680
+  _globals['_CREATEKEYRESPONSE']._serialized_start=682
+  _globals['_CREATEKEYRESPONSE']._serialized_end=746
+  _globals['_DELETEKEYREQUEST']._serialized_start=748
+  _globals['_DELETEKEYREQUEST']._serialized_end=792
+  _globals['_LISTKEYSREQUEST']._serialized_start=794
+  _globals['_LISTKEYSREQUEST']._serialized_end=860
+  _globals['_LISTKEYSRESPONSE']._serialized_start=862
+  _globals['_LISTKEYSRESPONSE']._serialized_end=956
+  _globals['_SESSIONSERVICE']._serialized_start=959
+  _globals['_SESSIONSERVICE']._serialized_end=1487
 # @@protoc_insertion_point(module_scope)

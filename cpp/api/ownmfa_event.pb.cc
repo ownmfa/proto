@@ -250,29 +250,29 @@ const char descriptor_table_protodef_api_2fownmfa_5fevent_2eproto[] ABSL_ATTRIBU
     "identityID\022\'\n\006status\030\004 \001(\0162\027.ownmfa.api."
     "EventStatus\022\r\n\005error\030\005 \001(\t\022.\n\ncreated_at"
     "\030\006 \001(\0132\032.google.protobuf.Timestamp\022\020\n\010tr"
-    "ace_id\030\007 \001(\t\"\237\001\n\021ListEventsRequest\022,\n\013id"
-    "entity_id\030\001 \001(\tB\013\340A\002\272H\005r\003\260\001\001R\nidentityID"
-    "\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf.Tim"
-    "estamp\022.\n\nstart_time\030\003 \001(\0132\032.google.prot"
-    "obuf.Timestamp\"7\n\022ListEventsResponse\022!\n\006"
-    "events\030\001 \003(\0132\021.ownmfa.api.Event\"g\n\023Lates"
-    "tEventsRequest\022\"\n\006app_id\030\001 \001(\tB\013\272H\010r\003\260\001\001"
-    "\330\001\001R\005appID\022,\n\013identity_id\030\002 \001(\tB\013\272H\010r\003\260\001"
-    "\001\330\001\001R\nidentityID\"9\n\024LatestEventsResponse"
-    "\022!\n\006events\030\001 \003(\0132\021.ownmfa.api.Event*\341\001\n\013"
-    "EventStatus\022\034\n\030EVENT_STATUS_UNSPECIFIED\020"
-    "\000\022\024\n\020IDENTITY_CREATED\020\001\022\022\n\016CHALLENGE_SEN"
-    "T\020\002\022\022\n\016CHALLENGE_NOOP\020\003\022\022\n\016CHALLENGE_FAI"
-    "L\020\004\022\024\n\020ACTIVATE_SUCCESS\020\005\022\021\n\rACTIVATE_FA"
-    "IL\020\006\022\022\n\016VERIFY_SUCCESS\020\007\022\017\n\013VERIFY_FAIL\020"
-    "\010\022\024\n\020IDENTITY_DELETED\020\t2\335\001\n\014EventService"
-    "\022_\n\nListEvents\022\035.ownmfa.api.ListEventsRe"
-    "quest\032\036.ownmfa.api.ListEventsResponse\"\022\202"
-    "\323\344\223\002\014\022\n/v1/events\022l\n\014LatestEvents\022\037.ownm"
-    "fa.api.LatestEventsRequest\032 .ownmfa.api."
-    "LatestEventsResponse\"\031\202\323\344\223\002\023\022\021/v1/events"
-    "/latestB Z\036github.com/ownmfa/proto/go/ap"
-    "ib\006proto3"
+    "ace_id\030\007 \001(\t\"\240\001\n\021ListEventsRequest\022-\n\013id"
+    "entity_id\030\001 \001(\tB\014\342A\001\002\272H\005r\003\260\001\001R\nidentityI"
+    "D\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf.Ti"
+    "mestamp\022.\n\nstart_time\030\003 \001(\0132\032.google.pro"
+    "tobuf.Timestamp\"7\n\022ListEventsResponse\022!\n"
+    "\006events\030\001 \003(\0132\021.ownmfa.api.Event\"g\n\023Late"
+    "stEventsRequest\022\"\n\006app_id\030\001 \001(\tB\013\272H\010r\003\260\001"
+    "\001\330\001\001R\005appID\022,\n\013identity_id\030\002 \001(\tB\013\272H\010r\003\260"
+    "\001\001\330\001\001R\nidentityID\"9\n\024LatestEventsRespons"
+    "e\022!\n\006events\030\001 \003(\0132\021.ownmfa.api.Event*\341\001\n"
+    "\013EventStatus\022\034\n\030EVENT_STATUS_UNSPECIFIED"
+    "\020\000\022\024\n\020IDENTITY_CREATED\020\001\022\022\n\016CHALLENGE_SE"
+    "NT\020\002\022\022\n\016CHALLENGE_NOOP\020\003\022\022\n\016CHALLENGE_FA"
+    "IL\020\004\022\024\n\020ACTIVATE_SUCCESS\020\005\022\021\n\rACTIVATE_F"
+    "AIL\020\006\022\022\n\016VERIFY_SUCCESS\020\007\022\017\n\013VERIFY_FAIL"
+    "\020\010\022\024\n\020IDENTITY_DELETED\020\t2\335\001\n\014EventServic"
+    "e\022_\n\nListEvents\022\035.ownmfa.api.ListEventsR"
+    "equest\032\036.ownmfa.api.ListEventsResponse\"\022"
+    "\202\323\344\223\002\014\022\n/v1/events\022l\n\014LatestEvents\022\037.own"
+    "mfa.api.LatestEventsRequest\032 .ownmfa.api"
+    ".LatestEventsResponse\"\031\202\323\344\223\002\023\022\021/v1/event"
+    "s/latestB Z\036github.com/ownmfa/proto/go/a"
+    "pib\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_api_2fownmfa_5fevent_2eproto_deps[4] = {
@@ -285,7 +285,7 @@ static ::absl::once_flag descriptor_table_api_2fownmfa_5fevent_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_api_2fownmfa_5fevent_2eproto = {
     false,
     false,
-    1249,
+    1250,
     descriptor_table_protodef_api_2fownmfa_5fevent_2eproto,
     "api/ownmfa_event.proto",
     &descriptor_table_api_2fownmfa_5fevent_2eproto_once,
