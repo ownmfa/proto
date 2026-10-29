@@ -4,6 +4,8 @@
 // 	protoc        v6.31.1
 // source: api/ownmfa_app_identity.proto
 
+//go:build !protoopaque
+
 package api
 
 import (
@@ -16,7 +18,6 @@ import (
 	fieldmaskpb "google.golang.org/protobuf/types/known/fieldmaskpb"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
-	sync "sync"
 	unsafe "unsafe"
 )
 
@@ -71,11 +72,6 @@ func (x IdentityStatus) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use IdentityStatus.Descriptor instead.
-func (IdentityStatus) EnumDescriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{0}
-}
-
 // Hash represents a hash function.
 type Hash int32
 
@@ -124,14 +120,9 @@ func (x Hash) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use Hash.Descriptor instead.
-func (Hash) EnumDescriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{1}
-}
-
 // App represents an application as stored in the database.
 type App struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Application ID (UUID).
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Organization ID (UUID).
@@ -181,11 +172,6 @@ func (x *App) ProtoReflect() protoreflect.Message {
 		return ms
 	}
 	return mi.MessageOf(x)
-}
-
-// Deprecated: Use App.ProtoReflect.Descriptor instead.
-func (*App) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *App) GetId() string {
@@ -265,9 +251,123 @@ func (x *App) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
+func (x *App) SetId(v string) {
+	x.Id = v
+}
+
+func (x *App) SetOrgId(v string) {
+	x.OrgId = v
+}
+
+func (x *App) SetName(v string) {
+	x.Name = v
+}
+
+func (x *App) SetDisplayName(v string) {
+	x.DisplayName = v
+}
+
+func (x *App) SetEmail(v string) {
+	x.Email = v
+}
+
+func (x *App) SetPushoverKey(v string) {
+	x.PushoverKey = v
+}
+
+func (x *App) SetSubjectTemplate(v string) {
+	x.SubjectTemplate = v
+}
+
+func (x *App) SetTextBodyTemplate(v string) {
+	x.TextBodyTemplate = v
+}
+
+func (x *App) SetHtmlBodyTemplate(v []byte) {
+	if v == nil {
+		v = []byte{}
+	}
+	x.HtmlBodyTemplate = v
+}
+
+func (x *App) SetCreatedAt(v *timestamppb.Timestamp) {
+	x.CreatedAt = v
+}
+
+func (x *App) SetUpdatedAt(v *timestamppb.Timestamp) {
+	x.UpdatedAt = v
+}
+
+func (x *App) HasCreatedAt() bool {
+	if x == nil {
+		return false
+	}
+	return x.CreatedAt != nil
+}
+
+func (x *App) HasUpdatedAt() bool {
+	if x == nil {
+		return false
+	}
+	return x.UpdatedAt != nil
+}
+
+func (x *App) ClearCreatedAt() {
+	x.CreatedAt = nil
+}
+
+func (x *App) ClearUpdatedAt() {
+	x.UpdatedAt = nil
+}
+
+type App_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Application ID (UUID).
+	Id string
+	// Organization ID (UUID).
+	OrgId string
+	// Application name.
+	Name string
+	// Application display name. Used anywhere the application is shown to an external user, including templates and notification sender fields.
+	DisplayName string
+	// Application email. Optional, used as the 'From' address in email notifications.
+	Email string
+	// Pushover application key. If not specified, the default OwnMFA Pushover application and templates will be used.
+	PushoverKey string
+	// Application subject template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution is '{{.displayName}}'. Optional field, for notification methods that support subjects.
+	SubjectTemplate string
+	// Application text body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support text bodies. To prevent fraud, SMS notifications used a fixed body that includes the application display_name and verification code.
+	TextBodyTemplate string
+	// Application HTML body template. Templates generate HTML-safe output using the [Go template engine](https://golang.org/pkg/html/template/). The variables available for substitution are '{{.displayName}}' and '{{.passcode}}'. Optional field, for notification methods that support HTML bodies. When used in JSON, the value will be represented as a base64 string.
+	HtmlBodyTemplate []byte
+	// Application creation timestamp.
+	CreatedAt *timestamppb.Timestamp
+	// Application modification timestamp.
+	UpdatedAt *timestamppb.Timestamp
+}
+
+func (b0 App_builder) Build() *App {
+	m0 := &App{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Id = b.Id
+	x.OrgId = b.OrgId
+	x.Name = b.Name
+	x.DisplayName = b.DisplayName
+	x.Email = b.Email
+	x.PushoverKey = b.PushoverKey
+	x.SubjectTemplate = b.SubjectTemplate
+	x.TextBodyTemplate = b.TextBodyTemplate
+	x.HtmlBodyTemplate = b.HtmlBodyTemplate
+	x.CreatedAt = b.CreatedAt
+	x.UpdatedAt = b.UpdatedAt
+	return m0
+}
+
 // CreateAppRequest is sent to create an application.
 type CreateAppRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// App message to create.
 	App           *App `protobuf:"bytes,1,opt,name=app,proto3" json:"app,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -299,11 +399,6 @@ func (x *CreateAppRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateAppRequest.ProtoReflect.Descriptor instead.
-func (*CreateAppRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{1}
-}
-
 func (x *CreateAppRequest) GetApp() *App {
 	if x != nil {
 		return x.App
@@ -311,9 +406,39 @@ func (x *CreateAppRequest) GetApp() *App {
 	return nil
 }
 
+func (x *CreateAppRequest) SetApp(v *App) {
+	x.App = v
+}
+
+func (x *CreateAppRequest) HasApp() bool {
+	if x == nil {
+		return false
+	}
+	return x.App != nil
+}
+
+func (x *CreateAppRequest) ClearApp() {
+	x.App = nil
+}
+
+type CreateAppRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// App message to create.
+	App *App
+}
+
+func (b0 CreateAppRequest_builder) Build() *CreateAppRequest {
+	m0 := &CreateAppRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.App = b.App
+	return m0
+}
+
 // GetAppRequest is sent to get an application.
 type GetAppRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Application ID (UUID) to get.
 	Id            string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -345,11 +470,6 @@ func (x *GetAppRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetAppRequest.ProtoReflect.Descriptor instead.
-func (*GetAppRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{2}
-}
-
 func (x *GetAppRequest) GetId() string {
 	if x != nil {
 		return x.Id
@@ -357,9 +477,28 @@ func (x *GetAppRequest) GetId() string {
 	return ""
 }
 
+func (x *GetAppRequest) SetId(v string) {
+	x.Id = v
+}
+
+type GetAppRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Application ID (UUID) to get.
+	Id string
+}
+
+func (b0 GetAppRequest_builder) Build() *GetAppRequest {
+	m0 := &GetAppRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Id = b.Id
+	return m0
+}
+
 // UpdateAppRequest is sent to update an application.
 type UpdateAppRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// App message to update.
 	App *App `protobuf:"bytes,1,opt,name=app,proto3" json:"app,omitempty"`
 	// Fields to update. Automatically populated by a PATCH request. If not present, a full resource update is performed.
@@ -393,11 +532,6 @@ func (x *UpdateAppRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateAppRequest.ProtoReflect.Descriptor instead.
-func (*UpdateAppRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{3}
-}
-
 func (x *UpdateAppRequest) GetApp() *App {
 	if x != nil {
 		return x.App
@@ -412,9 +546,57 @@ func (x *UpdateAppRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
 	return nil
 }
 
+func (x *UpdateAppRequest) SetApp(v *App) {
+	x.App = v
+}
+
+func (x *UpdateAppRequest) SetUpdateMask(v *fieldmaskpb.FieldMask) {
+	x.UpdateMask = v
+}
+
+func (x *UpdateAppRequest) HasApp() bool {
+	if x == nil {
+		return false
+	}
+	return x.App != nil
+}
+
+func (x *UpdateAppRequest) HasUpdateMask() bool {
+	if x == nil {
+		return false
+	}
+	return x.UpdateMask != nil
+}
+
+func (x *UpdateAppRequest) ClearApp() {
+	x.App = nil
+}
+
+func (x *UpdateAppRequest) ClearUpdateMask() {
+	x.UpdateMask = nil
+}
+
+type UpdateAppRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// App message to update.
+	App *App
+	// Fields to update. Automatically populated by a PATCH request. If not present, a full resource update is performed.
+	UpdateMask *fieldmaskpb.FieldMask
+}
+
+func (b0 UpdateAppRequest_builder) Build() *UpdateAppRequest {
+	m0 := &UpdateAppRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.App = b.App
+	x.UpdateMask = b.UpdateMask
+	return m0
+}
+
 // DeleteAppRequest is sent to delete an application.
 type DeleteAppRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Application ID (UUID) to delete.
 	Id            string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -446,11 +628,6 @@ func (x *DeleteAppRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteAppRequest.ProtoReflect.Descriptor instead.
-func (*DeleteAppRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{4}
-}
-
 func (x *DeleteAppRequest) GetId() string {
 	if x != nil {
 		return x.Id
@@ -458,9 +635,28 @@ func (x *DeleteAppRequest) GetId() string {
 	return ""
 }
 
+func (x *DeleteAppRequest) SetId(v string) {
+	x.Id = v
+}
+
+type DeleteAppRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Application ID (UUID) to delete.
+	Id string
+}
+
+func (b0 DeleteAppRequest_builder) Build() *DeleteAppRequest {
+	m0 := &DeleteAppRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Id = b.Id
+	return m0
+}
+
 // ListAppsRequest is sent to list applications.
 type ListAppsRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Number of applications to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
 	PageSize int32 `protobuf:"varint,1,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
 	// Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
@@ -494,11 +690,6 @@ func (x *ListAppsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListAppsRequest.ProtoReflect.Descriptor instead.
-func (*ListAppsRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{5}
-}
-
 func (x *ListAppsRequest) GetPageSize() int32 {
 	if x != nil {
 		return x.PageSize
@@ -513,9 +704,35 @@ func (x *ListAppsRequest) GetPageToken() string {
 	return ""
 }
 
+func (x *ListAppsRequest) SetPageSize(v int32) {
+	x.PageSize = v
+}
+
+func (x *ListAppsRequest) SetPageToken(v string) {
+	x.PageToken = v
+}
+
+type ListAppsRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Number of applications to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
+	PageSize int32
+	// Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
+	PageToken string
+}
+
+func (b0 ListAppsRequest_builder) Build() *ListAppsRequest {
+	m0 := &ListAppsRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.PageSize = b.PageSize
+	x.PageToken = b.PageToken
+	return m0
+}
+
 // ListAppsResponse is sent in response to an application list.
 type ListAppsResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// App array, ordered by ascending created_at timestamp.
 	Apps []*App `protobuf:"bytes,1,rep,name=apps,proto3" json:"apps,omitempty"`
 	// Pagination token used to retrieve the next page of results. Not returned for the last page.
@@ -551,11 +768,6 @@ func (x *ListAppsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListAppsResponse.ProtoReflect.Descriptor instead.
-func (*ListAppsResponse) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{6}
-}
-
 func (x *ListAppsResponse) GetApps() []*App {
 	if x != nil {
 		return x.Apps
@@ -577,9 +789,42 @@ func (x *ListAppsResponse) GetTotalSize() int32 {
 	return 0
 }
 
+func (x *ListAppsResponse) SetApps(v []*App) {
+	x.Apps = v
+}
+
+func (x *ListAppsResponse) SetNextPageToken(v string) {
+	x.NextPageToken = v
+}
+
+func (x *ListAppsResponse) SetTotalSize(v int32) {
+	x.TotalSize = v
+}
+
+type ListAppsResponse_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// App array, ordered by ascending created_at timestamp.
+	Apps []*App
+	// Pagination token used to retrieve the next page of results. Not returned for the last page.
+	NextPageToken string
+	// Total number of applications available.
+	TotalSize int32
+}
+
+func (b0 ListAppsResponse_builder) Build() *ListAppsResponse {
+	m0 := &ListAppsResponse{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Apps = b.Apps
+	x.NextPageToken = b.NextPageToken
+	x.TotalSize = b.TotalSize
+	return m0
+}
+
 // SoftwareHOTPMethod configures a software OATH HOTP one-time password method.
 type SoftwareHOTPMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Software HOTP hash function. Defaults to SHA512 if not specified.
 	Hash Hash `protobuf:"varint,1,opt,name=hash,proto3,enum=ownmfa.api.Hash" json:"hash,omitempty"`
 	// Passcode digits length. Defaults to 7 if not specified.
@@ -617,11 +862,6 @@ func (x *SoftwareHOTPMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SoftwareHOTPMethod.ProtoReflect.Descriptor instead.
-func (*SoftwareHOTPMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{7}
-}
-
 func (x *SoftwareHOTPMethod) GetHash() Hash {
 	if x != nil {
 		return x.Hash
@@ -650,9 +890,49 @@ func (x *SoftwareHOTPMethod) GetAccountName() string {
 	return ""
 }
 
+func (x *SoftwareHOTPMethod) SetHash(v Hash) {
+	x.Hash = v
+}
+
+func (x *SoftwareHOTPMethod) SetDigits(v int32) {
+	x.Digits = v
+}
+
+func (x *SoftwareHOTPMethod) SetCounter(v int32) {
+	x.Counter = v
+}
+
+func (x *SoftwareHOTPMethod) SetAccountName(v string) {
+	x.AccountName = v
+}
+
+type SoftwareHOTPMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Software HOTP hash function. Defaults to SHA512 if not specified.
+	Hash Hash
+	// Passcode digits length. Defaults to 7 if not specified.
+	Digits int32
+	// Software HOTP starting counter. Only included during identity creation. Defaults to 0 if not specified.
+	Counter int32
+	// Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
+	AccountName string
+}
+
+func (b0 SoftwareHOTPMethod_builder) Build() *SoftwareHOTPMethod {
+	m0 := &SoftwareHOTPMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Hash = b.Hash
+	x.Digits = b.Digits
+	x.Counter = b.Counter
+	x.AccountName = b.AccountName
+	return m0
+}
+
 // SoftwareTOTPMethod configures a software OATH TOTP one-time password method.
 type SoftwareTOTPMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Software TOTP hash function. Defaults to SHA512 if not specified.
 	Hash Hash `protobuf:"varint,1,opt,name=hash,proto3,enum=ownmfa.api.Hash" json:"hash,omitempty"`
 	// Passcode digits length. Defaults to 7 if not specified.
@@ -688,11 +968,6 @@ func (x *SoftwareTOTPMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SoftwareTOTPMethod.ProtoReflect.Descriptor instead.
-func (*SoftwareTOTPMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{8}
-}
-
 func (x *SoftwareTOTPMethod) GetHash() Hash {
 	if x != nil {
 		return x.Hash
@@ -714,9 +989,42 @@ func (x *SoftwareTOTPMethod) GetAccountName() string {
 	return ""
 }
 
+func (x *SoftwareTOTPMethod) SetHash(v Hash) {
+	x.Hash = v
+}
+
+func (x *SoftwareTOTPMethod) SetDigits(v int32) {
+	x.Digits = v
+}
+
+func (x *SoftwareTOTPMethod) SetAccountName(v string) {
+	x.AccountName = v
+}
+
+type SoftwareTOTPMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Software TOTP hash function. Defaults to SHA512 if not specified.
+	Hash Hash
+	// Passcode digits length. Defaults to 7 if not specified.
+	Digits int32
+	// Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
+	AccountName string
+}
+
+func (b0 SoftwareTOTPMethod_builder) Build() *SoftwareTOTPMethod {
+	m0 := &SoftwareTOTPMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Hash = b.Hash
+	x.Digits = b.Digits
+	x.AccountName = b.AccountName
+	return m0
+}
+
 // GoogleAuthHOTPMethod configures a Google Authenticator HOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function.
 type GoogleAuthHOTPMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
 	AccountName   string `protobuf:"bytes,1,opt,name=account_name,json=accountName,proto3" json:"account_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -748,11 +1056,6 @@ func (x *GoogleAuthHOTPMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GoogleAuthHOTPMethod.ProtoReflect.Descriptor instead.
-func (*GoogleAuthHOTPMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{9}
-}
-
 func (x *GoogleAuthHOTPMethod) GetAccountName() string {
 	if x != nil {
 		return x.AccountName
@@ -760,9 +1063,28 @@ func (x *GoogleAuthHOTPMethod) GetAccountName() string {
 	return ""
 }
 
+func (x *GoogleAuthHOTPMethod) SetAccountName(v string) {
+	x.AccountName = v
+}
+
+type GoogleAuthHOTPMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
+	AccountName string
+}
+
+func (b0 GoogleAuthHOTPMethod_builder) Build() *GoogleAuthHOTPMethod {
+	m0 := &GoogleAuthHOTPMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.AccountName = b.AccountName
+	return m0
+}
+
 // GoogleAuthTOTPMethod configures a Google Authenticator or Microsoft Authenticator TOTP one-time password method. This method is limited to 6-digit passcodes using the SHA1 hash function.
 type GoogleAuthTOTPMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
 	AccountName   string `protobuf:"bytes,1,opt,name=account_name,json=accountName,proto3" json:"account_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -794,11 +1116,6 @@ func (x *GoogleAuthTOTPMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GoogleAuthTOTPMethod.ProtoReflect.Descriptor instead.
-func (*GoogleAuthTOTPMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{10}
-}
-
 func (x *GoogleAuthTOTPMethod) GetAccountName() string {
 	if x != nil {
 		return x.AccountName
@@ -806,9 +1123,28 @@ func (x *GoogleAuthTOTPMethod) GetAccountName() string {
 	return ""
 }
 
+func (x *GoogleAuthTOTPMethod) SetAccountName(v string) {
+	x.AccountName = v
+}
+
+type GoogleAuthTOTPMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Account name, such as username or email, for inclusion in QR codes. This field is never saved. If not specified, only the application display name is included in the returned QR code.
+	AccountName string
+}
+
+func (b0 GoogleAuthTOTPMethod_builder) Build() *GoogleAuthTOTPMethod {
+	m0 := &GoogleAuthTOTPMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.AccountName = b.AccountName
+	return m0
+}
+
 // AppleiOSTOTPMethod configures an Apple iOS TOTP one-time password method.
 type AppleiOSTOTPMethod struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
+	state         protoimpl.MessageState `protogen:"hybrid.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -838,14 +1174,21 @@ func (x *AppleiOSTOTPMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AppleiOSTOTPMethod.ProtoReflect.Descriptor instead.
-func (*AppleiOSTOTPMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{11}
+type AppleiOSTOTPMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+}
+
+func (b0 AppleiOSTOTPMethod_builder) Build() *AppleiOSTOTPMethod {
+	m0 := &AppleiOSTOTPMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	return m0
 }
 
 // HardwareHOTPMethod configures a hardware OATH HOTP one-time password method.
 type HardwareHOTPMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Hardware HOTP hash function. Defaults to SHA512 if not specified.
 	Hash Hash `protobuf:"varint,1,opt,name=hash,proto3,enum=ownmfa.api.Hash" json:"hash,omitempty"`
 	// Passcode digits length.
@@ -883,11 +1226,6 @@ func (x *HardwareHOTPMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use HardwareHOTPMethod.ProtoReflect.Descriptor instead.
-func (*HardwareHOTPMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{12}
-}
-
 func (x *HardwareHOTPMethod) GetHash() Hash {
 	if x != nil {
 		return x.Hash
@@ -916,9 +1254,52 @@ func (x *HardwareHOTPMethod) GetSecret() []byte {
 	return nil
 }
 
+func (x *HardwareHOTPMethod) SetHash(v Hash) {
+	x.Hash = v
+}
+
+func (x *HardwareHOTPMethod) SetDigits(v int32) {
+	x.Digits = v
+}
+
+func (x *HardwareHOTPMethod) SetCounter(v int32) {
+	x.Counter = v
+}
+
+func (x *HardwareHOTPMethod) SetSecret(v []byte) {
+	if v == nil {
+		v = []byte{}
+	}
+	x.Secret = v
+}
+
+type HardwareHOTPMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Hardware HOTP hash function. Defaults to SHA512 if not specified.
+	Hash Hash
+	// Passcode digits length.
+	Digits int32
+	// Hardware HOTP starting counter. Only included during identity creation. Defaults to 0 if not specified.
+	Counter int32
+	// Hardware HOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
+	Secret []byte
+}
+
+func (b0 HardwareHOTPMethod_builder) Build() *HardwareHOTPMethod {
+	m0 := &HardwareHOTPMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Hash = b.Hash
+	x.Digits = b.Digits
+	x.Counter = b.Counter
+	x.Secret = b.Secret
+	return m0
+}
+
 // HardwareTOTPMethod configures a hardware OATH TOTP one-time password method.
 type HardwareTOTPMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Hardware TOTP hash function. Defaults to SHA512 if not specified.
 	Hash Hash `protobuf:"varint,1,opt,name=hash,proto3,enum=ownmfa.api.Hash" json:"hash,omitempty"`
 	// Passcode digits length.
@@ -954,11 +1335,6 @@ func (x *HardwareTOTPMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use HardwareTOTPMethod.ProtoReflect.Descriptor instead.
-func (*HardwareTOTPMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{13}
-}
-
 func (x *HardwareTOTPMethod) GetHash() Hash {
 	if x != nil {
 		return x.Hash
@@ -980,9 +1356,45 @@ func (x *HardwareTOTPMethod) GetSecret() []byte {
 	return nil
 }
 
+func (x *HardwareTOTPMethod) SetHash(v Hash) {
+	x.Hash = v
+}
+
+func (x *HardwareTOTPMethod) SetDigits(v int32) {
+	x.Digits = v
+}
+
+func (x *HardwareTOTPMethod) SetSecret(v []byte) {
+	if v == nil {
+		v = []byte{}
+	}
+	x.Secret = v
+}
+
+type HardwareTOTPMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Hardware TOTP hash function. Defaults to SHA512 if not specified.
+	Hash Hash
+	// Passcode digits length.
+	Digits int32
+	// Hardware TOTP secret. Only included during identity creation. When used in JSON, the value will be represented as a base64 string.
+	Secret []byte
+}
+
+func (b0 HardwareTOTPMethod_builder) Build() *HardwareTOTPMethod {
+	m0 := &HardwareTOTPMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Hash = b.Hash
+	x.Digits = b.Digits
+	x.Secret = b.Secret
+	return m0
+}
+
 // SMSMethod configures an SMS passcode method.
 type SMSMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Phone number. Must be in valid [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
 	Phone         string `protobuf:"bytes,1,opt,name=phone,proto3" json:"phone,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1014,11 +1426,6 @@ func (x *SMSMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SMSMethod.ProtoReflect.Descriptor instead.
-func (*SMSMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{14}
-}
-
 func (x *SMSMethod) GetPhone() string {
 	if x != nil {
 		return x.Phone
@@ -1026,9 +1433,28 @@ func (x *SMSMethod) GetPhone() string {
 	return ""
 }
 
+func (x *SMSMethod) SetPhone(v string) {
+	x.Phone = v
+}
+
+type SMSMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Phone number. Must be in valid [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
+	Phone string
+}
+
+func (b0 SMSMethod_builder) Build() *SMSMethod {
+	m0 := &SMSMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Phone = b.Phone
+	return m0
+}
+
 // PushoverMethod configures a Pushover passcode method.
 type PushoverMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Pushover user key.
 	PushoverKey   string `protobuf:"bytes,1,opt,name=pushover_key,json=pushoverKey,proto3" json:"pushover_key,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1060,11 +1486,6 @@ func (x *PushoverMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use PushoverMethod.ProtoReflect.Descriptor instead.
-func (*PushoverMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{15}
-}
-
 func (x *PushoverMethod) GetPushoverKey() string {
 	if x != nil {
 		return x.PushoverKey
@@ -1072,9 +1493,28 @@ func (x *PushoverMethod) GetPushoverKey() string {
 	return ""
 }
 
+func (x *PushoverMethod) SetPushoverKey(v string) {
+	x.PushoverKey = v
+}
+
+type PushoverMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Pushover user key.
+	PushoverKey string
+}
+
+func (b0 PushoverMethod_builder) Build() *PushoverMethod {
+	m0 := &PushoverMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.PushoverKey = b.PushoverKey
+	return m0
+}
+
 // EmailMethod configures an email passcode method.
 type EmailMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Email address.
 	Email         string `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1106,11 +1546,6 @@ func (x *EmailMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use EmailMethod.ProtoReflect.Descriptor instead.
-func (*EmailMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{16}
-}
-
 func (x *EmailMethod) GetEmail() string {
 	if x != nil {
 		return x.Email
@@ -1118,9 +1553,28 @@ func (x *EmailMethod) GetEmail() string {
 	return ""
 }
 
+func (x *EmailMethod) SetEmail(v string) {
+	x.Email = v
+}
+
+type EmailMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Email address.
+	Email string
+}
+
+func (b0 EmailMethod_builder) Build() *EmailMethod {
+	m0 := &EmailMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Email = b.Email
+	return m0
+}
+
 // BackupsCodesMethod configures a backup codes method. Identities using this method are immediately activated and do not require activation.
 type BackupsCodesMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Number of passcodes provided.
 	Passcodes     int32 `protobuf:"varint,1,opt,name=passcodes,proto3" json:"passcodes,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1152,11 +1606,6 @@ func (x *BackupsCodesMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use BackupsCodesMethod.ProtoReflect.Descriptor instead.
-func (*BackupsCodesMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{17}
-}
-
 func (x *BackupsCodesMethod) GetPasscodes() int32 {
 	if x != nil {
 		return x.Passcodes
@@ -1164,9 +1613,28 @@ func (x *BackupsCodesMethod) GetPasscodes() int32 {
 	return 0
 }
 
+func (x *BackupsCodesMethod) SetPasscodes(v int32) {
+	x.Passcodes = v
+}
+
+type BackupsCodesMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Number of passcodes provided.
+	Passcodes int32
+}
+
+func (b0 BackupsCodesMethod_builder) Build() *BackupsCodesMethod {
+	m0 := &BackupsCodesMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Passcodes = b.Passcodes
+	return m0
+}
+
 // SecurityQuestionsMethod configures a security questions method. Identities using this method are immediately activated and do not require activation.
 type SecurityQuestionsMethod struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Answer to the security question. Only included during identity creation. The security question should be stored out-of-band and queried of an external user by the consuming application.
 	Answer        string `protobuf:"bytes,1,opt,name=answer,proto3" json:"answer,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1198,11 +1666,6 @@ func (x *SecurityQuestionsMethod) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SecurityQuestionsMethod.ProtoReflect.Descriptor instead.
-func (*SecurityQuestionsMethod) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{18}
-}
-
 func (x *SecurityQuestionsMethod) GetAnswer() string {
 	if x != nil {
 		return x.Answer
@@ -1210,9 +1673,28 @@ func (x *SecurityQuestionsMethod) GetAnswer() string {
 	return ""
 }
 
+func (x *SecurityQuestionsMethod) SetAnswer(v string) {
+	x.Answer = v
+}
+
+type SecurityQuestionsMethod_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Answer to the security question. Only included during identity creation. The security question should be stored out-of-band and queried of an external user by the consuming application.
+	Answer string
+}
+
+func (b0 SecurityQuestionsMethod_builder) Build() *SecurityQuestionsMethod {
+	m0 := &SecurityQuestionsMethod{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Answer = b.Answer
+	return m0
+}
+
 // Identity represents an identity as stored in the database.
 type Identity struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Identity ID (UUID).
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Organization ID (UUID).
@@ -1271,11 +1753,6 @@ func (x *Identity) ProtoReflect() protoreflect.Message {
 		return ms
 	}
 	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Identity.ProtoReflect.Descriptor instead.
-func (*Identity) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *Identity) GetId() string {
@@ -1442,6 +1919,486 @@ func (x *Identity) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
+func (x *Identity) SetId(v string) {
+	x.Id = v
+}
+
+func (x *Identity) SetOrgId(v string) {
+	x.OrgId = v
+}
+
+func (x *Identity) SetAppId(v string) {
+	x.AppId = v
+}
+
+func (x *Identity) SetComment(v string) {
+	x.Comment = v
+}
+
+func (x *Identity) SetStatus(v IdentityStatus) {
+	x.Status = v
+}
+
+func (x *Identity) SetSoftwareHotpMethod(v *SoftwareHOTPMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_SoftwareHotpMethod{v}
+}
+
+func (x *Identity) SetSoftwareTotpMethod(v *SoftwareTOTPMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_SoftwareTotpMethod{v}
+}
+
+func (x *Identity) SetGoogleAuthHotpMethod(v *GoogleAuthHOTPMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_GoogleAuthHotpMethod{v}
+}
+
+func (x *Identity) SetGoogleAuthTotpMethod(v *GoogleAuthTOTPMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_GoogleAuthTotpMethod{v}
+}
+
+func (x *Identity) SetAppleIosTotpMethod(v *AppleiOSTOTPMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_AppleIosTotpMethod{v}
+}
+
+func (x *Identity) SetHardwareHotpMethod(v *HardwareHOTPMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_HardwareHotpMethod{v}
+}
+
+func (x *Identity) SetHardwareTotpMethod(v *HardwareTOTPMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_HardwareTotpMethod{v}
+}
+
+func (x *Identity) SetSmsMethod(v *SMSMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_SmsMethod{v}
+}
+
+func (x *Identity) SetPushoverMethod(v *PushoverMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_PushoverMethod{v}
+}
+
+func (x *Identity) SetEmailMethod(v *EmailMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_EmailMethod{v}
+}
+
+func (x *Identity) SetBackupCodesMethod(v *BackupsCodesMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_BackupCodesMethod{v}
+}
+
+func (x *Identity) SetSecurityQuestionsMethod(v *SecurityQuestionsMethod) {
+	if v == nil {
+		x.MethodOneof = nil
+		return
+	}
+	x.MethodOneof = &Identity_SecurityQuestionsMethod{v}
+}
+
+func (x *Identity) SetCreatedAt(v *timestamppb.Timestamp) {
+	x.CreatedAt = v
+}
+
+func (x *Identity) SetUpdatedAt(v *timestamppb.Timestamp) {
+	x.UpdatedAt = v
+}
+
+func (x *Identity) HasMethodOneof() bool {
+	if x == nil {
+		return false
+	}
+	return x.MethodOneof != nil
+}
+
+func (x *Identity) HasSoftwareHotpMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_SoftwareHotpMethod)
+	return ok
+}
+
+func (x *Identity) HasSoftwareTotpMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_SoftwareTotpMethod)
+	return ok
+}
+
+func (x *Identity) HasGoogleAuthHotpMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_GoogleAuthHotpMethod)
+	return ok
+}
+
+func (x *Identity) HasGoogleAuthTotpMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_GoogleAuthTotpMethod)
+	return ok
+}
+
+func (x *Identity) HasAppleIosTotpMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_AppleIosTotpMethod)
+	return ok
+}
+
+func (x *Identity) HasHardwareHotpMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_HardwareHotpMethod)
+	return ok
+}
+
+func (x *Identity) HasHardwareTotpMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_HardwareTotpMethod)
+	return ok
+}
+
+func (x *Identity) HasSmsMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_SmsMethod)
+	return ok
+}
+
+func (x *Identity) HasPushoverMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_PushoverMethod)
+	return ok
+}
+
+func (x *Identity) HasEmailMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_EmailMethod)
+	return ok
+}
+
+func (x *Identity) HasBackupCodesMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_BackupCodesMethod)
+	return ok
+}
+
+func (x *Identity) HasSecurityQuestionsMethod() bool {
+	if x == nil {
+		return false
+	}
+	_, ok := x.MethodOneof.(*Identity_SecurityQuestionsMethod)
+	return ok
+}
+
+func (x *Identity) HasCreatedAt() bool {
+	if x == nil {
+		return false
+	}
+	return x.CreatedAt != nil
+}
+
+func (x *Identity) HasUpdatedAt() bool {
+	if x == nil {
+		return false
+	}
+	return x.UpdatedAt != nil
+}
+
+func (x *Identity) ClearMethodOneof() {
+	x.MethodOneof = nil
+}
+
+func (x *Identity) ClearSoftwareHotpMethod() {
+	if _, ok := x.MethodOneof.(*Identity_SoftwareHotpMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearSoftwareTotpMethod() {
+	if _, ok := x.MethodOneof.(*Identity_SoftwareTotpMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearGoogleAuthHotpMethod() {
+	if _, ok := x.MethodOneof.(*Identity_GoogleAuthHotpMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearGoogleAuthTotpMethod() {
+	if _, ok := x.MethodOneof.(*Identity_GoogleAuthTotpMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearAppleIosTotpMethod() {
+	if _, ok := x.MethodOneof.(*Identity_AppleIosTotpMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearHardwareHotpMethod() {
+	if _, ok := x.MethodOneof.(*Identity_HardwareHotpMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearHardwareTotpMethod() {
+	if _, ok := x.MethodOneof.(*Identity_HardwareTotpMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearSmsMethod() {
+	if _, ok := x.MethodOneof.(*Identity_SmsMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearPushoverMethod() {
+	if _, ok := x.MethodOneof.(*Identity_PushoverMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearEmailMethod() {
+	if _, ok := x.MethodOneof.(*Identity_EmailMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearBackupCodesMethod() {
+	if _, ok := x.MethodOneof.(*Identity_BackupCodesMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearSecurityQuestionsMethod() {
+	if _, ok := x.MethodOneof.(*Identity_SecurityQuestionsMethod); ok {
+		x.MethodOneof = nil
+	}
+}
+
+func (x *Identity) ClearCreatedAt() {
+	x.CreatedAt = nil
+}
+
+func (x *Identity) ClearUpdatedAt() {
+	x.UpdatedAt = nil
+}
+
+const Identity_MethodOneof_not_set_case case_Identity_MethodOneof = 0
+const Identity_SoftwareHotpMethod_case case_Identity_MethodOneof = 16
+const Identity_SoftwareTotpMethod_case case_Identity_MethodOneof = 6
+const Identity_GoogleAuthHotpMethod_case case_Identity_MethodOneof = 17
+const Identity_GoogleAuthTotpMethod_case case_Identity_MethodOneof = 7
+const Identity_AppleIosTotpMethod_case case_Identity_MethodOneof = 22
+const Identity_HardwareHotpMethod_case case_Identity_MethodOneof = 18
+const Identity_HardwareTotpMethod_case case_Identity_MethodOneof = 19
+const Identity_SmsMethod_case case_Identity_MethodOneof = 8
+const Identity_PushoverMethod_case case_Identity_MethodOneof = 20
+const Identity_EmailMethod_case case_Identity_MethodOneof = 9
+const Identity_BackupCodesMethod_case case_Identity_MethodOneof = 10
+const Identity_SecurityQuestionsMethod_case case_Identity_MethodOneof = 21
+
+func (x *Identity) WhichMethodOneof() case_Identity_MethodOneof {
+	if x == nil {
+		return Identity_MethodOneof_not_set_case
+	}
+	switch x.MethodOneof.(type) {
+	case *Identity_SoftwareHotpMethod:
+		return Identity_SoftwareHotpMethod_case
+	case *Identity_SoftwareTotpMethod:
+		return Identity_SoftwareTotpMethod_case
+	case *Identity_GoogleAuthHotpMethod:
+		return Identity_GoogleAuthHotpMethod_case
+	case *Identity_GoogleAuthTotpMethod:
+		return Identity_GoogleAuthTotpMethod_case
+	case *Identity_AppleIosTotpMethod:
+		return Identity_AppleIosTotpMethod_case
+	case *Identity_HardwareHotpMethod:
+		return Identity_HardwareHotpMethod_case
+	case *Identity_HardwareTotpMethod:
+		return Identity_HardwareTotpMethod_case
+	case *Identity_SmsMethod:
+		return Identity_SmsMethod_case
+	case *Identity_PushoverMethod:
+		return Identity_PushoverMethod_case
+	case *Identity_EmailMethod:
+		return Identity_EmailMethod_case
+	case *Identity_BackupCodesMethod:
+		return Identity_BackupCodesMethod_case
+	case *Identity_SecurityQuestionsMethod:
+		return Identity_SecurityQuestionsMethod_case
+	default:
+		return Identity_MethodOneof_not_set_case
+	}
+}
+
+type Identity_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Identity ID (UUID).
+	Id string
+	// Organization ID (UUID).
+	OrgId string
+	// Application ID (UUID).
+	AppId string
+	// Identity comment. This should be an opaque identifier known to the consuming application.
+	Comment string
+	// Identity status.
+	Status IdentityStatus
+	// Identity method.
+
+	// Fields of oneof MethodOneof:
+	// Software HOTP method configuration.
+	SoftwareHotpMethod *SoftwareHOTPMethod
+	// Software TOTP method configuration.
+	SoftwareTotpMethod *SoftwareTOTPMethod
+	// Google Authenticator HOTP method configuration.
+	GoogleAuthHotpMethod *GoogleAuthHOTPMethod
+	// Google Authenticator TOTP method configuration.
+	GoogleAuthTotpMethod *GoogleAuthTOTPMethod
+	// Apple iOS TOTP method configuration.
+	AppleIosTotpMethod *AppleiOSTOTPMethod
+	// Hardware HOTP method configuration.
+	HardwareHotpMethod *HardwareHOTPMethod
+	// Hardware TOTP method configuration.
+	HardwareTotpMethod *HardwareTOTPMethod
+	// SMS method configuration.
+	SmsMethod *SMSMethod
+	// Pushover method configuration.
+	PushoverMethod *PushoverMethod
+	// Email method configuration.
+	EmailMethod *EmailMethod
+	// Backups codes method configuration.
+	BackupCodesMethod *BackupsCodesMethod
+	// Security questions method configuration.
+	SecurityQuestionsMethod *SecurityQuestionsMethod
+	// -- end of MethodOneof
+	// Identity creation timestamp.
+	CreatedAt *timestamppb.Timestamp
+	// Identity modification timestamp.
+	UpdatedAt *timestamppb.Timestamp
+}
+
+func (b0 Identity_builder) Build() *Identity {
+	m0 := &Identity{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Id = b.Id
+	x.OrgId = b.OrgId
+	x.AppId = b.AppId
+	x.Comment = b.Comment
+	x.Status = b.Status
+	if b.SoftwareHotpMethod != nil {
+		x.MethodOneof = &Identity_SoftwareHotpMethod{b.SoftwareHotpMethod}
+	}
+	if b.SoftwareTotpMethod != nil {
+		x.MethodOneof = &Identity_SoftwareTotpMethod{b.SoftwareTotpMethod}
+	}
+	if b.GoogleAuthHotpMethod != nil {
+		x.MethodOneof = &Identity_GoogleAuthHotpMethod{b.GoogleAuthHotpMethod}
+	}
+	if b.GoogleAuthTotpMethod != nil {
+		x.MethodOneof = &Identity_GoogleAuthTotpMethod{b.GoogleAuthTotpMethod}
+	}
+	if b.AppleIosTotpMethod != nil {
+		x.MethodOneof = &Identity_AppleIosTotpMethod{b.AppleIosTotpMethod}
+	}
+	if b.HardwareHotpMethod != nil {
+		x.MethodOneof = &Identity_HardwareHotpMethod{b.HardwareHotpMethod}
+	}
+	if b.HardwareTotpMethod != nil {
+		x.MethodOneof = &Identity_HardwareTotpMethod{b.HardwareTotpMethod}
+	}
+	if b.SmsMethod != nil {
+		x.MethodOneof = &Identity_SmsMethod{b.SmsMethod}
+	}
+	if b.PushoverMethod != nil {
+		x.MethodOneof = &Identity_PushoverMethod{b.PushoverMethod}
+	}
+	if b.EmailMethod != nil {
+		x.MethodOneof = &Identity_EmailMethod{b.EmailMethod}
+	}
+	if b.BackupCodesMethod != nil {
+		x.MethodOneof = &Identity_BackupCodesMethod{b.BackupCodesMethod}
+	}
+	if b.SecurityQuestionsMethod != nil {
+		x.MethodOneof = &Identity_SecurityQuestionsMethod{b.SecurityQuestionsMethod}
+	}
+	x.CreatedAt = b.CreatedAt
+	x.UpdatedAt = b.UpdatedAt
+	return m0
+}
+
+type case_Identity_MethodOneof protoreflect.FieldNumber
+
+func (x case_Identity_MethodOneof) String() string {
+	md := file_api_ownmfa_app_identity_proto_msgTypes[19].Descriptor()
+	if x == 0 {
+		return "not set"
+	}
+	return protoimpl.X.MessageFieldStringOf(md, protoreflect.FieldNumber(x))
+}
+
 type isIdentity_MethodOneof interface {
 	isIdentity_MethodOneof()
 }
@@ -1532,7 +2489,7 @@ func (*Identity_SecurityQuestionsMethod) isIdentity_MethodOneof() {}
 
 // CreateIdentityRequest is sent to create an identity.
 type CreateIdentityRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Identity message to create.
 	Identity      *Identity `protobuf:"bytes,1,opt,name=identity,proto3" json:"identity,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1564,11 +2521,6 @@ func (x *CreateIdentityRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateIdentityRequest.ProtoReflect.Descriptor instead.
-func (*CreateIdentityRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{20}
-}
-
 func (x *CreateIdentityRequest) GetIdentity() *Identity {
 	if x != nil {
 		return x.Identity
@@ -1576,9 +2528,39 @@ func (x *CreateIdentityRequest) GetIdentity() *Identity {
 	return nil
 }
 
+func (x *CreateIdentityRequest) SetIdentity(v *Identity) {
+	x.Identity = v
+}
+
+func (x *CreateIdentityRequest) HasIdentity() bool {
+	if x == nil {
+		return false
+	}
+	return x.Identity != nil
+}
+
+func (x *CreateIdentityRequest) ClearIdentity() {
+	x.Identity = nil
+}
+
+type CreateIdentityRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Identity message to create.
+	Identity *Identity
+}
+
+func (b0 CreateIdentityRequest_builder) Build() *CreateIdentityRequest {
+	m0 := &CreateIdentityRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Identity = b.Identity
+	return m0
+}
+
 // CreateIdentityResponse is sent in response to an identity creation.
 type CreateIdentityResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Identity message created.
 	Identity *Identity `protobuf:"bytes,1,opt,name=identity,proto3" json:"identity,omitempty"`
 	// Secret in base32 format, for identity methods that provide secrets. Only returned once, upon identity creation.
@@ -1616,11 +2598,6 @@ func (x *CreateIdentityResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateIdentityResponse.ProtoReflect.Descriptor instead.
-func (*CreateIdentityResponse) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{21}
-}
-
 func (x *CreateIdentityResponse) GetIdentity() *Identity {
 	if x != nil {
 		return x.Identity
@@ -1649,9 +2626,63 @@ func (x *CreateIdentityResponse) GetPasscodes() []string {
 	return nil
 }
 
+func (x *CreateIdentityResponse) SetIdentity(v *Identity) {
+	x.Identity = v
+}
+
+func (x *CreateIdentityResponse) SetSecret(v string) {
+	x.Secret = v
+}
+
+func (x *CreateIdentityResponse) SetQr(v []byte) {
+	if v == nil {
+		v = []byte{}
+	}
+	x.Qr = v
+}
+
+func (x *CreateIdentityResponse) SetPasscodes(v []string) {
+	x.Passcodes = v
+}
+
+func (x *CreateIdentityResponse) HasIdentity() bool {
+	if x == nil {
+		return false
+	}
+	return x.Identity != nil
+}
+
+func (x *CreateIdentityResponse) ClearIdentity() {
+	x.Identity = nil
+}
+
+type CreateIdentityResponse_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Identity message created.
+	Identity *Identity
+	// Secret in base32 format, for identity methods that provide secrets. Only returned once, upon identity creation.
+	Secret string
+	// Identity QR code, in Google Authenticator-compatible format, as a PNG image. For identity methods that provide secrets. Only returned once, upon identity creation. When used in JSON, the value will be represented as a base64 string.
+	Qr []byte
+	// Passcode array, for identity methods that provide pregenerated passcodes. Only returned once, upon identity creation.
+	Passcodes []string
+}
+
+func (b0 CreateIdentityResponse_builder) Build() *CreateIdentityResponse {
+	m0 := &CreateIdentityResponse{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Identity = b.Identity
+	x.Secret = b.Secret
+	x.Qr = b.Qr
+	x.Passcodes = b.Passcodes
+	return m0
+}
+
 // ActivateIdentityRequest is sent to activate an identity.
 type ActivateIdentityRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Identity ID (UUID) to activate.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Application ID (UUID).
@@ -1687,11 +2718,6 @@ func (x *ActivateIdentityRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ActivateIdentityRequest.ProtoReflect.Descriptor instead.
-func (*ActivateIdentityRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{22}
-}
-
 func (x *ActivateIdentityRequest) GetId() string {
 	if x != nil {
 		return x.Id
@@ -1713,9 +2739,42 @@ func (x *ActivateIdentityRequest) GetPasscode() string {
 	return ""
 }
 
+func (x *ActivateIdentityRequest) SetId(v string) {
+	x.Id = v
+}
+
+func (x *ActivateIdentityRequest) SetAppId(v string) {
+	x.AppId = v
+}
+
+func (x *ActivateIdentityRequest) SetPasscode(v string) {
+	x.Passcode = v
+}
+
+type ActivateIdentityRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Identity ID (UUID) to activate.
+	Id string
+	// Application ID (UUID).
+	AppId string
+	// Passcode for verification. For security questions identity methods, this is the answer to the security question.
+	Passcode string
+}
+
+func (b0 ActivateIdentityRequest_builder) Build() *ActivateIdentityRequest {
+	m0 := &ActivateIdentityRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Id = b.Id
+	x.AppId = b.AppId
+	x.Passcode = b.Passcode
+	return m0
+}
+
 // ChallengeIdentityRequest is sent to issue a challenge to an identity.
 type ChallengeIdentityRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Identity ID (UUID) to issue challenge. The rate limit for methods that send notifications is one challenge per identity every 30 seconds.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Application ID (UUID).
@@ -1749,11 +2808,6 @@ func (x *ChallengeIdentityRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ChallengeIdentityRequest.ProtoReflect.Descriptor instead.
-func (*ChallengeIdentityRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{23}
-}
-
 func (x *ChallengeIdentityRequest) GetId() string {
 	if x != nil {
 		return x.Id
@@ -1768,9 +2822,35 @@ func (x *ChallengeIdentityRequest) GetAppId() string {
 	return ""
 }
 
+func (x *ChallengeIdentityRequest) SetId(v string) {
+	x.Id = v
+}
+
+func (x *ChallengeIdentityRequest) SetAppId(v string) {
+	x.AppId = v
+}
+
+type ChallengeIdentityRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Identity ID (UUID) to issue challenge. The rate limit for methods that send notifications is one challenge per identity every 30 seconds.
+	Id string
+	// Application ID (UUID).
+	AppId string
+}
+
+func (b0 ChallengeIdentityRequest_builder) Build() *ChallengeIdentityRequest {
+	m0 := &ChallengeIdentityRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Id = b.Id
+	x.AppId = b.AppId
+	return m0
+}
+
 // VerifyIdentityRequest is sent to verify an identity. If verification fails, the request does not automatically fall through to a backup codes method. Consuming applications should design a workflow that either explicitly verifies by backup codes or falls through on failure.
 type VerifyIdentityRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Identity ID (UUID) to verify.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Application ID (UUID).
@@ -1806,11 +2886,6 @@ func (x *VerifyIdentityRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VerifyIdentityRequest.ProtoReflect.Descriptor instead.
-func (*VerifyIdentityRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{24}
-}
-
 func (x *VerifyIdentityRequest) GetId() string {
 	if x != nil {
 		return x.Id
@@ -1832,9 +2907,42 @@ func (x *VerifyIdentityRequest) GetPasscode() string {
 	return ""
 }
 
+func (x *VerifyIdentityRequest) SetId(v string) {
+	x.Id = v
+}
+
+func (x *VerifyIdentityRequest) SetAppId(v string) {
+	x.AppId = v
+}
+
+func (x *VerifyIdentityRequest) SetPasscode(v string) {
+	x.Passcode = v
+}
+
+type VerifyIdentityRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Identity ID (UUID) to verify.
+	Id string
+	// Application ID (UUID).
+	AppId string
+	// Passcode for verification. For security questions identity methods, this is the answer to the security question.
+	Passcode string
+}
+
+func (b0 VerifyIdentityRequest_builder) Build() *VerifyIdentityRequest {
+	m0 := &VerifyIdentityRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Id = b.Id
+	x.AppId = b.AppId
+	x.Passcode = b.Passcode
+	return m0
+}
+
 // GetIdentityRequest is sent to get an identity.
 type GetIdentityRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Identity ID (UUID) to get. Identity method_oneof may be returned in simplified form.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Application ID (UUID).
@@ -1868,11 +2976,6 @@ func (x *GetIdentityRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetIdentityRequest.ProtoReflect.Descriptor instead.
-func (*GetIdentityRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{25}
-}
-
 func (x *GetIdentityRequest) GetId() string {
 	if x != nil {
 		return x.Id
@@ -1887,9 +2990,35 @@ func (x *GetIdentityRequest) GetAppId() string {
 	return ""
 }
 
+func (x *GetIdentityRequest) SetId(v string) {
+	x.Id = v
+}
+
+func (x *GetIdentityRequest) SetAppId(v string) {
+	x.AppId = v
+}
+
+type GetIdentityRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Identity ID (UUID) to get. Identity method_oneof may be returned in simplified form.
+	Id string
+	// Application ID (UUID).
+	AppId string
+}
+
+func (b0 GetIdentityRequest_builder) Build() *GetIdentityRequest {
+	m0 := &GetIdentityRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Id = b.Id
+	x.AppId = b.AppId
+	return m0
+}
+
 // DeleteIdentityRequest is sent to delete an identity.
 type DeleteIdentityRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Identity ID (UUID) to delete.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Application ID (UUID).
@@ -1923,11 +3052,6 @@ func (x *DeleteIdentityRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteIdentityRequest.ProtoReflect.Descriptor instead.
-func (*DeleteIdentityRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{26}
-}
-
 func (x *DeleteIdentityRequest) GetId() string {
 	if x != nil {
 		return x.Id
@@ -1942,9 +3066,35 @@ func (x *DeleteIdentityRequest) GetAppId() string {
 	return ""
 }
 
+func (x *DeleteIdentityRequest) SetId(v string) {
+	x.Id = v
+}
+
+func (x *DeleteIdentityRequest) SetAppId(v string) {
+	x.AppId = v
+}
+
+type DeleteIdentityRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Identity ID (UUID) to delete.
+	Id string
+	// Application ID (UUID).
+	AppId string
+}
+
+func (b0 DeleteIdentityRequest_builder) Build() *DeleteIdentityRequest {
+	m0 := &DeleteIdentityRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Id = b.Id
+	x.AppId = b.AppId
+	return m0
+}
+
 // ListIdentitiesRequest is sent to list identities.
 type ListIdentitiesRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Number of identities to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
 	PageSize int32 `protobuf:"varint,1,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
 	// Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
@@ -1980,11 +3130,6 @@ func (x *ListIdentitiesRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListIdentitiesRequest.ProtoReflect.Descriptor instead.
-func (*ListIdentitiesRequest) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{27}
-}
-
 func (x *ListIdentitiesRequest) GetPageSize() int32 {
 	if x != nil {
 		return x.PageSize
@@ -2006,9 +3151,42 @@ func (x *ListIdentitiesRequest) GetAppId() string {
 	return ""
 }
 
+func (x *ListIdentitiesRequest) SetPageSize(v int32) {
+	x.PageSize = v
+}
+
+func (x *ListIdentitiesRequest) SetPageToken(v string) {
+	x.PageToken = v
+}
+
+func (x *ListIdentitiesRequest) SetAppId(v string) {
+	x.AppId = v
+}
+
+type ListIdentitiesRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Number of identities to retrieve in a single page. Defaults to 50 if not specified, with a maximum of 250.
+	PageSize int32
+	// Token of the page to retrieve. If not specified, the first page of results will be returned. To request the next page of results, use next_page_token from the previous response.
+	PageToken string
+	// Application ID (UUID). If not specified, all rules are included.
+	AppId string
+}
+
+func (b0 ListIdentitiesRequest_builder) Build() *ListIdentitiesRequest {
+	m0 := &ListIdentitiesRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.PageSize = b.PageSize
+	x.PageToken = b.PageToken
+	x.AppId = b.AppId
+	return m0
+}
+
 // ListIdentitiesResponse is sent in response to an identity list.
 type ListIdentitiesResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"hybrid.v1"`
 	// Identity array, ordered by ascending created_at timestamp.
 	Identities []*Identity `protobuf:"bytes,1,rep,name=identities,proto3" json:"identities,omitempty"`
 	// Pagination token used to retrieve the next page of results. Not returned for the last page.
@@ -2044,11 +3222,6 @@ func (x *ListIdentitiesResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListIdentitiesResponse.ProtoReflect.Descriptor instead.
-func (*ListIdentitiesResponse) Descriptor() ([]byte, []int) {
-	return file_api_ownmfa_app_identity_proto_rawDescGZIP(), []int{28}
-}
-
 func (x *ListIdentitiesResponse) GetIdentities() []*Identity {
 	if x != nil {
 		return x.Identities
@@ -2068,6 +3241,39 @@ func (x *ListIdentitiesResponse) GetTotalSize() int32 {
 		return x.TotalSize
 	}
 	return 0
+}
+
+func (x *ListIdentitiesResponse) SetIdentities(v []*Identity) {
+	x.Identities = v
+}
+
+func (x *ListIdentitiesResponse) SetNextPageToken(v string) {
+	x.NextPageToken = v
+}
+
+func (x *ListIdentitiesResponse) SetTotalSize(v int32) {
+	x.TotalSize = v
+}
+
+type ListIdentitiesResponse_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	// Identity array, ordered by ascending created_at timestamp.
+	Identities []*Identity
+	// Pagination token used to retrieve the next page of results. Not returned for the last page.
+	NextPageToken string
+	// Total number of identities available.
+	TotalSize int32
+}
+
+func (b0 ListIdentitiesResponse_builder) Build() *ListIdentitiesResponse {
+	m0 := &ListIdentitiesResponse{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.Identities = b.Identities
+	x.NextPageToken = b.NextPageToken
+	x.TotalSize = b.TotalSize
+	return m0
 }
 
 var File_api_ownmfa_app_identity_proto protoreflect.FileDescriptor
@@ -2251,18 +3457,6 @@ const file_api_ownmfa_app_identity_proto_rawDesc = "" +
 	"\x16A successful response.\x12\x00\x82\xd3\xe4\x93\x02+*)/v1/applications/{app_id}/identities/{id}\x12_\n" +
 	"\bListApps\x12\x1b.ownmfa.api.ListAppsRequest\x1a\x1c.ownmfa.api.ListAppsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/applications\x12\xa4\x01\n" +
 	"\x0eListIdentities\x12!.ownmfa.api.ListIdentitiesRequest\x1a\".ownmfa.api.ListIdentitiesResponse\"K\x82\xd3\xe4\x93\x02EZ\x1d\x12\x1b/v1/applications/identities\x12$/v1/applications/{app_id}/identitiesB Z\x1egithub.com/ownmfa/proto/go/apib\x06proto3"
-
-var (
-	file_api_ownmfa_app_identity_proto_rawDescOnce sync.Once
-	file_api_ownmfa_app_identity_proto_rawDescData []byte
-)
-
-func file_api_ownmfa_app_identity_proto_rawDescGZIP() []byte {
-	file_api_ownmfa_app_identity_proto_rawDescOnce.Do(func() {
-		file_api_ownmfa_app_identity_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_api_ownmfa_app_identity_proto_rawDesc), len(file_api_ownmfa_app_identity_proto_rawDesc)))
-	})
-	return file_api_ownmfa_app_identity_proto_rawDescData
-}
 
 var file_api_ownmfa_app_identity_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_api_ownmfa_app_identity_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
