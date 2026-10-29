@@ -12,7 +12,8 @@ deps:
 
 api:
 	protoc -I=../protobuf -I=/tmp/googleapis -I=/tmp/grpc-gateway \
-	-I=/tmp/pv/proto/protovalidate --go_out=. --go_opt=paths=source_relative \
+	-I=/tmp/pv/proto/protovalidate --go_out=. \
+	--go_opt=paths=source_relative,default_api_level=API_HYBRID \
 	--go-grpc_out=. --go-grpc_opt=paths=source_relative \
 	--grpc-gateway_out=. --grpc-gateway_opt=paths=source_relative \
 	api/ownmfa_app_identity.proto \

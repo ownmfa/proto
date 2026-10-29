@@ -4,13 +4,14 @@
 // 	protoc        v6.31.1
 // source: api/ownmfa_role.proto
 
+//go:build !protoopaque
+
 package api
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	sync "sync"
 	unsafe "unsafe"
 )
 
@@ -77,11 +78,6 @@ func (x Role) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use Role.Descriptor instead.
-func (Role) EnumDescriptor() ([]byte, []int) {
-	return file_api_ownmfa_role_proto_rawDescGZIP(), []int{0}
-}
-
 var File_api_ownmfa_role_proto protoreflect.FileDescriptor
 
 const file_api_ownmfa_role_proto_rawDesc = "" +
@@ -95,18 +91,6 @@ const file_api_ownmfa_role_proto_rawDesc = "" +
 	"\rAUTHENTICATOR\x10\b\x12\t\n" +
 	"\x05ADMIN\x10\f\x12\r\n" +
 	"\tSYS_ADMIN\x10\x0fB Z\x1egithub.com/ownmfa/proto/go/apib\x06proto3"
-
-var (
-	file_api_ownmfa_role_proto_rawDescOnce sync.Once
-	file_api_ownmfa_role_proto_rawDescData []byte
-)
-
-func file_api_ownmfa_role_proto_rawDescGZIP() []byte {
-	file_api_ownmfa_role_proto_rawDescOnce.Do(func() {
-		file_api_ownmfa_role_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_api_ownmfa_role_proto_rawDesc), len(file_api_ownmfa_role_proto_rawDesc)))
-	})
-	return file_api_ownmfa_role_proto_rawDescData
-}
 
 var file_api_ownmfa_role_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_api_ownmfa_role_proto_goTypes = []any{
